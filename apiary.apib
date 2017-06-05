@@ -5,7 +5,7 @@ HOST: http://polls.apiblueprint.org/
 
 Polls is a simple API allowing consumers to view polls and vote in them.
 
-## Users Collection [/users]
+## Authentication [/users/login]
 
 ### Login [POST]
 
@@ -43,4 +43,45 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 "saldo_wallet": null,
                 "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0"
             }
+        }
+
+
+##GET USER [/users/66]
+
+
+###GetUser [GET]
+
++ Request
+    + Headers
+
+            Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0
+
+
+
++ Response 200 (application/json)
+
+        {
+              "code": 200,
+              "status": true,
+              "message": "User Data",
+              "data": {
+                "id_users": 66,
+                "id_marketplaceuser": 0,
+                "email_users": "admin@komuto.com",
+                "namalengkap_users": "Admin Komuto",
+                "no_anggotakoperasi_users": null,
+                "approval_koperasi_users": "0",
+                "pathfoto_users": null,
+                "nohp_users": null,
+                "tgl_create_users": 1496336400,
+                "tgl_join_koperasi": null,
+                "jeniskelamin_users": null,
+                "status_users": "1",
+                "tglstatus_users": 1493668888,
+                "ibukandung_users": null,
+                "auth_key": null,
+                "kota_lahir": null,
+                "tgl_lahir": null,
+                "saldo_wallet": null
+              }
         }
