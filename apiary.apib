@@ -64,7 +64,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 "data": {}
         }
 
-### Get User [GET /users/{?user_id}]
+### Get User [GET /users/{user_id}]
 
 + Request
     + Parameters
@@ -104,7 +104,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
               }
         }
 
-### User Activation [POST /users/{?user_id}/activate]
+### User Activation [POST /users/{user_id}/activate]
 
 + Request (application/json)
 
@@ -117,7 +117,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 "data": {}
         }
 
-### Change Status [POST /users/{?user_id}/status]
+### Change Status [POST /users/{user_id}/status]
 
 + Parameters
     +   user_id: 2 (number, required)
@@ -133,7 +133,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 
 ## Marketplace Collection [/marketplace]
 
-### Get Term of Service [GET /marketplace/{?marketplace_id}/term]
+### Get Term of Service [GET /marketplace/{marketplace_id}/term]
 
 + Parameters 
     + marketplace_id: 55 (required, number)
@@ -147,10 +147,23 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 "data": {}
         }
         
-### Get Privacy Policy [GET /marketplace/{?marketplace_id}/policy]
+### Get Privacy Policy [GET /marketplace/{marketplace_id}/policy]
 
 + Parameters
     + marketplace_id: 99 (required, number)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Marketplace Data",
+                "data": {}
+        }
+        
+### Login Marketplace [POST /marketplace/login]
+
++ Request (application/json)
 
 + Response 200 (application/json)
 
