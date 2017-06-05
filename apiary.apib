@@ -131,6 +131,32 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 "data": {}
         }
 
+### Reset Password [POST /users/{user_id}/password/reset]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "User Data",
+                "data": {}
+        }
+
+### Update User [POST /users/{user_id}]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+    
+        {
+                "code": 200,
+                "status": true,
+                "message": "User Data"
+                "data": {}
+        }
+
 ## Marketplace Collection [/marketplace]
 
 ### Get Term of Service [GET /marketplace/{marketplace_id}/term]
