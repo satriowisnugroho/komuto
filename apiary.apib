@@ -5,7 +5,7 @@ HOST: http://polls.apiblueprint.org/
 
 Polls is a simple API allowing consumers to view polls and vote in them.
 
-## Authentication [/users/login]
+## Users Collection [/users/login]
 
 ### Login [POST]
 
@@ -46,12 +46,14 @@ Polls is a simple API allowing consumers to view polls and vote in them.
         }
 
 
-##GET USER [/users/66]
-
-
+##GET USER [/users/{?id_users}]
+    
 ###GetUser [GET]
 
 + Request
+    + Parameters
+        + id_users: 66 (required, number)
+
     + Headers
 
             Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0
@@ -85,3 +87,15 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 "saldo_wallet": null
               }
         }
+
++ Request
+
+    + Headers
+
+            Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0
+
++ Response 403 (application/json)
+    
+        [
+            "Access denied for user anonymous"
+        ]
