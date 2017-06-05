@@ -5,7 +5,7 @@ HOST: http://polls.apiblueprint.org/
 
 Polls is a simple API allowing consumers to view polls and vote in them.
 
-## Users Collection [/users/login]
+## Authentication [/users/login]
 
 ### Login [POST]
 
@@ -45,10 +45,26 @@ Polls is a simple API allowing consumers to view polls and vote in them.
             }
         }
 
+## User Collection [/users]
 
-##GET USER [/users/{?id_users}]
-    
-###GetUser [GET]
+### Registration [POST]
+
++ Request (application/json)
+
+        {
+            
+        }
+
++ Response 201 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "User Data",
+                "data": {}
+        }
+
+### Get User [GET /users/{?user_id}]
 
 + Request
     + Parameters
@@ -88,14 +104,45 @@ Polls is a simple API allowing consumers to view polls and vote in them.
               }
         }
 
-+ Request
+### User Activation [POST /users/{?user_id}/activate]
 
-    + Headers
++ Request (application/json)
 
-            Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0
++ Response 200 (application/json)
 
-+ Response 403 (application/json)
+        {
+                "code": 200,
+                "status": true,
+                "message": "User Data"
+                "data": {}
+        }
+
+## Marketplace Collection [/marketplace]
+
+### Get Term of Service [GET /marketplace/{?marketplace_id}/term]
+
++ Parameters 
+    + marketplace_id: 55 (required, number)
     
-        [
-            "Access denied for user anonymous"
-        ]
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Marketplace Data",
+                "data": {}
+        }
+        
+### Get Privacy Policy [GET /marketplace/{?marketplace_id}/policy]
+
++ Parameters
+    + marketplace_id: 99 (required, number)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Marketplace Data",
+                "data": {}
+        }
