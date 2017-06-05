@@ -5,76 +5,42 @@ HOST: http://polls.apiblueprint.org/
 
 Polls is a simple API allowing consumers to view polls and vote in them.
 
-## Questions Collection [/questions]
+## Users Collection [/users]
 
-### List All Questions [GET]
-
-+ Response 200 (application/json)
-
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
-
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+### Login [POST]
 
 + Request (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            "email": "admin@komuto.com",
+            "password": "admin"
         }
 
-+ Response 201 (application/json)
++ Response 200 (application/json)
 
-    + Headers
-
-            Location: /questions/2
-
-    + Body
-
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
+        {
+            "code": 200,
+            "status": true,
+            "message": "User Data",
+            "data": {
+                "email_users": "admin@komuto.com",
+                "id_users": 66,
+                "id_marketplaceuser": 0,
+                "namalengkap_users": "Admin Komuto",
+                "no_anggotakoperasi_users": null,
+                "approval_koperasi_users": "0",
+                "pathfoto_users": null,
+                "nohp_users": null,
+                "tgl_create_users": "2017-06-01T17:00:00.000Z",
+                "tgl_join_koperasi": null,
+                "jeniskelamin_users": null,
+                "status_users": "1",
+                "tglstatus_users": "2017-05-01T20:01:28.000Z",
+                "ibukandung_users": null,
+                "auth_key": null,
+                "kota_lahir": null,
+                "tgl_lahir": null,
+                "saldo_wallet": null,
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0"
             }
+        }
