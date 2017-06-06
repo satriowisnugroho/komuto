@@ -1137,3 +1137,44 @@ Komuto API
                 }
             ]
         }
+
+## Bucket Collection [/bucket]
+
+### Get Bucket [GET /bucket/{user_id}]
+
++ Parameters
+    + user_id: 2 (number, required)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Bucket Data",
+                "data": [
+                      {
+                          "bucket_id": 45,
+                          "users_id": 2,
+                          "promotion_id": 1,
+                          "bucketorder_date": 1496710635,
+                          "bucket_status": "",
+                          "bucketstatus_date": 1496710635,
+                          "uniq_code": "kode_unik",
+                          "paymentmethod_id": 2,
+                          "wallet_pay": 1,
+                          "uid": "213124132"
+                      },
+                      {
+                          "bucket_id": 43,
+                          "users_id": 2,
+                          "promotion_id": 3,
+                          "bucketorder_date": 1496710635,
+                          "bucket_status": "",
+                          "bucketstatus_date": 1496710635,
+                          "uniq_code": "lebih_unik",
+                          "paymentmethod_id": 2,
+                          "wallet_pay": 1,
+                          "uid": "sdak9123"
+                      }
+                ]
+        }
