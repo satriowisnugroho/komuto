@@ -406,3 +406,82 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                   "privacy_policy": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                 }
         }
+
+## Store Collection [/store]
+
+### Open Store [POST]
+
++ Request (application/json)
+
+        {
+              "users_id": 2,
+              "name": "Baju Keren",
+              "slogan": "Semua harus keren",
+              "description": "Menjual semua jenis baju yang keren",
+              "logo": "bajukeren.png",
+              "custom_domain": ".com"
+        }
+
++ Response 201 (application/json)
+
+        {
+              "code": 200,
+              "status": true,
+              "message": "Store Data"
+              "data": {
+                  "id": 13,
+                  "user_id": 2,
+                  "name": "Baju Keren",
+                  "slogan": "Semua harus keren",
+                  "description": "Menjual semua jenis baju yang keren",
+                  "logo": "bajukeren.png",
+                  "custom_domain": ".com",
+                  "created_date": 1496710635,
+                  "status": "",
+                  "remarks_status": "",
+                  "status_date": 1496710635,
+                  "cover_image": "coverbajukeren.png",
+                  "seller_theme_id": 2,
+                  "reputation": 23,
+                  "id_no": "3404092309880001",
+                  "total_favorite": 40,
+                  "verification_date": 1496710635,
+                  "note": "lorem ipsum",
+                  "start_date": 1496710635,
+                  "end_date": 1496710635
+              }
+        }
+
+### Get All Expedition [GET /store/{id}/expedition]
+
++ Parameters
+    + id: 13 (number, required)
+
++ Response 200 (application/json)
+
+        {
+              "code": 200,
+              "status": true,
+              "message": "Expedition Data",
+              "meta": 2,
+              "data": [
+                {
+                    "id": 1,
+                    "name": "Ekspedisi Pertama",
+                    "status": "",
+                    "method": "",
+                    "status_date": 1496710635,
+                    "logo_path": "",
+                    "asuransi_fee": "20000"
+                },
+                {
+                    "id": 2,
+                    "name": "Ekspedisi Kedua",
+                    "status": "",
+                    "method": "",
+                    "status_date": 1496710635,
+                    "logo_path": "",
+                    "asuransi_fee": "15000"
+                }
+              ]
+        }
