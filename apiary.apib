@@ -5,7 +5,7 @@ HOST: http://polls.apiblueprint.org/
 
 Polls is a simple API allowing consumers to view polls and vote in them.
 
-## Users Collection [/users]
+## User Collection [/users]
 
 ### Login [POST /users/login]
 
@@ -82,7 +82,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 }
         }
 
-### Get User [GET /users/{id}]
+### Get [GET /users/{id}]
 
 + Request
     + Parameters
@@ -123,7 +123,43 @@ Polls is a simple API allowing consumers to view polls and vote in them.
               }
         }
 
-### User Activation [POST /users/{id}/activate]
+### Update [PUT /users/{id}]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "User Data"
+                "data": {
+                  "id": 66,
+                  "marketplace_id": 0,
+                  "name": "User skyshi",
+                  "email": "use@skyshi.com",
+                  "cooperative_member_number": "ALSK83929K",
+                  "approval_cooperative_status": "0",
+                  "photo": null,
+                  "phone_number": "081222333444",
+                  "gender": null,
+                  "status": "1",
+                  "mother_name": "Siti Aminah",
+                  "auth_key": null,
+                  "saldo_wallet": null,
+                  "place_of_birth": "Yogyakarta",
+                  "date_of_birth": 1496710635,
+                  "created_at": 1496710635,
+                  "join_at": 1496710635,
+                  "status_at": 1496710635,
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0"
+                }
+        }
+
+### Activation [POST /users/{id}/activate]
 
 + Parameters
     + id: 2 (number, required)
@@ -267,7 +303,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
               }
         }
 
-### Verification Phone [POST /users/{id}/phone/send-verification]
+### Generate OTP Phone [POST /users/{id}/phone/generate-otp]
 
 + Parameters
     + id: 2 (number, required)
@@ -294,7 +330,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
               }
         }
 
-### Verify Phone [POST /users/{id}/phone/verify]
+### Verify OTP Phone [POST /users/{id}/phone/verify]
 
 + Parameters
     + id: 2 (number, required)
@@ -307,7 +343,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 
 + Response 200
 
-### Update User [PUT /users/{id}]
+### Generate OTP Address [POST /users/{id}/address/generate-otp]
 
 + Parameters
     + id: 2 (number, required)
@@ -319,28 +355,28 @@ Polls is a simple API allowing consumers to view polls and vote in them.
         {
                 "code": 200,
                 "status": true,
-                "message": "User Data"
-                "data": {
-                  "id": 66,
-                  "marketplace_id": 0,
-                  "name": "User skyshi",
-                  "email": "use@skyshi.com",
-                  "cooperative_member_number": "ALSK83929K",
-                  "approval_cooperative_status": "0",
-                  "photo": null,
-                  "phone_number": "081222333444",
-                  "gender": null,
-                  "status": "1",
-                  "mother_name": "Siti Aminah",
-                  "auth_key": null,
-                  "saldo_wallet": null,
-                  "place_of_birth": "Yogyakarta",
-                  "date_of_birth": 1496710635,
-                  "created_at": 1496710635,
-                  "join_at": 1496710635,
-                  "status_at": 1496710635,
-                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0"
-                }
+                "message": "Success"
+                "data": {}
+        }
+
+### Verify OTP Address [POST /users/{id}/address/verify]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Request (application/json)
+
+        {
+            "code": "kOazJh"
+        }
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Success"
+                "data": {}
         }
 
 ## Marketplace Collection [/marketplace]
@@ -484,4 +520,30 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                     "asuransi_fee": "15000"
                 }
               ]
+        }
+
+## Bank Account Collection [/bank-accounts]
+
+### List [POST]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Bank Account Data",
+            "data": [
+                {
+                    "id": 1,
+                    "user_id": 1,
+                    "marketplace_id": 1,
+                    "master_bank_id": 1,
+                    "holder_name": "User Skyshi",
+                    "holder_account_number": "09812309812398",
+                    "bank_branch_office_name": "Yogyakarta",
+                    "primary_account_number": "098129383"
+                }
+            ]
         }
