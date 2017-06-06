@@ -516,40 +516,6 @@ Komuto API
             }
         }
 
-### Get All Expedition [GET /store/{id}/expedition]
-
-+ Parameters
-    + id: 13 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Expedition Data",
-            "meta": 2,
-            "data": [
-                {
-                    "id": 1,
-                    "name": "Ekspedisi Pertama",
-                    "status": "",
-                    "method": "",
-                    "status_date": 1496710635,
-                    "logo_path": "",
-                    "asuransi_fee": "20000"
-                },
-                {
-                    "id": 2,
-                    "name": "Ekspedisi Kedua",
-                    "status": "",
-                    "method": "",
-                    "status_date": 1496710635,
-                    "logo_path": "",
-                    "asuransi_fee": "15000"
-                }
-            ]
-        }
-
 ## Bank Account Collection [/bank-accounts]
 
 ### List [POST]
@@ -1177,4 +1143,60 @@ Komuto API
                           "uid": "sdak9123"
                       }
                 ]
+        }
+
+
+## Expedition Collection [/expedition]
+
+### Get List Expedition [GET]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Expedition Data",
+            "meta": 2,
+            "data": [
+                {
+                    "id": 1,
+                    "name": "Ekspedisi Pertama",
+                    "status": "",
+                    "method": "",
+                    "status_date": 1496710635,
+                    "logo_path": "",
+                    "asuransi_fee": "20000"
+                },
+                {
+                    "id": 2,
+                    "name": "Ekspedisi Kedua",
+                    "status": "",
+                    "method": "",
+                    "status_date": 1496710635,
+                    "logo_path": "",
+                    "asuransi_fee": "15000"
+                }
+            ]
+        }
+
+### Get Expedition [GET /expedition/{id}]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Response 200 (application/json)
+
+        {
+              "code": 200,
+              "status": true,
+              "message": "Expedition Data",
+              "data": {
+                  "id": 2,
+                  "name": "Ekspedisi Kedua",
+                  "status": "",
+                  "method": "",
+                  "status_date": 1496710635,
+                  "logo_path": "",
+                  "asuransi_fee": "15000"
+              }
         }
