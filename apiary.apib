@@ -848,6 +848,28 @@ Komuto API
             }
         }
 
+### Get Shipping Charge [/product/shipping]
+
++ Request (application/json)
+
+        {
+              "expedition":"JNE",
+              "expeditionservice":"JNE YES",
+              "origin_id":1,
+              "destination_id":1
+        }
+
++ Response 200 (application/json)
+
+        {
+              "code": 200,
+              "status": true,
+              "message": "Shipping Data",
+              "data": {
+                  "charge": 25000
+              }
+        }
+
 ### Get Reviews [GET /products/{id}/reviews]
 
 + Parameters
@@ -949,6 +971,7 @@ Komuto API
                 "delete_date": 1496710635
             }
          }
+
 
 ## Tender Product Collection [/tender-products]
 
@@ -1114,3 +1137,4 @@ Komuto API
                 }
             ]
         }
+>>>>>>> 2038275358d12c1aeb94fca2a914879d50462279
