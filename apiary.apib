@@ -548,6 +548,7 @@ Komuto API
             ]
         }
 
+
 ## Category Collection [/categories]
 
 ### List [POST]
@@ -569,6 +570,68 @@ Komuto API
                 }
             ]
         }
+
+### Category Marketplace [GET /marketplace/{id}/categories]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Category Marketplace Data",
+            "meta": 2,
+            "data": [
+                {
+                      "marketplace_id": 1,
+                      "id": 1,
+                      "name": "Celana",
+                      "parent_id": 2,
+                      "icon": "path/Celana.png"
+                },
+                {
+                      "marketplace_id": 1,
+                      "id": 2,
+                      "name": "Baju",
+                      "parent_id": 3,
+                      "icon": "path/Baju.png"
+                }
+            ]
+        }
+
+### Category Child Marketplace [GET /marketplace/{id}/categories/{parent_id}]
+
++ Parameters
+    + id: 1 (number, required)
+    + parent_id: 2 (number, required)
+
++ Response 200 (application/json)
+
+        {
+              "code": 200,
+              "status": true,
+              "message": "Category Marketplace Data",
+              "meta": 2,
+              "data": [
+                  {
+                        "marketplace_id": 1,
+                        "id": 1,
+                        "name": "Celana",
+                        "parent_id": 2,
+                        "icon": "path/Celana.png"
+                  },
+                  {
+                        "marketplace_id": 1,
+                        "id": 2,
+                        "name": "Baju",
+                        "parent_id": 2,
+                        "icon": "path/Baju.png"
+                  }
+              ]
+        }
+
 
 ## Product Collection [/products]
 
@@ -756,3 +819,77 @@ Komuto API
                 "identifier_catalog": 32
             }
         }
+
+## Discussion Collection [/discussion]
+
+### Get Discussion [GET /discussion/{user_id}/{product_id}]
+
++ Parameters
+    + user_id: 66 (number, required)
+    + product_id: 2 (number, required)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Discussion Data",
+                "meta": 3,
+                "data": [
+                    {
+                          "id": 2,
+                          "users_id": 66,
+                          "product_id": 2,
+                          "question": "barangnya ready gan?",
+                          "discussion_date": 1496710635,
+                          "discussion_deleted": "0",
+                          "delete_date": null
+                    },
+                    {
+                          "id": 50,
+                          "users_id": 66,
+                          "product_id": 2,
+                          "question": "stoknya masih berapa gan?",
+                          "discussion_date": 1496710635,
+                          "discussion_deleted": "0",
+                          "delete_date": null
+                    },
+                    {
+                          "id": 30
+                          "users_id": 66,
+                          "product_id": 2,
+                          "question": "barangnya jelek banget gan?",
+                          "discussion_date": 1496710635,
+                          "discussion_deleted": "1",
+                          "delete_date": 1496710635
+                    }
+                ]
+        }
+
+### New Discussion [POST /discussion]
+
++ Request (application/json)
+
+        {
+            "users_id": 100,
+            "product_id": 99,
+            "question": "Pertanyaan nya adalah non-sense",
+            "discussion_deleted": "1"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Discussion Data",
+            "data": {
+                  "id": 21,
+                  "users_id": 100,
+                  "product_id": 99,
+                  "question": "Pertanyaan nya adalah non-sense",
+                  "discussion_date": 1496710635,
+                  "discussion_deleted": "1",
+                  "delete_date": 1496710635
+            }
+         }
