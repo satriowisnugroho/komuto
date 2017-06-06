@@ -649,3 +649,86 @@ Komuto API
                 }
             ]
         }
+
+### Get [GET /products/{id}]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Request (application/json)
+
+        {
+            "dropshipper_id": 1
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Product list Data",
+            "data": {
+                "id": 1,
+                "category": {
+                    "id": 1,
+                    "category_id": null,
+                    "icon": "icon.png",
+                    "name": "Camera"
+                },
+                "store": {
+                    "id": 13,
+                    "user_id": 2,
+                    "name": "Baju Keren",
+                    "slogan": "Semua harus keren",
+                    "description": "Menjual semua jenis baju yang keren",
+                    "logo": "bajukeren.png",
+                    "custom_domain": ".com",
+                    "created_date": 1496710635,
+                    "status": "1",
+                    "remarks_status": "",
+                    "status_date": 1496710635,
+                    "cover_image": "coverbajukeren.png",
+                    "seller_theme_id": 2,
+                    "reputation": 23,
+                    "store_id_number": "3404092309880001",
+                    "total_favorite": 40,
+                    "verification_date": 1496710635,
+                    "note": "lorem ipsum",
+                    "start_date": 1496710635,
+                    "end_date": 1496710635
+                },
+                "dropshipper": {
+                    "id": 1,
+                    "store_id": 1
+                    "product_id": 1,
+                    "catalog_id": 1,
+                    "status": "1",
+                    "status_at": 1496710635,
+                    "created_at": 1496710635
+                },
+                "city_id": {
+                    "id": 1,
+                    "province_id": 1,
+                    "name": "Yogyakarta"
+                },
+                "name": "GoPro 5",
+                "stock": 100,
+                "weight": 1,
+                "type": "Camera",
+                "description": "Lorem ipsum",
+                "price": 5000000,
+                "status": "1",
+                "insurance": "Lorem",
+                "discount": 10,
+                "created_at": 1496710635,
+                "status_at": 1496710635,
+                "attrval": "0",
+                "margin_dropshipper": 0,
+                "is_dropshipper": true,
+                "is_grosir": false,
+                "count_sold": 0,
+                "count_popular": 0,
+                "identifier_brand": 0,
+                "identifier_catalog": 32
+            }
+        }
