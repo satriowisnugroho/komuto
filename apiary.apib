@@ -345,8 +345,11 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 
 ### Generate OTP Address [POST /users/{id}/address/generate-otp]
 
++ Parameters
+    + id: 2 (number, required)
+
 + Request (application/json)
-    +   id: 1 (number, required)
+        {}
 
 + Response 200 (application/json)
 
@@ -359,9 +362,13 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 
 ### Verify OTP Address [POST /users/{id}/address/verify]
 
++ Parameters
+        + id: 2 (number, required)
+
 + Request (application/json)
-    +   id: 1 (number, required)
-    +   code: "kOazJh" (string, required)
+        {
+            "code": "kOazJh"
+        }
 
 + Response 200 (application/json)
 
