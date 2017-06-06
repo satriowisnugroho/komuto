@@ -807,8 +807,8 @@ Komuto API
 ### Get Discussion [GET /discussion/{user_id}/{product_id}]
 
 + Parameters
-+ user_id: 66 (number, required)
-+ product_id: 2 (number, required)
+    + user_id: 66 (number, required)
+    + product_id: 2 (number, required)
 
 + Response 200 (application/json)
 
@@ -852,16 +852,16 @@ Komuto API
 
 + Request (application/json)
 
-      {
+        {
             "users_id": 100,
             "product_id": 99,
             "question": "Pertanyaan nya adalah non-sense",
             "discussion_deleted": "1"
-      }
+        }
 
 + Response 201 (application/json)
 
-      {
+        {
             "code": 200,
             "status": true,
             "message": "Discussion Data",
@@ -874,4 +874,4 @@ Komuto API
                   "discussion_deleted": "1",
                   "delete_date": 1496710635
             }
-      }
+         }
