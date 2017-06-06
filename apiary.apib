@@ -551,7 +551,7 @@ Komuto API
 
 ## Category Collection [/categories]
 
-### List [POST]
+### List [GET]
 
 + Request (application/json)
 
@@ -560,7 +560,7 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Category list Data",
+            "message": "Category List Data",
             "data": [
                 {
                     "id": 1,
@@ -635,7 +635,7 @@ Komuto API
 
 ## Product Collection [/products]
 
-### List [POST]
+### List [GET]
 
 + Request (application/json)
 
@@ -644,7 +644,7 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Product list Data",
+            "message": "Product List Data",
             "data": [
                 {
                     "id": 1,
@@ -690,6 +690,15 @@ Komuto API
                         "province_id": 1,
                         "name": "Yogyakarta"
                     },
+                    "pictures": [
+                        {
+                            "id": 1,
+                            "product_id": 1,
+                            "file": "picture.png",
+                            "created_at": 1496710635,
+                            "updated_at": 1496710635
+                        }
+                    ],
                     "name": "GoPro 5",
                     "stock": 100,
                     "weight": 1,
@@ -735,7 +744,7 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Product list Data",
+            "message": "Product Detail Data",
             "data": {
                 "id": 1,
                 "category": {
@@ -780,6 +789,15 @@ Komuto API
                     "province_id": 1,
                     "name": "Yogyakarta"
                 },
+                "pictures": [
+                    {
+                        "id": 1,
+                        "product_id": 1,
+                        "file": "picture.png",
+                        "created_at": 1496710635,
+                        "updated_at": 1496710635
+                    }
+                ],
                 "name": "GoPro 5",
                 "stock": 100,
                 "weight": 1,
@@ -824,6 +842,34 @@ Komuto API
               }
         }
 
+### Get Reviews [GET /products/{id}/reviews]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Review List Data",
+            "data": [
+                {
+                    "id": 1,
+                    "product_id": 1,
+                    "user": {
+                        "id": 66,
+                        "name": "User skyshi",
+                        "photo": "photo.png"
+                    },
+                    "review": "Pengemasannya bagus, pengiriman cepat,barang sesuai, recommended bgt lah",
+                    "quality": 5,
+                    "accuracy": 3,
+                    "created_at": 1496710635
+                }
+            ]
+        }
+
 ## Discussion Collection [/discussion]
 
 ### Get Discussion [GET /discussion/{user_id}/{product_id}]
@@ -835,39 +881,39 @@ Komuto API
 + Response 200 (application/json)
 
         {
-                "code": 200,
-                "status": true,
-                "message": "Discussion Data",
-                "meta": 3,
-                "data": [
-                    {
-                          "id": 2,
-                          "users_id": 66,
-                          "product_id": 2,
-                          "question": "barangnya ready gan?",
-                          "discussion_date": 1496710635,
-                          "discussion_deleted": "0",
-                          "delete_date": null
-                    },
-                    {
-                          "id": 50,
-                          "users_id": 66,
-                          "product_id": 2,
-                          "question": "stoknya masih berapa gan?",
-                          "discussion_date": 1496710635,
-                          "discussion_deleted": "0",
-                          "delete_date": null
-                    },
-                    {
-                          "id": 30
-                          "users_id": 66,
-                          "product_id": 2,
-                          "question": "barangnya jelek banget gan?",
-                          "discussion_date": 1496710635,
-                          "discussion_deleted": "1",
-                          "delete_date": 1496710635
-                    }
-                ]
+            "code": 200,
+            "status": true,
+            "message": "Discussion Data",
+            "meta": 3,
+            "data": [
+                {
+                    "id": 2,
+                    "users_id": 66,
+                    "product_id": 2,
+                    "question": "barangnya ready gan?",
+                    "discussion_date": 1496710635,
+                    "discussion_deleted": "0",
+                    "delete_date": null
+                },
+                {
+                    "id": 50,
+                    "users_id": 66,
+                    "product_id": 2,
+                    "question": "stoknya masih berapa gan?",
+                    "discussion_date": 1496710635,
+                    "discussion_deleted": "0",
+                    "delete_date": null
+                },
+                {
+                    "id": 30
+                    "users_id": 66,
+                    "product_id": 2,
+                    "question": "barangnya jelek banget gan?",
+                    "discussion_date": 1496710635,
+                    "discussion_deleted": "1",
+                    "delete_date": 1496710635
+                }
+            ]
         }
 
 ### New Discussion [POST /discussion]
@@ -888,12 +934,180 @@ Komuto API
             "status": true,
             "message": "Discussion Data",
             "data": {
-                  "id": 21,
-                  "users_id": 100,
-                  "product_id": 99,
-                  "question": "Pertanyaan nya adalah non-sense",
-                  "discussion_date": 1496710635,
-                  "discussion_deleted": "1",
-                  "delete_date": 1496710635
+                "id": 21,
+                "users_id": 100,
+                "product_id": 99,
+                "question": "Pertanyaan nya adalah non-sense",
+                "discussion_date": 1496710635,
+                "discussion_deleted": "1",
+                "delete_date": 1496710635
             }
          }
+<<<<<<< HEAD
+=======
+
+## Tender Product Collection [/tender-products]
+
+### List [GET]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Tender Product List Data",
+            "data": [
+                {
+                    "id": 1,
+                    "category": {
+                        "id": 1,
+                        "category_id": null,
+                        "icon": "icon.png",
+                        "name": "Camera"
+                    },
+                    "store": {
+                        "id": 13,
+                        "user_id": 2,
+                        "name": "Baju Keren",
+                        "slogan": "Semua harus keren",
+                        "description": "Menjual semua jenis baju yang keren",
+                        "logo": "bajukeren.png",
+                        "custom_domain": ".com",
+                        "created_date": 1496710635,
+                        "status": "1",
+                        "remarks_status": "",
+                        "status_date": 1496710635,
+                        "cover_image": "coverbajukeren.png",
+                        "seller_theme_id": 2,
+                        "reputation": 23,
+                        "store_id_number": "3404092309880001",
+                        "total_favorite": 40,
+                        "verification_date": 1496710635,
+                        "note": "lorem ipsum",
+                        "start_date": 1496710635,
+                        "end_date": 1496710635
+                    },
+                    "pictures": [
+                        {
+                            "id": 1,
+                            "product_id": 1,
+                            "file": "picture.png",
+                            "created_at": 1496710635,
+                            "updated_at": 1496710635
+                        }
+                    ],
+                    "name": "GoPro 5",
+                    "amount": 5,
+                    "weight": 1,
+                    "type": "1",
+                    "description": "Panah  berburu buatan Jerman Tahun 1980",
+                    "open_bid": 120000,
+                    "max_bid": 5000000,
+                    "insurance": "1"
+                    "status": "1",
+                    "status_at": 1496710635,
+                    "start_at": 1496710635,
+                    "end_at": 1496710635
+                }
+            ]
+        }
+
+### Get [GET /tender-products/{id}]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Tender Product Detail Data",
+            "data": {
+                "id": 1,
+                "category": {
+                    "id": 1,
+                    "category_id": null,
+                    "icon": "icon.png",
+                    "name": "Camera"
+                },
+                "store": {
+                    "id": 13,
+                    "user_id": 2,
+                    "name": "Baju Keren",
+                    "slogan": "Semua harus keren",
+                    "description": "Menjual semua jenis baju yang keren",
+                    "logo": "bajukeren.png",
+                    "custom_domain": ".com",
+                    "created_date": 1496710635,
+                    "status": "1",
+                    "remarks_status": "",
+                    "status_date": 1496710635,
+                    "cover_image": "coverbajukeren.png",
+                    "seller_theme_id": 2,
+                    "reputation": 23,
+                    "store_id_number": "3404092309880001",
+                    "total_favorite": 40,
+                    "verification_date": 1496710635,
+                    "note": "lorem ipsum",
+                    "start_date": 1496710635,
+                    "end_date": 1496710635
+                },
+                "pictures": [
+                    {
+                        "id": 1,
+                        "product_id": 1,
+                        "file": "picture.png",
+                        "created_at": 1496710635,
+                        "updated_at": 1496710635
+                    }
+                ],
+                "name": "GoPro 5",
+                "amount": 5,
+                "weight": 1,
+                "type": "1",
+                "description": "Panah  berburu buatan Jerman Tahun 1980",
+                "open_bid": 120000,
+                "max_bid": 5000000,
+                "insurance": "1"
+                "status": "1",
+                "status_at": 1496710635,
+                "start_at": 1496710635,
+                "end_at": 1496710635
+            }
+        }
+
+### Get Reviews [GET /tender-products/{id}/reviews]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Review List Data",
+            "data": [
+                {
+                    "id": 1,
+                    "product_id": 1,
+                    "user": {
+                        "id": 66,
+                        "name": "User skyshi",
+                        "photo": "photo.png"
+                    },
+                    "review": "Pengemasannya bagus, pengiriman cepat,barang sesuai, recommended bgt lah",
+                    "quality": 5,
+                    "accuracy": 3,
+                    "created_at": 1496710635
+                }
+            ]
+        }
+>>>>>>> 2038275358d12c1aeb94fca2a914879d50462279
