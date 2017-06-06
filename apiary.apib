@@ -407,6 +407,22 @@ Komuto API
             }
         }
 
+### Get Balance [GET /users/{id}/saldo]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Response 200 (application/json)
+
+        {
+              "code": 200,
+              "status": true,
+              "message": "User Data",
+              "data": {
+                    "user_balance": 45000
+              }
+        }
+
 ## Marketplace Collection [/marketplace]
 
 ### Login Marketplace [POST /marketplace/login]
