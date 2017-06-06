@@ -45,6 +45,44 @@ Polls is a simple API allowing consumers to view polls and vote in them.
             }
         }
 
+### Login [POST /users/login]
+
++ Request (application/json)
+
+        {
+            "email": "admin@komuto.com",
+            "password": "admin"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "User Data",
+            "data": {
+                "id": 66,
+                "marketplace_id": 0,
+                "name": "User skyshi",
+                "email": "use@skyshi.com",
+                "cooperative_member_number": "ALSK83929K",
+                "approval_cooperative_status": "0",
+                "photo": null,
+                "phone_number": "081222333444",
+                "gender": null,
+                "status": "1",
+                "mother_name": "Siti Aminah",
+                "auth_key": null,
+                "saldo_wallet": null,
+                "place_of_birth": "Yogyakarta",
+                "date_of_birth": 1496710635,
+                "created_at": 1496710635,
+                "join_at": 1496710635,
+                "status_at": 1496710635,
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0"
+            }
+        }
+
 ### Registration [POST]
 
 + Request (application/json)
@@ -152,6 +190,35 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 "code": 200,
                 "status": true,
                 "message": "User Data"
+                "data": {}
+        }
+
+### Generate OTP Address [POST /users/{id}/address/generate-otp]
+
++ Request (application/json)
+    +   id: 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Success"
+                "data": {}
+        }
+
+### Verify OTP Address [POST /users/{id}/address/verify]
+
++ Request (application/json)
+    +   id: 1 (number, required)
+    +   code: "kOazJh" (string, required)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Success"
                 "data": {}
         }
 
