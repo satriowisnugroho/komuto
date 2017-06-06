@@ -50,7 +50,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 + Request (application/json)
 
         {
-            
+
         }
 
 + Response 201 (application/json)
@@ -59,14 +59,34 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 "code": 200,
                 "status": true,
                 "message": "User Data",
-                "data": {}
+                "data": {
+                    "id": 66,
+                    "marketplace_id": 0,
+                    "name": "User skyshi",
+                    "email": "use@skyshi.com",
+                    "cooperative_member_number": "ALSK83929K",
+                    "approval_cooperative_status": "0",
+                    "photo": null,
+                    "phone_number": "081222333444",
+                    "gender": null,
+                    "status": "1",
+                    "mother_name": "Siti Aminah",
+                    "auth_key": null,
+                    "saldo_wallet": null,
+                    "place_of_birth": "Yogyakarta",
+                    "date_of_birth": 1496710635,
+                    "created_at": 1496710635,
+                    "join_at": 1496710635,
+                    "status_at": 1496710635,
+                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0"
+                }
         }
 
-### Get User [GET /users/{user_id}]
+### Get User [GET /users/{id}]
 
 + Request
     + Parameters
-        + id_users: 66 (required, number)
+        + id: 66 (required, number)
 
     + Headers
 
@@ -81,110 +101,250 @@ Polls is a simple API allowing consumers to view polls and vote in them.
               "status": true,
               "message": "User Data",
               "data": {
-                "id_users": 66,
-                "id_marketplaceuser": 0,
-                "email_users": "admin@komuto.com",
-                "namalengkap_users": "Admin Komuto",
-                "no_anggotakoperasi_users": null,
-                "approval_koperasi_users": "0",
-                "pathfoto_users": null,
-                "nohp_users": null,
-                "tgl_create_users": 1496336400,
-                "tgl_join_koperasi": null,
-                "jeniskelamin_users": null,
-                "status_users": "1",
-                "tglstatus_users": 1493668888,
-                "ibukandung_users": null,
-                "auth_key": null,
-                "kota_lahir": null,
-                "tgl_lahir": null,
-                "saldo_wallet": null
+                    "id": 66,
+                    "marketplace_id": 0,
+                    "name": "User skyshi",
+                    "email": "use@skyshi.com",
+                    "cooperative_member_number": "ALSK83929K",
+                    "approval_cooperative_status": "0",
+                    "photo": null,
+                    "phone_number": "081222333444",
+                    "gender": null,
+                    "status": "1",
+                    "mother_name": "Siti Aminah",
+                    "auth_key": null,
+                    "saldo_wallet": null,
+                    "place_of_birth": "Yogyakarta",
+                    "date_of_birth": 1496710635,
+                    "created_at": 1496710635,
+                    "join_at": 1496710635,
+                    "status_at": 1496710635,
+                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0"
               }
         }
 
-### User Activation [POST /users/{user_id}/activate]
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-        {
-                "code": 200,
-                "status": true,
-                "message": "User Data"
-                "data": {}
-        }
-
-### Change Status [POST /users/{user_id}/status]
+### User Activation [POST /users/{id}/activate]
 
 + Parameters
-    +   user_id: 2 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-                "code": 200,
-                "status": true,
-                "message": "User Data",
-                "data": {}
-        }
-
-### Reset Password [POST /users/{user_id}/password/reset]
+    + id: 2 (number, required)
 
 + Request (application/json)
 
 + Response 200 (application/json)
 
-        {
-                "code": 200,
-                "status": true,
-                "message": "User Data",
-                "data": {}
-        }
-
-### Update User [PUT /users/{user_id}]
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-    
         {
                 "code": 200,
                 "status": true,
                 "message": "User Data"
-                "data": {}
+                "data": {
+                  "id": 66,
+                  "marketplace_id": 0,
+                  "name": "User skyshi",
+                  "email": "use@skyshi.com",
+                  "cooperative_member_number": "ALSK83929K",
+                  "approval_cooperative_status": "0",
+                  "photo": null,
+                  "phone_number": "081222333444",
+                  "gender": null,
+                  "status": "1",
+                  "mother_name": "Siti Aminah",
+                  "auth_key": null,
+                  "saldo_wallet": null,
+                  "place_of_birth": "Yogyakarta",
+                  "date_of_birth": 1496710635,
+                  "created_at": 1496710635,
+                  "join_at": 1496710635,
+                  "status_at": 1496710635,
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0"
+                }
+        }
+
+### Change Status [POST /users/{id}/status]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "User Data",
+                "data": {
+                  "id": 66,
+                  "marketplace_id": 0,
+                  "name": "User skyshi",
+                  "email": "use@skyshi.com",
+                  "cooperative_member_number": "ALSK83929K",
+                  "approval_cooperative_status": "0",
+                  "photo": null,
+                  "phone_number": "081222333444",
+                  "gender": null,
+                  "status": "1",
+                  "mother_name": "Siti Aminah",
+                  "auth_key": null,
+                  "saldo_wallet": null,
+                  "place_of_birth": "Yogyakarta",
+                  "date_of_birth": 1496710635,
+                  "created_at": 1496710635,
+                  "join_at": 1496710635,
+                  "status_at": 1496710635,
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0"
+                }
+        }
+
+### Reset Password [POST /users/{id}/password/reset]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "User Data",
+                "data": {
+                  "id": 66,
+                  "marketplace_id": 0,
+                  "name": "User skyshi",
+                  "email": "use@skyshi.com",
+                  "cooperative_member_number": "ALSK83929K",
+                  "approval_cooperative_status": "0",
+                  "photo": null,
+                  "phone_number": "081222333444",
+                  "gender": null,
+                  "status": "1",
+                  "mother_name": "Siti Aminah",
+                  "auth_key": null,
+                  "saldo_wallet": null,
+                  "place_of_birth": "Yogyakarta",
+                  "date_of_birth": 1496710635,
+                  "created_at": 1496710635,
+                  "join_at": 1496710635,
+                  "status_at": 1496710635,
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0"
+                }
+        }
+
+### Forgot Password [POST /users/{id}/password/forgot]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+              "code": 200,
+              "status": true,
+              "message": "User Data"
+              "data": {
+                    "id": 66,
+                    "marketplace_id": 0,
+                    "name": "User skyshi",
+                    "email": "use@skyshi.com",
+                    "cooperative_member_number": "ALSK83929K",
+                    "approval_cooperative_status": "0",
+                    "photo": null,
+                    "phone_number": "081222333444",
+                    "gender": null,
+                    "status": "1",
+                    "mother_name": "Siti Aminah",
+                    "auth_key": null,
+                    "saldo_wallet": null,
+                    "place_of_birth": "Yogyakarta",
+                    "date_of_birth": 1496710635,
+                    "created_at": 1496710635,
+                    "join_at": 1496710635,
+                    "status_at": 1496710635,
+                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0"
+              }
+        }
+
+### Verification Phone [POST /users/{id}/phone/send-verification]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Request (application/json)
+
+        {
+              "phone_number": "081222333444"
+        }
+
++ Response 200 (application/json)
+
+        {
+              "message": "OTP Data",
+              "data": {
+                    "id": 1,
+                    "user_id": 1,
+                    "marketplace_id": 1,
+                    "phone_number": "081222333444",
+                    "code": "KuxOk",
+                    "status": "1",
+                    "expired_at": 1496710635,
+                    "created_at": 1496710635,
+              }
+        }
+
+### Verify Phone [POST /users/{id}/phone/verify]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Request (application/json)
+
+        {
+              "code": "KuxOk"
+        }
+
++ Response 200
+
+### Update User [PUT /users/{id}]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "User Data"
+                "data": {
+                  "id": 66,
+                  "marketplace_id": 0,
+                  "name": "User skyshi",
+                  "email": "use@skyshi.com",
+                  "cooperative_member_number": "ALSK83929K",
+                  "approval_cooperative_status": "0",
+                  "photo": null,
+                  "phone_number": "081222333444",
+                  "gender": null,
+                  "status": "1",
+                  "mother_name": "Siti Aminah",
+                  "auth_key": null,
+                  "saldo_wallet": null,
+                  "place_of_birth": "Yogyakarta",
+                  "date_of_birth": 1496710635,
+                  "created_at": 1496710635,
+                  "join_at": 1496710635,
+                  "status_at": 1496710635,
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0"
+                }
         }
 
 ## Marketplace Collection [/marketplace]
 
-### Get Term of Service [GET /marketplace/{marketplace_id}/term]
-
-+ Parameters 
-    + marketplace_id: 55 (required, number)
-    
-+ Response 200 (application/json)
-
-        {
-                "code": 200,
-                "status": true,
-                "message": "Marketplace Data",
-                "data": {}
-        }
-        
-### Get Privacy Policy [GET /marketplace/{marketplace_id}/policy]
-
-+ Parameters
-    + marketplace_id: 99 (required, number)
-
-+ Response 200 (application/json)
-
-        {
-                "code": 200,
-                "status": true,
-                "message": "Marketplace Data",
-                "data": {}
-        }
-        
 ### Login Marketplace [POST /marketplace/login]
 
 + Request (application/json)
@@ -195,5 +355,54 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 "code": 200,
                 "status": true,
                 "message": "Marketplace Data",
-                "data": {}
+                "data": {
+                    "id": 2,
+                    "email": "komuto@gmail.com",
+                    "name": "Komuto",
+                    "domain": "pasarmall.xyz",
+                    "cooperative": "1",
+                    "marketplace_id": 1,
+                    "cooperative_added_at": 1496710635,
+                    "created_at": 1496710635,
+                    "status": "1",
+                    "status_at": 1496710635,
+                    "identifier_theme": 2,
+                    "auth_key": "dssUE53Oq2k8e3e_0pLeVanGQeP0W1oa",
+                    "logo": "Logo-Komuto.png",
+                    "favicon": "pasaragus.png",
+                    "phone_number": "(021) 849 04 63",
+                    "saldo_wallet": 10000000
+                }
+        }
+
+### Get Term of Service [GET /marketplace/{id}/term]
+
++ Parameters
+    + id: 2 (required, number)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Term of Service Data",
+                "data": {
+                  "term_of_service": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                }
+        }
+
+### Get Privacy Policy [GET /marketplace/{id}/policy]
+
++ Parameters
+    + id: 2 (required, number)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Privacy Policy Data",
+                "data": {
+                  "privacy_policy": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                }
         }
