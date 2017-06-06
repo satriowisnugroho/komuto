@@ -5,9 +5,9 @@ HOST: http://polls.apiblueprint.org/
 
 Polls is a simple API allowing consumers to view polls and vote in them.
 
-## Authentication [/users/login]
+## Users Collection [/users]
 
-### Login [POST]
+### Login [POST /users/login]
 
 + Request (application/json)
 
@@ -23,29 +23,27 @@ Polls is a simple API allowing consumers to view polls and vote in them.
             "status": true,
             "message": "User Data",
             "data": {
-                "email_users": "admin@komuto.com",
-                "id_users": 66,
-                "id_marketplaceuser": 0,
-                "namalengkap_users": "Admin Komuto",
-                "no_anggotakoperasi_users": null,
-                "approval_koperasi_users": "0",
-                "pathfoto_users": null,
-                "nohp_users": null,
-                "tgl_create_users": "2017-06-01T17:00:00.000Z",
-                "tgl_join_koperasi": null,
-                "jeniskelamin_users": null,
-                "status_users": "1",
-                "tglstatus_users": "2017-05-01T20:01:28.000Z",
-                "ibukandung_users": null,
+                "id": 66,
+                "marketplace_id": 0,
+                "name": "User skyshi",
+                "email": "use@skyshi.com",
+                "cooperative_member_number": "ALSK83929K",
+                "approval_cooperative_status": "0",
+                "photo": null,
+                "phone_number": "081222333444",
+                "gender": null,
+                "status": "1",
+                "mother_name": "Siti Aminah",
                 "auth_key": null,
-                "kota_lahir": null,
-                "tgl_lahir": null,
                 "saldo_wallet": null,
+                "place_of_birth": "Yogyakarta",
+                "date_of_birth": 1496710635,
+                "created_at": 1496710635,
+                "join_at": 1496710635,
+                "status_at": 1496710635,
                 "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0"
             }
         }
-
-## User Collection [/users]
 
 ### Registration [POST]
 
@@ -144,7 +142,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 "data": {}
         }
 
-### Update User [POST /users/{user_id}]
+### Update User [PUT /users/{user_id}]
 
 + Request (application/json)
 
