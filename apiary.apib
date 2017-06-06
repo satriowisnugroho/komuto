@@ -820,7 +820,7 @@ Komuto API
             }
         }
 
-### Get Review [GET /products/{id}/reviews]
+### Get Reviews [GET /products/{id}/reviews]
 
 + Parameters
     + id: 1 (number, required)
@@ -921,3 +921,168 @@ Komuto API
                 "delete_date": 1496710635
             }
          }
+
+## Tender Product Collection [/tender-products]
+
+### List [GET]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Tender Product List Data",
+            "data": [
+                {
+                    "id": 1,
+                    "category": {
+                        "id": 1,
+                        "category_id": null,
+                        "icon": "icon.png",
+                        "name": "Camera"
+                    },
+                    "store": {
+                        "id": 13,
+                        "user_id": 2,
+                        "name": "Baju Keren",
+                        "slogan": "Semua harus keren",
+                        "description": "Menjual semua jenis baju yang keren",
+                        "logo": "bajukeren.png",
+                        "custom_domain": ".com",
+                        "created_date": 1496710635,
+                        "status": "1",
+                        "remarks_status": "",
+                        "status_date": 1496710635,
+                        "cover_image": "coverbajukeren.png",
+                        "seller_theme_id": 2,
+                        "reputation": 23,
+                        "store_id_number": "3404092309880001",
+                        "total_favorite": 40,
+                        "verification_date": 1496710635,
+                        "note": "lorem ipsum",
+                        "start_date": 1496710635,
+                        "end_date": 1496710635
+                    },
+                    "pictures": [
+                        {
+                            "id": 1,
+                            "product_id": 1,
+                            "file": "picture.png",
+                            "created_at": 1496710635,
+                            "updated_at": 1496710635
+                        }
+                    ],
+                    "name": "GoPro 5",
+                    "amount": 5,
+                    "weight": 1,
+                    "type": "1",
+                    "description": "Panah  berburu buatan Jerman Tahun 1980",
+                    "open_bid": 120000,
+                    "max_bid": 5000000,
+                    "insurance": "1"
+                    "status": "1",
+                    "status_at": 1496710635,
+                    "start_at": 1496710635,
+                    "end_at": 1496710635
+                }
+            ]
+        }
+
+### Get [GET /tender-products/{id}]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Tender Product Detail Data",
+            "data": {
+                "id": 1,
+                "category": {
+                    "id": 1,
+                    "category_id": null,
+                    "icon": "icon.png",
+                    "name": "Camera"
+                },
+                "store": {
+                    "id": 13,
+                    "user_id": 2,
+                    "name": "Baju Keren",
+                    "slogan": "Semua harus keren",
+                    "description": "Menjual semua jenis baju yang keren",
+                    "logo": "bajukeren.png",
+                    "custom_domain": ".com",
+                    "created_date": 1496710635,
+                    "status": "1",
+                    "remarks_status": "",
+                    "status_date": 1496710635,
+                    "cover_image": "coverbajukeren.png",
+                    "seller_theme_id": 2,
+                    "reputation": 23,
+                    "store_id_number": "3404092309880001",
+                    "total_favorite": 40,
+                    "verification_date": 1496710635,
+                    "note": "lorem ipsum",
+                    "start_date": 1496710635,
+                    "end_date": 1496710635
+                },
+                "pictures": [
+                    {
+                        "id": 1,
+                        "product_id": 1,
+                        "file": "picture.png",
+                        "created_at": 1496710635,
+                        "updated_at": 1496710635
+                    }
+                ],
+                "name": "GoPro 5",
+                "amount": 5,
+                "weight": 1,
+                "type": "1",
+                "description": "Panah  berburu buatan Jerman Tahun 1980",
+                "open_bid": 120000,
+                "max_bid": 5000000,
+                "insurance": "1"
+                "status": "1",
+                "status_at": 1496710635,
+                "start_at": 1496710635,
+                "end_at": 1496710635
+            }
+        }
+
+### Get Reviews [GET /tender-products/{id}/reviews]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Review List Data",
+            "data": [
+                {
+                    "id": 1,
+                    "product_id": 1,
+                    "user": {
+                        "id": 66,
+                        "name": "User skyshi",
+                        "photo": "photo.png"
+                    },
+                    "review": "Pengemasannya bagus, pengiriman cepat,barang sesuai, recommended bgt lah",
+                    "quality": 5,
+                    "accuracy": 3,
+                    "created_at": 1496710635
+                }
+            ]
+        }
