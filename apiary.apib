@@ -5,7 +5,7 @@ HOST: http://polls.apiblueprint.org/
 
 Polls is a simple API allowing consumers to view polls and vote in them.
 
-## Users Collection [/users]
+## User Collection [/users]
 
 ### Login [POST /users/login]
 
@@ -441,4 +441,30 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 "data": {
                   "privacy_policy": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                 }
+        }
+
+## Bank Account Collection [/bank-accounts]
+
+### List [POST]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Bank Account Data",
+            "data": [
+                {
+                    "id": 1,
+                    "user_id": 1,
+                    "marketplace_id": 1,
+                    "master_bank_id": 1,
+                    "holder_name": "User Skyshi",
+                    "holder_account_number": "09812309812398",
+                    "bank_branch_office_name": "Yogyakarta",
+                    "primary_account_number": "098129383"
+                }
+            ]
         }
