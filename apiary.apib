@@ -547,3 +547,25 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 }
             ]
         }
+
+## Category Collection [/categories]
+
+### List [POST]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Category list Data",
+            "data": [
+                {                    
+                    "id": 1,
+                    "category_id": 0,
+                    "icon": "icon.png",
+                    "name": "Fashion"
+                }
+            ]
+        }
