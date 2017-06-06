@@ -802,6 +802,28 @@ Komuto API
             }
         }
 
+### Get Shipping Charge [/product/shipping]
+
++ Request (application/json)
+
+        {
+              "expedition":"JNE",
+              "expeditionservice":"JNE YES",
+              "origin_id":1,
+              "destination_id":1
+        }
+
++ Response 200 (application/json)
+
+        {
+              "code": 200,
+              "status": true,
+              "message": "Shipping Data",
+              "data": {
+                  "charge": 25000
+              }
+        }
+
 ## Discussion Collection [/discussion]
 
 ### Get Discussion [GET /discussion/{user_id}/{product_id}]
