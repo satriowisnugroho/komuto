@@ -818,6 +818,49 @@ Komuto API
             ]
         }
 
+### List Expedition [GET /stores/{id}/expeditions]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Expedition Data",
+            "meta": 2,
+            "data": [
+                {
+                    "id": 1,
+                    "name": "JNE",
+                    "logo": "logo.png",
+                    "insurance_fee": 20000,
+                    "services": [
+                        {
+                            "id": 1,
+                            "name": "REG",
+                            "description": "JNE Reguler adalah",
+                            "logo": "logo.png"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "TIKI",
+                    "logo": "logo.png",
+                    "insurance_fee": 15000,
+                    "services": [
+                        {
+                            "id": 1,
+                            "name": "Service Normal",
+                            "description": "Service normal adalah",
+                            "logo": "logo.png"
+                        }
+                    ]
+                }
+            ]
+        }
+
 ## Bank Account Collection [/bank-accounts]
 
 ### List [GET]
@@ -1576,45 +1619,33 @@ Komuto API
             "data": [
                 {
                     "id": 1,
-                    "name": "Ekspedisi Pertama",
-                    "status": "",
-                    "method": "",
-                    "status_date": 1496710635,
-                    "logo_path": "",
-                    "asuransi_fee": "20000"
+                    "name": "JNE",
+                    "logo": "logo.png",
+                    "insurance_fee": 20000,
+                    "services": [
+                        {
+                            "id": 1,
+                            "name": "REG",
+                            "description": "JNE Reguler adalah",
+                            "logo": "logo.png"
+                        }
+                    ]
                 },
                 {
                     "id": 2,
-                    "name": "Ekspedisi Kedua",
-                    "status": "",
-                    "method": "",
-                    "status_date": 1496710635,
-                    "logo_path": "",
-                    "asuransi_fee": "15000"
+                    "name": "TIKI",
+                    "logo": "logo.png",
+                    "insurance_fee": 15000,
+                    "services": [
+                        {
+                            "id": 1,
+                            "name": "Service Normal",
+                            "description": "Service normal adalah",
+                            "logo": "logo.png"
+                        }
+                    ]
                 }
             ]
-        }
-
-### Get Expedition [GET /expeditions/{id}]
-
-+ Parameters
-    + id: 2 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Expedition Data",
-            "data": {
-                "id": 2,
-                "name": "Ekspedisi Kedua",
-                "status": "",
-                "method": "",
-                "status_date": 1496710635,
-                "logo_path": "",
-                "asuransi_fee": "15000"
-            }
         }
 
 ## Invoice Collection [/invoice]
