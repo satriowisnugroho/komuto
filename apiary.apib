@@ -861,6 +861,82 @@ Komuto API
             ]
         }
 
+### List Expedition Manage [GET /stores/{id}/expeditions/manage]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Expedition Data",
+            "meta": 2,
+            "data": [
+                {
+                    "id": 1,
+                    "name": "JNE",
+                    "logo": "logo.png",
+                    "insurance_fee": 20000,
+                    "services": [
+                        {
+                            "id": 1,
+                            "name": "REG",
+                            "description": "JNE Reguler adalah",
+                            "logo": "logo.png",
+                            "status": 1
+                        },
+                        {
+                            "id": 1,
+                            "name": "REG",
+                            "description": "JNE Reguler adalah",
+                            "logo": "logo.png",
+                            "status": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "TIKI",
+                    "logo": "logo.png",
+                    "insurance_fee": 15000,
+                    "services": [
+                        {
+                            "id": 1,
+                            "name": "Service Normal",
+                            "description": "Service normal adalah",
+                            "logo": "logo.png",
+                            "status": 1
+                        }
+                    ]
+                }
+            ]
+        }
+
+### Create Store Expedition [PUT /stores/{id}/expeditions]
+
++ Request (application/json)
+
+        [
+            {
+                "expedition_service_id": 1,
+                "status": 1
+            },
+            {
+                "expedition_service_id": 0,
+                "status": 0
+            }
+        ]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
 ## Bank Account Collection [/bank-accounts]
 
 ### List [GET]
