@@ -605,9 +605,9 @@ Komuto API
             ]
         }
 
-## Marketplace Collection [/marketplace]
+## Marketplace Collection [/marketplaces]
 
-### Login Marketplace [POST /marketplace/login]
+### Login Marketplace [POST /marketplaces/login]
 
 + Request (application/json)
 
@@ -637,7 +637,7 @@ Komuto API
             }
         }
 
-### Get Term of Service [GET /marketplace/{id}/term]
+### Get Term of Service [GET /marketplaces/{id}/term]
 
 + Parameters
     + id: 2 (required, number)
@@ -653,7 +653,7 @@ Komuto API
             }
         }
 
-### Get Privacy Policy [GET /marketplace/{id}/policy]
+### Get Privacy Policy [GET /marketplaces/{id}/policy]
 
 + Parameters
     + id: 2 (required, number)
@@ -855,7 +855,7 @@ Komuto API
             ]
         }
 
-### Category Marketplace [GET /marketplace/{id}/categories]
+### Category Marketplace [GET /marketplaces/{id}/categories]
 
 + Parameters
     + id: 1 (number, required)
@@ -885,7 +885,7 @@ Komuto API
             ]
         }
 
-### Category Child Marketplace [GET /marketplace/{id}/categories/{parent_id}]
+### Category Child Marketplace [GET /marketplaces/{id}/categories/{parent_id}]
 
 + Parameters
     + id: 1 (number, required)
@@ -916,7 +916,7 @@ Komuto API
               ]
         }
 
-### Get Promo [GET /marketplace/{id}/promo]
+### Get Promo [GET /marketplaces/{id}/promo]
 
 + Parameters
     + id: 2 (number, required)
@@ -1139,7 +1139,7 @@ Komuto API
             }
         }
 
-### Get Shipping Charge [GET /product/shipping]
+### Get Shipping Charge [GET /products/shipping]
 
 + Request (application/json)
 
@@ -1189,9 +1189,9 @@ Komuto API
             ]
         }
 
-## Discussion Collection [/discussion]
+## Discussion Collection [/discussions]
 
-### Get Discussion [GET /discussion/{user_id}/{product_id}]
+### Get Discussion [GET /discussions/{user_id}/{product_id}]
 
 + Parameters
     + user_id: 66 (number, required)
@@ -1235,7 +1235,7 @@ Komuto API
             ]
         }
 
-### New Discussion [POST /discussion]
+### New Discussion [POST /discussions]
 
 + Request (application/json)
 
@@ -1431,9 +1431,9 @@ Komuto API
             ]
         }
 
-## Bucket Collection [/bucket]
+## Bucket Collection [/buckets]
 
-### Get Bucket [GET /bucket/{user_id}]
+### Get Bucket [GET /buckets/{user_id}]
 
 + Parameters
     + user_id: 2 (number, required)
@@ -1543,7 +1543,7 @@ Komuto API
             ]
         }
 
-## Expedition Collection [/expedition]
+## Expedition Collection [/expeditions]
 
 ### Get List Expedition [GET]
 
@@ -1576,7 +1576,7 @@ Komuto API
             ]
         }
 
-### Get Expedition [GET /expedition/{id}]
+### Get Expedition [GET /expeditions/{id}]
 
 + Parameters
     + id: 2 (number, required)
@@ -1596,4 +1596,98 @@ Komuto API
                   "logo_path": "",
                   "asuransi_fee": "15000"
               }
+        }
+
+## Invoice Collection [/invoice]
+
+### Get Invoice [GET /invoices/{user_id}]
+
++ Parameters
+    + user_id: 2 (number, required)
+
++ Response 200 (application/json)
+
+        {
+              "code": 200,
+              "status": true,
+              "message": "Invoice Data",
+              "data": [
+                    {
+                      "id": 5,
+                      "number": "50",
+                      "createdate": 1496710635,
+                      "status": "ready",
+                      "store_id": 3,
+                      "user_id": 66,
+                      "total_bill": "500000",
+                      "cancel_remark": "no",
+                      "paymentmethod_id": 2,
+                      "shipping_id": 1,
+                      "price": "480000",
+                      "shipping_charge": "40000",
+                      "asurance_cost": "40000",
+                      "admin_cost": "20000",
+                      "wallet_pay": "30000",
+                      "promotion": "This",
+                      "confirmation_date": 1496710635,
+                      "bucket_id": 3,
+                      "bid_id": 6
+                    },
+                    {
+                      "id": 8,
+                      "number": "51",
+                      "createdate": 1496710635,
+                      "status": "ready",
+                      "store_id": 3,
+                      "user_id": 66,
+                      "total_bill": "500000",
+                      "cancel_remark": "no",
+                      "paymentmethod_id": 2,
+                      "shipping_id": 1,
+                      "price": "480000",
+                      "shipping_charge": "40000",
+                      "asurance_cost": "40000",
+                      "admin_cost": "20000",
+                      "wallet_pay": "30000",
+                      "promotion": "This",
+                      "confirmation_date": 1496710635,
+                      "bucket_id": 3,
+                      "bid_id": 6
+                    }
+              ]
+        }
+
+### Get Invoice Detail [GET /invoices/{user_id}/{id}]
+
++ Parameters
+    + user_id: 66 (number, required)
+    + id: 5 (number, required)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Invoice Data",
+                "data": {
+                  "id": 5,
+                  "number": "50",
+                  "createdate": 1496710635,
+                  "status": "ready",
+                  "store_id": 3,
+                  "user_id": 66,
+                  "total_bill": "500000",
+                  "cancel_remark": "no",
+                  "paymentmethod_id": 2,
+                  "shipping_id": 1,
+                  "price": "480000",
+                  "shipping_charge": "40000",
+                  "asurance_cost": "40000",
+                  "admin_cost": "20000",
+                  "wallet_pay": "30000",
+                  "promotion": "This",
+                  "confirmation_date": 1496710635,
+                  "bucket_id": 3,
+                  "bid_id": 6
+                }
         }
