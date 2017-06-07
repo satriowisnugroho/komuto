@@ -873,6 +873,59 @@ Komuto API
             ]
         }
 
+### Create Catalog [POST /store/{id}/catalog]
+
++ Parameters
+    + id: 2(number, required)
+
++ Request(application/json)
+
+        {
+              "store_id": 5,
+              "catalog_name": "Sepatu Terbang"
+        }
+
++ Response 201 (application/json)
+
+        {
+              "code": 200,
+              "status": true,
+              "message": "Catalog Data",
+              "data": {
+                  "catalog_id": 2,
+                  "store_id": 5,
+                  "catalog_name": "Sepatu Terbang",
+                  "created_at": 1496710635
+              }
+        }
+
+### Get Catalog List [GET /store/{id}/catalog]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Response 200 (application/json)
+
+        {
+              "code": 200,
+              "status": true,
+              "message": "Catalog Data",
+              "data": [
+                    {
+                        "catalog_id": 2,
+                        "store_id": 5,
+                        "catalog_name": "Sepatu Terbang",
+                        "created_at": 1496710635
+                    },
+                    {
+                        "catalog_id": 3,
+                        "store_id": 5,
+                        "catalog_name": "Sepatu Renang",
+                        "created_at": 1496710635
+                    }
+              ]
+        }
+
 ## Bank Account Collection [/bank-accounts]
 
 ### List [GET]
