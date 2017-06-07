@@ -532,6 +532,7 @@ Komuto API
             }
         }
 
+
 ## Bank Account Collection [/bank-accounts]
 
 ### List [POST]
@@ -642,6 +643,39 @@ Komuto API
               ]
         }
 
+### Get Promo [GET /marketplace/{id}/promo]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Request (application/json)
+
+        {
+              "promotion_code": "aUk9d"
+        }
+
++ Response 200 (application/json)
+
+        {
+              "code": 200,
+              "status": true,
+              "message": "Marketplace Promotion Data",
+              "data": {
+                  "promotion_id": 15,
+                  "id": 2,
+                  "promotion_code": "aUk9d",
+                  "startdate": 1496710635,
+                  "expiredate": 1496710635,
+                  "type": "",
+                  "percentage": 35,
+                  "nominal": "200000",
+                  "status": "active",
+                  "status_date": 1496710635,
+                  "min_purchasing": "250000",
+                  "max_discount": "50000",
+                  "quota": "20"
+              }
+        }
 
 ## Product Collection [/products]
 
