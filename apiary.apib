@@ -926,6 +926,26 @@ Komuto API
               ]
         }
 
+### Get Catalog [GET /stores/{id}/catalog/{catalog_id}]
+
++ Parameters
+    + id: 5 (number, required)
+    + catalog_id: 3 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Catalog Data",
+            "data": {
+                  "catalog_id": 3,
+                  "store_id": 5,
+                  "catalog_name": "Sepatu Renang",
+                  "created_at": 1496710635
+            }
+        }
+
 ## Bank Account Collection [/bank-accounts]
 
 ### List [GET]
