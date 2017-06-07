@@ -777,6 +777,82 @@ Komuto API
             }
         }
 
+### Update Store [PUT /stores/{id}]
+
++ Parameters
+    + id : 66 (number, required)
+
++ Request (application/json)
+
+        + `user_id` (required)
+        + `slogan` (optional)
+        + `description` (optional)
+        + `logo` (optional)
+        + `custom_domain` (optional)
+        + `status` (optional)
+        + `remarks_status` (optional)
+        + `status_date` (optional)
+        + `cover_image` (optional)
+        + `seller_theme_id` (optional)
+        + `reputation` (optional)
+        + `store_id_number` (optional)
+        + `total_favorite` (optional)
+        + `note` (optional)
+
+        + Body
+
+            {
+                "user_id": 66,
+                "slogan": "",
+                "description": "",
+                "logo": "logo.png",
+                "custom_domain": "domain.domain",
+                "status": "single",
+                "remarks_status": "",
+                "status_date": 1496710635,
+                "cover_image": "cover.png",
+                "seller_theme_id": 2,
+                "reputation": 23,
+                "store_id_number": "23223425323" ,
+                "total_favorite": "3213",
+                "note": "lorem"
+            }
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Store Data"
+            "data": {
+                "id": 13,
+                "user": {
+                    "id": 66,
+                    "name": "User skyshi",
+                    "photo": "photo.png"
+                },
+                "name": "Baju Keren",
+                "slogan": "Semua harus keren",
+                "description": "Menjual semua jenis baju yang keren",
+                "logo": "bajukeren.png",
+                "custom_domain": ".com",
+                "created_date": 1496710635,
+                "status": "",
+                "remarks_status": "",
+                "status_date": 1496710635,
+                "cover_image": "coverbajukeren.png",
+                "seller_theme_id": 2,
+                "reputation": 23,
+                "store_id_number": "3404092309880001",
+                "total_favorite": 40,
+                "verification_date": 1496710635,
+                "note": "lorem ipsum",
+                "count_review": 15,
+                "start_date": 1496710635,
+                "end_date": 1496710635
+            }
+        }
+
 ### List [GET /stores]
 
 + Request (application/json)
@@ -816,6 +892,79 @@ Komuto API
                     "end_date": 1496710635
                 }
             ]
+        }
+
+### Create Catalog [POST /store/{id}/catalog]
+
++ Parameters
+    + id: 2(number, required)
+
++ Request(application/json)
+
+        {
+            "store_id": 5,
+            "catalog_name": "Sepatu Terbang"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Catalog Data",
+            "data": {
+                "catalog_id": 2,
+                "store_id": 5,
+                "catalog_name": "Sepatu Terbang",
+                "created_at": 1496710635
+            }
+        }
+
+### Get Catalog List [GET /store/{id}/catalog]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Catalog Data",
+            "data": [
+                {
+                    "catalog_id": 2,
+                    "store_id": 5,
+                    "catalog_name": "Sepatu Terbang",
+                    "created_at": 1496710635
+                },
+                {
+                    "catalog_id": 3,
+                    "store_id": 5,
+                    "catalog_name": "Sepatu Renang",
+                    "created_at": 1496710635
+                }
+            ]
+        }
+
+### Get Catalog [GET /stores/{id}/catalog/{catalog_id}]
+
++ Parameters
+    + id: 5 (number, required)
+    + catalog_id: 3 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Catalog Data",
+            "data": {
+                "catalog_id": 3,
+                "store_id": 5,
+                "catalog_name": "Sepatu Renang",
+                "created_at": 1496710635
+            }
         }
 
 ### List Expedition [GET /stores/{id}/expeditions]
