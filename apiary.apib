@@ -605,6 +605,27 @@ Komuto API
             ]
         }
 
+### Get Shipping Information [GET /users/{id}/shipping-info]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Shipping Information"
+            "data": {
+                "name": "User skyshi",
+                "email": "user@skyshi.com",
+                "phone_number": "user@skyshi.com",
+                "address": "Kemanggisan Jakarta Barat, Palmerah, Jakarta Barat, DKI Jakarta, Indonesia 55673"
+            }
+        }
+
 ## Marketplace Collection [/marketplaces]
 
 ### Login Marketplace [POST /marketplaces/login]
