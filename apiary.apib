@@ -487,9 +487,9 @@ Komuto API
             }
         }
 
-## Store Collection [/store]
+## Store Collection [/stores]
 
-### Open Store [POST]
+### Create [POST]
 
 + Request (application/json)
 
@@ -502,7 +502,7 @@ Komuto API
             "custom_domain": ".com"
         }
 
-+ Response 201 (application/json)
++ Response 200 (application/json)
 
         {
             "code": 200,
@@ -532,6 +532,47 @@ Komuto API
             }
         }
 
+### Get [GET /stores/{id}]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Store Data"
+            "data": {
+                "id": 13,
+                "user": {
+                    "id": 66,
+                    "name": "User skyshi",
+                    "photo": "photo.png"
+                },
+                "name": "Baju Keren",
+                "slogan": "Semua harus keren",
+                "description": "Menjual semua jenis baju yang keren",
+                "logo": "bajukeren.png",
+                "custom_domain": ".com",
+                "created_date": 1496710635,
+                "status": "",
+                "remarks_status": "",
+                "status_date": 1496710635,
+                "cover_image": "coverbajukeren.png",
+                "seller_theme_id": 2,
+                "reputation": 23,
+                "store_id_number": "3404092309880001",
+                "total_favorite": 40,
+                "verification_date": 1496710635,
+                "note": "lorem ipsum",
+                "count_review": 15,
+                "start_date": 1496710635,
+                "end_date": 1496710635
+            }
+        }
 
 ## Bank Account Collection [/bank-accounts]
 
