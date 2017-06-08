@@ -604,7 +604,7 @@ Komuto API
             ]
         }
 
-### Get Shipping Information [GET /users/{id}/shipping-info]
+### Get Address Information [GET /users/{id}/address]
 
 + Parameters
     + id: 1 (number, required)
@@ -616,12 +616,34 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Shipping Information"
+            "message": "Address Information"
             "data": {
+                "id": 1,
                 "name": "User skyshi",
                 "email": "user@skyshi.com",
                 "phone_number": "user@skyshi.com",
-                "address": "Kemanggisan Jakarta Barat, Palmerah, Jakarta Barat, DKI Jakarta, Indonesia 55673"
+                "postal_code": "84314",
+                "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
+                "alias_address": "Alamat Toko",
+                "is_primary_address": true,
+                "is_sale_address": false,
+                "is_tender_address": false,
+                "province": {
+                    "id": 1,
+                    "name": "Yogyakarta"
+                },
+                "district": {
+                    "id": 1,
+                    "name": "Sleman"
+                },
+                "sub_district": {
+                    "id": 1,
+                    "name": "Ngaglik"
+                },
+                "village": {
+                    "id": 1,
+                    "name": "Sariharjo"
+                }
             }
         }
 
