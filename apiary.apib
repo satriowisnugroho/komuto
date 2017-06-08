@@ -2214,7 +2214,7 @@ Komuto API
             ]
         }
 
-### Get District [GET /locations/provinces/{id}/districts]
+### Get District [GET /locations/districts?province_id=1]
 
 + Parameters
     + id: 1 (number, required)
@@ -2243,7 +2243,7 @@ Komuto API
             ]
         }
 
-### Get Sub District [GET /locations/provinces/{id}/districts/{district_id}/sub-districts]
+### Get Sub District [GET /locations/sub-districts?district_id=1]
 
 + Parameters
     + id: 1 (number, required)
@@ -2273,7 +2273,7 @@ Komuto API
             ]
         }
 
-### Get Village [GET /locations/provinces/{id}/districts/{district_id}/sub-districts/{sub_district_id}/villages]
+### Get Village [GET /locations/villages?sub_district_id=1]
 
 + Parameters
     + id: 1 (number, required)
@@ -2437,7 +2437,6 @@ Komuto API
             "transaction_at": 1496710635,
             "transaction_code": "tId4K",
             "status": "",
-            "status_at": 1496710635,
             "nominal": "20000"
         }
 
