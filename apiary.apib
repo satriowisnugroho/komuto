@@ -1137,6 +1137,23 @@ Komuto API
             "data": {}
         }
 
+### Get Reputation [GET /stores/{id}/reputation]
+
++ Parameters
+    + id : 2 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Store Data",
+            "data": {
+                "reputation_count": 50
+            }
+        }
+
+
 ## Bank Account Collection [/bank-accounts]
 
 ### List [GET]
@@ -1924,6 +1941,33 @@ Komuto API
             ]
         }
 
+### Get Expedition Service [GET /expeditions/{id}/services]
+
++ Parameters
+    + id : 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Expedition Data",
+                "data": [
+                    {
+                        "id": 1,
+                        "name": "REG",
+                        "description": "JNE Reguler adalah",
+                        "logo": "logo.png"
+                    },
+                    {
+                        "id": 1,
+                        "name": "REG",
+                        "description": "JNE Reguler adalah",
+                        "logo": "logo.png"
+                    }
+                ]
+        }
+
 ## Invoice Collection [/invoices]
 
 ### Get Invoice [GET /invoices/{user_id}]
@@ -2110,4 +2154,183 @@ Komuto API
                     "name": "Umbulmartani"
                 }
             ]
+        }
+
+## Bank Collection [/banks]
+
+### Get Master Bank [GET]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Master Bank Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "Mandiri",
+                    "code": "1001",
+                    "status": "1",
+                    "status_date": 1496710635,
+                    "logo": "mandiri.png"
+                },
+                {
+                    "id": 3,
+                    "name": "BCA",
+                    "code": "1002",
+                    "status": "1",
+                    "status_date": 1496710635,
+                    "logo": "bca.png"
+                },
+                {
+                    "id": 5,
+                    "name": "BRI",
+                    "code": "2003",
+                    "status": "1",
+                    "status_date": 1496710635,
+                    "logo": "bri.png"
+                }
+            ]
+        }
+
+### Get Master Bank Detail [GET /banks/{id}]
+
++ Parameters
+    + id : 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Master Bank Data",
+                "data": {
+                    "id": 1,
+                    "name": "Mandiri",
+                    "code": "1001",
+                    "status": "1",
+                    "status_date": 1496710635,
+                    "logo": "mandiri.png"
+                }
+        }
+
+## Wholesaler Collection [/wholesalers]
+
+### Post Wholesaler [POST]
+
++ Request (application/json)
+
+        {
+                "product_id": 5,
+                "minimum_order": 20,
+                "maximum_order": 60,
+                "price": "100000"
+        }
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Wholesaler Data",
+                "data": {
+                    "id": 6,
+                    "product_id": 5,
+                    "minimum_order": 20,
+                    "maximum_order": 60,
+                    "price": "100000"
+                }
+        }
+
+### Get Wholesaler [GET /wholesalers/{product_id}]
+
++ Parameters
+    + product_id: 4 (number, required)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Wholesaler Data",
+                "data": [
+                    {
+                        "id": 5,
+                        "product_id": 4,
+                        "minimum_order": 12,
+                        "maximum_order": 48,
+                        "price": "50000"
+                    }
+                ]
+        }
+
+## Transaction Collection [/transactions]
+
+### Set Transaction Summary [POST]
+
++ Request (application/json)
+
+        {
+                "user_id": 2,
+                "is_debit": true,
+                "transaction_date": 1496710635,
+                "transaction_code": "tId4K",
+                "status": "",
+                "status_date": 1496710635,
+                "nominal": "20000"
+        }
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Transaction Data",
+                "data": {
+                    "id": 3,
+                    "transaction_date": 1496710635,
+                    "transaction_code": "tId4K",
+                    "status": "",
+                    "status_date": 1496710635,
+                    "nominal": "20000",
+                    "balance_before": "500000",
+                    "balance_after": "480000",
+                    "is_debit": true,
+                    "user_id": 2,
+                    "remark": "",
+                    "marketplace_id": 3
+                }
+        }
+
+### Transaction Summary [GET /transactions/summary]
+
++ Request (application/json)
+
+        {
+                "user_id": 2
+        }
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Transaction Data",
+                "data": [
+                    {
+                        "id": 2,
+                        "transaction_date": 1496710635,
+                        "transaction_code": "AuXaH",
+                        "status": "",
+                        "status_date": 1496710635,
+                        "nominal": "200000",
+                        "balance_before": "500000",
+                        "balance_after": "300000",
+                        "is_debit": false,
+                        "user_id": 2,
+                        "remark": "",
+                        "marketplace_id": 3
+                    }
+                ]
         }
