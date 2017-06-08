@@ -1924,7 +1924,7 @@ Komuto API
             ]
         }
 
-## Invoice Collection [/invoice]
+## Invoice Collection [/invoices]
 
 ### Get Invoice [GET /invoices/{user_id}]
 
@@ -2016,4 +2016,100 @@ Komuto API
                 "bucket_id": 3,
                 "bid_id": 6
             }
+        }
+
+## Location Collection [/locations]
+
+### Get Provinces [GET /locations/provinces]
+
++ Parameters
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Provinces Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "Yogyakarta"
+                },
+                {
+                    "id": 2,
+                    "name": "Jakarta"
+                }
+            ]
+        }
+
+### Get District [GET /locations/provinces/{id}/districts]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Districts Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "Sleman"
+                },
+                {
+                    "id": 2,
+                    "name": "Kulon Progo"
+                }
+            ]
+        }
+
+### Get Sub District [GET /locations/provinces/{id}/districts/{district_id}/sub-districts]
+
++ Parameters
+    + id: 1 (number, required)
+    + district_id: 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Sub Districts Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "Ngaglik"
+                },
+                {
+                    "id": 2,
+                    "name": "Ngemplak"
+                }
+            ]
+        }
+
+### Get Village [GET /locations/provinces/{id}/districts/{district_id}/sub-districts/{sub_district_id}/villages]
+
++ Parameters
+    + id: 1 (number, required)
+    + district_id: 1 (number, required)
+    + sub_district_id: 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Sub Districts Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "Sariharjo"
+                },
+                {
+                    "id": 2,
+                    "name": "Umbulmartani"
+                }
+            ]
         }
