@@ -621,7 +621,7 @@ Komuto API
                 "id": 1,
                 "name": "User skyshi",
                 "email": "user@skyshi.com",
-                "phone_number": "user@skyshi.com",
+                "phone_number": "081222333444",
                 "postal_code": "84314",
                 "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
                 "alias_address": "Alamat Toko",
@@ -645,6 +645,36 @@ Komuto API
                     "name": "Sariharjo"
                 }
             }
+        }
+
+### PUT Address Information [GET /users/{id}/address]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Request (application/json)
+
+        {
+            "province_id": 1,
+            "district_id": 1,
+            "sub_district_id": 1,
+            "village_id": 1,
+            "name": "User skyshi",
+            "email": "user@skyshi.com",
+            "phone_number": "081222333444",
+            "postal_code": "84314",
+            "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
+            "alias_address": "Alamat Toko",
+            "type": 'primary'
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success"
+            "data": {}
         }
 
 ## Marketplace Collection [/marketplaces]
