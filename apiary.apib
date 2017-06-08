@@ -25,24 +25,22 @@ Komuto API
             "data": {
                 "id": 66,
                 "marketplace_id": 0,
-                "user": {
-                    "name": "User skyshi",
-                    "email": "use@skyshi.com",
-                    "cooperative_member_number": "ALSK83929K",
-                    "approval_cooperative_status": "0",
-                    "photo": null,
-                    "phone_number": "081222333444",
-                    "gender": null,
-                    "status": "1",
-                    "mother_name": "Siti Aminah",
-                    "auth_key": null,
-                    "saldo_wallet": null,
-                    "place_of_birth": "Yogyakarta",
-                    "date_of_birth": 1496710635,
-                    "created_at": 1496710635,
-                    "join_at": 1496710635,
-                    "status_at": 1496710635
-                }
+                "name": "User skyshi",
+                "email": "user@skyshi.com",
+                "cooperative_member_number": "ALSK83929K",
+                "approval_cooperative_status": "0",
+                "photo": null,
+                "phone_number": "081222333444",
+                "gender": null,
+                "status": "1",
+                "mother_name": "Siti Aminah",
+                "auth_key": null,
+                "saldo_wallet": null,
+                "place_of_birth": "Yogyakarta",
+                "date_of_birth": 1496710635,
+                "created_at": 1496710635,
+                "join_at": 1496710635,
+                "status_at": 1496710635
             }
         }
 
@@ -51,7 +49,9 @@ Komuto API
 + Request (application/json)
 
         {
-
+            "name": "User Skyshi",
+            "email": "user@skyshi.com",
+            "password": "123456"
         }
 
 + Response 201 (application/json)
@@ -64,7 +64,7 @@ Komuto API
                 "id": 66,
                 "marketplace_id": 0,
                 "name": "User skyshi",
-                "email": "use@skyshi.com",
+                "email": "user@skyshi.com",
                 "cooperative_member_number": "ALSK83929K",
                 "approval_cooperative_status": "0",
                 "photo": null,
@@ -102,7 +102,7 @@ Komuto API
                 "id": 66,
                 "marketplace_id": 0,
                 "name": "User skyshi",
-                "email": "use@skyshi.com",
+                "email": "user@skyshi.com",
                 "cooperative_member_number": "ALSK83929K",
                 "approval_cooperative_status": "0",
                 "photo": null,
@@ -132,12 +132,12 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "User Data"
+            "message": "User Data",
             "data": {
                 "id": 66,
                 "marketplace_id": 0,
                 "name": "User skyshi",
-                "email": "use@skyshi.com",
+                "email": "user@skyshi.com",
                 "cooperative_member_number": "ALSK83929K",
                 "approval_cooperative_status": "0",
                 "photo": null,
@@ -168,8 +168,26 @@ Komuto API
             "status": true,
             "message": "User Data",
             "data": {
-                "id": 66,
-                "marketplace_id": 0,
+                "user": {
+                    "id": 66,
+                    "marketplace_id": 0,
+                    "name": "User skyshi",
+                    "email": "user@skyshi.com",
+                    "cooperative_member_number": "ALSK83929K",
+                    "approval_cooperative_status": "0",
+                    "photo": null,
+                    "phone_number": "081222333444",
+                    "gender": null,
+                    "status": "1",
+                    "mother_name": "Siti Aminah",
+                    "auth_key": null,
+                    "saldo_wallet": 580000,
+                    "place_of_birth": "Yogyakarta",
+                    "date_of_birth": 1496710635,
+                    "created_at": 1496710635,
+                    "join_at": 1496710635,
+                    "status_at": 1496710635
+                },
                 "store": {
                     "id": 13,
                     "name": "Baju Keren",
@@ -190,23 +208,7 @@ Komuto API
                     "note": "lorem ipsum",
                     "start_date": 1496710635,
                     "end_date": 1496710635
-                },
-                "name": "User skyshi",
-                "email": "use@skyshi.com",
-                "cooperative_member_number": "ALSK83929K",
-                "approval_cooperative_status": "0",
-                "photo": null,
-                "phone_number": "081222333444",
-                "gender": null,
-                "status": "1",
-                "mother_name": "Siti Aminah",
-                "auth_key": null,
-                "saldo_wallet": 580000,
-                "place_of_birth": "Yogyakarta",
-                "date_of_birth": 1496710635,
-                "created_at": 1496710635,
-                "join_at": 1496710635,
-                "status_at": 1496710635
+                }
             }
         }
 
@@ -222,12 +224,12 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "User Data"
+            "message": "User Data",
             "data": {
                 "id": 66,
                 "marketplace_id": 0,
                 "name": "User skyshi",
-                "email": "use@skyshi.com",
+                "email": "user@skyshi.com",
                 "cooperative_member_number": "ALSK83929K",
                 "approval_cooperative_status": "0",
                 "photo": null,
@@ -262,7 +264,7 @@ Komuto API
                 "id": 66,
                 "marketplace_id": 0,
                 "name": "User skyshi",
-                "email": "use@skyshi.com",
+                "email": "user@skyshi.com",
                 "cooperative_member_number": "ALSK83929K",
                 "approval_cooperative_status": "0",
                 "photo": null,
@@ -297,7 +299,7 @@ Komuto API
                 "id": 66,
                 "marketplace_id": 0,
                 "name": "User skyshi",
-                "email": "use@skyshi.com",
+                "email": "user@skyshi.com",
                 "cooperative_member_number": "ALSK83929K",
                 "approval_cooperative_status": "0",
                 "photo": null,
@@ -327,12 +329,12 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "User Data"
+            "message": "User Data",
             "data": {
                 "id": 66,
                 "marketplace_id": 0,
                 "name": "User skyshi",
-                "email": "use@skyshi.com",
+                "email": "user@skyshi.com",
                 "cooperative_member_number": "ALSK83929K",
                 "approval_cooperative_status": "0",
                 "photo": null,
@@ -402,7 +404,7 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Success"
+            "message": "Success",
             "data": {}
         }
 
@@ -422,7 +424,7 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Success"
+            "message": "Success",
             "data": {}
         }
 
@@ -448,7 +450,7 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Count Bucket"
+            "message": "Count Bucket",
             "data": {
                 "count_bucket": 100
             }
@@ -482,15 +484,16 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Favourite Store"
+            "message": "Favourite Store",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
-                    "id": 13,
-                    "user": {
-                        "id": 66,
-                        "name": "User skyshi",
-                        "photo": "photo.png"
-                    },
+                    "id": 1,
                     "name": "Baju Keren",
                     "slogan": "Semua harus keren",
                     "description": "Menjual semua jenis baju yang keren",
@@ -527,10 +530,37 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Wishlist Data"
+            "message": "Wishlist Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
-                    "id": 1,
+                    "product": {
+                        "id": 1,
+                        "name": "GoPro 5",
+                        "stock": 100,
+                        "weight": 1,
+                        "type": "Camera",
+                        "description": "Lorem ipsum",
+                        "price": 5000000,
+                        "status": "1",
+                        "insurance": "Lorem",
+                        "discount": 10,
+                        "created_at": 1496710635,
+                        "status_at": 1496710635,
+                        "attrval": "0",
+                        "margin_dropshipper": 0,
+                        "is_dropshipper": true,
+                        "is_grosir": false,
+                        "count_sold": 0,
+                        "count_popular": 0,
+                        "identifier_brand": 0,
+                        "identifier_catalog": 32
+                    },
                     "category": {
                         "id": 1,
                         "category_id": null,
@@ -569,7 +599,7 @@ Komuto API
                         "status_at": 1496710635,
                         "created_at": 1496710635
                     },
-                    "city_id": {
+                    "city": {
                         "id": 1,
                         "province_id": 1,
                         "name": "Yogyakarta"
@@ -582,26 +612,7 @@ Komuto API
                             "created_at": 1496710635,
                             "updated_at": 1496710635
                         }
-                    ],
-                    "name": "GoPro 5",
-                    "stock": 100,
-                    "weight": 1,
-                    "type": "Camera",
-                    "description": "Lorem ipsum",
-                    "price": 5000000,
-                    "status": "1",
-                    "insurance": "Lorem",
-                    "discount": 10,
-                    "created_at": 1496710635,
-                    "status_at": 1496710635,
-                    "attrval": "0",
-                    "margin_dropshipper": 0,
-                    "is_dropshipper": true,
-                    "is_grosir": false,
-                    "count_sold": 0,
-                    "count_popular": 0,
-                    "identifier_brand": 0,
-                    "identifier_catalog": 32
+                    ]
                 }
             ]
         }
@@ -618,7 +629,7 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Address Information"
+            "message": "Address Information",
             "data": {
                 "id": 1,
                 "name": "User skyshi",
@@ -675,7 +686,7 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Success"
+            "message": "Success",
             "data": {}
         }
 
@@ -763,7 +774,7 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Store Data"
+            "message": "Store Data",
             "data": {
                 "id": 13,
                 "user_id": 2,
@@ -800,7 +811,7 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Store Data"
+            "message": "Store Data",
             "data": {
                 "id": 13,
                 "user": {
@@ -876,7 +887,7 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Store Data"
+            "message": "Store Data",
             "data": {
                 "id": 13,
                 "user": {
@@ -915,7 +926,13 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Store Data"
+            "message": "Store Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "id": 13,
@@ -984,6 +1001,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Catalog Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "catalog_id": 2,
@@ -1030,7 +1053,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Expedition Data",
-            "meta": 2,
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "id": 1,
@@ -1073,7 +1101,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Expedition Data",
-            "meta": 2,
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "id": 1,
@@ -1168,6 +1201,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Bank Account Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "id": 1,
@@ -1202,6 +1241,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Category List Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "id": 1,
@@ -1223,7 +1268,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Category Marketplace Data",
-            "meta": 2,
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "marketplace_id": 1,
@@ -1254,7 +1304,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Category Marketplace Data",
-            "meta": 2,
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "marketplace_id": 1,
@@ -1319,6 +1374,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Product List Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "id": 1,
@@ -1421,7 +1482,28 @@ Komuto API
             "status": true,
             "message": "Product Detail Data",
             "data": {
-                "id": 1,
+                "product": {
+                    "id": 1,
+                    "name": "GoPro 5",
+                    "stock": 100,
+                    "weight": 1,
+                    "type": "Camera",
+                    "description": "Lorem ipsum",
+                    "price": 5000000,
+                    "status": "1",
+                    "insurance": "Lorem",
+                    "discount": 10,
+                    "created_at": 1496710635,
+                    "status_at": 1496710635,
+                    "attrval": "0",
+                    "margin_dropshipper": 0,
+                    "is_dropshipper": true,
+                    "is_grosir": false,
+                    "count_sold": 0,
+                    "count_popular": 0,
+                    "identifier_brand": 0,
+                    "identifier_catalog": 32
+                },
                 "category": {
                     "id": 1,
                     "category_id": null,
@@ -1460,7 +1542,7 @@ Komuto API
                     "status_at": 1496710635,
                     "created_at": 1496710635
                 },
-                "city_id": {
+                "city": {
                     "id": 1,
                     "province_id": 1,
                     "name": "Yogyakarta"
@@ -1473,26 +1555,7 @@ Komuto API
                         "created_at": 1496710635,
                         "updated_at": 1496710635
                     }
-                ],
-                "name": "GoPro 5",
-                "stock": 100,
-                "weight": 1,
-                "type": "Camera",
-                "description": "Lorem ipsum",
-                "price": 5000000,
-                "status": "1",
-                "insurance": "Lorem",
-                "discount": 10,
-                "created_at": 1496710635,
-                "status_at": 1496710635,
-                "attrval": "0",
-                "margin_dropshipper": 0,
-                "is_dropshipper": true,
-                "is_grosir": false,
-                "count_sold": 0,
-                "count_popular": 0,
-                "identifier_brand": 0,
-                "identifier_catalog": 32
+                ]
             }
         }
 
@@ -1529,10 +1592,15 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Review List Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "id": 1,
-                    "product_id": 1,
                     "user": {
                         "id": 66,
                         "name": "User skyshi",
@@ -1560,7 +1628,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Discussion Data",
-            "meta": 3,
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "id": 2,
@@ -1633,9 +1706,29 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Tender Product List Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
-                    "id": 1,
+                    "product": {
+                        "id": 1,
+                        "name": "GoPro 5",
+                        "amount": 5,
+                        "weight": 1,
+                        "type": "1",
+                        "description": "Panah  berburu buatan Jerman Tahun 1980",
+                        "open_bid": 120000,
+                        "max_bid": 5000000,
+                        "insurance": "1"
+                        "status": "1",
+                        "status_at": 1496710635,
+                        "start_at": 1496710635,
+                        "end_at": 1496710635
+                    },
                     "category": {
                         "id": 1,
                         "category_id": null,
@@ -1673,19 +1766,7 @@ Komuto API
                             "created_at": 1496710635,
                             "updated_at": 1496710635
                         }
-                    ],
-                    "name": "GoPro 5",
-                    "amount": 5,
-                    "weight": 1,
-                    "type": "1",
-                    "description": "Panah  berburu buatan Jerman Tahun 1980",
-                    "open_bid": 120000,
-                    "max_bid": 5000000,
-                    "insurance": "1"
-                    "status": "1",
-                    "status_at": 1496710635,
-                    "start_at": 1496710635,
-                    "end_at": 1496710635
+                    ]
                 }
             ]
         }
@@ -1704,7 +1785,21 @@ Komuto API
             "status": true,
             "message": "Tender Product Detail Data",
             "data": {
-                "id": 1,
+                "product": {
+                    "id": 1,
+                    "name": "GoPro 5",
+                    "amount": 5,
+                    "weight": 1,
+                    "type": "1",
+                    "description": "Panah  berburu buatan Jerman Tahun 1980",
+                    "open_bid": 120000,
+                    "max_bid": 5000000,
+                    "insurance": "1"
+                    "status": "1",
+                    "status_at": 1496710635,
+                    "start_at": 1496710635,
+                    "end_at": 1496710635
+                },
                 "category": {
                     "id": 1,
                     "category_id": null,
@@ -1742,19 +1837,7 @@ Komuto API
                         "created_at": 1496710635,
                         "updated_at": 1496710635
                     }
-                ],
-                "name": "GoPro 5",
-                "amount": 5,
-                "weight": 1,
-                "type": "1",
-                "description": "Panah  berburu buatan Jerman Tahun 1980",
-                "open_bid": 120000,
-                "max_bid": 5000000,
-                "insurance": "1"
-                "status": "1",
-                "status_at": 1496710635,
-                "start_at": 1496710635,
-                "end_at": 1496710635
+                ]
             }
         }
 
@@ -1771,6 +1854,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Review List Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "id": 1,
@@ -1801,6 +1890,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Bucket Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "bucket_id": 45,
@@ -1883,6 +1978,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Review List Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "id": 1,
@@ -1910,7 +2011,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Expedition Data",
-            "meta": 2,
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "id": 1,
@@ -1951,23 +2057,29 @@ Komuto API
 + Response 200 (application/json)
 
         {
-                "code": 200,
-                "status": true,
-                "message": "Expedition Data",
-                "data": [
-                    {
-                        "id": 1,
-                        "name": "REG",
-                        "description": "JNE Reguler adalah",
-                        "logo": "logo.png"
-                    },
-                    {
-                        "id": 1,
-                        "name": "REG",
-                        "description": "JNE Reguler adalah",
-                        "logo": "logo.png"
-                    }
-                ]
+            "code": 200,
+            "status": true,
+            "message": "Expedition Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
+            "data": [
+                {
+                    "id": 1,
+                    "name": "REG",
+                    "description": "JNE Reguler adalah",
+                    "logo": "logo.png"
+                },
+                {
+                    "id": 1,
+                    "name": "REG",
+                    "description": "JNE Reguler adalah",
+                    "logo": "logo.png"
+                }
+            ]
         }
 
 ## Invoice Collection [/invoices]
@@ -1983,6 +2095,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Invoice Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "id": 5,
@@ -2074,6 +2192,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Provinces Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "id": 1,
@@ -2097,6 +2221,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Districts Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "id": 1,
@@ -2121,6 +2251,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Sub Districts Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "id": 1,
@@ -2146,6 +2282,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Sub Districts Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "id": 1,
@@ -2168,6 +2310,12 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Master Bank Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
             "data": [
                 {
                     "id": 1,
@@ -2253,18 +2401,24 @@ Komuto API
 + Response 200 (application/json)
 
         {
-                "code": 200,
-                "status": true,
-                "message": "Wholesaler Data",
-                "data": [
-                    {
-                        "id": 5,
-                        "product_id": 4,
-                        "minimum_order": 12,
-                        "maximum_order": 48,
-                        "price": "50000"
-                    }
-                ]
+            "code": 200,
+            "status": true,
+            "message": "Wholesaler Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
+            "data": [
+                {
+                    "id": 5,
+                    "product_id": 4,
+                    "minimum_order": 12,
+                    "maximum_order": 48,
+                    "price": "50000"
+                }
+            ]
         }
 
 ## Transaction Collection [/transactions]
@@ -2274,35 +2428,35 @@ Komuto API
 + Request (application/json)
 
         {
-                "user_id": 2,
-                "is_debit": true,
-                "transaction_date": 1496710635,
-                "transaction_code": "tId4K",
-                "status": "",
-                "status_date": 1496710635,
-                "nominal": "20000"
+            "user_id": 2,
+            "is_debit": true,
+            "transaction_date": 1496710635,
+            "transaction_code": "tId4K",
+            "status": "",
+            "status_date": 1496710635,
+            "nominal": "20000"
         }
 
 + Response 200 (application/json)
 
         {
-                "code": 200,
-                "status": true,
-                "message": "Transaction Data",
-                "data": {
-                    "id": 3,
-                    "transaction_date": 1496710635,
-                    "transaction_code": "tId4K",
-                    "status": "",
-                    "status_date": 1496710635,
-                    "nominal": "20000",
-                    "balance_before": "500000",
-                    "balance_after": "480000",
-                    "is_debit": true,
-                    "user_id": 2,
-                    "remark": "",
-                    "marketplace_id": 3
-                }
+            "code": 200,
+            "status": true,
+            "message": "Transaction Data",
+            "data": {
+                "id": 3,
+                "transaction_date": 1496710635,
+                "transaction_code": "tId4K",
+                "status": "",
+                "status_date": 1496710635,
+                "nominal": "20000",
+                "balance_before": "500000",
+                "balance_after": "480000",
+                "is_debit": true,
+                "user_id": 2,
+                "remark": "",
+                "marketplace_id": 3
+            }
         }
 
 ### Transaction Summary [GET /transactions/summary]
@@ -2316,23 +2470,29 @@ Komuto API
 + Response 200 (application/json)
 
         {
-                "code": 200,
-                "status": true,
-                "message": "Transaction Data",
-                "data": [
-                    {
-                        "id": 2,
-                        "transaction_date": 1496710635,
-                        "transaction_code": "AuXaH",
-                        "status": "",
-                        "status_date": 1496710635,
-                        "nominal": "200000",
-                        "balance_before": "500000",
-                        "balance_after": "300000",
-                        "is_debit": false,
-                        "user_id": 2,
-                        "remark": "",
-                        "marketplace_id": 3
-                    }
-                ]
+            "code": 200,
+            "status": true,
+            "message": "Transaction Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
+            "data": [
+                {
+                    "id": 2,
+                    "transaction_date": 1496710635,
+                    "transaction_code": "AuXaH",
+                    "status": "",
+                    "status_date": 1496710635,
+                    "nominal": "200000",
+                    "balance_before": "500000",
+                    "balance_after": "300000",
+                    "is_debit": false,
+                    "user_id": 2,
+                    "remark": "",
+                    "marketplace_id": 3
+                }
+            ]
         }
