@@ -1976,6 +1976,51 @@ Komuto API
 
 ## Discussion Collection [/discussions]
 
+### Get Discussion by Product [GET /discussions/products/{product_id}]
+
++ Parameters
+    + product_id: 2 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Discussion Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
+            "data": [
+                {
+                    "user": {
+                        "id": 66,
+                        "name": "Satrio Wisnugroho",
+                        "photo": "http://www.look4fitness.net/images/no_user_logo.png"
+                    },
+                    "discussion": {
+                        "id": 2,
+                        "question": "barangnya ready gan?",
+                        "created_at": 1496710635
+                    }
+                },
+                {
+                    "user": {
+                        "id": 67,
+                        "name": "Indra Skyshi",
+                        "photo": "http://www.look4fitness.net/images/no_user_logo.png"
+                    },
+                    "discussion": {
+                        "id": 2,
+                        "question": "stoknya masih ada?",
+                        "created_at": 1496710635
+                    }
+                }
+            ]
+        }
+
 ### Get Discussion [GET /discussions/{user_id}/{product_id}]
 
 + Parameters
