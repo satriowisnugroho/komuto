@@ -1416,6 +1416,25 @@ Komuto API
             "data": {}
         }
 
+### Create Dropship [POST /products/dropship]
+
++ Request (application/json)
+
+        {
+            "product_id": 1,
+            "catalog_id": 1,
+            "store_id": 1
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
 ### List [GET /products?is_dropship={is_dropship}&limit={limit}&page={page}]
 
 + Parameters
