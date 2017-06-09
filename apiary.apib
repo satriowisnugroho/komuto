@@ -755,6 +755,98 @@ Komuto API
             }
         }
 
+### Category Marketplace [GET /marketplaces/{id}/categories]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Category Marketplace Data",
+            "data": [
+                {
+                    "marketplace_id": 1,
+                    "id": 1,
+                    "name": "Celana",
+                    "parent_id": 2,
+                    "icon": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/navara-dept-store_catenzo-kets-black-line-cream-sepatu-pria_full01.jpg"
+                },
+                {
+                    "marketplace_id": 1,
+                    "id": 2,
+                    "name": "Baju",
+                    "parent_id": 3,
+                    "icon": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/navara-dept-store_catenzo-kets-black-line-cream-sepatu-pria_full01.jpg"
+                }
+            ]
+        }
+
+### Category Child Marketplace [GET /marketplaces/{id}/categories/{parent_id}]
+
++ Parameters
+    + id: 1 (number, required)
+    + parent_id: 2 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Category Marketplace Data",
+            "data": [
+                {
+                    "marketplace_id": 1,
+                    "id": 1,
+                    "name": "Celana",
+                    "parent_id": 2,
+                    "icon": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/navara-dept-store_catenzo-kets-black-line-cream-sepatu-pria_full01.jpg"
+                },
+                {
+                    "marketplace_id": 1,
+                    "id": 2,
+                    "name": "Baju",
+                    "parent_id": 2,
+                    "icon": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/navara-dept-store_catenzo-kets-black-line-cream-sepatu-pria_full01.jpg"
+                }
+            ]
+        }
+
+### Get Promo [GET /marketplaces/{id}/promo]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Request (application/json)
+
+        {
+              "promotion_code": "aUk9d"
+        }
+
++ Response 200 (application/json)
+
+        {
+              "code": 200,
+              "status": true,
+              "message": "Marketplace Promotion Data",
+              "data": {
+                  "id": 15,
+                  "promotion_code": "aUk9d",
+                  "type": "",
+                  "percentage": 35,
+                  "nominal": 200000,
+                  "status": "active",
+                  "status_at": 1496710635,
+                  "min_purchasing": 250000,
+                  "max_discount": 50000,
+                  "quota": "20",
+                  "start_at": 1496710635,
+                  "expired_at": 1496710635
+              }
+        }
+
 ### Get [GET /stores/{id}]
 
 + Parameters
@@ -1245,23 +1337,17 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Category List Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
             "data": [
                 {
                     "id": 1,
                     "category_id": 0,
                     "icon": "icon.png",
-                    "name": "Fashion"
+                    "name": "Fashion dan Aksesoris"
                 }
             ]
         }
 
-### Category Marketplace [GET /marketplaces/{id}/categories]
+### Get Sub Category [GET /categories/{id}/sub-categories]
 
 + Parameters
     + id: 1 (number, required)
@@ -1271,98 +1357,21 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Category Marketplace Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
+            "message": "Sub Category List Data",
             "data": [
                 {
-                    "marketplace_id": 1,
-                    "id": 1,
-                    "name": "Celana",
-                    "parent_id": 2,
-                    "icon": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/navara-dept-store_catenzo-kets-black-line-cream-sepatu-pria_full01.jpg"
+                    "id": 2,
+                    "category_id": 1,
+                    "icon": "icon.png",
+                    "name": "Fashion Pria"
                 },
                 {
-                    "marketplace_id": 1,
-                    "id": 2,
-                    "name": "Baju",
-                    "parent_id": 3,
-                    "icon": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/navara-dept-store_catenzo-kets-black-line-cream-sepatu-pria_full01.jpg"
+                    "id": 3,
+                    "category_id": 1,
+                    "icon": "icon.png",
+                    "name": "Fashion Wanita"
                 }
             ]
-        }
-
-### Category Child Marketplace [GET /marketplaces/{id}/categories/{parent_id}]
-
-+ Parameters
-    + id: 1 (number, required)
-    + parent_id: 2 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Category Marketplace Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
-            "data": [
-                {
-                    "marketplace_id": 1,
-                    "id": 1,
-                    "name": "Celana",
-                    "parent_id": 2,
-                    "icon": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/navara-dept-store_catenzo-kets-black-line-cream-sepatu-pria_full01.jpg"
-                },
-                {
-                    "marketplace_id": 1,
-                    "id": 2,
-                    "name": "Baju",
-                    "parent_id": 2,
-                    "icon": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/navara-dept-store_catenzo-kets-black-line-cream-sepatu-pria_full01.jpg"
-                }
-            ]
-        }
-
-### Get Promo [GET /marketplaces/{id}/promo]
-
-+ Parameters
-    + id: 2 (number, required)
-
-+ Request (application/json)
-
-        {
-              "promotion_code": "aUk9d"
-        }
-
-+ Response 200 (application/json)
-
-        {
-              "code": 200,
-              "status": true,
-              "message": "Marketplace Promotion Data",
-              "data": {
-                  "id": 15,
-                  "promotion_code": "aUk9d",
-                  "type": "",
-                  "percentage": 35,
-                  "nominal": 200000,
-                  "status": "active",
-                  "status_at": 1496710635,
-                  "min_purchasing": 250000,
-                  "max_discount": 50000,
-                  "quota": "20",
-                  "start_at": 1496710635,
-                  "expired_at": 1496710635
-              }
         }
 
 ## Product Collection [/products]
