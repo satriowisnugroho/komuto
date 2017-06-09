@@ -1420,6 +1420,16 @@ Komuto API
 
 + Request (application/json)
 
+    Data about product being listed. With following attributes are:
+
+    + `is_dropship` (optional) ... dropship status
+
+    + Body
+
+            {
+                "is_dropship": true
+            }
+
 + Response 200 (application/json)
 
         {
@@ -1499,15 +1509,13 @@ Komuto API
                         "province_id": 1,
                         "name": "Yogyakarta"
                     },
-                    "images": [
-                        {
-                            "id": 1,
-                            "product_id": 1,
-                            "file": "picture.png",
-                            "created_at": 1496710635,
-                            "updated_at": 1496710635
-                        }
-                    ]
+                    "image": {
+                        "id": 1,
+                        "product_id": 1,
+                        "file": "picture.png",
+                        "created_at": 1496710635,
+                        "updated_at": 1496710635
+                    }
                 }
             ]
         }
