@@ -2820,3 +2820,21 @@ Komuto API
                 }
             ]
         }
+
+## Password Collection [/passwords]
+
+### Forgot Password [POST /passwords/forgot]
+
++ Request
+        {
+            "email": "user@skyshi.com"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
