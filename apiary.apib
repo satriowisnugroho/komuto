@@ -2023,7 +2023,7 @@ Komuto API
             ]
         }
 
-### Get Detail [GET /discussions/{id}]
+### Get Comments [GET /discussions/{id}/comments]
 
 + Parameters
     + id: 2 (number, required)
@@ -2033,38 +2033,44 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Discussion Data",
+            "message": "Comment Data",
             "meta": {
                 "page": 1,
                 "limit": 10,
                 "total": 100,
                 "pages": 10
             },
-            "data": {
+            "data": [
                 "user": {
-                    "id": 66,
-                    "name": "Satrio Wisnugroho",
+                    "id": 70,
+                    "name": "Sports Station",
                     "photo": "http://www.look4fitness.net/images/no_user_logo.png"
                 },
-                "discussion": {
-                    "id": 2,
-                    "question": "barangnya ready gan?",
-                    "count_comment": 3,
+                "comment": {
+                    "id": 1,
+                    "reply": "Ready gan silahkan di order",
                     "created_at": 1496710635
-                },
-                "comments": [
-                    "user": {
-                        "id": 70,
-                        "name": "Sports Station",
-                        "photo": "http://www.look4fitness.net/images/no_user_logo.png"
-                    },
-                    "comment": {
-                        "id": 1,
-                        "reply": "Ready gan silahkan di order",
-                        "created_at": 1496710635
-                    }
-                ]
-            }
+                }
+            ]
+        }
+
+### New Comment [POST /discussions/{id}/comments]
+
++ Request (application/json)
+
+        {
+            "users_id": 100,
+            "discussion_id": 2,
+            "comment": "Ready gan silahkan di order"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
         }
 
 ### Get Discussion [GET /discussions/{user_id}/{product_id}]
@@ -2091,7 +2097,7 @@ Komuto API
                     "users_id": 66,
                     "product_id": 2,
                     "question": "barangnya ready gan?",
-                    "discussion_at": 1496710635,
+                    "created_at": 1496710635,
                     "discussion_deleted": "0",
                     "delete_at": null
                 },
@@ -2100,7 +2106,7 @@ Komuto API
                     "users_id": 66,
                     "product_id": 2,
                     "question": "stoknya masih berapa gan?",
-                    "discussion_at": 1496710635,
+                    "created_at": 1496710635,
                     "discussion_deleted": "0",
                     "delete_at": null
                 },
@@ -2109,7 +2115,7 @@ Komuto API
                     "users_id": 66,
                     "product_id": 2,
                     "question": "barangnya jelek banget gan?",
-                    "discussion_at": 1496710635,
+                    "created_at": 1496710635,
                     "discussion_deleted": "1",
                     "delete_at": 1496710635
                 }
@@ -2123,7 +2129,7 @@ Komuto API
         {
             "users_id": 100,
             "product_id": 99,
-            "question": "Pertanyaan nya adalah non-sense"
+            "question": "Hallo gan, mau nanya neh. Sepatu ini kan ringan banget kayaknya. Ngerawat nya susah enggak ya?"
         }
 
 + Response 201 (application/json)
@@ -2136,12 +2142,10 @@ Komuto API
                 "id": 21,
                 "users_id": 100,
                 "product_id": 99,
-                "question": "Pertanyaan nya adalah non-sense",
-                "discussion_at": 1496710635,
-                "discussion_deleted": "1",
-                "delete_at": 1496710635
+                "question": "Hallo gan, mau nanya neh. Sepatu ini kan ringan banget kayaknya. Ngerawat nya susah enggak ya?",
+                "created_at": 1496710635,
             }
-         }
+        }
 
 
 ## Tender Product Collection [/tender-products]
