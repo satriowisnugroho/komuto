@@ -1416,19 +1416,12 @@ Komuto API
             "data": {}
         }
 
-### List [GET]
+### List [GET /products?is_dropship={is_dropship}&limit={limit}&page={page}]
 
-+ Request (application/json)
-
-    Data about product being listed. With following attributes are:
-
-    + `is_dropship` (optional) ... dropship status
-
-    + Body
-
-            {
-                "is_dropship": true
-            }
++ Parameters
+    + is_dropship: true (boolean)
+    + limit: 10 (number)
+    + page: 2 (number)
 
 + Response 200 (application/json)
 
@@ -1437,7 +1430,7 @@ Komuto API
             "status": true,
             "message": "Product List Data",
             "meta": {
-                "page": 1,
+                "page": 2,
                 "limit": 10,
                 "total": 100,
                 "pages": 10
