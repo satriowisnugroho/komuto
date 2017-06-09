@@ -2003,6 +2003,7 @@ Komuto API
                     "discussion": {
                         "id": 2,
                         "question": "barangnya ready gan?",
+                        "count_comment": 1,
                         "created_at": 1496710635
                     }
                 },
@@ -2013,12 +2014,57 @@ Komuto API
                         "photo": "http://www.look4fitness.net/images/no_user_logo.png"
                     },
                     "discussion": {
-                        "id": 2,
+                        "id": 3,
                         "question": "stoknya masih ada?",
+                        "count_comment": 3,
                         "created_at": 1496710635
                     }
                 }
             ]
+        }
+
+### Get Detail [GET /discussions/{id}]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Discussion Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
+            "data": {
+                "user": {
+                    "id": 66,
+                    "name": "Satrio Wisnugroho",
+                    "photo": "http://www.look4fitness.net/images/no_user_logo.png"
+                },
+                "discussion": {
+                    "id": 2,
+                    "question": "barangnya ready gan?",
+                    "count_comment": 3,
+                    "created_at": 1496710635
+                },
+                "comments": [
+                    "user": {
+                        "id": 70,
+                        "name": "Sports Station",
+                        "photo": "http://www.look4fitness.net/images/no_user_logo.png"
+                    },
+                    "comment": {
+                        "id": 1,
+                        "reply": "Ready gan silahkan di order",
+                        "created_at": 1496710635
+                    }
+                ]
+            }
         }
 
 ### Get Discussion [GET /discussions/{user_id}/{product_id}]
