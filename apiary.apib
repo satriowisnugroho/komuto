@@ -710,51 +710,6 @@ Komuto API
             }
         }
 
-## Store Collection [/stores]
-
-### Create [POST]
-
-+ Request (application/json)
-
-        {
-            "users_id": 2,
-            "name": "Baju Keren",
-            "slogan": "Semua harus keren",
-            "description": "Menjual semua jenis baju yang keren",
-            "logo": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-            "custom_domain": ".com"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Store Data",
-            "data": {
-                "id": 13,
-                "user_id": 2,
-                "name": "Baju Keren",
-                "slogan": "Semua harus keren",
-                "description": "Menjual semua jenis baju yang keren",
-                "logo": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                "custom_domain": ".com",
-                "created_at": 1496710635,
-                "status": 1,
-                "remarks_status": "",
-                "status_at": 1496710635,
-                "cover_image": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                "seller_theme_id": 2,
-                "reputation": 23,
-                "store_id_number": "3404092309880001",
-                "total_favorite": 40,
-                "verification_at": 1496710635,
-                "note": "lorem ipsum",
-                "start_at": 1496710635,
-                "end_at": 1496710635
-            }
-        }
-
 ### Category Marketplace [GET /marketplaces/{id}/categories]
 
 + Parameters
@@ -845,6 +800,51 @@ Komuto API
                   "start_at": 1496710635,
                   "expired_at": 1496710635
               }
+        }
+
+## Store Collection [/stores]
+
+### Create [POST]
+
++ Request (application/json)
+
+        {
+            "users_id": 2,
+            "name": "Baju Keren",
+            "slogan": "Semua harus keren",
+            "description": "Menjual semua jenis baju yang keren",
+            "logo": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
+            "custom_domain": ".com"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Store Data",
+            "data": {
+                "id": 13,
+                "user_id": 2,
+                "name": "Baju Keren",
+                "slogan": "Semua harus keren",
+                "description": "Menjual semua jenis baju yang keren",
+                "logo": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
+                "custom_domain": ".com",
+                "created_at": 1496710635,
+                "status": 1,
+                "remarks_status": "",
+                "status_at": 1496710635,
+                "cover_image": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
+                "seller_theme_id": 2,
+                "reputation": 23,
+                "store_id_number": "3404092309880001",
+                "total_favorite": 40,
+                "verification_at": 1496710635,
+                "note": "lorem ipsum",
+                "start_at": 1496710635,
+                "end_at": 1496710635
+            }
         }
 
 ### Get [GET /stores/{id}]
@@ -1012,7 +1012,7 @@ Komuto API
             ]
         }
 
-### Create Catalog [POST /store/{id}/catalog]
+### Create Catalog [POST /stores/{id}/catalog]
 
 + Parameters
     + id: 2(number, required)
@@ -1031,7 +1031,7 @@ Komuto API
             "status": true,
             "message": "Catalog Data",
             "data": {
-                "catalog_id": 2,
+                "id": 2,
                 "store_id": 5,
                 "name": "Sepatu Terbang",
                 "created_at": 1496710635
