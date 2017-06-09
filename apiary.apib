@@ -646,6 +646,81 @@ Komuto API
             "data": {}
         }
 
+### Get List Bucket [GET /users/{id}/bucket/{buckets_id}]
+
++ Parameters
+    + id: 2 (number, required)
+    + buckets_id: 2 (number, required)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Bucket Data",
+                "data": [
+                    {
+                        "bucket_id": 2,
+                        "users_id": 2,
+                        "promotion_id": 1,
+                        "order_at": 1496710635,
+                        "status": 1,
+                        "status_at": 1496710635,
+                        "unique_code": "kode_unik",
+                        "payment_method_id": 2,
+                        "wallet_pay": 1,
+                        "uid": "213124132"
+                    },
+                    {
+                        "bucket_id": 2,
+                        "users_id": 2,
+                        "promotion_id": 2,
+                        "order_at": 1496710635,
+                        "status": 0,
+                        "status_at": 1496710635,
+                        "unique_code": "_unik",
+                        "payment_method_id": 1,
+                        "wallet_pay": 2,
+                        "uid": "123456789"
+                    }
+                ]
+        }
+
+### Update Bucket [PUT /users/{id}/buckets/{buckets_id}]
+
++ Parameters
+    + id: 2 (number, required)
+    + buckets_id: 5 (number, required)
+
++ Request (application/json)
+
+        {
+            "promotion_id": 1,
+            "order_at": 1496710635,
+            "status": "",
+            "status_at": 1496710635,
+            "unique_code": "_unik",
+            "payment_method_id": 2,
+            "wallet_pay": 1,
+            "uid": "213124132"
+        }
+
++ Response 201 (application/json)
+
+        {
+                "id": 5,
+                "users_id": 2,
+                "promotion_id": 2,
+                "order_at": 1496710635,
+                "status": "",
+                "status_at": 1496710635,
+                "unique_code": "_unik",
+                "payment_method_id": 2,
+                "wallet_pay": 1,
+                "uid": "213124132"
+        }
+
+
 ## Marketplace Collection [/marketplaces]
 
 ### Login Marketplace [POST /marketplaces/login]
@@ -1694,6 +1769,46 @@ Komuto API
             ]
         }
 
+### Post Ulasan [POST /products/{id}/reviews]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Request (application/json)
+
+        {
+                "id": 2,
+                "user": 66,
+                "id_produk": 2,
+                "review": "Barang memuaskan",
+                "quality": 5,
+                "accuracy": 3,
+                "created_at": 1496710635
+        }
+
++ Response 201 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Review Data",
+                "data": {
+                    "id": 2,
+                    "user": {
+                        "id": 66,
+                        "name": "User skyshi",
+                        "photo": "photo.png"
+                    },
+                    "id_produk": 2,
+                    "review": "Barang memuaskan",
+                    "quality": 5,
+                    "accuracy": 3,
+                    "created_at": 1496710635
+                }
+        }
+
+
+
 ### Hide Products [POST /products/hide]
 
 + Request (application/json)
@@ -2322,6 +2437,50 @@ Komuto API
                 "bucket_id": 3,
                 "bid_id": 6
             }
+        }
+
+### Create Dispute [POST /invoices/{id}/disputes]
+
++ Parameters
+    +id: 2 (number, required)
+
++ Request (application/json)
+
+        {
+                "dispute_type": 2,
+                "problem": "Barang cacat",
+                "picture": "pict.jpg",
+                "solution": "",
+                "reason": "",
+                "invoice_type": 1,
+                "report_number": "555222666",
+                "created_at": 1496710635
+        }
+
+
++ Response 201 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Invoice Data",
+                "data": {
+                    "id": 4,
+                    "problem": "Barang cacat",
+                    "picture": "pict.jpg",
+                    "solution": "",
+                    "reason": "",
+                    "admin_response": "Sudah di kirim barang yang baru, mohon kirimkan kembali barang lama",
+                    "report_number": "555222666",
+                    "remark_result": "Barang baru",
+                    "invoice_type": 1,
+                    "invoice_id": 2,
+                    "user_id": 66,
+                    "accept_order": "No",
+                    "store_id": 5,
+                    "created_at": 1496710635,
+                    "admin_response_date": 1496710635
+                }
         }
 
 ## Location Collection [/locations]
