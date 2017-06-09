@@ -1428,7 +1428,6 @@ Komuto API
             ]
         }
 
-
 ## Category Collection [/categories]
 
 ### List [GET]
@@ -1445,8 +1444,62 @@ Komuto API
                 {
                     "id": 1,
                     "category_id": 0,
-                    "icon": "icon.png",
+                    "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
                     "name": "Fashion dan Aksesoris"
+                }
+            ]
+        }
+
+### List Category with Sub Category [GET /categories/sub]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Category List Data",
+            "data": [
+                {
+                    "id": 1,
+                    "category_id": 0,
+                    "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
+                    "name": "Fashion dan Aksesoris",
+                    "sub_categories": [
+                        {
+                            "id": 2,
+                            "category_id": 1,
+                            "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
+                            "name": "Fashion Pria"
+                        },
+                        {
+                            "id": 3,
+                            "category_id": 1,
+                            "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
+                            "name": "Fashion Wanita"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "category_id": 0,
+                    "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
+                    "name": "Ibu dan Anak",
+                    "sub_categories": [
+                        {
+                            "id": 5,
+                            "category_id": 4,
+                            "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
+                            "name": "Ibu Hamil dan Menyusui"
+                        },
+                        {
+                            "id": 6,
+                            "category_id": 4,
+                            "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
+                            "name": "Baby Sitter"
+                        }
+                    ]
                 }
             ]
         }
@@ -1466,13 +1519,13 @@ Komuto API
                 {
                     "id": 2,
                     "category_id": 1,
-                    "icon": "icon.png",
+                    "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
                     "name": "Fashion Pria"
                 },
                 {
                     "id": 3,
                     "category_id": 1,
-                    "icon": "icon.png",
+                    "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
                     "name": "Fashion Wanita"
                 }
             ]
