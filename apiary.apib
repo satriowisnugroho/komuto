@@ -657,7 +657,52 @@ Komuto API
             }
         }
 
-### PUT Address Information [PUT /users/{id}/address]
+### List Address Information [GET /users/{id}/addresses]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Address Information",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "User skyshi",
+                    "email": "user@skyshi.com",
+                    "phone_number": "081222333444",
+                    "postal_code": "84314",
+                    "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
+                    "alias_address": "Alamat Toko",
+                    "is_primary_address": true,
+                    "is_sale_address": false,
+                    "is_tender_address": false,
+                    "province": {
+                        "id": 1,
+                        "name": "Yogyakarta"
+                    },
+                    "district": {
+                        "id": 1,
+                        "name": "Sleman"
+                    },
+                    "sub_district": {
+                        "id": 1,
+                        "name": "Ngaglik"
+                    },
+                    "village": {
+                        "id": 1,
+                        "name": "Sariharjo"
+                    }
+                }
+            ]
+        }
+
+### Create Address Information [POST /users/{id}/addresses]
 
 + Parameters
     + id: 1 (number, required)
@@ -675,7 +720,7 @@ Komuto API
             "postal_code": "84314",
             "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
             "alias_address": "Alamat Toko",
-            "type": 'primary'
+            "type": "primary"
         }
 
 + Response 200 (application/json)
