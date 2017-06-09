@@ -702,7 +702,7 @@ Komuto API
                 "data": [
                     {
                         "bucket_id": 2,
-                        "users_id": 2,
+                        "user_id": 2,
                         "promotion_id": 1,
                         "order_at": 1496710635,
                         "status": 1,
@@ -714,7 +714,7 @@ Komuto API
                     },
                     {
                         "bucket_id": 2,
-                        "users_id": 2,
+                        "user_id": 2,
                         "promotion_id": 2,
                         "order_at": 1496710635,
                         "status": 0,
@@ -750,7 +750,7 @@ Komuto API
 
         {
                 "id": 5,
-                "users_id": 2,
+                "user_id": 2,
                 "promotion_id": 2,
                 "order_at": 1496710635,
                 "status": "",
@@ -925,7 +925,7 @@ Komuto API
 + Request (application/json)
 
         {
-            "users_id": 2,
+            "user_id": 2,
             "name": "Baju Keren",
             "slogan": "Semua harus keren",
             "description": "Menjual semua jenis baju yang keren",
@@ -1974,6 +1974,25 @@ Komuto API
             "data": {}
         }
 
+### Report Product [POST /products/{id}/report]
+
++ Request (application/json)
+
+        {
+            "user_id": 2,
+            "type": 1,
+            "report": "Salah katalog nih"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
 ## Discussion Collection [/discussions]
 
 ### Get Discussion by Product [GET /discussions/products/{product_id}]
@@ -2059,7 +2078,7 @@ Komuto API
 + Request (application/json)
 
         {
-            "users_id": 100,
+            "user_id": 100,
             "discussion_id": 2,
             "comment": "Ready gan silahkan di order"
         }
@@ -2094,7 +2113,7 @@ Komuto API
             "data": [
                 {
                     "id": 2,
-                    "users_id": 66,
+                    "user_id": 66,
                     "product_id": 2,
                     "question": "barangnya ready gan?",
                     "created_at": 1496710635,
@@ -2103,7 +2122,7 @@ Komuto API
                 },
                 {
                     "id": 50,
-                    "users_id": 66,
+                    "user_id": 66,
                     "product_id": 2,
                     "question": "stoknya masih berapa gan?",
                     "created_at": 1496710635,
@@ -2112,7 +2131,7 @@ Komuto API
                 },
                 {
                     "id": 30
-                    "users_id": 66,
+                    "user_id": 66,
                     "product_id": 2,
                     "question": "barangnya jelek banget gan?",
                     "created_at": 1496710635,
@@ -2127,7 +2146,7 @@ Komuto API
 + Request (application/json)
 
         {
-            "users_id": 100,
+            "user_id": 100,
             "product_id": 99,
             "question": "Hallo gan, mau nanya neh. Sepatu ini kan ringan banget kayaknya. Ngerawat nya susah enggak ya?"
         }
@@ -2140,7 +2159,7 @@ Komuto API
             "message": "Discussion Data",
             "data": {
                 "id": 21,
-                "users_id": 100,
+                "user_id": 100,
                 "product_id": 99,
                 "question": "Hallo gan, mau nanya neh. Sepatu ini kan ringan banget kayaknya. Ngerawat nya susah enggak ya?",
                 "created_at": 1496710635,
@@ -2353,7 +2372,7 @@ Komuto API
             "data": [
                 {
                     "bucket_id": 45,
-                    "users_id": 2,
+                    "user_id": 2,
                     "promotion_id": 1,
                     "order_at": 1496710635,
                     "status": 1,
@@ -2365,7 +2384,7 @@ Komuto API
                 },
                 {
                     "bucket_id": 43,
-                    "users_id": 2,
+                    "user_id": 2,
                     "promotion_id": 3,
                     "order_at": 1496710635,
                     "status": 1,
