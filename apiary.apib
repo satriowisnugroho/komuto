@@ -85,15 +85,7 @@ Komuto API
             }
         }
 
-### Get [GET /users/{id}]
-
-+ Request
-    + Parameters
-        + id: 66 (required, number)
-
-    + Headers
-
-            Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0
+### Update [PUT /users]
 
 + Response 200 (application/json)
 
@@ -123,46 +115,7 @@ Komuto API
             }
         }
 
-### Update [PUT /users/{id}]
-
-+ Parameters
-    + id: 2 (number, required)
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "User Data",
-            "data": {
-                "id": 66,
-                "marketplace_id": 0,
-                "name": "User skyshi",
-                "email": "user@skyshi.com",
-                "cooperative_member_number": "ALSK83929K",
-                "approval_cooperative_status": "0",
-                "photo": "http://media.tcc.fl.edu/webcourses/ctll/Developing_Your_Teaching_Philosophy/examples.jpg",
-                "phone_number": "081222333444",
-                "gender": "female",
-                "status": 1,
-                "mother_name": "Siti Aminah",
-                "auth_key": "12345678",
-                "saldo_wallet": "500000",
-                "place_of_birth": "Yogyakarta",
-                "date_of_birth": 1496710635,
-                "created_at": 1496710635,
-                "join_at": 1496710635,
-                "status_at": 1496710635
-            }
-        }
-
-### Profile [GET /users/{id}/profile]
-
-+ Request
-    + Parameters
-        + id: 66 (required, number)
+### Profile [GET /users/profile]
 
 + Response 200 (application/json)
 
@@ -216,150 +169,7 @@ Komuto API
             }
         }
 
-### Activation [POST /users/{id}/activate]
-
-+ Parameters
-    + id: 2 (number, required)
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "User Data",
-            "data": {
-                "id": 66,
-                "marketplace_id": 0,
-                "name": "User skyshi",
-                "email": "user@skyshi.com",
-                "cooperative_member_number": "ALSK83929K",
-                "approval_cooperative_status": "0",
-                "photo": "http://media.tcc.fl.edu/webcourses/ctll/Developing_Your_Teaching_Philosophy/examples.jpg",
-                "phone_number": "081222333444",
-                "gender": "female",
-                "status": 1,
-                "mother_name": "Siti Aminah",
-                "auth_key": "12345678",
-                "saldo_wallet": "500000",
-                "place_of_birth": "Yogyakarta",
-                "date_of_birth": 1496710635,
-                "created_at": 1496710635,
-                "join_at": 1496710635,
-                "status_at": 1496710635
-            }
-        }
-
-### Change Status [POST /users/{id}/status]
-
-+ Parameters
-    + id: 2 (number, required)
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "User Data",
-            "data": {
-                "id": 66,
-                "marketplace_id": 0,
-                "name": "User skyshi",
-                "email": "user@skyshi.com",
-                "cooperative_member_number": "ALSK83929K",
-                "approval_cooperative_status": "0",
-                "photo": "http://media.tcc.fl.edu/webcourses/ctll/Developing_Your_Teaching_Philosophy/examples.jpg",
-                "phone_number": "081222333444",
-                "gender": "female",
-                "status": 1,
-                "mother_name": "Siti Aminah",
-                "auth_key": "12345678",
-                "saldo_wallet": "500000",
-                "place_of_birth": "Yogyakarta",
-                "date_of_birth": 1496710635,
-                "created_at": 1496710635,
-                "join_at": 1496710635,
-                "status_at": 1496710635
-            }
-        }
-
-### Reset Password [POST /users/{id}/password/reset]
-
-+ Parameters
-    + id: 2 (number, required)
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "User Data",
-            "data": {
-                "id": 66,
-                "marketplace_id": 0,
-                "name": "User skyshi",
-                "email": "user@skyshi.com",
-                "cooperative_member_number": "ALSK83929K",
-                "approval_cooperative_status": "0",
-                "photo": "http://media.tcc.fl.edu/webcourses/ctll/Developing_Your_Teaching_Philosophy/examples.jpg",
-                "phone_number": "081222333444",
-                "gender": "female",
-                "status": 1,
-                "mother_name": "Siti Aminah",
-                "auth_key": "12345678",
-                "saldo_wallet": "500000",
-                "place_of_birth": "Yogyakarta",
-                "date_of_birth": 1496710635,
-                "created_at": 1496710635,
-                "join_at": 1496710635,
-                "status_at": 1496710635
-            }
-        }
-
-### Forgot Password [POST /users/{id}/password/forgot]
-
-+ Parameters
-    + id: 2 (number, required)
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "User Data",
-            "data": {
-                "id": 66,
-                "marketplace_id": 0,
-                "name": "User skyshi",
-                "email": "user@skyshi.com",
-                "cooperative_member_number": "ALSK83929K",
-                "approval_cooperative_status": "0",
-                "photo": "http://media.tcc.fl.edu/webcourses/ctll/Developing_Your_Teaching_Philosophy/examples.jpg",
-                "phone_number": "081222333444",
-                "gender": "female",
-                "status": 1,
-                "mother_name": "Siti Aminah",
-                "auth_key": "12345678",
-                "saldo_wallet": "500000",
-                "place_of_birth": "Yogyakarta",
-                "date_of_birth": 1496710635,
-                "created_at": 1496710635,
-                "join_at": 1496710635,
-                "status_at": 1496710635
-            }
-        }
-
 ### Update Password [POST /users/{id}/password/update]
-
-+ Parameters
-    + id: 2 (number, required)
 
 + Request (application/json)
 
@@ -395,86 +205,7 @@ Komuto API
             }
         }
 
-### Generate OTP Phone [POST /users/{id}/phone/generate-otp]
-
-+ Parameters
-    + id: 2 (number, required)
-
-+ Request (application/json)
-
-        {
-              "phone_number": "081222333444"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "message": "OTP Data",
-            "data": {
-                "id": 1,
-                "user_id": 1,
-                "marketplace_id": 1,
-                "phone_number": "081222333444",
-                "code": "KuxOk",
-                "status": 1,
-                "expired_at": 1496710635,
-                "created_at": 1496710635,
-            }
-        }
-
-### Verify OTP Phone [POST /users/{id}/phone/verify]
-
-+ Parameters
-    + id: 2 (number, required)
-
-+ Request (application/json)
-
-        {
-            "code": "KuxOk"
-        }
-
-+ Response 200
-
-### Generate OTP Address [POST /users/{id}/address/generate-otp]
-
-+ Parameters
-    + id: 2 (number, required)
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-### Verify OTP Address [POST /users/{id}/address/verify]
-
-+ Parameters
-    + id: 2 (number, required)
-
-+ Request (application/json)
-
-        {
-            "code": "kOazJh"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-### Get Count Bucket [POST /users/{id}/bucket]
-
-+ Parameters
-    + id: 2 (number, required)
+### Get Count Bucket [POST /users/bucket]
 
 + Request (application/json)
 
@@ -499,10 +230,7 @@ Komuto API
             }
         }
 
-### Get Balance [GET /users/{id}/balance]
-
-+ Parameters
-    + id: 2 (number, required)
+### Get Balance [GET /users/balance]
 
 + Response 200 (application/json)
 
@@ -515,13 +243,10 @@ Komuto API
             }
         }
 
-### Get Wishlist [GET /users/{id}/wishlist?status={status}]
+### Get Wishlist [GET /users/wishlist?status={status}]
 
 + Parameters
-    + id: 1 (number, required)
     + status: 1 (string)
-
-+ Request (application/json)
 
 + Response 200 (application/json)
 
@@ -615,12 +340,7 @@ Komuto API
             ]
         }
 
-### Get Address Information [GET /users/{id}/address]
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Request (application/json)
+### Get Address Information [GET /users/address]
 
 + Response 200 (application/json)
 
@@ -658,12 +378,7 @@ Komuto API
             }
         }
 
-### List Address Information [GET /users/{id}/addresses]
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Request (application/json)
+### List Address Information [GET /users/addresses]
 
 + Response 200 (application/json)
 
@@ -703,10 +418,7 @@ Komuto API
             ]
         }
 
-### Create Address Information [POST /users/{id}/addresses]
-
-+ Parameters
-    + id: 1 (number, required)
+### Create Address Information [POST /users/addresses]
 
 + Request (application/json)
 
@@ -733,10 +445,9 @@ Komuto API
             "data": {}
         }
 
-### Get List Bucket [GET /users/{id}/buckets/{bucket_id}]
+### Get List Bucket [GET /users/buckets/{bucket_id}]
 
 + Parameters
-    + id: 2 (number, required)
     + bucket_id: 2 (number, required)
 
 + Response 200 (application/json)
@@ -773,10 +484,9 @@ Komuto API
                 ]
         }
 
-### Update Bucket [PUT /users/{id}/buckets/{bucket_id}]
+### Update Bucket [PUT /users/buckets/{bucket_id}]
 
 + Parameters
-    + id: 2 (number, required)
     + bucket_id: 5 (number, required)
 
 + Request (application/json)
