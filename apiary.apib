@@ -2475,10 +2475,8 @@ Komuto API
             "solution": "",
             "reason": "",
             "invoice_type": 1,
-            "report_number": "555222666",
-            "created_at": 1496710635
+            "report_number": "555222666"
         }
-
 
 + Response 201 (application/json)
 
@@ -2503,6 +2501,23 @@ Komuto API
                 "created_at": 1496710635,
                 "admin_response_date": 1496710635
             }
+        }
+
+### Create invoice [POST /invoices]
+
++ Request (application/json)
+
+        {
+            "payment_method_id": 1
+        }
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
         }
 
 ## Location Collection [/locations]
