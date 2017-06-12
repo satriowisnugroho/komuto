@@ -1058,12 +1058,6 @@ Komuto API
             "code": 200,
             "status": true,
             "message": "Bank Account Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
             "data": [
                 {
                     "bank_account": {
@@ -2899,9 +2893,22 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Success",
+            "message": "Payment Data",
             "data": {
                 "total_price": 250219,
                 "saldo_wallet": 450000
             }
+        }
+
+## Checkout Collection [/checkout]
+
+### Checkout [POST]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
         }
