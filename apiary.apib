@@ -2038,10 +2038,7 @@ Komuto API
 
 ## Bucket Collection [/buckets]
 
-### Get Bucket [GET]
-
-+ Parameters
-    + user_id: 2 (number, required)
+### Get [GET]
 
 + Response 200 (application/json)
 
@@ -2081,6 +2078,30 @@ Komuto API
                     "uid": "sdak9123"
                 }
             ]
+        }
+
+### Add to cart [POST]
+
++ Request (application/json)
+        {
+            "product_id": 1,
+            "service_id": 1,
+            "qty": 1,
+            "note": "Lorem ipsum",
+            "total_price": 380000,
+            "additional_price": 0,
+            "address_id": 1,
+            "is_insurance": true,
+            "insurance_fee": 15000
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
         }
 
 ### Get Count Bucket [POST /buckets/count]
