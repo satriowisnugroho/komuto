@@ -205,31 +205,6 @@ Komuto API
             }
         }
 
-### Get Count Bucket [POST /users/bucket]
-
-+ Request (application/json)
-
-    Data about count bucket being show. With following attributes are:
-
-    + `status_bucket` (optional) ... status of bucket
-
-    + Body
-
-            {
-                "status_bucket": [1, 3]
-            }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Count Bucket",
-            "data": {
-                "count_bucket": 100
-            }
-        }
-
 ### Get Balance [GET /users/balance]
 
 + Response 200 (application/json)
@@ -443,78 +418,6 @@ Komuto API
             "status": true,
             "message": "Success",
             "data": {}
-        }
-
-### Get List Bucket [GET /users/buckets/{bucket_id}]
-
-+ Parameters
-    + bucket_id: 2 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-                "code": 200,
-                "status": true,
-                "message": "Bucket Data",
-                "data": [
-                    {
-                        "bucket_id": 2,
-                        "user_id": 2,
-                        "promotion_id": 1,
-                        "order_at": 1496710635,
-                        "status": 1,
-                        "status_at": 1496710635,
-                        "unique_code": "kode_unik",
-                        "payment_method_id": 2,
-                        "wallet_pay": 1,
-                        "uid": "213124132"
-                    },
-                    {
-                        "bucket_id": 2,
-                        "user_id": 2,
-                        "promotion_id": 2,
-                        "order_at": 1496710635,
-                        "status": 0,
-                        "status_at": 1496710635,
-                        "unique_code": "_unik",
-                        "payment_method_id": 1,
-                        "wallet_pay": 2,
-                        "uid": "123456789"
-                    }
-                ]
-        }
-
-### Update Bucket [PUT /users/buckets/{bucket_id}]
-
-+ Parameters
-    + bucket_id: 5 (number, required)
-
-+ Request (application/json)
-
-        {
-            "promotion_id": 1,
-            "order_at": 1496710635,
-            "status": "",
-            "status_at": 1496710635,
-            "unique_code": "_unik",
-            "payment_method_id": 2,
-            "wallet_pay": 1,
-            "uid": "213124132"
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "id": 5,
-            "user_id": 2,
-            "promotion_id": 2,
-            "order_at": 1496710635,
-            "status": "",
-            "status_at": 1496710635,
-            "unique_code": "_unik",
-            "payment_method_id": 2,
-            "wallet_pay": 1,
-            "uid": "213124132"
         }
 
 
@@ -2135,7 +2038,7 @@ Komuto API
 
 ## Bucket Collection [/buckets]
 
-### Get Bucket [GET /buckets/{user_id}]
+### Get Bucket [GET]
 
 + Parameters
     + user_id: 2 (number, required)
@@ -2178,6 +2081,103 @@ Komuto API
                     "uid": "sdak9123"
                 }
             ]
+        }
+
+### Get Count Bucket [POST /buckets/count]
+
++ Request (application/json)
+
+    Data about count bucket being show. With following attributes are:
+
+    + `status_bucket` (optional) ... status of bucket
+
+    + Body
+
+            {
+                "status_bucket": [1, 3]
+            }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Count Bucket",
+            "data": {
+                "count_bucket": 100
+            }
+        }
+
+### Get List Bucket [GET /buckets/{id}]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Response 200 (application/json)
+
+        {
+                "code": 200,
+                "status": true,
+                "message": "Bucket Data",
+                "data": [
+                    {
+                        "bucket_id": 2,
+                        "user_id": 2,
+                        "promotion_id": 1,
+                        "order_at": 1496710635,
+                        "status": 1,
+                        "status_at": 1496710635,
+                        "unique_code": "kode_unik",
+                        "payment_method_id": 2,
+                        "wallet_pay": 1,
+                        "uid": "213124132"
+                    },
+                    {
+                        "bucket_id": 2,
+                        "user_id": 2,
+                        "promotion_id": 2,
+                        "order_at": 1496710635,
+                        "status": 0,
+                        "status_at": 1496710635,
+                        "unique_code": "_unik",
+                        "payment_method_id": 1,
+                        "wallet_pay": 2,
+                        "uid": "123456789"
+                    }
+                ]
+        }
+
+### Update Bucket [PUT /buckets/{id}]
+
++ Parameters
+    + id: 5 (number, required)
+
++ Request (application/json)
+
+        {
+            "promotion_id": 1,
+            "order_at": 1496710635,
+            "status": "",
+            "status_at": 1496710635,
+            "unique_code": "_unik",
+            "payment_method_id": 2,
+            "wallet_pay": 1,
+            "uid": "213124132"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "id": 5,
+            "user_id": 2,
+            "promotion_id": 2,
+            "order_at": 1496710635,
+            "status": "",
+            "status_at": 1496710635,
+            "unique_code": "_unik",
+            "payment_method_id": 2,
+            "wallet_pay": 1,
+            "uid": "213124132"
         }
 
 ## Review Collection [/reviews]
