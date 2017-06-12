@@ -558,23 +558,23 @@ Komuto API
 + Response 200 (application/json)
 
         {
-              "code": 200,
-              "status": true,
-              "message": "Marketplace Promotion Data",
-              "data": {
-                  "id": 15,
-                  "promotion_code": "aUk9d",
-                  "type": "",
-                  "percentage": 35,
-                  "nominal": 200000,
-                  "status": "active",
-                  "status_at": 1496710635,
-                  "min_purchasing": 250000,
-                  "max_discount": 50000,
-                  "quota": "20",
-                  "start_at": 1496710635,
-                  "expired_at": 1496710635
-              }
+            "code": 200,
+            "status": true,
+            "message": "Marketplace Promotion Data",
+            "data": {
+                "id": 15,
+                "promotion_code": "aUk9d",
+                "type": "",
+                "percentage": 35,
+                "nominal": 200000,
+                "status": "active",
+                "status_at": 1496710635,
+                "min_purchasing": 250000,
+                "max_discount": 50000,
+                "quota": "20",
+                "start_at": 1496710635,
+                "expired_at": 1496710635
+            }
         }
 
 ## Store Collection [/stores]
@@ -1474,10 +1474,10 @@ Komuto API
 + Request (application/json)
 
         {
-              "expedition":"JNE",
-              "expeditionservice":"JNE YES",
-              "origin_id":1,
-              "destination_id":1
+            "expedition":"JNE",
+            "expeditionservice":"JNE YES",
+            "origin_id":1,
+            "destination_id":1
         }
 
 + Response 200 (application/json)
@@ -1532,34 +1532,34 @@ Komuto API
 + Request (application/json)
 
         {
-                "id": 2,
-                "user": 66,
-                "id_produk": 2,
-                "review": "Barang memuaskan",
-                "quality": 5,
-                "accuracy": 3,
-                "created_at": 1496710635
+            "id": 2,
+            "user": 66,
+            "id_produk": 2,
+            "review": "Barang memuaskan",
+            "quality": 5,
+            "accuracy": 3,
+            "created_at": 1496710635
         }
 
 + Response 201 (application/json)
 
         {
-                "code": 200,
-                "status": true,
-                "message": "Review Data",
-                "data": {
-                    "id": 2,
-                    "user": {
-                        "id": 66,
-                        "name": "User skyshi",
-                        "photo": "photo.png"
-                    },
-                    "id_produk": 2,
-                    "review": "Barang memuaskan",
-                    "quality": 5,
-                    "accuracy": 3,
-                    "created_at": 1496710635
-                }
+            "code": 200,
+            "status": true,
+            "message": "Review Data",
+            "data": {
+                "id": 2,
+                "user": {
+                    "id": 66,
+                    "name": "User skyshi",
+                    "photo": "photo.png"
+                },
+                "id_produk": 2,
+                "review": "Barang memuaskan",
+                "quality": 5,
+                "accuracy": 3,
+                "created_at": 1496710635
+            }
         }
 
 
@@ -2155,35 +2155,35 @@ Komuto API
 + Response 200 (application/json)
 
         {
-                "code": 200,
-                "status": true,
-                "message": "Bucket Data",
-                "data": [
-                    {
-                        "bucket_id": 2,
-                        "user_id": 2,
-                        "promotion_id": 1,
-                        "order_at": 1496710635,
-                        "status": 1,
-                        "status_at": 1496710635,
-                        "unique_code": "kode_unik",
-                        "payment_method_id": 2,
-                        "wallet_pay": 1,
-                        "uid": "213124132"
-                    },
-                    {
-                        "bucket_id": 2,
-                        "user_id": 2,
-                        "promotion_id": 2,
-                        "order_at": 1496710635,
-                        "status": 0,
-                        "status_at": 1496710635,
-                        "unique_code": "_unik",
-                        "payment_method_id": 1,
-                        "wallet_pay": 2,
-                        "uid": "123456789"
-                    }
-                ]
+            "code": 200,
+            "status": true,
+            "message": "Bucket Data",
+            "data": [
+                {
+                    "bucket_id": 2,
+                    "user_id": 2,
+                    "promotion_id": 1,
+                    "order_at": 1496710635,
+                    "status": 1,
+                    "status_at": 1496710635,
+                    "unique_code": "kode_unik",
+                    "payment_method_id": 2,
+                    "wallet_pay": 1,
+                    "uid": "213124132"
+                },
+                {
+                    "bucket_id": 2,
+                    "user_id": 2,
+                    "promotion_id": 2,
+                    "order_at": 1496710635,
+                    "status": 0,
+                    "status_at": 1496710635,
+                    "unique_code": "_unik",
+                    "payment_method_id": 1,
+                    "wallet_pay": 2,
+                    "uid": "123456789"
+                }
+            ]
         }
 
 ### Update Bucket [PUT /buckets/{id}]
@@ -2475,40 +2475,40 @@ Komuto API
 + Request (application/json)
 
         {
-                "dispute_type": 2,
-                "problem": "Barang cacat",
-                "picture": "pict.jpg",
-                "solution": "",
-                "reason": "",
-                "invoice_type": 1,
-                "report_number": "555222666",
-                "created_at": 1496710635
+            "dispute_type": 2,
+            "problem": "Barang cacat",
+            "picture": "pict.jpg",
+            "solution": "",
+            "reason": "",
+            "invoice_type": 1,
+            "report_number": "555222666",
+            "created_at": 1496710635
         }
 
 
 + Response 201 (application/json)
 
         {
-                "code": 200,
-                "status": true,
-                "message": "Invoice Data",
-                "data": {
-                    "id": 4,
-                    "problem": "Barang cacat",
-                    "picture": "pict.jpg",
-                    "solution": "",
-                    "reason": "",
-                    "admin_response": "Sudah di kirim barang yang baru, mohon kirimkan kembali barang lama",
-                    "report_number": "555222666",
-                    "remark_result": "Barang baru",
-                    "invoice_type": 1,
-                    "invoice_id": 2,
-                    "user_id": 66,
-                    "accept_order": "No",
-                    "store_id": 5,
-                    "created_at": 1496710635,
-                    "admin_response_date": 1496710635
-                }
+            "code": 200,
+            "status": true,
+            "message": "Invoice Data",
+            "data": {
+                "id": 4,
+                "problem": "Barang cacat",
+                "picture": "pict.jpg",
+                "solution": "",
+                "reason": "",
+                "admin_response": "Sudah di kirim barang yang baru, mohon kirimkan kembali barang lama",
+                "report_number": "555222666",
+                "remark_result": "Barang baru",
+                "invoice_type": 1,
+                "invoice_id": 2,
+                "user_id": 66,
+                "accept_order": "No",
+                "store_id": 5,
+                "created_at": 1496710635,
+                "admin_response_date": 1496710635
+            }
         }
 
 ## Location Collection [/locations]
@@ -2707,16 +2707,16 @@ Komuto API
 + Response 200 (application/json)
 
         {
-                "code": 200,
-                "status": true,
-                "message": "Wholesaler Data",
-                "data": {
-                    "id": 6,
-                    "product_id": 5,
-                    "min_order": 20,
-                    "max_order": 60,
-                    "price": "100000"
-                }
+            "code": 200,
+            "status": true,
+            "message": "Wholesaler Data",
+            "data": {
+                "id": 6,
+                "product_id": 5,
+                "min_order": 20,
+                "max_order": 60,
+                "price": "100000"
+            }
         }
 
 ### Get Wholesaler [GET /wholesalers/{product_id}]
