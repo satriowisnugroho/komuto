@@ -1014,7 +1014,6 @@ Komuto API
             ]
         }
 
-
 ## Bank Account Collection [/bank-accounts]
 
 ### List [GET]
@@ -3096,6 +3095,273 @@ Komuto API
             "subject": "Mau tanya tentang sepatu",
             "content": "Halo gan, mau tanya nih, sepatu nya kan ringan, kalo dibakar rusak gak?"
         }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+## Account Collection [/accounts]
+
+### Get Profile [GET /accounts/profile]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Profile Data",
+            "data": {
+                "id": 1,
+                "name": "User skyshi",
+                "photo": "http://media.tcc.fl.edu/webcourses/ctll/Developing_Your_Teaching_Philosophy/examples.jpg",
+                "gender": "female",
+                "place_of_birth": "Yogyakarta",
+                "date_of_birth": 1496710635
+            }
+        }
+
+### Update Profile [PUT /accounts/profile]
+
++ Request
+
+        {
+            "name": "User Skyshi",
+            "photo": "base64",
+            "gender": "male",
+            "place_of_birth": "Yogyakarta",
+            "date_of_birth": 1496710635
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Profile Data",
+            "data": {
+                "id": 1,
+                "name": "User skyshi",
+                "photo": "http://media.tcc.fl.edu/webcourses/ctll/Developing_Your_Teaching_Philosophy/examples.jpg",
+                "gender": "female",
+                "place_of_birth": "Yogyakarta",
+                "date_of_birth": 1496710635
+            }
+        }
+
+### Get Phone [GET /accounts/phone]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Phone Number Data",
+            "data": {
+                "phone_number": "082312391239"
+            }
+        }
+
+### Update Phone [PUT /accounts/phone]
+
++ Request
+
+        {
+            "phone_number": "0823912383929"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Phone Number Data",
+            "data": {
+                "phone_number": "0823912383929"
+            }
+        }
+
+### Verify Phone [POST /accounts/phone/send-verification]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Verify Phone [POST /accounts/phone/verify]
+
++ Request
+
+        {
+            "code": "akXAoj"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### List Bank Accounts [GET /accounts/banks]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Bank Account Data",
+            "data": [
+                {
+                    "bank_account": {
+                        "id": 1,
+                        "user_id": 1,
+                        "marketplace_id": 1,,
+                        "holder_name": "User Skyshi",
+                        "holder_account_number": "09812309812398",
+                        "bank_branch_office_name": "Yogyakarta",
+                        "primary_account_number": "098129383"
+                    },
+                    "master_bank": {
+                        "id": "1",
+                        "name": "BNI",
+                        "code": "003",
+                        "status": 1,
+                        "status_at": 1496710635,
+                        "logo": "logo.png"
+                    }
+                }
+            ]
+        }
+
+### Get Bank Accounts [GET /accounts/banks/{id}]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Bank Account Data",
+            "data": {
+                "bank_account": {
+                    "id": 1,
+                    "user_id": 1,
+                    "marketplace_id": 1,,
+                    "holder_name": "User Skyshi",
+                    "holder_account_number": "09812309812398",
+                    "bank_branch_office_name": "Yogyakarta",
+                    "primary_account_number": "098129383"
+                },
+                "master_bank": {
+                    "id": "1",
+                    "name": "BNI",
+                    "code": "003",
+                    "status": 1,
+                    "status_at": 1496710635,
+                    "logo": "logo.png"
+                }
+            }
+        }
+
+### Create Bank Accounts [POST /accounts/banks]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Request
+
+        {
+            "master_bank_id": 1,
+            "holder_name": "user skyshi2",
+            "holder_account_number": "09812309812398",
+            "bank_branch_office_name": "Yogyakarta"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Bank Account Data",
+            "data": {
+                "bank_account": {
+                    "id": 1,
+                    "user_id": 1,
+                    "marketplace_id": 1,,
+                    "holder_name": "User Skyshi",
+                    "holder_account_number": "09812309812398",
+                    "bank_branch_office_name": "Yogyakarta",
+                    "primary_account_number": "098129383"
+                },
+                "master_bank": {
+                    "id": "1",
+                    "name": "BNI",
+                    "code": "003",
+                    "status": 1,
+                    "status_at": 1496710635,
+                    "logo": "logo.png"
+                }
+            }
+        }
+
+### Update Bank Accounts [PUT /accounts/banks/{id}]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Request
+
+        {
+            "master_bank_id": 1,
+            "holder_name": "user skyshi2",
+            "holder_account_number": "09812309812398",
+            "bank_branch_office_name": "Yogyakarta"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Bank Account Data",
+            "data": {
+                "bank_account": {
+                    "id": 1,
+                    "user_id": 1,
+                    "marketplace_id": 1,,
+                    "holder_name": "User Skyshi",
+                    "holder_account_number": "09812309812398",
+                    "bank_branch_office_name": "Yogyakarta",
+                    "primary_account_number": "098129383"
+                },
+                "master_bank": {
+                    "id": "1",
+                    "name": "BNI",
+                    "code": "003",
+                    "status": 1,
+                    "status_at": 1496710635,
+                    "logo": "logo.png"
+                }
+            }
+        }
+
+### Delete Bank Accounts [DELETE /accounts/banks/{id}]
+
++ Parameters
+    + id: 1 (number, required)
 
 + Response 200 (application/json)
 
