@@ -2591,6 +2591,32 @@ Komuto API
             ]
         }
 
+### Confirmation [POST /transactions/{id}/confirm]
+
++ Request (application/json)
+
+        {
+            "nominal": 1,
+            "transfer_at": 1496710635,
+            "destination_bank": 1,
+            "origin_bank": 1,
+            "holder_account_number": "091823871239",
+            "images": [
+                {
+                    "image": "base64"
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Transaction Data",
+            "data": {}
+        }
+
 ## Location Collection [/locations]
 
 ### Get Provinces [GET /locations/provinces]
