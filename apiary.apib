@@ -674,13 +674,71 @@ Auto send OTP if address changed
             "data": {}
         }
 
-### Create Catalog Store [POST /store/catalog]
+### List Catalog Store [POST /users/store/catalogs]
 
-+ Request(application/json)
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                [
+                    {
+                        "id": 1,
+                        "name": "Sepatu Futsal",
+                        "count_product": 5
+                    },
+                    {
+                        "id": 3,
+                        "name": "Sepatu Bola",
+                        "count_product": 5
+                    }
+                ]
+            }
+        }
+
+### Create Catalog Store [POST /users/store/catalogs]
+
++ Request (application/json)
 
         {
             "name": "Sepatu Futsal"
         }
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Update Catalog Store [PUT /users/store/catalogs/{catalog_id}]
+
++ Parameters
+    + catalog_id: 1 (number, required)
+
++ Request (application/json)
+
+        {
+            "name": "Sepatu Bola"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Delete Catalog Store [DELETE /users/store/catalogs/{catalog_id}]
+
++ Parameters
+    + catalog_id: 1 (number, required)
 
 + Response 201 (application/json)
 
