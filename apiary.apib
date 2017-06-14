@@ -3199,7 +3199,7 @@ Komuto API
 + Request
 
         {
-            "code": "akXAoj"
+            "code": "84729"
         }
 
 + Response 200 (application/json)
@@ -3242,6 +3242,56 @@ Komuto API
             ]
         }
 
+### Send OTP Create Bank Accounts [POST /accounts/banks/send-verification]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Create Bank Accounts [POST /accounts/banks]
+
++ Request
+
+        {
+            "code": "83783",
+            "master_bank_id": 1,
+            "holder_name": "user skyshi2",
+            "holder_account_number": "09812309812398",
+            "bank_branch_office_name": "Yogyakarta"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Bank Account Data",
+            "data": {
+                "bank_account": {
+                    "id": 1,
+                    "user_id": 1,
+                    "marketplace_id": 1,,
+                    "holder_name": "User Skyshi",
+                    "holder_account_number": "09812309812398",
+                    "bank_branch_office_name": "Yogyakarta",
+                    "primary_account_number": "098129383"
+                },
+                "master_bank": {
+                    "id": "1",
+                    "name": "BNI",
+                    "code": "003",
+                    "status": 1,
+                    "status_at": 1496710635,
+                    "logo": "logo.png"
+                }
+            }
+        }
+
 ### Get Bank Accounts [GET /accounts/banks/{id}]
 
 + Parameters
@@ -3274,42 +3324,18 @@ Komuto API
             }
         }
 
-### Create Bank Accounts [POST /accounts/banks]
+### Send OTP Update Bank Accounts [PUT /accounts/banks/{id}/send-verification]
 
-+ Request
-
-        {
-            "master_bank_id": 1,
-            "holder_name": "user skyshi2",
-            "holder_account_number": "09812309812398",
-            "bank_branch_office_name": "Yogyakarta"
-        }
++ Parameters
+    + id: 1 (number, required)
 
 + Response 200 (application/json)
 
         {
             "code": 200,
             "status": true,
-            "message": "Bank Account Data",
-            "data": {
-                "bank_account": {
-                    "id": 1,
-                    "user_id": 1,
-                    "marketplace_id": 1,,
-                    "holder_name": "User Skyshi",
-                    "holder_account_number": "09812309812398",
-                    "bank_branch_office_name": "Yogyakarta",
-                    "primary_account_number": "098129383"
-                },
-                "master_bank": {
-                    "id": "1",
-                    "name": "BNI",
-                    "code": "003",
-                    "status": 1,
-                    "status_at": 1496710635,
-                    "logo": "logo.png"
-                }
-            }
+            "message": "Success",
+            "data": {}
         }
 
 ### Update Bank Accounts [PUT /accounts/banks/{id}]
@@ -3317,9 +3343,10 @@ Komuto API
 + Parameters
     + id: 1 (number, required)
 
-+ Request
++ Request (application/json)
 
         {
+            "code": "08293",
             "master_bank_id": 1,
             "holder_name": "user skyshi2",
             "holder_account_number": "09812309812398",
@@ -3331,7 +3358,7 @@ Komuto API
         {
             "code": 200,
             "status": true,
-            "message": "Bank Account Data",
+            "message": "Success",
             "data": {
                 "bank_account": {
                     "id": 1,
@@ -3353,10 +3380,30 @@ Komuto API
             }
         }
 
+### Send OTP Delete Bank Accounts [DELETE /accounts/banks/{id}/send-verification]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
 ### Delete Bank Accounts [DELETE /accounts/banks/{id}]
 
 + Parameters
     + id: 1 (number, required)
+
++ Request (application/json)
+
+        {
+            "code": "83792"
+        }
 
 + Response 200 (application/json)
 
