@@ -613,6 +613,23 @@ Auto send otp
             "data": {}
         }
 
+### Verify Store [POST /users/store/verify]
+
++ Request (application/json)
+
+        {
+            "code": "97123839012"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
 ## Marketplace Collection [/marketplaces]
 
 ### Login Marketplace [POST /marketplaces/login]
