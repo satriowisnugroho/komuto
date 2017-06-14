@@ -630,6 +630,50 @@ Auto send otp
             "data": {}
         }
 
+### Update Store [PUT /users/store]
+Auto send OTP if address changed
+
++ Request (application/json)
+
+        {
+            "store": {
+                "slogan": "Anda Sopan Kami Segan",
+                "description": "Lorem ipsum",
+                "logo": "base64"
+            },
+            "expeditions": [
+                {
+                    "expedition_service_id": 1,
+                    "status": 1
+                },
+                {
+                    "expedition_service_id": 0,
+                    "status": 0
+                }
+            ],
+            "address": {
+                "province_id": 1,
+                "district_id": 1,
+                "sub_district_id": 1,
+                "village_id": 1,
+                "name": "User skyshi",
+                "email": "user@skyshi.com",
+                "phone_number": "081222333444",
+                "postal_code": "84314",
+                "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
+                "type": "primary"
+            }
+        }
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
 ## Marketplace Collection [/marketplaces]
 
 ### Login Marketplace [POST /marketplaces/login]
@@ -806,82 +850,6 @@ Auto send otp
 + Request (application/json)
 
 + Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Store Data",
-            "data": {
-                "id": 13,
-                "user": {
-                    "id": 66,
-                    "name": "User skyshi",
-                    "photo": "http://www.look4fitness.net/images/no_user_logo.png"
-                },
-                "name": "Baju Keren",
-                "slogan": "Semua harus keren",
-                "description": "Menjual semua jenis baju yang keren",
-                "logo": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                "custom_domain": ".com",
-                "created_at": 1496710635,
-                "status": 1,
-                "remarks_status": "",
-                "status_at": 1496710635,
-                "cover_image": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                "seller_theme_id": 2,
-                "reputation": 23,
-                "store_id_number": "3404092309880001",
-                "total_favorite": 40,
-                "verification_at": 1496710635,
-                "note": "lorem ipsum",
-                "count_review": 15,
-                "start_at": 1496710635,
-                "end_at": 1496710635
-            }
-        }
-
-### Update Store [PUT /stores/{id}]
-
-+ Parameters
-    + id : 66 (number, required)
-
-+ Request (application/json)
-
-        + `user_id` (required)
-        + `slogan` (optional)
-        + `description` (optional)
-        + `logo` (optional)
-        + `custom_domain` (optional)
-        + `status` (optional)
-        + `remarks_status` (optional)
-        + `status_at` (optional)
-        + `cover_image` (optional)
-        + `seller_theme_id` (optional)
-        + `reputation` (optional)
-        + `store_id_number` (optional)
-        + `total_favorite` (optional)
-        + `note` (optional)
-
-        + Body
-
-            {
-                "user_id": 66,
-                "slogan": "",
-                "description": "",
-                "logo": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                "custom_domain": "domain.domain",
-                "status": "single",
-                "remarks_status": "",
-                "status_at": 1496710635,
-                "cover_image": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                "seller_theme_id": 2,
-                "reputation": 23,
-                "store_id_number": "23223425323" ,
-                "total_favorite": "3213",
-                "note": "lorem"
-            }
-
-+ Response 201 (application/json)
 
         {
             "code": 200,
