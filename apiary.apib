@@ -749,7 +749,7 @@ Auto send OTP if address changed
             "data": {}
         }
 
-### Get Favorite Store [GET /users/store/favorites]
+### List Favorite Store [GET /users/store/favorites]
 
 + Response 200 (application/json)
 
@@ -765,26 +765,23 @@ Auto send OTP if address changed
             },
             "data": [
                 {
-                    "id": 1,
-                    "name": "Baju Keren",
-                    "slogan": "Semua harus keren",
-                    "description": "Menjual semua jenis baju yang keren",
-                    "logo": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                    "custom_domain": ".com",
-                    "created_at": 1496710635,
-                    "status": 1,
-                    "remarks_status": "",
-                    "status_at": 1496710635,
-                    "cover_image": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                    "seller_theme_id": 2,
-                    "reputation": 23,
-                    "store_id_number": "3404092309880001",
-                    "total_favorite": 40,
-                    "verification_at": 1496710635,
-                    "note": "lorem ipsum",
-                    "count_review": 15,
-                    "start_at": 1496710635,
-                    "end_at": 1496710635
+                    "store": {
+                        "id": 1,
+                        "name": "Baju Keren",
+                        "province": {
+                            "id": 1,
+                            "name": "DKI Jakarta"
+                        }
+                    },
+                    "products": [
+                        {
+                            "id": 1,
+                            "name": "Xiaomi Mi Notebook Air 12.5",
+                            "price": 5000000,
+                            "discount": 10,
+                            "image": "https://xiaomi-mi.com/uploads/CatalogueImage/pvm_xiaomi-mi-notebook-air-125-silver-01_14457_1469630599.jpg"
+                        }
+                    ]
                 }
             ]
         }
