@@ -45,6 +45,45 @@ Komuto API
             }
         }
 
+### Login Social [POST /users/social-login]
+
++ Request (application/json)
+
+        {
+            "provider_name": "Facebook",
+            "provider_uid": "12345678"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "User Data",
+            "data": {
+                "id": 66,
+                "marketplace_id": 0,
+                "name": "User skyshi",
+                "email": "user@skyshi.com",
+                "cooperative_member_number": "ALSK83929K",
+                "approval_cooperative_status": "0",
+                "photo": "http://www.look4fitness.net/images/no_user_logo.png",
+                "phone_number": "081222333444",
+                "gender": "female",
+                "status": 1,
+                "mother_name": "Siti Aminah",
+                "auth_key": "12345678",
+                "saldo_wallet": "500000",
+                "place_of_birth": "Yogyakarta",
+                "date_of_birth": 1496710635,
+                "created_at": 1496710635,
+                "join_at": 1496710635,
+                "status_at": 1496710635,
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0OTY2MjM2MTJ9.flFtOxurZF_wU15OPoPkjBzqe7mn__7jPUYcLTglMe0",
+                "is_required_password": true
+            }
+        }
+
 ### Registration [POST]
 
 + Request (application/json)
