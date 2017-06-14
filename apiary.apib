@@ -561,6 +561,57 @@ Komuto API
             "data": {}
         }
 
+### Create [POST /users/store]
+
++ Request (application/json)
+
+        {
+            "store": {
+                "name": "Toko Makmur Abadi Sejahtera",
+                "slogan": "Lorem ipsum",
+                "description": "Lorem ipsum",
+                "logo": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg"
+            },
+            "expeditions" : [
+                {
+                    "expedition_service_id": 1,
+                    "status": 1
+                },
+                {
+                    "expedition_service_id": 0,
+                    "status": 0
+                }
+            ],
+            "owner": {
+                "name": "Satrio Wisnugroho",
+                "email": "wisnu@skyshi.com",
+                "phone_number": "082113101585",
+                "id_number": "0982390923989",
+                "mother_name": "Siti Aminah"
+            },
+            "address": {
+                "province_id": 1,
+                "district_id": 1,
+                "sub_district_id": 1,
+                "village_id": 1,
+                "name": "User skyshi",
+                "email": "user@skyshi.com",
+                "phone_number": "081222333444",
+                "postal_code": "84314",
+                "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
+                "type": "primary"
+            }
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
 ## Marketplace Collection [/marketplaces]
 
 ### Login Marketplace [POST /marketplaces/login]
