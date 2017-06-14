@@ -2726,6 +2726,79 @@ Komuto API
             }
         }
 
+### Set Transaction Summary [POST /transactions/summary]
+
++ Request (application/json)
+
+        {
+            "user_id": 2,
+            "is_debit": true,
+            "transaction_at": 1496710635,
+            "transaction_code": "tId4K",
+            "status": 1,
+            "nominal": 20000
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Transaction Data",
+            "data": {
+                "id": 3,
+                "transaction_at": 1496710635,
+                "transaction_code": "tId4K",
+                "status": 1,
+                "status_at": 1496710635,
+                "nominal": "20000",
+                "balance_before": "500000",
+                "balance_after": "480000",
+                "is_debit": true,
+                "user_id": 2,
+                "remark": "",
+                "marketplace_id": 3
+            }
+        }
+
+### Transaction Summary [GET /transactions/summary]
+
++ Request (application/json)
+
+        {
+            "user_id": 2
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Transaction Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
+            "data": [
+                {
+                    "id": 2,
+                    "transaction_at": 1496710635,
+                    "transaction_code": "AuXaH",
+                    "status": 1,
+                    "status_at": 1496710635,
+                    "nominal": "200000",
+                    "balance_before": "500000",
+                    "balance_after": "300000",
+                    "is_debit": false,
+                    "user_id": 2,
+                    "remark": "",
+                    "marketplace_id": 3
+                }
+            ]
+        }
+
 ## Location Collection [/locations]
 
 ### Get Provinces [GET /locations/provinces]
@@ -2958,81 +3031,6 @@ Komuto API
                     "min_order": 12,
                     "max_order": 48,
                     "price": "50000"
-                }
-            ]
-        }
-
-## Transaction Collection [/transactions]
-
-### Set Transaction Summary [POST]
-
-+ Request (application/json)
-
-        {
-            "user_id": 2,
-            "is_debit": true,
-            "transaction_at": 1496710635,
-            "transaction_code": "tId4K",
-            "status": 1,
-            "nominal": 20000
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Transaction Data",
-            "data": {
-                "id": 3,
-                "transaction_at": 1496710635,
-                "transaction_code": "tId4K",
-                "status": 1,
-                "status_at": 1496710635,
-                "nominal": "20000",
-                "balance_before": "500000",
-                "balance_after": "480000",
-                "is_debit": true,
-                "user_id": 2,
-                "remark": "",
-                "marketplace_id": 3
-            }
-        }
-
-### Transaction Summary [GET /transactions/summary]
-
-+ Request (application/json)
-
-        {
-            "user_id": 2
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Transaction Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
-            "data": [
-                {
-                    "id": 2,
-                    "transaction_at": 1496710635,
-                    "transaction_code": "AuXaH",
-                    "status": 1,
-                    "status_at": 1496710635,
-                    "nominal": "200000",
-                    "balance_before": "500000",
-                    "balance_after": "300000",
-                    "is_debit": false,
-                    "user_id": 2,
-                    "remark": "",
-                    "marketplace_id": 3
                 }
             ]
         }
@@ -3277,9 +3275,6 @@ Komuto API
         }
 
 ### Create Bank Accounts [POST /accounts/banks]
-
-+ Parameters
-    + id: 1 (number, required)
 
 + Request
 
