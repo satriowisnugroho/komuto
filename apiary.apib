@@ -1413,12 +1413,14 @@ Auto send otp
             "data": {}
         }
 
-### Create Dropship [POST /products/dropship]
+### Create Dropship [POST /products/{id}/dropship]
+
++ parameters
+    + id: 1 (number, required)
 
 + Request (application/json)
 
         {
-            "product_id": 1,
             "catalog_id": 1,
             "store_id": 1
         }
