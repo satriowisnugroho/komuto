@@ -674,6 +674,23 @@ Auto send OTP if address changed
             "data": {}
         }
 
+### Create Catalog Store [POST /store/catalog]
+
++ Request(application/json)
+
+        {
+            "name": "Sepatu Futsal"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
 ## Marketplace Collection [/marketplaces]
 
 ### Login Marketplace [POST /marketplaces/login]
@@ -929,32 +946,6 @@ Auto send OTP if address changed
                     "end_at": 1496710635
                 }
             ]
-        }
-
-### Create Catalog [POST /stores/{id}/catalog]
-
-+ Parameters
-    + id: 2(number, required)
-
-+ Request(application/json)
-
-        {
-            "store_id": 5,
-            "name": "Sepatu Terbang"
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Catalog Data",
-            "data": {
-                "id": 2,
-                "store_id": 5,
-                "name": "Sepatu Terbang",
-                "created_at": 1496710635
-            }
         }
 
 ### Get Catalog List [GET /stores/{id}/catalog]
