@@ -381,6 +381,7 @@ Komuto API
                 },
                 "district": {
                     "id": 1,
+                    "ro_id": 1,
                     "name": "Sleman"
                 },
                 "sub_district": {
@@ -420,6 +421,7 @@ Komuto API
                     },
                     "district": {
                         "id": 1,
+                        "ro_id": 1,
                         "name": "Sleman"
                     },
                     "sub_district": {
@@ -489,6 +491,7 @@ Komuto API
                 },
                 "district": {
                     "id": 1,
+                    "ro_id": 1,
                     "name": "Sleman"
                 },
                 "sub_district": {
@@ -530,6 +533,7 @@ Komuto API
                 },
                 "district": {
                     "id": 1,
+                    "ro_id": 1,
                     "name": "Sleman"
                 },
                 "sub_district": {
@@ -989,7 +993,7 @@ Komuto API
                         {
                             "id": 1,
                             "name": "REG",
-                            "description": "JNE Reguler adalah",
+                            "description": "Layanan reguler",
                             "logo": "logo.png"
                         }
                     ]
@@ -1031,14 +1035,14 @@ Komuto API
                         {
                             "id": 1,
                             "name": "REG",
-                            "description": "JNE Reguler adalah",
+                            "description": "Layanan reguler",
                             "logo": "logo.png",
                             "status": 1
                         },
                         {
                             "id": 1,
                             "name": "REG",
-                            "description": "JNE Reguler adalah",
+                            "description": "Layanan reguler",
                             "logo": "logo.png",
                             "status": 0
                         }
@@ -2412,7 +2416,7 @@ Komuto API
                         {
                             "id": 1,
                             "name": "REG",
-                            "description": "JNE Reguler adalah",
+                            "description": "Layanan reguler",
                             "logo": "logo.png"
                         }
                     ]
@@ -2455,14 +2459,51 @@ Komuto API
                 {
                     "id": 1,
                     "name": "REG",
-                    "description": "JNE Reguler adalah",
+                    "description": "Layanan reguler",
                     "logo": "logo.png"
                 },
                 {
                     "id": 1,
                     "name": "REG",
-                    "description": "JNE Reguler adalah",
+                    "description": "Layanan reguler",
                     "logo": "logo.png"
+                }
+            ]
+        }
+
+### Cost Expedition [POST /expeditions/{id}/cost]
+
++ Request (application/json)
+
+        {
+            "courier": "jne",
+            "weight": 1,
+            "origin_ro_id": 1,
+            "destination_ro_id": 1
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Cost Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "REG",
+                    "description": "Layanan reguler",
+                    "logo": "logo.png",
+                    "cost": 32000,
+                    "etd": "6-7"
+                },
+                {
+                    "id": 2,
+                    "name": "OKE",
+                    "description": "Ongkos Kirim Ekonomis",
+                    "logo": "logo.png",
+                    "cost": 28000,
+                    "etd": "4-5"
                 }
             ]
         }
