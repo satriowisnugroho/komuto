@@ -1043,7 +1043,7 @@ Auto send OTP if address changed
             ]
         }
 
-### Get Catalog List [GET /stores/{id}/catalog]
+### Get Catalog List [GET /stores/{id}/catalogs]
 
 + Parameters
     + id: 2 (number, required)
@@ -1076,7 +1076,7 @@ Auto send OTP if address changed
             ]
         }
 
-### Get Catalog [GET /stores/{id}/catalog/{catalog_id}]
+### Get Catalog [GET /stores/{id}/catalogs/{catalog_id}]
 
 + Parameters
     + id: 5 (number, required)
@@ -1227,6 +1227,20 @@ Auto send OTP if address changed
             "data": {
                 "reputation_count": 50
             }
+        }
+
+### Favorite Store [POST /stores/{id}/favorite]
+
++ Parameters
+    + id : 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
         }
 
 ## Bank Account Collection [/bank-accounts]
