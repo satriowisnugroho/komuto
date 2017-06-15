@@ -131,6 +131,40 @@ Komuto API
 
 ### Update [PUT /users]
 
++ Request (application/json)
+
+    Data about user being updated. With following attributes are:
+
+    + `name` (optional) ... product id
+    + `email` (optional) ... store id
+    + `cooperative_member_number` (optional) ... user id
+    + `approval_cooperative_status` (optional) ... search query
+    + `photo` (optional) ... search query
+    + `phone_number` (optional) ... search query
+    + `gender` (optional) ... search query
+    + `status` (optional) ... search query
+    + `mother_name` (optional) ... search query
+    + `saldo_wallet` (optional) ... search query
+    + `place_of_birth` (optional) ... search query
+    + `date_of_birth` (optional) ... search query
+
+    + Body
+
+            {
+                "name": "User skyshi
+                "email": "user@
+                "cooperative_member_number": "ALSK83929K",
+                "approval_cooperative_status": "0",
+                "photo": "http://
+                "phone_number": "081222333444",
+                "gender": "female",
+                "status": 1,
+                "mother_name": "Siti Aminah
+                "saldo_wallet": "500000",
+                "place_of_birth": "Yogyakarta",
+                "date_of_birth": 1496710635
+            }
+
 + Response 200 (application/json)
 
         {
