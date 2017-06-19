@@ -2739,6 +2739,38 @@ Ready
             ]
         }
 
+### Get List Expedition Service [GET /expeditions/services]
+Ready
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Expedition Service Data",
+            "data": [
+                {
+                    "id": 1,
+                    "expedition_id": 2,
+                    "name": "JNE Reguler",
+                    "description": "JNE Reguler adalahpaket reguler yang ditawarkan JNE. Kecepatanpengiriman tergantung dari lokasi pengiriman dan tujuan. untuk kota yang sama umumnya memakan waku 2-3 hari",
+                    "status": "1",
+                    "status_at": "2016-06-21T17:00:00.000Z",
+                    "logo": null
+                },
+                {
+                    "id": 2,
+                    "expedition_id": 2,
+                    "name": "JNE YES",
+                    "description": "JNE YES adalah Paket dengan prioritas pengiriman tercepat yang ditawarkan JNE. Hanya saja perlu diperhatikan kecepatan barang dipengaruhi kecepatan penjual melakukan pengiriman barang.",
+                    "status": "1",
+                    "status_at": "2016-06-11T17:00:00.000Z",
+                    "logo": null
+                }
+            ]
+        }    
+        
+
 ## Invoice Collection [/invoices]
 
 ### Get Invoice [GET]
