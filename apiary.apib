@@ -1633,6 +1633,7 @@ Ready
         }
 
 ### List [GET /products?is_dropship={is_dropship}&category_id={category_id}&q={query}&limit={limit}&page={page}]
+Ready
 
 + Parameters
     + is_dropship: true (boolean)
@@ -1727,6 +1728,30 @@ Ready
                         "created_at": 1496710635,
                         "updated_at": 1496710635
                     }
+                }
+            ]
+        }
+        
+
+
+### List [GET /products/search?q={query}]
+Ready
+
++ Parameters
+    + query: "sepatu lari" (string)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Product List Data",
+            "data": [
+                {
+                    "name": "Sepatu lari dari"
+                },
+                {
+                    "name": "Sepatu lari dari kenyataan"
                 }
             ]
         }
