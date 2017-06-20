@@ -3592,6 +3592,23 @@ Ready
             }
         }
 
+### Check Email [POST /accounts/email/check]
+
++ Request
+
+        {
+            "email": "user@skyshi.com"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Email Available",
+            "data": {}
+        }
+
 ### Get Phone [GET /accounts/phone]
 
 + Response 200 (application/json)
