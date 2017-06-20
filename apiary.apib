@@ -131,6 +131,20 @@ Ready
             }
         }
 
+### Activate Account [GET /signup-verification?token={token}]
+
++ Parameters
+    + token: 31540cf0b21cd8513d3dbc7192d8cad1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
 ### Update [PUT /users]
 Ready
 
@@ -495,7 +509,7 @@ Ready
             "postal_code": "84314",
             "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
             "alias_address": "Alamat Toko",
-            "type": "primary"
+            "is_primary": true
         }
 
 + Response 200 (application/json)
