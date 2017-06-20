@@ -1518,6 +1518,31 @@ Ready
             ]
         }
 
+### Get Brand by Category [GET /categories/{id}/brands]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Brand List Data",
+            "data": [
+                {
+                    "id": 1,
+                    "category_id": 2,
+                    "name": "Nike"
+                },
+                {
+                    "id": 2,
+                    "category_id": 2,
+                    "name": "Adidas"
+                }
+            ]
+        }
+
 ## Product Collection [/products]
 
 ### Create [POST]
@@ -3455,17 +3480,14 @@ Ready
 
 ## Brand Collection [/brands]
 
-### Get Brand by Category [GET /brands/categories/{category_id}]
-
-+ Parameters
-    + category_id: 2 (number, required)
+### List [GET /brands]
 
 + Response 200 (application/json)
 
         {
             "code": 200,
             "status": true,
-            "message": "Brand List Data",
+            "message": "Brands Data",
             "data": [
                 {
                     "id": 1,
