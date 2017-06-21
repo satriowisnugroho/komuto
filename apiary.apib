@@ -135,7 +135,7 @@ Ready
 Ready
 
 + Parameters
-    + token: 31540cf0b21cd8513d3dbc7192d8cad1 (number, required)
+    + token: 31540cf0b21cd8513d3dbc7192d8cad1 (string, required)
 
 + Response 200 (application/json)
 
@@ -3550,12 +3550,28 @@ Ready
 ## Password Collection [/passwords]
 
 ### Forgot Password [POST /passwords/forgot]
+Ready
 
 + Request
 
         {
             "email": "user@skyshi.com"
         }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+        
+### Validate Token [GET /password-new?token={token}]
+Ready
+
++ Parameters
+    + token: 31540cf0b21cd8513d3dbc7192d8cad1 (string, required)
 
 + Response 200 (application/json)
 
