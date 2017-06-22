@@ -1255,7 +1255,8 @@ Auto send OTP if address changed
 
 ### List Expedition [GET /stores/{id}/expeditions]
 
-+ Request (application/json)
++ Parameters
+    + id: 5 (number, required)
 
 + Response 200 (application/json)
 
@@ -1297,7 +1298,8 @@ Auto send OTP if address changed
 
 ### List Expedition Manage [GET /stores/{id}/expeditions/manage]
 
-+ Request (application/json)
++ Parameters
+    + id: 5 (number, required)
 
 + Response 200 (application/json)
 
@@ -1347,6 +1349,9 @@ Auto send OTP if address changed
         }
 
 ### Create Store Expedition [PUT /stores/{id}/expeditions]
+
++ Parameters
+    + id: 5 (number, required)
 
 + Request (application/json)
 
@@ -1403,7 +1408,6 @@ Auto send OTP if address changed
 ## Bank Account Collection [/bank-accounts]
 
 ### List [GET]
-
 + Request (application/json)
 
 + Response 200 (application/json)
@@ -3555,7 +3559,7 @@ Ready
 ### Forgot Password [POST /passwords/forgot]
 Ready
 
-+ Request
++ Request (application/json)
 
         {
             "email": "user@skyshi.com"
@@ -3589,7 +3593,7 @@ Ready
 
 ### Create [POST]
 
-+ Request
++ Request (application/json)
 
         {
             "user_id": 1,
@@ -3629,7 +3633,7 @@ Ready
 
 ### Update Profile [PUT /accounts/profile]
 
-+ Request
++ Request (application/json)
 
         {
             "name": "User Skyshi",
@@ -3658,7 +3662,7 @@ Ready
 ### Check Email Available [POST /accounts/email/check]
 Ready
 
-+ Request
++ Request (application/json)
 
         {
             "email": "user@skyshi.com"
@@ -3688,7 +3692,7 @@ Ready
 
 ### Update Phone [PUT /accounts/phone]
 
-+ Request
++ Request (application/json)
 
         {
             "phone_number": "0823912383929"
@@ -3718,7 +3722,7 @@ Ready
 
 ### Verify Phone [POST /accounts/phone/verify]
 
-+ Request
++ Request (application/json)
 
         {
             "code": "84729"
@@ -3777,7 +3781,7 @@ Ready
 
 ### Create Bank Accounts [POST /accounts/banks]
 
-+ Request
++ Request (application/json)
 
         {
             "code": "83783",
