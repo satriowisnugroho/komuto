@@ -3574,7 +3574,7 @@ Ready
             "data": {}
         }
         
-### Validate Token [GET /password-new?token={token}]
+### Validate Token [GET /passwords/new?token={token}]
 Ready
 
 + Parameters
@@ -3589,6 +3589,25 @@ Ready
             "data": {}
         }
 
+### Update Password [PUT /passwords/new]
+Ready
+
++ Request
+
+        {
+            "token": "784fd054301106e1679454fc0e7d9217"
+            "password": "komuto"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+        
 ## Message Collection [/messages]
 
 ### Create [POST]
