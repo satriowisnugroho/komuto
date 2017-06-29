@@ -1898,10 +1898,12 @@ Ready
               }
         }
 
-### Get Reviews [GET /products/{id}/reviews]
+### Get Reviews [GET /products/{id}/reviews?page={page}&size={size}]
 
 + Parameters
     + id: 1 (number, required)
+    + page: 1 (number)
+    + size: 5 (number)
 
 + Response 200 (application/json)
 
@@ -1941,7 +1943,7 @@ Ready
         {
             "review": "Barang memuaskan",
             "quality": 5,
-            "accuracy": 3
+            "accuracy": 3a
         }
 
 + Response 201 (application/json)
