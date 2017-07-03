@@ -1646,15 +1646,20 @@ Ready
             "data": {}
         }
 
-### List [GET /products?is_dropship={is_dropship}&category_id={category_id}&q={query}&limit={limit}&page={page}]
+### List [GET /products?q={query}&page={page}&size={size}&sort={sort}&price={price}&condition={condition}&other={other}&brands={brands}&services={services}&address={address}]
 Ready
 
 + Parameters
-    + is_dropship: true (boolean)
-    + category_id: 1 (number)
     + query: "sepatu lari" (string)
-    + limit: 10 (number)
     + page: 2 (number)
+    + size: 10 (number)
+    + sort: "newest" (string)
+    + price: "1000-10000" (string)
+    + condition: "new" (string)
+    + other: "discount" (string)
+    + brands: "1,2,3" (string)
+    + services: "1,2,3" (string)
+    + address: 1 (number)
 
 + Response 200 (application/json)
 
@@ -1748,7 +1753,7 @@ Ready
         
 
 
-### List [GET /products/search?q={query}]
+### Search [GET /products/search?q={query}]
 Ready
 
 + Parameters
