@@ -320,24 +320,15 @@ Ready
             }
         }
 
-### Get Wishlist [GET /users/wishlist?status={status}]
+### Get Wishlist [GET /users/wishlist]
 Ready
-
-+ Parameters
-    + status: 1 (string)
 
 + Response 200 (application/json)
 
         {
             "code": 200,
             "status": true,
-            "message": "Wishlist Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
+            "message": "Product Wishlist Data",
             "data": [
                 {
                     "product": {
@@ -362,12 +353,6 @@ Ready
                         "identifier_brand": 0,
                         "identifier_catalog": 32
                     },
-                    "category": {
-                        "id": 1,
-                        "category_id": 3,
-                        "icon": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/navara-dept-store_catenzo-kets-black-line-cream-sepatu-pria_full01.jpg",
-                        "name": "Camera"
-                    },
                     "store": {
                         "id": 13,
                         "user_id": 2,
@@ -390,20 +375,6 @@ Ready
                         "count_review": 15,
                         "start_at": 1496710635,
                         "end_at": 1496710635
-                    },
-                    "dropshipper": {
-                        "id": 1,
-                        "store_id": 1
-                        "product_id": 1,
-                        "catalog_id": 1,
-                        "status": 1,
-                        "status_at": 1496710635,
-                        "created_at": 1496710635
-                    },
-                    "city": {
-                        "id": 1,
-                        "province_id": 1,
-                        "name": "Yogyakarta"
                     },
                     "images": [
                         {
