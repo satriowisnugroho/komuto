@@ -789,6 +789,30 @@ Ready
             "data": {}
         }
 
+### Update Store Expedition [PUT /users/store/expeditions]
+
++ Request (application/json)
+
+        [
+            {
+                "expedition_service_id": 1,
+                "status": 1
+            },
+            {
+                "expedition_service_id": 0,
+                "status": 0
+            }
+        ]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
 ### List Favorite Store [GET /users/store/favorites]
 
 + Response 200 (application/json)
