@@ -1126,53 +1126,6 @@ Auto send OTP if address changed
             }
         }
 
-### List [GET /stores]
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Store Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
-            "data": [
-                {
-                    "id": 13,
-                    "user": {
-                        "id": 66,
-                        "name": "User skyshi",
-                        "photo": "http://www.look4fitness.net/images/no_user_logo.png"
-                    },
-                    "name": "Baju Keren",
-                    "slogan": "Semua harus keren",
-                    "description": "Menjual semua jenis baju yang keren",
-                    "logo": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                    "custom_domain": ".com",
-                    "created_at": 1496710635,
-                    "status": 1,
-                    "remarks_status": "",
-                    "status_at": 1496710635,
-                    "cover_image": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                    "seller_theme_id": 2,
-                    "reputation": 23,
-                    "store_id_number": "3404092309880001",
-                    "total_favorite": 40,
-                    "verification_at": 1496710635,
-                    "note": "lorem ipsum",
-                    "count_review": 15,
-                    "start_at": 1496710635,
-                    "end_at": 1496710635
-                }
-            ]
-        }
-
 ### Get Catalog List [GET /stores/{id}/catalogs]
 
 + Parameters
