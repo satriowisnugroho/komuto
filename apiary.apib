@@ -714,13 +714,14 @@ Auto send OTP if address changed
         }
 
 ### List Catalog Store [GET /users/store/catalogs]
+Ready
 
 + Response 201 (application/json)
 
         {
             "code": 200,
             "status": true,
-            "message": "Success",
+            "message": "Store Catalog Data",
             "data": {
                 [
                     {
@@ -1123,59 +1124,6 @@ Auto send OTP if address changed
                 "count_review": 15,
                 "start_at": 1496710635,
                 "end_at": 1496710635
-            }
-        }
-
-### Get Catalog List [GET /stores/{id}/catalogs]
-
-+ Parameters
-    + id: 2 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Catalog Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
-            "data": [
-                {
-                    "id": 2,
-                    "store_id": 5,
-                    "name": "Sepatu Terbang",
-                    "created_at": 1496710635
-                },
-                {
-                    "id": 3,
-                    "store_id": 5,
-                    "name": "Sepatu Renang",
-                    "created_at": 1496710635
-                }
-            ]
-        }
-
-### Get Catalog [GET /stores/{id}/catalogs/{catalog_id}]
-
-+ Parameters
-    + id: 5 (number, required)
-    + catalog_id: 3 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Catalog Data",
-            "data": {
-                "id": 3,
-                "store_id": 5,
-                "name": "Sepatu Renang",
-                "created_at": 1496710635
             }
         }
 
