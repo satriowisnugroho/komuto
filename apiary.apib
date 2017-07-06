@@ -790,33 +790,41 @@ Ready
         {
             "code": 200,
             "status": true,
-            "message": "Expedition Data",
+            "message": "Store Expeditions Data",
             "data": [
                 {
-                    "id": 1,
-                    "name": "JNE",
-                    "logo": "logo.png",
-                    "insurance_fee": 20000,
+                    "id": 7,
+                    "name": "PANDU",
+                    "status": 1,
+                    "method": "1",
+                    "status_at": 1471366800,
+                    "logo": "http://188.166.246.46/img/pengiriman/pandu.png",
+                    "insurance_fee": 2,
                     "services": [
                         {
-                            "id": 1,
-                            "name": "REG",
-                            "description": "Layanan reguler",
-                            "logo": "logo.png"
+                            "id": 12,
+                            "name": "Reguler",
+                            "description": "Paket Reguler adalah paket yang ditawarkan oleh Pandu Logistik yang umumnya memakan waktu 2-3 hari",
+                            "logo": null,
+                            "is_checked": false
                         }
                     ]
                 },
                 {
-                    "id": 2,
-                    "name": "TIKI",
-                    "logo": "logo.png",
-                    "insurance_fee": 15000,
+                    "id": 8,
+                    "name": "CAHAYA",
+                    "status": 1,
+                    "method": "1",
+                    "status_at": 1471366800,
+                    "logo": "http://188.166.246.46/img/pengiriman/cahaya.png",
+                    "insurance_fee": 2,
                     "services": [
                         {
-                            "id": 1,
+                            "id": 13,
                             "name": "Service Normal",
-                            "description": "Service normal adalah",
-                            "logo": "logo.png"
+                            "description": "Service Normal adalah Pengiriman paket yang ditawarkan keseluruh Indonesia dengan lead time  pengiriman estimasi 2-3 hari ke kota besar dan 4-7 hari ke pelosok",
+                            "logo": null,
+                            "is_checked": false
                         }
                     ]
                 }
@@ -1293,22 +1301,6 @@ Ready
                         }
                     ]
                 }
-            }
-        }
-
-### Get Reputation [GET /stores/{id}/reputation]
-
-+ Parameters
-    + id : 2 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Store Data",
-            "data": {
-                "reputation_count": 50
             }
         }
 
