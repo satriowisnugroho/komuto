@@ -155,10 +155,12 @@ Ready
     Data about user being updated. With following attributes are:
 
     + `name` (optional) ... product id
+    + `email` (optional) ... store id
     + `cooperative_member_number` (optional) ... user id
     + `photo` (optional) ... base64
     + `phone_number` (optional)
     + `gender` (optional)
+    + `mother_name` (optional)
     + `place_of_birth` (optional)
     + `date_of_birth` (optional)
 
@@ -166,10 +168,12 @@ Ready
 
             {
                 "name": "User skyshi"
+                "email": "user@skyshi.com"
                 "cooperative_member_number": "ALSK83929K",
                 "photo": "base64"
                 "phone_number": "081222333444",
                 "gender": "female",
+                "mother_name": "Siti Aminah",
                 "place_of_birth": 1,
                 "date_of_birth": 1496710635
             }
@@ -179,8 +183,27 @@ Ready
         {
             "code": 200,
             "status": true,
-            "message": "Success",
-            "data": {}
+            "message": "User Data",
+            "data": {
+                "id": 66,
+                "marketplace_id": 0,
+                "name": "User skyshi",
+                "email": "user@skyshi.com",
+                "cooperative_member_number": "ALSK83929K",
+                "approval_cooperative_status": "0",
+                "photo": "http://media.tcc.fl.edu/webcourses/ctll/Developing_Your_Teaching_Philosophy/examples.jpg",
+                "phone_number": "081222333444",
+                "gender": "female",
+                "status": 1,
+                "mother_name": "Siti Aminah",
+                "auth_key": "12345678",
+                "saldo_wallet": "500000",
+                "place_of_birth": "Yogyakarta",
+                "date_of_birth": 1496710635,
+                "created_at": 1496710635,
+                "join_at": 1496710635,
+                "status_at": 1496710635
+            }
         }
 
 ### Profile [GET /users/profile]
@@ -883,7 +906,6 @@ Ready
         }
 
 ### List Favorite Store [GET /users/store/favorites]
-Ready
 
 + Response 200 (application/json)
 
@@ -1135,49 +1157,6 @@ Ready
         }
 
 ## Store Collection [/stores]
-
-### Create [POST]
-
-+ Request (application/json)
-
-        {
-            "user_id": 2,
-            "name": "Baju Keren",
-            "slogan": "Semua harus keren",
-            "description": "Menjual semua jenis baju yang keren",
-            "logo": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-            "custom_domain": ".com"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Store Data",
-            "data": {
-                "id": 13,
-                "user_id": 2,
-                "name": "Baju Keren",
-                "slogan": "Semua harus keren",
-                "description": "Menjual semua jenis baju yang keren",
-                "logo": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                "custom_domain": ".com",
-                "created_at": 1496710635,
-                "status": 1,
-                "remarks_status": "",
-                "status_at": 1496710635,
-                "cover_image": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                "seller_theme_id": 2,
-                "reputation": 23,
-                "store_id_number": "3404092309880001",
-                "total_favorite": 40,
-                "verification_at": 1496710635,
-                "note": "lorem ipsum",
-                "start_at": 1496710635,
-                "end_at": 1496710635
-            }
-        }
 
 ### Get [GET /stores/{id}]
 
@@ -1751,6 +1730,44 @@ Ready
                         "quality": 5,
                         "accuracy": 3,
                         "created_at": 1496710635
+                    }
+                ],
+                "rating": {
+                    "quality": 4,
+                    "accuracy": 3
+                },
+                "wholesaler": [
+                    {
+                        "id": 1,
+                        "min": 5,
+                        "max": 10,
+                        "price": 10000
+                    }
+                ],
+                "other_products": [
+                    {
+                        "id": 1,
+                        "name": "Kue Putu Ayu Kas Demak",
+                        "price": 5000,
+                        "discount": 0,
+                        "is_discount": false,
+                        "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Kue Putu Ayu Kas Demak",
+                        "price": 5000,
+                        "discount": 0,
+                        "is_discount": false,
+                        "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Kue Putu Ayu Kas Demak",
+                        "price": 5000,
+                        "discount": 0,
+                        "is_discount": false,
+                        "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
                     }
                 ]
             }
