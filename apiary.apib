@@ -604,36 +604,32 @@ Auto send otp
                 "name": "Toko Makmur Abadi Sejahtera",
                 "slogan": "Lorem ipsum",
                 "description": "Lorem ipsum",
-                "logo": "base64"
+                "logo": "logo.jpg"
             },
-            "expeditions" : [
+            "expedition_services" : [
                 {
                     "expedition_service_id": 1,
                     "status": 1
                 },
                 {
-                    "expedition_service_id": 0,
+                    "expedition_service_id": 2,
                     "status": 0
                 }
             ],
-            "owner": {
-                "name": "Satrio Wisnugroho",
-                "email": "wisnu@skyshi.com",
-                "phone_number": "082113101585",
+            "user": {
                 "id_number": "0982390923989",
                 "mother_name": "Siti Aminah"
             },
             "address": {
-                "province_id": 1,
-                "district_id": 1,
-                "sub_district_id": 1,
-                "village_id": 1,
+                "province_id": 32,
+                "district_id": 3273,
+                "sub_district_id": 1111110,
+                "village_id": 1111110073,
                 "name": "User skyshi",
                 "email": "user@skyshi.com",
                 "phone_number": "081222333444",
                 "postal_code": "84314",
-                "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
-                "type": "primary"
+                "address": "Jl. Klamat No. 24 RT. 002 RW. 003"
             }
         }
 
@@ -642,8 +638,65 @@ Auto send otp
         {
             "code": 200,
             "status": true,
-            "message": "Success",
-            "data": {}
+            "message": "Store Data",
+            "data": {
+                "store": {
+                    "id": 57,
+                    "user_id": 50,
+                    "name": "Toko Makmur Abadi Sejahtera",
+                    "slogan": "Lorem ipsum",
+                    "description": "Lorem ipsum",
+                    "logo": "http://188.166.246.46/uploads/toko/logo.jpg",
+                    "status": 1,
+                    "cover_image": null,
+                    "seller_theme_id": 0,
+                    "store_id_number": "0982390923989",
+                    "created_at": 1499398387,
+                    "status_at": 1499398387,
+                    "verification_at": null,
+                    "is_verified": false,
+                    "start_at": null,
+                    "end_at": null
+                },
+                "user": {
+                    "marketplace_id": null,
+                    "cooperative_member_number": null,
+                    "photo": null,
+                    "phone_number": null,
+                    "gender": "female",
+                    "status": null,
+                    "mother_name": "Siti Aminah",
+                    "auth_key": null,
+                    "saldo_wallet": 0,
+                    "place_of_birth": null,
+                    "date_of_birth": null,
+                    "created_at": 1499398387,
+                    "join_at": null,
+                    "status_at": 1499398387
+                },
+                "address": {
+                    "id": 68,
+                    "name": "User skyshi",
+                    "email": "user@skyshi.com",
+                    "phone_number": "081222333444",
+                    "postal_code": "84314",
+                    "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
+                    "alias_address": "Jl. Klamat No. 24 RT. 002 RW. 003",
+                    "is_primary_address": false,
+                    "is_sale_address": true,
+                    "is_tender_address": false
+                },
+                "expedition_services": [
+                    {
+                        "expedition_service_id": 1,
+                        "status": 1
+                    },
+                    {
+                        "expedition_service_id": 2,
+                        "status": 0
+                    }
+                ]
+            }
         }
 
 ### Verify Store [POST /users/store/verify]
