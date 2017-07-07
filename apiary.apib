@@ -2722,15 +2722,13 @@ Ready
             ]
         }
 
-### Cost Expedition [POST /expeditions/{id}/cost]
+### Cost Expedition [GET /expeditions/{id}/cost?origin_ro_id={origin_id}&destination_ro_id={destination_id}&weight={weight}]
+Ready
 
-+ Request (application/json)
-
-        {
-            "weight": 1700,
-            "origin_ro_id": 1,
-            "destination_ro_id": 1
-        }
++ Parameters
+    + origin_id: 501 (number, required)
+    + destination_id: 62 (number, required)
+    + weight: 1700 (number, required)
 
 + Response 200 (application/json)
 
