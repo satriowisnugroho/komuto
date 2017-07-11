@@ -2459,48 +2459,6 @@ Ready
             }
         }
 
-### Get [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Bucket Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
-            "data": [
-                {
-                    "bucket_id": 45,
-                    "user_id": 2,
-                    "promotion_id": 1,
-                    "order_at": 1496710635,
-                    "status": 1,
-                    "status_at": 1496710635,
-                    "unique_code": "kode_unik",
-                    "payment_method_id": 2,
-                    "wallet_pay": 1,
-                    "uid": "213124132"
-                },
-                {
-                    "bucket_id": 43,
-                    "user_id": 2,
-                    "promotion_id": 3,
-                    "order_at": 1496710635,
-                    "status": 1,
-                    "status_at": 1496710635,
-                    "unique_code": "lebih_unik",
-                    "payment_method_id": 2,
-                    "wallet_pay": 1,
-                    "uid": "sdak9123"
-                }
-            ]
-        }
-
 ### Get Count Bucket [GET /buckets/count]
 
 + Response 200 (application/json)
@@ -2514,10 +2472,7 @@ Ready
             }
         }
 
-### Get List Bucket [GET /buckets/{id}]
-
-+ Parameters
-    + id: 2 (number, required)
+### Get List Bucket [GET /buckets]
 
 + Response 200 (application/json)
 
