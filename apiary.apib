@@ -1108,6 +1108,18 @@ Ready
             }
         }
 
+### Send OTP [POST /users/otp]
+Ready
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
 ## Marketplace Collection [/marketplaces]
 
 ### Login Marketplace [POST /marketplaces/login]
@@ -3664,18 +3676,6 @@ Ready
             }
         }
 
-### Send OTP Phone [POST /accounts/phone/send-verification]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
 ### Verify Phone [POST /accounts/phone/verify]
 Waiting for otp_hp table in db dev
 
@@ -3721,17 +3721,6 @@ Ready
                     "is_primary": false
                 }
             ]
-        }
-
-### Send OTP Create Bank Accounts [POST /accounts/banks/send-verification]
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
         }
 
 ### Create Bank Accounts [POST /accounts/banks]
@@ -3803,20 +3792,6 @@ Ready
                     "logo": "logo.png"
                 }
             }
-        }
-
-### Send OTP Update Bank Accounts [PUT /accounts/banks/{id}/send-verification]
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
         }
 
 ### Update Bank Accounts [PUT /accounts/banks/{id}]
