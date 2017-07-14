@@ -2080,7 +2080,7 @@ Ready
 + Parameters
     + id: 1 (number, required)
 
-+ Response 200 (applicatstion/json)
++ Response 200 (application/json)
 
         {
               "code": 200,
@@ -3768,27 +3768,25 @@ Ready
             "status": true,
             "message": "Bank Account Data",
             "data": {
-                "bank_account": {
+                "id": 4,
+                "user_id": 50,
+                "bank": {
                     "id": 1,
-                    "user_id": 1,
-                    "marketplace_id": 1,
-                    "holder_name": "User Skyshi",
-                    "holder_account_number": "09812309812398",
-                    "bank_branch_office_name": "Yogyakarta",
-                    "primary_account_number": "098129383"
+                    "name": "Mandiri",
+                    "code": "1001",
+                    "status": "1",
+                    "status_at": 1466497561,
+                    "logo": null
                 },
-                "master_bank": {
-                    "id": "1",
-                    "name": "BNI",
-                    "code": "003",
-                    "status": 1,
-                    "status_at": 1496710635,
-                    "logo": "logo.png"
-                }
+                "holder_name": "Satrio wisnugroho",
+                "holder_account_name": "09829123923",
+                "bank_branch_office_name": "SLEMAN",
+                "is_primary": false
             }
         }
 
 ### Get Bank Accounts [GET /accounts/banks/{id}]
+Ready
 
 + Parameters
     + id: 1 (number, required)
@@ -3800,27 +3798,25 @@ Ready
             "status": true,
             "message": "Bank Account Data",
             "data": {
-                "bank_account": {
+                "id": 4,
+                "user_id": 50,
+                "bank": {
                     "id": 1,
-                    "user_id": 1,
-                    "marketplace_id": 1,
-                    "holder_name": "User Skyshi",
-                    "holder_account_number": "09812309812398",
-                    "bank_branch_office_name": "Yogyakarta",
-                    "primary_account_number": "098129383"
+                    "name": "Mandiri",
+                    "code": "1001",
+                    "status": "1",
+                    "status_at": 1466497561,
+                    "logo": null
                 },
-                "master_bank": {
-                    "id": "1",
-                    "name": "BNI",
-                    "code": "003",
-                    "status": 1,
-                    "status_at": 1496710635,
-                    "logo": "logo.png"
-                }
+                "holder_name": "Satrio wisnugroho",
+                "holder_account_name": "09829123923",
+                "bank_branch_office_name": "SLEMAN",
+                "is_primary": false
             }
         }
 
 ### Update Bank Accounts [PUT /accounts/banks/{id}]
+Ready
 
 + Parameters
     + id: 1 (number, required)
@@ -3842,27 +3838,25 @@ Ready
             "status": true,
             "message": "Success",
             "data": {
-                "bank_account": {
+                "id": 4,
+                "user_id": 50,
+                "bank": {
                     "id": 1,
-                    "user_id": 1,
-                    "marketplace_id": 1,
-                    "holder_name": "User Skyshi",
-                    "holder_account_number": "09812309812398",
-                    "bank_branch_office_name": "Yogyakarta",
-                    "primary_account_number": "098129383"
+                    "name": "Mandiri",
+                    "code": "1001",
+                    "status": "1",
+                    "status_at": 1466497561,
+                    "logo": null
                 },
-                "master_bank": {
-                    "id": "1",
-                    "name": "BNI",
-                    "code": "003",
-                    "status": 1,
-                    "status_at": 1496710635,
-                    "logo": "logo.png"
-                }
+                "holder_name": "Satrio wisnugroho",
+                "holder_account_name": "09829123923",
+                "bank_branch_office_name": "SLEMAN",
+                "is_primary": false
             }
         }
 
 ### Delete Bank Accounts [DELETE /accounts/banks/{id}]
+Ready
 
 + Parameters
     + id: 1 (number, required)
