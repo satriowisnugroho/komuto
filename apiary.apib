@@ -2173,6 +2173,9 @@ Ready
 ### New Discussion [POST /products/{id}/discussions]
 Ready
 
++ Parameters
+    + id: 1 (number, required)
+
 + Request (application/json)
 
         {
@@ -2193,16 +2196,17 @@ Ready
             }
         }
 
-## Discussion Collection [/discussions]
+### New Comment [POST /products/{id}/discussions/{discussion_id}/comments]
+Ready
 
-### New Comment [POST /discussions/{id}/comments]
++ Parameters
+    + id: 1 (number, required)
+    + discussion_id: 1 (number, required)
 
 + Request (application/json)
 
         {
-            "user_id": 100,
-            "discussion_id": 2,
-            "comment": "Ready gan silahkan di order"
+            "content": "Ready gan silahkan di order"
         }
 
 + Response 201 (application/json)
@@ -2210,9 +2214,16 @@ Ready
         {
             "code": 200,
             "status": true,
-            "message": "Success",
-            "data": {}
+            "message": "Comment Data",
+            "data": {
+                "id": 9,
+                "user_id": 9,
+                "content": "Iya sedia warna coklat aja",
+                "created_at": 1500014900
+            }
         }
+
+## Discussion Collection [/discussions]
 
 ### Get Discussion [GET /discussions/{user_id}/{product_id}]
 
