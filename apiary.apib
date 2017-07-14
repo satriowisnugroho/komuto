@@ -1166,6 +1166,53 @@ Ready
             ]
         }
 
+### Get Store Discussion [GET /users/store/discussions]
+Ready
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Discussion Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 13,
+                    "user_id": 50,
+                    "question": "Barang ready gan ?",
+                    "created_at": 1500020060,
+                    "product": {
+                        "id": 4,
+                        "name": "Kue Putu Ayu",
+                        "slug": "kue-putu-ayu",
+                        "price": 2000,
+                        "discount": 0,
+                        "is_discount": false,
+                        "image": null
+                    }
+                },
+                {
+                    "id": 6,
+                    "user_id": 50,
+                    "question": "Barang ready gan ?",
+                    "created_at": 1500006654,
+                    "product": {
+                        "id": 5,
+                        "name": "Kue Putu Ayu",
+                        "slug": "kue-putu-ayu",
+                        "price": 2000,
+                        "discount": 0,
+                        "is_discount": false,
+                        "image": null
+                    }
+                }
+            ]
+        }
+
 ## Marketplace Collection [/marketplaces]
 
 ### Login Marketplace [POST /marketplaces/login]
