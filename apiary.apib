@@ -2751,14 +2751,16 @@ Ready
                     "name": "REG",
                     "description": "Layanan reguler",
                     "cost": 32000,
-                    "etd": "6-7"
+                    "etd": "6-7",
+                    "full_name": "JNE REG"
                 },
                 {
                     "id": 2,
                     "name": "OKE",
                     "description": "Ongkos Kirim Ekonomis",
                     "cost": 28000,
-                    "etd": "4-5"
+                    "etd": "4-5",
+                    "full_name": "JNE OKE"
                 }
             ]
         }
@@ -2792,7 +2794,41 @@ Ready
                     "logo": null
                 }
             ]
-        }    
+        }
+        
+### Cost Expedition by Product [GET /expeditions/cost?product_id={product_id}&origin_ro_id={origin_id}&destination_ro_id={destination_id}&weight={weight}]
+
++ Parameters
+    + product_id: 1 (number, required)
+    + origin_id: 501 (number, required)
+    + destination_id: 62 (number, required)
+    + weight: 1700 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Cost Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "REG",
+                    "description": "Layanan reguler",
+                    "cost": 32000,
+                    "etd": "6-7",
+                    "full_name": "JNE REG"
+                },
+                {
+                    "id": 2,
+                    "name": "Reguler",
+                    "description": "Reguler",
+                    "cost": 28000,
+                    "etd": "4-5",
+                    "full_name": "TIKI Reguler"
+                }
+            ]
+        }
         
 
 ## Invoice Collection [/invoices]
