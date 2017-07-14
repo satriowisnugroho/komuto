@@ -2122,41 +2122,55 @@ Ready
                 }
             ]
         }
-
-## Discussion Collection [/discussions]
-
-### Get Comments [GET /discussions/{id}/comments]
+        
+### Get Discussion Comments [GET /products/{id}/discussions/{discussion_id}/comments]
+Ready
 
 + Parameters
     + id: 2 (number, required)
+    + discussion_id: 2 (number, required)
 
 + Response 200 (application/json)
 
         {
             "code": 200,
             "status": true,
-            "message": "Comment Data",
+            "message": "Discussion Comments Data",
             "meta": {
                 "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
+                "limit": 10
             },
             "data": [
                 {
+                    "id": 4,
                     "user": {
-                        "id": 70,
-                        "name": "Sports Station",
-                        "photo": "http://www.look4fitness.net/images/no_user_logo.png"
+                        "id": 3,
+                        "name": "Afifur Rahman",
+                        "photo": "http://188.166.246.46/uploads/user/3_1496110091dcbc8f63b06c8.jpeg",
+                        "gender": "male",
+                        "place_of_birth": 3321,
+                        "date_of_birth": 652899600
                     },
-                    "comment": {
-                        "id": 1,
-                        "reply": "Ready gan silahkan di order",
-                        "created_at": 1496710635
-                    }
+                    "content": "rem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+                    "created_at": 1496091123
+                },
+                {
+                    "id": 3,
+                    "user": {
+                        "id": 3,
+                        "name": "Afifur Rahman",
+                        "photo": "http://188.166.246.46/uploads/user/3_1496110091dcbc8f63b06c8.jpeg",
+                        "gender": "male",
+                        "place_of_birth": 3321,
+                        "date_of_birth": 652899600
+                    },
+                    "content": "barang saya kok belum sampai ya ?",
+                    "created_at": 1496090500
                 }
             ]
         }
+
+## Discussion Collection [/discussions]
 
 ### New Comment [POST /discussions/{id}/comments]
 
