@@ -883,7 +883,7 @@ Ready
             ]
         }
 
-### List Expedition Manage [GET /user/store/expeditions/manage]
+### List Expedition Manage [GET /users/store/expeditions/manage]
 Ready
 
 + Response 200 (application/json)
@@ -1116,6 +1116,53 @@ Ready
             "status": true,
             "message": "Success",
             "data": {}
+        }
+
+### Get Discussion [GET /users/discussions]
+Ready
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Discussion Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 13,
+                    "user_id": 50,
+                    "question": "Barang ready gan ?",
+                    "created_at": 1500020060,
+                    "product": {
+                        "id": 4,
+                        "name": "Kue Putu Ayu",
+                        "slug": "kue-putu-ayu",
+                        "price": 2000,
+                        "discount": 0,
+                        "is_discount": false,
+                        "image": null
+                    }
+                },
+                {
+                    "id": 6,
+                    "user_id": 50,
+                    "question": "Barang ready gan ?",
+                    "created_at": 1500006654,
+                    "product": {
+                        "id": 4,
+                        "name": "Kue Putu Ayu",
+                        "slug": "kue-putu-ayu",
+                        "price": 2000,
+                        "discount": 0,
+                        "is_discount": false,
+                        "image": null
+                    }
+                }
+            ]
         }
 
 ## Marketplace Collection [/marketplaces]
@@ -2221,58 +2268,7 @@ Ready
                 "content": "Iya sedia warna coklat aja",
                 "created_at": 1500014900
             }
-        }
-
-## Discussion Collection [/discussions]
-
-### Get Discussion [GET /discussions/{user_id}/{product_id}]
-
-+ Parameters
-    + user_id: 66 (number, required)
-    + product_id: 2 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Discussion Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
-            "data": [
-                {
-                    "id": 2,
-                    "user_id": 66,
-                    "product_id": 2,
-                    "question": "barangnya ready gan?",
-                    "created_at": 1496710635,
-                    "discussion_deleted": "0",
-                    "delete_at": null
-                },
-                {
-                    "id": 50,
-                    "user_id": 66,
-                    "product_id": 2,
-                    "question": "stoknya masih berapa gan?",
-                    "created_at": 1496710635,
-                    "discussion_deleted": "0",
-                    "delete_at": null
-                },
-                {
-                    "id": 30,
-                    "user_id": 66,
-                    "product_id": 2,
-                    "question": "barangnya jelek banget gan?",
-                    "created_at": 1496710635,
-                    "discussion_deleted": "1",
-                    "delete_at": 1496710635
-                }
-            ]
-        }
+        }s
 
 ## Tender Product Collection [/tender-products]
 
