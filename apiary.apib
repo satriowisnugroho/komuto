@@ -167,10 +167,10 @@ Ready
     + Body
 
             {
-                "name": "User skyshi"
-                "email": "user@skyshi.com"
+                "name": "User skyshi",
+                "email": "user@skyshi.com",
                 "cooperative_member_number": "ALSK83929K",
-                "photo": "photo.jpg"
+                "photo": "photo.jpg",
                 "phone_number": "081222333444",
                 "gender": "female",
                 "mother_name": "Siti Aminah",
@@ -769,20 +769,18 @@ Ready
             "code": 200,
             "status": true,
             "message": "Store Catalog Data",
-            "data": {
-                [
-                    {
-                        "id": 1,
-                        "name": "Sepatu Futsal",
-                        "count_product": 5
-                    },
-                    {
-                        "id": 3,
-                        "name": "Sepatu Bola",
-                        "count_product": 5
-                    }
-                ]
-            }
+            "data": [
+                {
+                    "id": 1,
+                    "name": "Sepatu Futsal",
+                    "count_product": 5
+                },
+                {
+                    "id": 3,
+                    "name": "Sepatu Bola",
+                    "count_product": 5
+                }
+            ]
         }
 
 ### Create Catalog Store [POST /users/store/catalogs]
@@ -1379,7 +1377,7 @@ Ready
                     "bank_account": {
                         "id": 1,
                         "user_id": 1,
-                        "marketplace_id": 1,,
+                        "marketplace_id": 1,
                         "holder_name": "User Skyshi",
                         "holder_account_number": "09812309812398",
                         "bank_branch_office_name": "Yogyakarta",
@@ -1534,7 +1532,7 @@ Ready
 + Request (application/json)
 
         {
-            "name": "Sepatu Lari Nike Orange"
+            "name": "Sepatu Lari Nike Orange",
             "category_id": 2,
             "brand_id": 1,
             "description": "lorem ipsum",
@@ -1565,7 +1563,7 @@ Ready
                     "expedition_service_id": 2
                 }
             ],
-            images: [
+            "images": [
                 {
                     "image": "base64"
                 }
@@ -1948,7 +1946,7 @@ Ready
         {
             "review": "Barang memuaskan",
             "quality": 5,
-            "accuracy": 3a
+            "accuracy": 3
         }
 
 + Response 201 (application/json)
@@ -2158,15 +2156,17 @@ Ready
                 "pages": 10
             },
             "data": [
-                "user": {
-                    "id": 70,
-                    "name": "Sports Station",
-                    "photo": "http://www.look4fitness.net/images/no_user_logo.png"
-                },
-                "comment": {
-                    "id": 1,
-                    "reply": "Ready gan silahkan di order",
-                    "created_at": 1496710635
+                {
+                    "user": {
+                        "id": 70,
+                        "name": "Sports Station",
+                        "photo": "http://www.look4fitness.net/images/no_user_logo.png"
+                    },
+                    "comment": {
+                        "id": 1,
+                        "reply": "Ready gan silahkan di order",
+                        "created_at": 1496710635
+                    }
                 }
             ]
         }
@@ -2294,7 +2294,7 @@ Ready
                         "description": "Panah  berburu buatan Jerman Tahun 1980",
                         "open_bid": 120000,
                         "max_bid": 5000000,
-                        "insurance": "1"
+                        "insurance": "1",
                         "status": 1,
                         "status_at": 1496710635,
                         "start_at": 1496710635,
@@ -2365,7 +2365,7 @@ Ready
                     "description": "Panah  berburu buatan Jerman Tahun 1980",
                     "open_bid": 120000,
                     "max_bid": 5000000,
-                    "insurance": "1"
+                    "insurance": "1",
                     "status": 1,
                     "status_at": 1496710635,
                     "start_at": 1496710635,
@@ -2976,15 +2976,17 @@ Ready
             "data": {
                 "total_price": 250219,
                 "saldo_wallet": 450000,
-                "payment_methods": [
-                    "id": 1,
-                    "name": "Manual Transfer",
-                    "remarks": "Menerima pembayaran via transfer bank, akan membantu Toko Online Anda lebih dipercaya.",
-                    "status": 1,
-                    "status_at": 1496710635,
-                    "type": 1,
-                    "logo": "https://upload.wikimedia.org/wikipedia/en/e/e8/ATM_Bersama_2016.png",
-                    "type_text": ""
+                "payment_methods": [ 
+                    {
+                        "id": 1,
+                        "name": "Manual Transfer",
+                        "remarks": "Menerima pembayaran via transfer bank, akan membantu Toko Online Anda lebih dipercaya.",
+                        "status": 1,
+                        "status_at": 1496710635,
+                        "type": 1,
+                        "logo": "https://upload.wikimedia.org/wikipedia/en/e/e8/ATM_Bersama_2016.png",
+                        "type_text": ""
+                    }
                 ]
             }
         }
@@ -3007,7 +3009,7 @@ Ready
                         "total_bill": 250219,
                         "status": 0,
                         "total_price": 250257,
-                        "payment_method_id": 1
+                        "payment_method_id": 1,
                         "duration": 30000
                     },
                     "list_buckets": [
@@ -3101,7 +3103,7 @@ Ready
                     "total_bill": 250219,
                     "status": 0,
                     "total_price": 250257,
-                    "payment_method_id": 1
+                    "payment_method_id": 1,
                     "duration": 30000
                 },
                 "list_buckets": [
@@ -3746,7 +3748,7 @@ Ready
                 "bank_account": {
                     "id": 1,
                     "user_id": 1,
-                    "marketplace_id": 1,,
+                    "marketplace_id": 1,
                     "holder_name": "User Skyshi",
                     "holder_account_number": "09812309812398",
                     "bank_branch_office_name": "Yogyakarta",
@@ -3778,7 +3780,7 @@ Ready
                 "bank_account": {
                     "id": 1,
                     "user_id": 1,
-                    "marketplace_id": 1,,
+                    "marketplace_id": 1,
                     "holder_name": "User Skyshi",
                     "holder_account_number": "09812309812398",
                     "bank_branch_office_name": "Yogyakarta",
@@ -3820,7 +3822,7 @@ Ready
                 "bank_account": {
                     "id": 1,
                     "user_id": 1,
-                    "marketplace_id": 1,,
+                    "marketplace_id": 1,
                     "holder_name": "User Skyshi",
                     "holder_account_number": "09812309812398",
                     "bank_branch_office_name": "Yogyakarta",
