@@ -2088,55 +2088,42 @@ Ready
               "message": "Success",
               "data": {}
         }
-
-## Discussion Collection [/discussions]
-
-### Get Discussion by Product [GET /discussions/products/{product_id}]
+        
+### Get Discussions [GET /products/{id}/discussions]
+Ready
 
 + Parameters
-    + product_id: 2 (number, required)
-
+    + id: 1 (number, required)
+    
 + Response 200 (application/json)
 
         {
             "code": 200,
             "status": true,
-            "message": "Discussion Data",
+            "message": "Product Discussion Data",
             "meta": {
                 "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
+                "limit": 10
             },
             "data": [
                 {
+                    "id": 2,
                     "user": {
-                        "id": 66,
-                        "name": "Satrio Wisnugroho",
-                        "photo": "http://www.look4fitness.net/images/no_user_logo.png"
+                        "id": 100,
+                        "name": "Akmal Gumilar",
+                        "photo": "http://188.166.246.46/uploads/user/100_14770314462dba9b2d116.jpg",
+                        "gender": "male",
+                        "place_of_birth": 3275,
+                        "date_of_birth": 604861200
                     },
-                    "discussion": {
-                        "id": 2,
-                        "question": "barangnya ready gan?",
-                        "count_comment": 1,
-                        "created_at": 1496710635
-                    }
-                },
-                {
-                    "user": {
-                        "id": 67,
-                        "name": "Indra Skyshi",
-                        "photo": "http://www.look4fitness.net/images/no_user_logo.png"
-                    },
-                    "discussion": {
-                        "id": 3,
-                        "question": "stoknya masih ada?",
-                        "count_comment": 3,
-                        "created_at": 1496710635
-                    }
+                    "question": "barangnya ready gan?",
+                    "created_at": 1477627049,
+                    "count_comments": 0
                 }
             ]
         }
+
+## Discussion Collection [/discussions]
 
 ### Get Comments [GET /discussions/{id}/comments]
 
