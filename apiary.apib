@@ -2169,6 +2169,29 @@ Ready
                 }
             ]
         }
+        
+### New Discussion [POST /products/{id}/discussions]
+Ready
+
++ Request (application/json)
+
+        {
+            "question": "Hallo gan, mau nanya neh. Sepatu ini kan ringan banget kayaknya. Ngerawat nya susah enggak ya?"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Discussion Data",
+            "data": {
+                "id": 21,
+                "user_id": 100,
+                "question": "Hallo gan, mau nanya neh. Sepatu ini kan ringan banget kayaknya. Ngerawat nya susah enggak ya?",
+                "created_at": 1496710635
+            }
+        }
 
 ## Discussion Collection [/discussions]
 
@@ -2239,32 +2262,6 @@ Ready
                 }
             ]
         }
-
-### New Discussion [POST /discussions]
-
-+ Request (application/json)
-
-        {
-            "user_id": 100,
-            "product_id": 99,
-            "question": "Hallo gan, mau nanya neh. Sepatu ini kan ringan banget kayaknya. Ngerawat nya susah enggak ya?"
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Discussion Data",
-            "data": {
-                "id": 21,
-                "user_id": 100,
-                "product_id": 99,
-                "question": "Hallo gan, mau nanya neh. Sepatu ini kan ringan banget kayaknya. Ngerawat nya susah enggak ya?",
-                "created_at": 1496710635
-            }
-        }
-
 
 ## Tender Product Collection [/tender-products]
 
