@@ -1443,11 +1443,50 @@ Ready
             "message": "Success",
             "data": {}
         }
+        
+### Create Message [POST /stores/{id}/message]
+Ready
+
++ Parameters
+    + id: 1 (number, required)
+    
++ Request (application/json)
+
+        {
+            "subject": "Mau nanya nih",
+            "content": "Sepatu ini dijual ndak ya ?"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Message Data",
+            "data": {
+                "message": {
+                    "id": 9,
+                    "store_id": "1",
+                    "user_id": 50,
+                    "subject": "Mau nanya nih",
+                    "flag_sender": 2,
+                    "flag_receiver": 2,
+                    "flag_sender_at": 1500260346,
+                    "flag_receiver_at": 1500260346
+                },
+                "detailMessage": {
+                    "id": 4,
+                    "message_id": 9,
+                    "user_id": 50,
+                    "content": "Sepatu ini dijual ndak ya ?",
+                    "created_at": 1500260347
+                }
+            }
+        }
 
 ## Bank Account Collection [/bank-accounts]
 
 ### List [GET]
-+ Request (application/json)
 
 + Response 200 (application/json)
 
@@ -1482,8 +1521,6 @@ Ready
 
 ### List [GET]
 Ready
-
-+ Request (application/json)
 
 + Response 200 (application/json)
 
@@ -3620,28 +3657,6 @@ Ready
         {
             "token": "784fd054301106e1679454fc0e7d9217"
             "password": "komuto"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-        
-## Message Collection [/messages]
-
-### Create [POST]
-
-+ Request (application/json)
-
-        {
-            "user_id": 1,
-            "store_id": 1,
-            "subject": "Mau tanya tentang sepatu",
-            "content": "Halo gan, mau tanya nih, sepatu nya kan ringan, kalo dibakar rusak gak?"
         }
 
 + Response 200 (application/json)
