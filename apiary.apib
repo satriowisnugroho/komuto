@@ -808,7 +808,29 @@ Ready
             }
         }
 
+### Get Catalog Store [GET /users/store/catalogs/{catalog_id}]
+Ready
+
++ Parameters
+    + catalog_id: 1 (number, required)
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 1,
+                "store_id": 41,
+                "name": "Sepatu Futsal",
+                "count_product": null,
+                "created_at": 1500266952
+            }
+        }
+
 ### Update Catalog Store [PUT /users/store/catalogs/{catalog_id}]
+Ready
 
 + Parameters
     + catalog_id: 1 (number, required)
@@ -824,8 +846,14 @@ Ready
         {
             "code": 200,
             "status": true,
-            "message": "Success",
-            "data": {}
+            "message": "Catalog Data",
+            "data": {
+                "id": 1,
+                "store_id": 41,
+                "name": "Sepatu Bola",
+                "count_product": null,
+                "created_at": 1476994034
+            }
         }
 
 ### Delete Catalog Store [DELETE /users/store/catalogs/{catalog_id}]
