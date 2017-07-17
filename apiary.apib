@@ -785,6 +785,7 @@ Ready
         }
 
 ### Create Catalog Store [POST /users/store/catalogs]
+Ready
 
 + Request (application/json)
 
@@ -798,7 +799,13 @@ Ready
             "code": 200,
             "status": true,
             "message": "Success",
-            "data": {}
+            "data": {
+                "id": 80,
+                "store_id": 41,
+                "name": "Sepatu Futsal",
+                "count_product": null,
+                "created_at": 1500266952
+            }
         }
 
 ### Update Catalog Store [PUT /users/store/catalogs/{catalog_id}]
