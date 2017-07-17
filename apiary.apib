@@ -1107,18 +1107,6 @@ Ready
             }
         }
 
-### Send OTP [POST /users/otp]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
 ### Get Discussion [GET /users/discussions]
 Ready
 
@@ -3767,6 +3755,18 @@ Ready
             }
         }
 
+### Send OTP Phone [POST /accounts/otp/phone]
+Ready
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
 ### Verify Phone [POST /accounts/phone/verify]
 Waiting for otp_hp table in db dev
 
@@ -3812,6 +3812,17 @@ Ready
                     "is_primary": false
                 }
             ]
+        }
+
+### Send OTP Bank [POST /accounts/otp/bank]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
         }
 
 ### Create Bank Accounts [POST /accounts/banks]
