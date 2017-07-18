@@ -1740,6 +1740,7 @@ Ready
         }
 
 ### Create Dropship [POST /products/{id}/dropship]
+Ready
 
 + parameters
     + id: 1 (number, required)
@@ -1747,8 +1748,7 @@ Ready
 + Request (application/json)
 
         {
-            "catalog_id": 1,
-            "store_id": 1
+            "catalog_id": 1
         }
 
 + Response 200 (application/json)
@@ -1756,9 +1756,17 @@ Ready
         {
             "code": 200,
             "status": true,
-            "message": "Success",
-            "data": {}
-        }
+            "message": "Dropship Data",
+            "data": {
+                "id": 5,
+                "product_id": 1,
+                "catalog_id": 78,
+                "store_id": 41,
+                "status": 1,
+                "status_at": 1500364537,
+                "created_at": 1500364537
+            }
+        }    
 
 ### List [GET /products?q={query}&page={page}&size={size}&sort={sort}&price={price}&condition={condition}&other={other}&brands={brands}&services={services}&address={address}]
 Ready
