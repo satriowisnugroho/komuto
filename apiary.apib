@@ -1687,6 +1687,7 @@ Ready
 ## Product Collection [/products]
 
 ### Create [POST]
+Ready
 
 + Request (application/json)
 
@@ -1696,10 +1697,10 @@ Ready
             "brand_id": 1,
             "description": "lorem ipsum",
             "price": 1650000,
-            "weight": 0.5,
+            "weight": 500,
             "stock": 50,
-            "type": 1,
-            "insurance": 0,
+            "condition": "1",
+            "insurance": "0",
             "is_dropship": true,
             "catalog_id": 1,
             "wholesales": [
@@ -1724,7 +1725,7 @@ Ready
             ],
             "images": [
                 {
-                    "image": "base64"
+                    "image": "image.png"
                 }
             ]
         }
@@ -2189,16 +2190,13 @@ Ready
         }
 
 ### Report Product [POST /products/{id}/report]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
 
 + Request (application/json)
 
         {
+            "user_id": 2,
             "type": 1,
-            "description": "Salah katalog nih"
+            "report": "Salah katalog nih"
         }
 
 + Response 200 (application/json)
@@ -2207,13 +2205,7 @@ Ready
             "code": 200,
             "status": true,
             "message": "Success",
-            "data": {
-                "id": 2,
-                "product_id": 1,
-                "user_id": 50,
-                "type": 1,
-                "description": "Salah katalog nih"
-            }
+            "data": {}
         }
 
 ### Get Expedition [GET /products/{id}/expeditions]
@@ -2244,7 +2236,6 @@ Ready
         }
 
 ### Add to wishlist [GET /products/{id}/wishlist]
-Ready
 
 + Parameters
     + id: 1 (number, required)
