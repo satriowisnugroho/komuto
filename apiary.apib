@@ -2189,13 +2189,16 @@ Ready
         }
 
 ### Report Product [POST /products/{id}/report]
+Ready
+
++ Parameters
+    + id: 1 (number, required)
 
 + Request (application/json)
 
         {
-            "user_id": 2,
             "type": 1,
-            "report": "Salah katalog nih"
+            "description": "Salah katalog nih"
         }
 
 + Response 200 (application/json)
@@ -2204,7 +2207,13 @@ Ready
             "code": 200,
             "status": true,
             "message": "Success",
-            "data": {}
+            "data": {
+                "id": 2,
+                "product_id": 1,
+                "user_id": 50,
+                "type": 1,
+                "description": "Salah katalog nih"
+            }
         }
 
 ### Get Expedition [GET /products/{id}/expeditions]
@@ -2235,6 +2244,7 @@ Ready
         }
 
 ### Add to wishlist [GET /products/{id}/wishlist]
+Ready
 
 + Parameters
     + id: 1 (number, required)
