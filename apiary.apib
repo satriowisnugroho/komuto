@@ -1239,6 +1239,54 @@ Ready
             ]
         }
 
+### Get Store Products [GET /users/store/products?q={query}&page={page}&limit={limit}&hidden={hidden}]
+
++ Parameters
+    + query: "sepatu lari" (string)
+    + page: 2 (number)
+    + limit: 10 (number)
+    + hidden: true (boolean)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Store Product List Data",
+            "meta": {
+                "page": 2,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 23,
+                    "category_id": 30,
+                    "store_id": 14,
+                    "name": "Marketing for Dummies book",
+                    "stock": 100,
+                    "weight": 1,
+                    "type": 1,
+                    "description": "Buku ya buat belajar",
+                    "price": 1500,
+                    "attrval": 0,
+                    "status": 1,
+                    "insurance": 0,
+                    "discount": 0,
+                    "margin_dropshipper": null,
+                    "is_dropshipper": false,
+                    "is_wholesaler": false,
+                    "is_discount": false,
+                    "count_sold": 0,
+                    "count_popular": 0,
+                    "identifier_brand": null,
+                    "identifier_catalog": null,
+                    "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
+                    "status_at": 1471211789,
+                    "created_at": 1471194000
+                }
+            ]
+        }
+
 ## Store Collection [/stores]
 
 ### Get [GET /stores/{id}]
@@ -1612,13 +1660,13 @@ Ready
             }
         }    
 
-### List [GET /products?q={query}&page={page}&size={size}&sort={sort}&price={price}&condition={condition}&other={other}&brands={brands}&services={services}&address={address}]
+### List [GET /products?q={query}&page={page}&limit={limit}&sort={sort}&price={price}&condition={condition}&other={other}&brands={brands}&services={services}&address={address}]
 Ready
 
 + Parameters
     + query: "sepatu lari" (string)
     + page: 2 (number)
-    + size: 10 (number)
+    + limit: 10 (number)
     + sort: "newest" (string)
     + price: "1000-10000" (string)
     + condition: "new" (string)
@@ -1635,9 +1683,7 @@ Ready
             "message": "Product List Data",
             "meta": {
                 "page": 2,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
+                "limit": 10
             },
             "data": [
                 {
@@ -1700,8 +1746,6 @@ Ready
                 }
             ]
         }
-        
-
 
 ### Search [GET /products/search?q={query}]
 Ready
