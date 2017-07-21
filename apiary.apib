@@ -1239,129 +1239,6 @@ Ready
             ]
         }
 
-## Marketplace Collection [/marketplaces]
-
-### Login Marketplace [POST /marketplaces/login]
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Marketplace Data",
-            "data": {
-                "id": 2,
-                "email": "komuto@gmail.com",
-                "name": "Komuto",
-                "domain": "pasarmall.xyz",
-                "cooperative": "1",
-                "marketplace_id": 1,
-                "cooperative_added_at": 1496710635,
-                "created_at": 1496710635,
-                "status": 1,
-                "status_at": 1496710635,
-                "identifier_theme": 2,
-                "auth_key": "dssUE53Oq2k8e3e_0pLeVanGQeP0W1oa",
-                "logo": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                "favicon": "pasaragus.png",
-                "phone_number": "(021) 849 04 63",
-                "saldo_wallet": 10000000
-            }
-        }
-
-### Get Term of Service [GET /marketplaces/{id}/term]
-
-+ Parameters
-    + id: 2 (required, number)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Term of Service Data",
-            "data": {
-              "term_of_service": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            }
-        }
-
-### Get Privacy Policy [GET /marketplaces/{id}/policy]
-
-+ Parameters
-    + id: 2 (required, number)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Privacy Policy Data",
-            "data": {
-              "privacy_policy": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            }
-        }
-
-### Category Marketplace [GET /marketplaces/{id}/categories]
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Category Marketplace Data",
-            "data": [
-                {
-                    "marketplace_id": 1,
-                    "id": 1,
-                    "name": "Celana",
-                    "parent_id": 2,
-                    "icon": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/navara-dept-store_catenzo-kets-black-line-cream-sepatu-pria_full01.jpg"
-                },
-                {
-                    "marketplace_id": 1,
-                    "id": 2,
-                    "name": "Baju",
-                    "parent_id": 3,
-                    "icon": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/navara-dept-store_catenzo-kets-black-line-cream-sepatu-pria_full01.jpg"
-                }
-            ]
-        }
-
-### Category Child Marketplace [GET /marketplaces/{id}/categories/{parent_id}]
-
-+ Parameters
-    + id: 1 (number, required)
-    + parent_id: 2 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Category Marketplace Data",
-            "data": [
-                {
-                    "marketplace_id": 1,
-                    "id": 1,
-                    "name": "Celana",
-                    "parent_id": 2,
-                    "icon": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/navara-dept-store_catenzo-kets-black-line-cream-sepatu-pria_full01.jpg"
-                },
-                {
-                    "marketplace_id": 1,
-                    "id": 2,
-                    "name": "Baju",
-                    "parent_id": 2,
-                    "icon": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/navara-dept-store_catenzo-kets-black-line-cream-sepatu-pria_full01.jpg"
-                }
-            ]
-        }
-
 ## Store Collection [/stores]
 
 ### Get [GET /stores/{id}]
@@ -1521,39 +1398,6 @@ Ready
                     "created_at": 1500260347
                 }
             }
-        }
-
-## Bank Account Collection [/bank-accounts]
-
-### List [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Bank Account Data",
-            "data": [
-                {
-                    "bank_account": {
-                        "id": 1,
-                        "user_id": 1,
-                        "marketplace_id": 1,
-                        "holder_name": "User Skyshi",
-                        "holder_account_number": "09812309812398",
-                        "bank_branch_office_name": "Yogyakarta",
-                        "primary_account_number": "098129383"
-                    },
-                    "master_bank": {
-                        "id": "1",
-                        "name": "BNI",
-                        "code": "003",
-                        "status": 1,
-                        "status_at": 1496710635,
-                        "logo": "logo.png"
-                    }
-                }
-            ]
         }
 
 ## Category Collection [/categories]
@@ -2043,28 +1887,6 @@ Ready
                     }
                 ]
             }
-        }
-
-### Get Shipping Charge [GET /products/shipping]
-
-+ Request (application/json)
-
-        {
-            "expedition":"JNE",
-            "expeditionservice":"JNE YES",
-            "origin_id":1,
-            "destination_id":1
-        }
-
-+ Response 200 (application/json)
-
-        {
-              "code": 200,
-              "status": true,
-              "message": "Shipping Data",
-              "data": {
-                  "charge": 25000
-              }
         }
 
 ### Get Reviews [GET /products/{id}/reviews?page={page}&size={size}]
