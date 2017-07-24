@@ -1286,6 +1286,22 @@ Ready
                 }
             ]
         }
+        
+### Hide Products [POST /users/products/hides]
+Ready
+
++ Request (application/json)
+
+        [ 1, 2, 3 ]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
 
 ## Store Collection [/stores]
 
@@ -1984,30 +2000,6 @@ Ready
         }
 
 + Response 201 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-
-
-### Hide Products [POST /products/hide]
-
-+ Request (application/json)
-
-        [
-            {
-                "product_id" : 1
-            },
-            {
-                "product_id" : 2
-            }
-        ]
-
-+ Response 200 (application/json)
 
         {
             "code": 200,
