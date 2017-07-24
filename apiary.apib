@@ -1292,7 +1292,28 @@ Ready
 
 + Request (application/json)
 
-        [ 1, 2, 3 ]
+        {
+            "product_ids": [ 1, 2, 3 ] 
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Move Catalog Products [POST /users/store/products/move-catalog]
+Ready
+
++ Request (application/json)
+
+        {
+            "catalog_id": 2,
+            "product_ids": [ 1, 2, 3 ] 
+        }
 
 + Response 200 (application/json)
 
@@ -2020,31 +2041,6 @@ Ready
                 "product_id" : 2
             }
         ]
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-### Move Catalog Products [POST /products/move-catalog]
-
-+ Request (application/json)
-
-        {
-            "catalog_id": 2,
-            "products": [
-                {
-                    "product_id" : 1
-                },
-                {
-                    "product_id" : 2
-                }
-            ]
-        }
 
 + Response 200 (application/json)
 
