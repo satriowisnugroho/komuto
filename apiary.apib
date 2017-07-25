@@ -2431,7 +2431,7 @@ Ready
             "data": {}
         }
 
-### Get promo [GET /promo?code={code}]
+### Get promo [GET /buckets/promo?code={code}]
 Ready
 
 + Parameters
@@ -2455,6 +2455,18 @@ Ready
                 "status": 1,
                 "status_at": 1469775539
             }
+        }
+
+### Cancel promo [GET /buckets/promo/cancel]
+Ready
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
         }
 
 ### Get Count Bucket [GET /buckets/count]
