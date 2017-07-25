@@ -2513,33 +2513,6 @@ Ready
 
 ## Review Collection [/reviews]
 
-### Get  [GET /reviews/{id}]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Review List Data",
-            "data": {
-                "id": 1,
-                "product_id": 1,
-                "user": {
-                    "id": 66,
-                    "name": "User skyshi",
-                    "photo": "http://www.look4fitness.net/images/no_user_logo.png"
-                },
-                "review": "Pengemasannya bagus, pengiriman cepat,barang sesuai, recommended bgt lah",
-                "quality": 5,
-                "accuracy": 3,
-                "created_at": 1496710635
-            }
-        }
-
 ### Search  [GET /reviews/search?q={query}&store_id={store_id}&user_id={user_id}&product_id={product_id}&limit={limit}&page={page}]
 Ready
 
