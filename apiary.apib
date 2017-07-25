@@ -1239,12 +1239,10 @@ Ready
             ]
         }
 
-### Get Store Products [GET /users/store/products?q={query}&page={page}&limit={limit}&hidden={hidden}]
+### Get Store Products [GET /users/store/products?hidden={hidden}]
+Ready
 
 + Parameters
-    + query: "sepatu lari" (string)
-    + page: 2 (number)
-    + limit: 10 (number)
     + hidden: true (boolean)
 
 + Response 200 (application/json)
@@ -1252,37 +1250,67 @@ Ready
         {
             "code": 200,
             "status": true,
-            "message": "Store Product List Data",
-            "meta": {
-                "page": 2,
-                "limit": 10
-            },
+            "message": "Store Products Data",
             "data": [
                 {
-                    "id": 23,
-                    "category_id": 30,
-                    "store_id": 14,
-                    "name": "Marketing for Dummies book",
-                    "stock": 100,
-                    "weight": 1,
-                    "type": 1,
-                    "description": "Buku ya buat belajar",
-                    "price": 1500,
-                    "attrval": 0,
-                    "status": 1,
-                    "insurance": 0,
-                    "discount": 0,
-                    "margin_dropshipper": null,
-                    "is_dropshipper": false,
-                    "is_wholesaler": false,
-                    "is_discount": false,
-                    "count_sold": 0,
-                    "count_popular": 0,
-                    "identifier_brand": null,
-                    "identifier_catalog": null,
-                    "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
-                    "status_at": 1471211789,
-                    "created_at": 1471194000
+                    "catalog": {
+                        "id": 38,
+                        "store_id": 41,
+                        "name": "Minuman",
+                        "count_product": 1,
+                        "created_at": 1477368926
+                    },
+                    "products": [
+                        {
+                            "id": 99,
+                            "name": "say tea",
+                            "slug": "say-tea",
+                            "price": 10000,
+                            "discount": 0,
+                            "is_discount": false,
+                            "is_wholesaler": true,
+                            "image": "https://komutodev.aptmi.com/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
+                        }
+                    ]
+                },
+                {
+                    "catalog": {
+                        "id": 33,
+                        "store_id": 41,
+                        "name": "Batik kumur kumur",
+                        "count_product": 3,
+                        "created_at": 1476994034
+                    },
+                    "products": [
+                        {
+                            "id": 155,
+                            "name": "Motif Bunga Cengkeh",
+                            "slug": "motif-bunga-cengkeh",
+                            "price": 80000,
+                            "discount": 20,
+                            "is_discount": true,
+                            "is_wholesaler": false,
+                            "image": "http://demo.makitweb.com/broken_image/images/noimage.png"
+                        }
+                    ]
+                },
+                {
+                    "catalog": {
+                        "name": "Tanpa Katalog",
+                        "count_product": 1
+                    },
+                    "products": [
+                        {
+                            "id": 93,
+                            "name": "Kain denim motif polkadot",
+                            "slug": "kain-denim-motif-polkadot",
+                            "price": 100000,
+                            "discount": 10,
+                            "is_discount": true,
+                            "is_wholesaler": true,
+                            "image": "http://demo.makitweb.com/broken_image/images/noimage.png"
+                        }
+                    ]
                 }
             ]
         }
