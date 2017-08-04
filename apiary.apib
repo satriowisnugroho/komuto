@@ -1315,6 +1315,52 @@ Ready
             ]
         }
         
+### Get Store Products by Catalog [GET /users/store/products/catalogs/{id}]
+Ready
+
++ Parameters
+    
+    + id: 120 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Store Catalog Products Data",
+            "data": {
+                "catalog": {
+                    "id": 120,
+                    "store_id": 23,
+                    "name": "Sport Shoes2",
+                    "count_product": 2,
+                    "created_at": 1501723126
+                },
+                "products": [
+                    {
+                        "id": 49,
+                        "name": "Dropship nih",
+                        "slug": "dropship-nih",
+                        "price": 1650000,
+                        "discount": 0,
+                        "is_discount": false,
+                        "is_wholesaler": false,
+                        "image": "http://188.166.246.46/uploads/produk/kambing.png"
+                    },
+                    {
+                        "id": 48,
+                        "name": "Bukan dropship",
+                        "slug": "bukan-dropship",
+                        "price": 1650000,
+                        "discount": 0,
+                        "is_discount": false,
+                        "is_wholesaler": false,
+                        "image": "http://188.166.246.46/uploads/produk/noimage.png"
+                    }
+                ]
+            }
+        }
+
 ### Hide Products [POST /users/products/hides]
 Ready
 
@@ -2492,18 +2538,16 @@ Ready
             "status": true,
             "message": "Success",
             "data": {
-                "id": 383,
-                "bucket_id": 252,
-                "product_id": 95,
-                "shipping_id": 220,
-                "qty": 1,
-                "weight": 4,
-                "note": "Kirimnya cepat ya gan",
-                "additional_cost": 0,
-                "total_price": 2429001
+                "id": 252,
+                "user_id": 32,
+                "promo_id": null,
+                "order_at": 1501693200,
+                "wallet": 0,
+                "status": 1,
+                "status_at": 1501693200
             }
         }
-
+        
 ### Delete cart [DELETE /buckets/items/{id}]
 Ready
 
@@ -2950,6 +2994,7 @@ Ready
 ## Checkout Collection [/checkout]
 
 ### Checkout [POST]
+Ready
 
 + Response 200 (application/json)
 
@@ -2957,15 +3002,7 @@ Ready
             "code": 200,
             "status": true,
             "message": "Success",
-            "data": {
-                "id": 252,
-                "user_id": 32,
-                "promo_id": null,
-                "order_at": 1501693200,
-                "wallet": 0,
-                "status": 1,
-                "status_at": 1501693200
-            }
+            "data": {}
         }
 
 ## Payment Collection [/payment]
