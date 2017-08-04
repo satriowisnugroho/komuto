@@ -3033,6 +3033,39 @@ Ready
             }
         }
 
+### Get Payment Methods [GET /payment-methods]
+Ready
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Payment Methods Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "Manual Transfer",
+                    "remarks": "Menerima pembayaran via transfer bank, akan membantu Toko Online Anda lebih dipercaya.",
+                    "logo": "http://188.166.246.46/uploads/payment/transferbank.png",
+                    "type": 0,
+                    "type_text": null,
+                    "status": 1,
+                    "status_at": 1468987469
+                },
+                {
+                    "id": 3,
+                    "name": "BCA KlikPay",
+                    "remarks": "BCA KlikPay adalah cara bayar belanja online yang praktis dan terpercaya dengan menggunakan fasilitas KlikBCA Individu atau BCA Card.",
+                    "logo": "http://188.166.246.46/uploads/payment/bcaklikpay.png",
+                    "type": 1,
+                    "type_text": "klikpay-bca",
+                    "status": 1,
+                    "status_at": 1472526291
+                }
+            ]
+        }
+
 ## Transactions Collection [/transactions]
 
 ### List [GET]
@@ -3645,24 +3678,6 @@ Ready
                 "place_of_birth": "Yogyakarta",
                 "date_of_birth": 1496710635
             }
-        }
-
-### Check Email Available [POST /accounts/email/check]
-Ready
-
-+ Request (application/json)
-
-        {
-            "email": "user@skyshi.com"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Email Available",
-            "data": {}
         }
 
 ### Get Phone [GET /accounts/phone]
