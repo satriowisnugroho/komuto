@@ -3131,6 +3131,52 @@ Ready
             ]
         }
 
+### List (update) [GET /transactions/v2]
+Ready
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Transaction Data",
+            "data": [
+                {
+                    "bucket": {
+                    
+                    },
+                    "summary_invoice": {
+                        "total_price": 235000,
+                        "status": 1,
+                        "time_left": 6000
+                    },
+                    "invoices": [
+                        "id": 1,
+                        "invoice_number": "Invoice-89023498/04/2017",
+                        "total_bill": 250219,
+                        "status": 0,
+                        "total_price": 250257,
+                        "payment_method_id": 1,
+                        "duration": 30000,
+                        "items": [
+                            {
+                                "id": 1,
+                                "qty": 1,
+                                "total_price": 100000,
+                                "weight": 1,
+                                "additional_price": 5000,
+                                "product": {
+                                    "id": 1,
+                                    "name": "GoPro 5",
+                                    "image": "image.png"
+                                }
+                            }
+                        ]
+                    ]
+                }
+            ]
+        }
+
 ### Confirmation [POST /transactions/{id}/confirm]
 
 + Parameters
