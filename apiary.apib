@@ -2615,6 +2615,43 @@ Ready
                 "count": 100
             }
         }
+        
+### Bank payment [POST /buckets/{id}/bank]
+Ready
+
++ Parameters
+
+    + id: 252 (number, required)
+
++ Request
+
+        {
+            "bank_account_id": 1,
+            "date": 1477242000,
+            "amount": 150000,
+            "bank": "BNI",
+            "holder_account_number": "12341234",
+            "attachment": "attachment.png"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "success",
+            "data": {
+                "id": "23",
+                "user_id": 32,
+                "bucket_id": 252,
+                "bank_account_id": 1,
+                "date": 1477242000,
+                "amount": 150000,
+                "bank": "BNI",
+                "holder_account_number": "12341234",
+                "attachment": "http://188.166.246.46/uploads/payment_confirmation/attachment.png"
+            }
+        }
 
 ## Review Collection [/reviews]
 
