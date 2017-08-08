@@ -2616,6 +2616,43 @@ Ready
             }
         }
 
+### Bank payment [POST /buckets/{id}/bank]
+Ready
+
++ Parameters
+
+    + id: 252 (number, required)
+
++ Request
+
+        {
+            "bank_account_id": 1,
+            "date": 1477242000,
+            "amount": 150000,
+            "bank": "BNI",
+            "holder_account_number": "12341234",
+            "attachment": "attachment.png"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "success",
+            "data": {
+                "id": "23",
+                "user_id": 32,
+                "bucket_id": 252,
+                "bank_account_id": 1,
+                "date": 1477242000,
+                "amount": 150000,
+                "bank": "BNI",
+                "holder_account_number": "12341234",
+                "attachment": "http://188.166.246.46/uploads/payment_confirmation/attachment.png"
+            }
+        }
+
 ## Review Collection [/reviews]
 
 ### Search  [GET /reviews/search?q={query}&store_id={store_id}&user_id={user_id}&product_id={product_id}&limit={limit}&page={page}]
@@ -3175,35 +3212,6 @@ Ready
                     ]
                 }
             ]
-        }
-
-### Confirmation [POST /transactions/{id}/confirm]
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Request (application/json)
-
-        {
-            "nominal": 1,
-            "transfer_at": 1496710635,
-            "destination_bank": 1,
-            "origin_bank": 1,
-            "holder_account_number": "091823871239",
-            "images": [
-                {
-                    "image": "base64"
-                }
-            ]
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Transaction Data",
-            "data": {}
         }
 
 ### Get [GET /transactions/{id}]
