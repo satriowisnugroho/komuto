@@ -2616,43 +2616,6 @@ Ready
             }
         }
 
-### Bank payment [POST /buckets/{id}/bank]
-Ready
-
-+ Parameters
-
-    + id: 252 (number, required)
-
-+ Request
-
-        {
-            "bank_account_id": 1,
-            "date": 1477242000,
-            "amount": 150000,
-            "bank": "BNI",
-            "holder_account_number": "12341234",
-            "attachment": "attachment.png"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "success",
-            "data": {
-                "id": "23",
-                "user_id": 32,
-                "bucket_id": 252,
-                "bank_account_id": 1,
-                "date": 1477242000,
-                "amount": 150000,
-                "bank": "BNI",
-                "holder_account_number": "12341234",
-                "attachment": "http://188.166.246.46/uploads/payment_confirmation/attachment.png"
-            }
-        }
-
 ## Review Collection [/reviews]
 
 ### Search  [GET /reviews/search?q={query}&store_id={store_id}&user_id={user_id}&product_id={product_id}&limit={limit}&page={page}]
@@ -3106,69 +3069,6 @@ Ready
 ## Transactions Collection [/transactions]
 
 ### List [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Transaction Data",
-            "data": [
-                {
-                    "invoice": {
-                        "id": 1,
-                        "invoice_number": "Invoice-89023498/04/2017",
-                        "total_bill": 250219,
-                        "status": 0,
-                        "total_price": 250257,
-                        "payment_method_id": 1,
-                        "duration": 30000
-                    },
-                    "list_buckets": [
-                        {
-                            "list_bucket": {
-                                "id": 1,
-                                "qty": 1,
-                                "total_price": 100000,
-                                "weight": 1,
-                                "additional_price": 5000
-                            },
-                            "product": {
-                                "id": 1,
-                                "name": "GoPro 5",
-                                "stock": 100,
-                                "weight": 1,
-                                "type": "Camera",
-                                "description": "Lorem ipsum",
-                                "price": 5000000,
-                                "status": 1,
-                                "insurance": "Lorem",
-                                "discount": 10,
-                                "created_at": 1496710635,
-                                "status_at": 1496710635,
-                                "attrval": "0",
-                                "margin_dropshipper": 0,
-                                "is_dropshipper": true,
-                                "is_grosir": false,
-                                "count_sold": 0,
-                                "count_popular": 0,
-                                "identifier_brand": 0,
-                                "identifier_catalog": 32
-                            },
-                            "image": {
-                                "id": 1,
-                                "product_id": 1,
-                                "file": "picture.png",
-                                "created_at": 1496710635,
-                                "updated_at": 1496710635
-                            }
-                        }
-                    ]
-                }
-            ]
-        }
-
-### List (update) [GET /transactions/v2]
 Ready
 
 + Response 200 (application/json)
@@ -3176,144 +3076,124 @@ Ready
         {
             "code": 200,
             "status": true,
-            "message": "Transaction Data",
+            "message": "Transactions Data",
             "data": [
                 {
                     "bucket": {
-                    
+                        "id": 252,
+                        "user_id": 32,
+                        "promo_id": null,
+                        "payment_method_id": 1,
+                        "unique_code": 0,
+                        "order_at": 1501693200,
+                        "wallet": 0,
+                        "status": 1,
+                        "status_at": 1501693200
                     },
                     "summary_invoice": {
-                        "total_price": 235000,
+                        "total_price": 42201,
                         "status": 1,
-                        "time_left": 6000
+                        "time_left": {
+                            "days": 1,
+                            "hours": 18,
+                            "minutes": 27,
+                            "seconds": 51
+                        }
                     },
                     "invoices": [
-                        "id": 1,
-                        "invoice_number": "Invoice-89023498/04/2017",
-                        "total_bill": 250219,
-                        "status": 0,
-                        "total_price": 250257,
-                        "payment_method_id": 1,
-                        "duration": 30000,
-                        "items": [
-                            {
-                                "id": 1,
-                                "qty": 1,
-                                "total_price": 100000,
-                                "weight": 1,
-                                "additional_price": 5000,
-                                "product": {
-                                    "id": 1,
-                                    "name": "GoPro 5",
-                                    "image": "image.png"
+                        {
+                            "id": 126,
+                            "payment_method_id": 1,
+                            "invoice_number": "Invoice-471268034/08/2017",
+                            "total_bill": 42201,
+                            "total_price": 42201,
+                            "status": 1,
+                            "items": [
+                                {
+                                    "id": 395,
+                                    "qty": 1,
+                                    "weight": 1,
+                                    "additional_cost": 0,
+                                    "total_price": 42201,
+                                    "product": {
+                                        "id": 96,
+                                        "name": "TV Kecil",
+                                        "slug": "tv-kecil",
+                                        "price": 10000,
+                                        "discount": 10,
+                                        "is_discount": true,
+                                        "is_wholesaler": false,
+                                        "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
+                                    }
                                 }
-                            }
-                        ]
+                            ]
+                        }
                     ]
                 }
             ]
         }
 
 ### Get [GET /transactions/{id}]
+Ready
 
 + Parameters
-    + id: 1 (number, required)
+    + id: 252 (number, required)
 
 + Response 200 (application/json)
 
         {
             "code": 200,
             "status": true,
-            "message": "Transaction Data",
+            "message": "Transactions Data",
             "data": {
-                "invoice": {
-                    "id": 1,
-                    "invoice_number": "Invoice-89023498/04/2017",
-                    "total_bill": 250219,
-                    "status": 0,
-                    "total_price": 250257,
+                "bucket": {
+                    "id": 252,
+                    "user_id": 32,
+                    "promo_id": null,
                     "payment_method_id": 1,
-                    "duration": 30000
+                    "unique_code": 0,
+                    "order_at": 1501693200,
+                    "wallet": 0,
+                    "status": 1,
+                    "status_at": 1501693200
                 },
-                "list_buckets": [
+                "summary_invoice": {
+                    "total_price": 42201,
+                    "status": 1,
+                    "time_left": {
+                        "days": 1,
+                        "hours": 18,
+                        "minutes": 29,
+                        "seconds": 17
+                    }
+                },
+                "invoices": [
                     {
-                        "list_bucket": {
-                            "id": 1,
-                            "qty": 1,
-                            "total_price": 100000,
-                            "weight": 1,
-                            "additional_price": 5000
-                        },
-                        "product": {
-                            "id": 1,
-                            "name": "GoPro 5",
-                            "stock": 100,
-                            "weight": 1,
-                            "type": "Camera",
-                            "description": "Lorem ipsum",
-                            "price": 5000000,
-                            "status": 1,
-                            "insurance": "Lorem",
-                            "discount": 10,
-                            "created_at": 1496710635,
-                            "status_at": 1496710635,
-                            "attrval": "0",
-                            "margin_dropshipper": 0,
-                            "is_dropshipper": true,
-                            "is_grosir": false,
-                            "count_sold": 0,
-                            "count_popular": 0,
-                            "identifier_brand": 0,
-                            "identifier_catalog": 32
-                        },
-                        "store": {
-                            "id": 13,
-                            "name": "Baju Keren",
-                            "slogan": "Semua harus keren",
-                            "description": "Menjual semua jenis baju yang keren",
-                            "logo": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                            "custom_domain": ".com",
-                            "created_at": 1496710635,
-                            "status": 1,
-                            "remarks_status": "",
-                            "status_at": 1496710635,
-                            "cover_image": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                            "seller_theme_id": 2,
-                            "reputation": 23,
-                            "store_id_number": "3404092309880001",
-                            "total_favorite": 40,
-                            "verification_at": 1496710635,
-                            "note": "lorem ipsum",
-                            "is_verify": false,
-                            "start_at": 1496710635,
-                            "end_at": 1496710635
-                        },
-                        "image": {
-                            "id": 1,
-                            "product_id": 1,
-                            "file": "picture.png",
-                            "created_at": 1496710635,
-                            "updated_at": 1496710635
-                        },
-                        "product_delivery": {
-                            "id": 1,
-                            "service_id": 1,
-                            "address_id": 1,
-                            "delivery_cost": 32000,
-                            "insurance_fee": 10000,
-                            "note": "Lorem ipsum",
-                            "seller_note": "Lorem ipsum",
-                            "send_response_status": 0,
-                            "send_response_status_at": 1496710635,
-                            "send_response_expired_at": 1496710635,
-                            "send_response_receipt": "",
-                            "received_response_status": 0,
-                            "received_response_status_at": 1496710635,
-                            "received_response_expired_at": 1496710635,
-                            "received_items_response_expired_at": 1496710635,
-                            "is_insurance": true,
-                            "uid": ""
-                        }
+                        "id": 126,
+                        "payment_method_id": 1,
+                        "invoice_number": "Invoice-471268034/08/2017",
+                        "total_bill": 42201,
+                        "total_price": 42201,
+                        "status": 1,
+                        "items": [
+                            {
+                                "id": 395,
+                                "qty": 1,
+                                "weight": 1,
+                                "additional_cost": 0,
+                                "total_price": 42201,
+                                "product": {
+                                    "id": 96,
+                                    "name": "TV Kecil",
+                                    "slug": "tv-kecil",
+                                    "price": 10000,
+                                    "discount": 10,
+                                    "is_discount": true,
+                                    "is_wholesaler": false,
+                                    "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
+                                }
+                            }
+                        ]
                     }
                 ]
             }
