@@ -877,7 +877,7 @@ Ready
             ]
         }
 
-### List Expedition Manage [GET /users/store/expeditions/manage]
+### List Expeditions Manage [GET /users/store/expeditions/manage]
 Ready
 
 + Response 200 (application/json)
@@ -921,6 +921,70 @@ Ready
                             "description": "Service normal adalah",
                             "logo": "logo.png",
                             "status": 1
+                        }
+                    ]
+                }
+            ]
+        }
+
+### Product Expeditions Manage [GET /users/store/products/{id}/expeditions/manage]
+Ready
+
++ Parameters
+    + id: 76 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Product Expeditions Manage Data",
+            "data": [
+                {
+                    "id": 2,
+                    "name": "JNE",
+                    "logo": "http://188.166.246.46/img/pengiriman/jne.png",
+                    "insurance_fee": 2,
+                    "is_checked": false,
+                    "status": 1,
+                    "method": 1,
+                    "status_at": 1466528400,
+                    "services": [
+                        {
+                            "id": 1,
+                            "name": "REG",
+                            "description": "JNE Reguler adalahpaket reguler yang ditawarkan JNE. Kecepatanpengiriman tergantung dari lokasi pengiriman dan tujuan. untuk kota yang sama umumnya memakan waku 2-3 hari",
+                            "logo": null,
+                            "is_checked": true,
+                            "expedition": {
+                                "id": 2,
+                                "name": "JNE",
+                                "logo": "http://188.166.246.46/img/pengiriman/jne.png",
+                                "insurance_fee": 2,
+                                "is_checked": false,
+                                "status": 1,
+                                "method": 1,
+                                "status_at": 1466528400
+                            },
+                            "is_active": true
+                        },
+                        {
+                            "id": 2,
+                            "name": "YES",
+                            "description": "JNE YES adalah Paket dengan prioritas pengiriman tercepat yang ditawarkan JNE. Hanya saja perlu diperhatikan kecepatan barang dipengaruhi kecepatan penjual melakukan pengiriman barang.",
+                            "logo": null,
+                            "is_checked": true,
+                            "expedition": {
+                                "id": 2,
+                                "name": "JNE",
+                                "logo": "http://188.166.246.46/img/pengiriman/jne.png",
+                                "insurance_fee": 2,
+                                "is_checked": false,
+                                "status": 1,
+                                "method": 1,
+                                "status_at": 1466528400
+                            },
+                            "is_active": true
                         }
                     ]
                 }
