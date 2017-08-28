@@ -1762,6 +1762,45 @@ Ready
             }
         }
 
+### Update FCM Registration Token [PUT /users/registration-token]
+Ready
+
++ Request (application/json)
+
+        {
+            "reg_token": "FCM_REG_TOKEN"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 32,
+                "name": "bleble",
+                "photo": "http://188.166.246.46/uploads/user/user.jpg",
+                "gender": "female",
+                "place_of_birth": 1101,
+                "date_of_birth": null,
+                "marketplace_id": 0,
+                "email": "abdan@skyshi.com",
+                "cooperative_member_number": "ALSK83929K",
+                "approval_cooperative_status": "0",
+                "phone_number": "081222333444",
+                "status": 1,
+                "mother_name": "Siti Aminah",
+                "auth_key": null,
+                "saldo_wallet": 500000,
+                "created_at": 1497546000,
+                "status_at": 1497570793,
+                "provider_name": null,
+                "provider_uid": null,
+                "reg_token": "FCM_REG_TOKEN"
+            }
+        }
+
 ## Store Collection [/stores]
 
 ### Get [GET /stores/{id}]
