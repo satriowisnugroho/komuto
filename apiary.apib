@@ -718,50 +718,6 @@ Ready
             "data": {}
         }
 
-### Update Store [PUT /users/store]
-Auto send OTP if address changed
-
-+ Request (application/json)
-
-        {
-            "store": {
-                "slogan": "Anda Sopan Kami Segan",
-                "description": "Lorem ipsum",
-                "logo": "base64"
-            },
-            "expeditions": [
-                {
-                    "expedition_service_id": 1,
-                    "status": 1
-                },
-                {
-                    "expedition_service_id": 0,
-                    "status": 0
-                }
-            ],
-            "address": {
-                "province_id": 1,
-                "district_id": 1,
-                "sub_district_id": 1,
-                "village_id": 1,
-                "name": "User skyshi",
-                "email": "user@skyshi.com",
-                "phone_number": "081222333444",
-                "postal_code": "84314",
-                "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
-                "type": "primary"
-            }
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
 ### List Catalog Store [GET /users/store/catalogs]
 Ready
 
@@ -1396,6 +1352,118 @@ Ready
             "status": true,
             "message": "Success",
             "data": {}
+        }
+
+### Update Store Information [PUT /users/store]
+Ready
+
++ Request (application/json)
+
+        {
+            "name": "Toko Makmur Abadi Sejahtera selamanya",
+            "slogan": "Lorem ipsum",
+            "description": "Lorem ipsum",
+            "logo": "logo.jpg"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 28,
+                "name": "Toko Makmur Abadi Sejahtera selamanya",
+                "logo": "http://188.166.246.46/uploads/toko/logo.jpg",
+                "user_id": 32,
+                "slogan": "Lorem ipsum",
+                "description": "Lorem ipsum",
+                "custom_domain": null,
+                "status": 1,
+                "remarks_status": null,
+                "cover_image": null,
+                "seller_theme_id": 0,
+                "reputation": null,
+                "store_id_number": "0982390923989",
+                "total_favorite": null,
+                "term_condition": null,
+                "created_at": 1502211600,
+                "status_at": 1502225988,
+                "verification_at": 1502211600
+            }
+        }
+
+### Update Store Term & Condition [PUT /users/store/term-condition]
+Ready
+
++ Request (application/json)
+
+        {
+            "term_condition": "- Hanya melakukan pengiriman di hari kamis."
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 28,
+                "name": "Toko Makmur Abadi Sejahtera selamanya",
+                "logo": "http://188.166.246.46/uploads/toko/logo.jpg",
+                "user_id": 32,
+                "slogan": "Lorem ipsum",
+                "description": "Lorem ipsum",
+                "custom_domain": null,
+                "status": 1,
+                "remarks_status": null,
+                "cover_image": null,
+                "seller_theme_id": 0,
+                "reputation": null,
+                "store_id_number": "0982390923989",
+                "total_favorite": null,
+                "term_condition": "- Hanya melakukan pengiriman di hari kamis.",
+                "created_at": 1502211600,
+                "status_at": 1502225988,
+                "verification_at": 1502211600
+            }
+        }
+
+### Update Address Store [PUT /users/store/address]
+Ready
+
++ Request (application/json)
+
+        {
+            "province_id": 32,
+            "district_id": 3273,
+            "sub_district_id": 1111110,
+            "village_id": 1111110073,
+            "postal_code": "84341",
+            "address": "Jl. Klamat No. 24 RT. 002 RW. 003"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Address Data",
+            "data": {
+                "id": 485,
+                "name": "User skyshi",
+                "email": "abdan@skyshi.com",
+                "phone_number": "081222333444",
+                "postal_code": "84341",
+                "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
+                "alias_address": "Alamat Toko",
+                "is_primary_address": true,
+                "is_sale_address": true,
+                "is_tender_address": false,
+                "is_checked": false
+            }
         }
 
 ## Store Collection [/stores]
