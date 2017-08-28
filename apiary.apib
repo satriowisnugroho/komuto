@@ -1801,6 +1801,213 @@ Ready
             }
         }
 
+### Get List Messages [GET /users/messages]
+Ready
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Message Data",
+            "data": [
+                {
+                    "id": 27,
+                    "store": {
+                        "id": 1,
+                        "name": "Jaya Makmur",
+                        "logo": "http://188.166.246.46/uploads/toko/68d19956169712d63713a69f717f3c778998204e_jajan.jpg",
+                        "user_id": 1
+                    },
+                    "user_id": 32,
+                    "subject": "Mau nanya nih",
+                    "flag_sender": 2,
+                    "flag_receiver": 2,
+                    "flag_sender_at": 1503283591,
+                    "flag_receiver_at": 1503283591,
+                    "detail_message": {
+                        "id": 22,
+                        "message_id": 27,
+                        "user_id": 32,
+                        "content": "Sepatu ini dijual ndak ya ?",
+                        "created_at": 1503283591
+                    }
+                }
+            ]
+        }
+
+### Get Detail Message [GET /users/messages/{id}]
+Ready
+
++ Parameters
+    + id: 26 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Detail Message Data",
+            "data": {
+                "id": 26,
+                "store": {
+                    "id": 1,
+                    "name": "Jaya Makmur",
+                    "logo": "http://188.166.246.46/uploads/toko/68d19956169712d63713a69f717f3c778998204e_jajan.jpg",
+                    "user_id": 1
+                },
+                "user_id": 32,
+                "subject": "Mau nanya nih",
+                "flag_sender": 1,
+                "flag_receiver": 2,
+                "flag_sender_at": 1503559773,
+                "flag_receiver_at": 1503281845,
+                "detail_messages": [
+                    {
+                        "id": 23,
+                        "message_id": 26,
+                        "user": {
+                            "id": 32,
+                            "name": "bleble",
+                            "photo": "http://188.166.246.46/uploads/user/https://scontent.xx.fbcdn.net/v/t1.0-1/s200x200/12190927_1051452451551693_3353738072722896044_n.jpg?oh=1a89bdfda8446cc6b3c82a4536970ba3&oe=599E476F",
+                            "gender": "female",
+                            "place_of_birth": 1101,
+                            "date_of_birth": null
+                        },
+                        "content": "Dijual lah cuy",
+                        "created_at": 1503281058
+                    },
+                    {
+                        "id": 24,
+                        "message_id": 26,
+                        "user": {
+                            "id": 32,
+                            "name": "bleble",
+                            "photo": "http://188.166.246.46/uploads/user/https://scontent.xx.fbcdn.net/v/t1.0-1/s200x200/12190927_1051452451551693_3353738072722896044_n.jpg?oh=1a89bdfda8446cc6b3c82a4536970ba3&oe=599E476F",
+                            "gender": "female",
+                            "place_of_birth": 1101,
+                            "date_of_birth": null
+                        },
+                        "content": "Dijual lah cuy",
+                        "created_at": 1503281267
+                    }
+                ]
+            }
+        }
+
+### Update Message [PUT /users/messages/{id}]
+Ready
+
++ Parameters
+    + id: 26 (number, required)
+    
++ Request
+
+        {
+            "type": "conversation"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 26,
+                "store_id": 1,
+                "user_id": 32,
+                "subject": "Mau nanya nih",
+                "flag_sender": 1,
+                "flag_receiver": 2,
+                "flag_sender_at": 1503893378,
+                "flag_receiver_at": 1503281845
+            }
+        }
+
+### Reply Message [POST /users/messages/{id}]
+Ready
+
++ Parameters
+    + id: 26 (number, required)
+    
++ Request
+
+        {
+            "content": "Dijual lah cuy"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 29,
+                "message_id": 26,
+                "user_id": 32,
+                "content": "Dijual lah cuy",
+                "created_at": 1503893552
+            }
+        }
+
+### Delete Message [DELETE /users/messages/{id}]
+Ready
+
++ Parameters
+    + id: 26 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Get User Reviews [GET /users/reviews]
+Ready
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Review List Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 6,
+                "pages": 1
+            },
+            "data": [
+                {
+                    "id": 69,
+                    "review": "Obatnya manjur gan update",
+                    "quality": 4,
+                    "accuracy": 5,
+                    "created_at": 1503349439,
+                    "product": {
+                        "id": 9,
+                        "name": "Obat Nyamuk",
+                        "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
+                        "store": {
+                            "id": 2,
+                            "name": "Amanah Jaya",
+                            "logo": "http://188.166.246.46/uploads/toko/a52fe8dd933bdeeac3ceb8dc0242ecb980569b00_jajan.jpg"
+                        }
+                    },
+                    "user": {
+                        "id": 32,
+                        "name": "bleble",
+                        "photo": "http://188.166.246.46/uploads/user/https://scontent.xx.fbcdn.net/v/t1.0-1/s200x200/12190927_1051452451551693_3353738072722896044_n.jpg?oh=1a89bdfda8446cc6b3c82a4536970ba3&oe=599E476F"
+                    }
+                }
+            ]
+        }
+
 ## Store Collection [/stores]
 
 ### Get [GET /stores/{id}]
@@ -2632,11 +2839,10 @@ Ready
             ]
         }
         
-### Get Discussion Comments [GET /products/{id}/discussions/{discussion_id}/comments]
+### Get Discussion Comments [GET /discussions/{discussion_id}/comments]
 Ready
 
 + Parameters
-    + id: 2 (number, required)
     + discussion_id: 2 (number, required)
 
 + Response 200 (application/json)
@@ -2705,11 +2911,10 @@ Ready
             }
         }
 
-### New Comment [POST /products/{id}/discussions/{discussion_id}/comments]
+### New Comment [POST /discussions/{discussion_id}/comments]
 Ready
 
 + Parameters
-    + id: 1 (number, required)
     + discussion_id: 1 (number, required)
 
 + Request (application/json)
