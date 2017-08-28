@@ -1270,6 +1270,99 @@ Ready
                 }
             ]
         }
+
+### Get Store Product [GET /users/store/products/{id}]
+Ready
+
++ Parameters
+    + id: 80 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Product Detail Data",
+            "data": {
+                "product": {
+                    "id": 80,
+                    "name": "asdasd",
+                    "slug": "asdasd",
+                    "price": 1650000,
+                    "discount": 100,
+                    "is_discount": true,
+                    "is_wholesaler": true,
+                    "is_dropshipper": true,
+                    "weight": 500,
+                    "stock": 50,
+                    "category_id": 63,
+                    "store_id": 28,
+                    "condition": 1,
+                    "description": "lorem ipsum",
+                    "attrval": 0,
+                    "status": 1,
+                    "is_insurance": false,
+                    "margin_dropshipper": null,
+                    "is_dropship": true,
+                    "count_sold": 0,
+                    "count_popular": 0,
+                    "count_view": 0,
+                    "identifier_brand": 1,
+                    "identifier_catalog": 124,
+                    "status_at": 1502778680,
+                    "created_at": 1502730000
+                },
+                "category": {
+                    "id": 63,
+                    "parent_id": 62,
+                    "icon": "http://188.166.246.46/images/img-kategori/default.png",
+                    "name": "Sneakers Pria",
+                    "slug": "sneakers-pria"
+                },
+                "images": [
+                    {
+                        "id": 428,
+                        "product_id": 80,
+                        "file": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
+                        "created_at": 1503618116,
+                        "updated_at": 1503618116
+                    },
+                    {
+                        "id": 427,
+                        "product_id": 80,
+                        "file": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
+                        "created_at": 1503618116,
+                        "updated_at": 1503618116
+                    }
+                ],
+                "wholesaler": [
+                    {
+                        "id": 74,
+                        "min": 20,
+                        "max": 30,
+                        "price": 120000
+                    },
+                    {
+                        "id": 75,
+                        "min": 20,
+                        "max": 30,
+                        "price": 120000
+                    }
+                ],
+                "catalog": {
+                    "id": 124,
+                    "store_id": 28,
+                    "name": "Batik Jamur",
+                    "count_product": null,
+                    "created_at": 1501857724
+                },
+                "brand": null,
+                "expedition_services": [
+                    "JNE REG",
+                    "JNE YES"
+                ]
+            }
+        }
         
 ### Get Store Products by Catalog [GET /users/store/products/catalogs/{id}]
 Ready
