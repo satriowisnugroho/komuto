@@ -2882,7 +2882,7 @@ Ready
             }
         }
         
-### Bank payment [POST /buckets/{id}/bank]
+### Bank Payment [POST /buckets/{id}/bank]
 Ready
 
 + Parameters
@@ -2917,6 +2917,51 @@ Ready
                 "holder_account_number": "12341234",
                 "attachment": "http://188.166.246.46/uploads/payment_confirmation/attachment.png"
             }
+        }
+        
+### Bulk Update Cart [PUT /buckets]
+Ready
+
++ Request
+
+        {
+            "items": [
+                {
+                    "id": 470,
+                    "expedition_id": 2,
+                    "expedition_service_id": 1,
+                    "qty": 1,
+                    "note": "Kirimnya cepat ya gan",
+                    "address_id": 142,
+                    "is_insurance": true,
+                    "service": "YES",
+                    "origin_ro_id": 152,
+                    "destination_ro_id": 108
+                }
+            ] 
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Items Data",
+            "data": [
+                {
+                    "id": 470,
+                    "qty": 1,
+                    "weight": 1000,
+                    "additional_cost": 0,
+                    "total_price": 32200,
+                    "bucket_id": 269,
+                    "product_id": 96,
+                    "invoice_id": null,
+                    "shipping_id": 309,
+                    "dropshipper_id": 0,
+                    "note": "Kirimnya cepat ya gan"
+                }
+            ]
         }
 
 ## Review Collection [/reviews]
@@ -3298,6 +3343,12 @@ Ready
 
 ### Checkout [POST]
 Ready
+
++ Request
+
+        {
+            "payment_method_id": 1
+        }
 
 + Response 200 (application/json)
 
