@@ -2168,6 +2168,172 @@ Ready
                 }
             }
         }
+        
+### Get List Messages [GET /users/store/messages]
+Ready
+        
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Message Data",
+            "data": [
+                {
+                    "id": 24,
+                    "store": {
+                        "id": 28,
+                        "name": "Toko Makmur Abadi Sejahtera selamanya",
+                        "logo": "http://188.166.246.46/uploads/toko/logo.jpg",
+                        "user_id": 32
+                    },
+                    "user_id": 32,
+                    "subject": "Mau nanya nih",
+                    "flag_sender": 2,
+                    "flag_receiver": 2,
+                    "flag_sender_at": 1503029360,
+                    "flag_receiver_at": 1503029360,
+                    "detail_message": {
+                        "id": 19,
+                        "message_id": 24,
+                        "user_id": 32,
+                        "content": "Sepatu ini dijual ndak ya ?",
+                        "created_at": 1503029360
+                    }
+                }
+            ]
+        }
+        
+### Get Detail Message [GET /users/store/messages/{id}]
+Ready
+
++ Parameters
+    + id: 25 (number, required)
+        
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Detail Message Data",
+            "data": {
+                "id": 25,
+                "store": {
+                    "id": 28,
+                    "name": "Toko Makmur Abadi Sejahtera selamanya",
+                    "logo": "http://188.166.246.46/uploads/toko/logo.jpg",
+                    "user_id": 32
+                },
+                "user_id": 50,
+                "subject": "Mau nanya nih",
+                "flag_sender": 2,
+                "flag_receiver": 4,
+                "flag_sender_at": 1503043739,
+                "flag_receiver_at": 1503559342,
+                "detail_messages": [
+                    {
+                        "id": 20,
+                        "message_id": 25,
+                        "user": {
+                            "id": 50,
+                            "name": "kucing",
+                            "photo": "http://188.166.246.46/uploads/user/http://bawahkolong",
+                            "gender": "male",
+                            "place_of_birth": 3471,
+                            "date_of_birth": 816714000
+                        },
+                        "content": "Sepatu ini dijual ndak ya ?",
+                        "created_at": 1503043739
+                    },
+                    {
+                        "id": 27,
+                        "message_id": 25,
+                        "user": {
+                            "id": 32,
+                            "name": "bleble",
+                            "photo": "http://188.166.246.46/uploads/user/https://scontent.xx.fbcdn.net/v/t1.0-1/s200x200/12190927_1051452451551693_3353738072722896044_n.jpg?oh=1a89bdfda8446cc6b3c82a4536970ba3&oe=599E476F",
+                            "gender": "female",
+                            "place_of_birth": 1101,
+                            "date_of_birth": null
+                        },
+                        "content": "Dijual lah cuy",
+                        "created_at": 1503282018
+                    }
+                ]
+            }
+        }
+        
+### Update Message [PUT /users/store/messages/{id}]
+Ready
+
++ Parameters
+    + id: 25 (number, required)
+    
++ Request (application/json)
+
+        {
+            "type": "archive"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 25,
+                "store_id": 28,
+                "user_id": 50,
+                "subject": "Mau nanya nih",
+                "flag_sender": 2,
+                "flag_receiver": 4,
+                "flag_sender_at": 1503043739,
+                "flag_receiver_at": 1503894785
+            }
+        }
+        
+### Reply Message [POST /users/store/messages/{id}]
+Ready
+
++ Parameters
+    + id: 25 (number, required)
+    
++ Request (application/json)
+
+        {
+            "content": "Dijual lah cuy"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 30,
+                "message_id": 25,
+                "user_id": 32,
+                "content": "Dijual lah cuy",
+                "created_at": 1503894958
+            }
+        }
+        
+### Delete Message [DELETE /users/store/messages/{id}]
+Ready
+
++ Parameters
+    + id: 25 (number, required)
+        
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
 
 ## Category Collection [/categories]
 
