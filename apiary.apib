@@ -1259,7 +1259,7 @@ Ready
             ]
         }
 
-### Get Store Products [GET /users/store/products?hidden={hidden}]
+### Get List Store Products [GET /users/store/products?hidden={hidden}]
 Ready
 
 + Parameters
@@ -1533,7 +1533,7 @@ Ready
             }
         }
         
-### Get Store Products by Catalog [GET /users/store/products/catalogs/{id}]
+### Get List Store Products by Catalog [GET /users/store/products/catalogs/{id}]
 Ready
 
 + Parameters
@@ -1577,6 +1577,40 @@ Ready
                     }
                 ]
             }
+        }
+        
+### Get List Store Products by Catalog (bulk) [GET /users/store/products/catalogs/{id}/list]
+Ready
+
++ Parameters
+    
+    + id: 124 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Store Catalog Products Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 80,
+                    "name": "Dropship nih",
+                    "slug": "dropship-nih",
+                    "price": 1650000,
+                    "discount": 0,
+                    "is_discount": false,
+                    "is_wholesaler": true,
+                    "is_dropshipper": false,
+                    "weight": 500,
+                    "stock": 50,
+                    "image": "http://188.166.246.46/uploads/produk/kambing.png"
+                }
+            ]
         }
 
 ### Hide Products [POST /users/products/hides]
