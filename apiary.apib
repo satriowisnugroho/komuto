@@ -1363,6 +1363,111 @@ Ready
                 ]
             }
         }
+
+### Update Store Product [PUT /users/store/products/{id}]
+Ready
+
++ Parameters
+    + id: 80 (number, required)
+    
++ Request
+
+        {
+            "name": "Dropship nih",
+            "category_id": 63,
+            "brand_id": 1,
+            "description": "lorem ipsum",
+            "price": 1650000,
+            "weight": 500,
+            "stock": 50,
+            "condition": 1,
+            "is_insurance": false,
+            "is_dropship": false,
+            "catalog_id": 124,
+            "is_wholesaler": true,
+            "discount": 0,
+            "wholesales": [
+                {
+                    "id": 67,
+                    "min_order": 5,
+                    "max_order": 10,
+                    "price": 1500000,
+                    "is_deleted": true
+                },
+                {
+                    "id": 68,
+                    "min_order": 11,
+                    "max_order": 20,
+                    "price": 1200000,
+                    "is_deleted": false
+                },
+                {
+                    "id": 0,
+                    "min_order": 20,
+                    "max_order": 30,
+                    "price": 120000,
+                    "is_created": true
+                }
+            ],
+            "expeditions": [
+                {
+                    "expedition_service_id": 1,
+                    "status": 1
+                },
+                {
+                    "expedition_service_id": 2,
+                    "status": 1
+                },
+                {
+                    "expedition_service_id": 3,
+                    "status": 2
+                }
+            ],
+            "images": [
+                {
+                    "name": "kucing.png"
+                },
+                {
+                    "name": "kambing.png"
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Product Data",
+            "data": {
+                "id": 80,
+                "name": "Dropship nih",
+                "slug": "dropship-nih",
+                "price": 1650000,
+                "discount": 0,
+                "is_discount": false,
+                "is_wholesaler": true,
+                "is_dropshipper": false,
+                "weight": 500,
+                "stock": 50,
+                "category_id": 63,
+                "store_id": 28,
+                "condition": 1,
+                "description": "lorem ipsum",
+                "attrval": 0,
+                "status": 1,
+                "is_insurance": false,
+                "margin_dropshipper": null,
+                "is_dropship": false,
+                "count_sold": 0,
+                "count_popular": 0,
+                "count_view": 0,
+                "identifier_brand": 1,
+                "identifier_catalog": 124,
+                "status_at": 1502778680,
+                "created_at": 1502730000
+            }
+        }
         
 ### Get Store Products by Catalog [GET /users/store/products/catalogs/{id}]
 Ready
