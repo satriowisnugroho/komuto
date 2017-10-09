@@ -5,6 +5,1571 @@ HOST: https://api.komuto.skyshi.com/
 
 Komuto API
 
+Postman collection https://www.getpostman.com/collections/f2801628834132085b4a
+
+## Account [/accounts]
+
+### Get Profile [GET /accounts/profile]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Profile Data",
+            "data": {
+                "id": 1,
+                "name": "User skyshi",
+                "photo": "http://media.tcc.fl.edu/webcourses/ctll/Developing_Your_Teaching_Philosophy/examples.jpg",
+                "gender": "female",
+                "place_of_birth": "Yogyakarta",
+                "date_of_birth": 1496710635
+            }
+        }
+
+### Update Profile [PUT /accounts/profile]
+
++ Request (application/json)
+
+        {
+            "name": "User Skyshi",
+            "photo": "photo.jpg",
+            "gender": "male",
+            "place_of_birth": 3471,
+            "date_of_birth": 1496710635
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Profile Data",
+            "data": {
+                "id": 1,
+                "name": "User skyshi",
+                "photo": "http://media.tcc.fl.edu/webcourses/ctll/Developing_Your_Teaching_Philosophy/examples.jpg",
+                "gender": "female",
+                "place_of_birth": "Yogyakarta",
+                "date_of_birth": 1496710635
+            }
+        }
+
+### Get Phone [GET /accounts/phone]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Phone Number Data",
+            "data": {
+                "phone_number": "082312391239"
+            }
+        }
+
+### Update Phone [PUT /accounts/phone]
+
++ Request (application/json)
+
+        {
+            "phone_number": "0823912383929"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Phone Number Data",
+            "data": {
+                "phone_number": "0823912383929"
+            }
+        }
+
+### Send OTP Phone [POST /accounts/otp/phone]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Verify OTP Phone [POST /accounts/phone/verify]
+
++ Request (application/json)
+
+        {
+            "code": "84729"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Send OTP Bank [POST /accounts/otp/bank]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+## Address [/users/address]
+
+### Primary Address [GET /users/address]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Address Information",
+            "data": {
+                "id": 1,
+                "name": "User skyshi",
+                "email": "user@skyshi.com",
+                "phone_number": "081222333444",
+                "postal_code": "84314",
+                "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
+                "alias_address": "Alamat Toko",
+                "is_primary_address": true,
+                "is_sale_address": false,
+                "is_tender_address": false,
+                "province": {
+                    "id": 1,
+                    "name": "Yogyakarta"
+                },
+                "district": {
+                    "id": 1,
+                    "ro_id": 1,
+                    "name": "Sleman"
+                },
+                "sub_district": {
+                    "id": 1,
+                    "name": "Ngaglik"
+                },
+                "village": {
+                    "id": 1,
+                    "name": "Sariharjo"
+                }
+            }
+        }
+
+### List Address [GET /users/addresses]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Address Information",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "User skyshi",
+                    "email": "user@skyshi.com",
+                    "phone_number": "081222333444",
+                    "postal_code": "84314",
+                    "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
+                    "alias_address": "Alamat Toko",
+                    "is_primary_address": true,
+                    "is_sale_address": false,
+                    "is_tender_address": false,
+                    "province": {
+                        "id": 1,
+                        "name": "Yogyakarta"
+                    },
+                    "district": {
+                        "id": 1,
+                        "ro_id": 1,
+                        "name": "Sleman"
+                    },
+                    "sub_district": {
+                        "id": 1,
+                        "name": "Ngaglik"
+                    },
+                    "village": {
+                        "id": 1,
+                        "name": "Sariharjo"
+                    }
+                }
+            ]
+        }
+
+### Create Address [POST /users/addresses]
+
++ Request (application/json)
+
+        {
+            "province_id": 1,
+            "district_id": 1,
+            "sub_district_id": 1,
+            "village_id": 1,
+            "name": "User skyshi",
+            "email": "user@skyshi.com",
+            "phone_number": "081222333444",
+            "postal_code": "84314",
+            "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
+            "alias_address": "Alamat Toko",
+            "is_primary": true
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Get Address [GET /users/addresses/{id}]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 1,
+                "name": "User skyshi",
+                "email": "user@skyshi.com",
+                "phone_number": "081222333444",
+                "postal_code": "84314",
+                "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
+                "alias_address": "Alamat Toko",
+                "is_primary_address": true,
+                "is_sale_address": false,
+                "is_tender_address": false,
+                "province": {
+                    "id": 1,
+                    "name": "Yogyakarta"
+                },
+                "district": {
+                    "id": 1,
+                    "ro_id": 1,
+                    "name": "Sleman"
+                },
+                "sub_district": {
+                    "id": 1,
+                    "name": "Ngaglik"
+                },
+                "village": {
+                    "id": 1,
+                    "name": "Sariharjo"
+                }
+            }
+        }
+
+### Update Address [PUT /users/addresses/{id}]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 1,
+                "name": "User skyshi",
+                "email": "user@skyshi.com",
+                "phone_number": "081222333444",
+                "postal_code": "84314",
+                "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
+                "alias_address": "Alamat Toko",
+                "is_primary_address": true,
+                "is_sale_address": false,
+                "is_tender_address": false,
+                "province": {
+                    "id": 1,
+                    "name": "Yogyakarta"
+                },
+                "district": {
+                    "id": 1,
+                    "ro_id": 1,
+                    "name": "Sleman"
+                },
+                "sub_district": {
+                    "id": 1,
+                    "name": "Ngaglik"
+                },
+                "village": {
+                    "id": 1,
+                    "name": "Sariharjo"
+                }
+            }
+        }
+
+### Delete Address [DELETE /users/addresses/{id}]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Get Store Address [GET /users/store/address]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Address Data",
+            "data": {
+                "id": 485,
+                "name": "User skyshi",
+                "email": "abdan@skyshi.com",
+                "phone_number": "081222333444",
+                "postal_code": "84341",
+                "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
+                "alias_address": "Alamat Toko",
+                "is_primary_address": true,
+                "is_sale_address": true,
+                "is_tender_address": false,
+                "is_checked": false
+            }
+        }
+
+### Update Store Address [PUT /users/store/address]
+
++ Request (application/json)
+
+        {
+            "province_id": 32,
+            "district_id": 3273,
+            "sub_district_id": 1111110,
+            "village_id": 1111110073,
+            "postal_code": "84341",
+            "address": "Jl. Klamat No. 24 RT. 002 RW. 003"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Address Data",
+            "data": {
+                "id": 485,
+                "name": "User skyshi",
+                "email": "abdan@skyshi.com",
+                "phone_number": "081222333444",
+                "postal_code": "84341",
+                "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
+                "alias_address": "Alamat Toko",
+                "is_primary_address": true,
+                "is_sale_address": true,
+                "is_tender_address": false,
+                "is_checked": false
+            }
+        }
+
+## Bank [/banks]
+
+### List Master Bank [GET /banks]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Master Bank Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "Mandiri",
+                    "code": "1001",
+                    "status": 1,
+                    "status_at": 1496710635,
+                    "logo": "mandiri.png"
+                },
+                {
+                    "id": 3,
+                    "name": "BCA",
+                    "code": "1002",
+                    "status": 1,
+                    "status_at": 1496710635,
+                    "logo": "bca.png"
+                },
+                {
+                    "id": 5,
+                    "name": "BRI",
+                    "code": "2003",
+                    "status": 1,
+                    "status_at": 1496710635,
+                    "logo": "bri.png"
+                }
+            ]
+        }
+
+### Get Bank [GET /banks/{id}]
+
++ Parameters
+    + id : 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Master Bank Data",
+            "data": {
+                "id": 1,
+                "name": "Mandiri",
+                "code": "1001",
+                "status": 1,
+                "status_at": 1496710635,
+                "logo": "mandiri.png"
+            }
+        }
+
+### List Bank Accounts [GET /accounts/banks]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Bank Account Data",
+            "data": [
+                {
+                    "id": 4,
+                    "user_id": 50,
+                    "bank": {
+                        "id": 1,
+                        "name": "Mandiri",
+                        "code": "1001",
+                        "status": "1",
+                        "status_at": 1466497561,
+                        "logo": null
+                    },
+                    "holder_name": "Satrio wisnugroho",
+                    "holder_account_name": "09829123923",
+                    "bank_branch_office_name": "SLEMAN",
+                    "is_primary": false
+                }
+            ]
+        }
+
+### Create Bank Accounts [POST /accounts/banks]
+
++ Request (application/json)
+
+        {
+            "code": "83783",
+            "master_bank_id": 1,
+            "holder_name": "user skyshi2",
+            "holder_account_number": "09812309812398",
+            "bank_branch_office_name": "Yogyakarta"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Bank Account Data",
+            "data": {
+                "id": 4,
+                "user_id": 50,
+                "bank": {
+                    "id": 1,
+                    "name": "Mandiri",
+                    "code": "1001",
+                    "status": "1",
+                    "status_at": 1466497561,
+                    "logo": null
+                },
+                "holder_name": "Satrio wisnugroho",
+                "holder_account_name": "09829123923",
+                "bank_branch_office_name": "SLEMAN",
+                "is_primary": false
+            }
+        }
+
+### Get Bank Accounts [GET /accounts/banks/{id}]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Bank Account Data",
+            "data": {
+                "id": 4,
+                "user_id": 50,
+                "bank": {
+                    "id": 1,
+                    "name": "Mandiri",
+                    "code": "1001",
+                    "status": "1",
+                    "status_at": 1466497561,
+                    "logo": null
+                },
+                "holder_name": "Satrio wisnugroho",
+                "holder_account_name": "09829123923",
+                "bank_branch_office_name": "SLEMAN",
+                "is_primary": false
+            }
+        }
+
+### Update Bank Accounts [PUT /accounts/banks/{id}]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Request (application/json)
+
+        {
+            "code": "08293",
+            "master_bank_id": 1,
+            "holder_name": "user skyshi2",
+            "holder_account_number": "09812309812398",
+            "bank_branch_office_name": "Yogyakarta"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 4,
+                "user_id": 50,
+                "bank": {
+                    "id": 1,
+                    "name": "Mandiri",
+                    "code": "1001",
+                    "status": "1",
+                    "status_at": 1466497561,
+                    "logo": null
+                },
+                "holder_name": "Satrio wisnugroho",
+                "holder_account_name": "09829123923",
+                "bank_branch_office_name": "SLEMAN",
+                "is_primary": false
+            }
+        }
+
+### Delete Bank Accounts [DELETE /accounts/banks/{id}]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Request (application/json)
+
+        {
+            "code": "83792"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### List Bank Accounts Marketplace [GET /banks/marketplace]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Marketplace Bank Account Data",
+            "data": [
+                {
+                    "id": 1,
+                    "marketplace_id": 15,
+                    "bank_name": "BCA@pasarkaranganyar",
+                    "holder_name": "PT Pasarkaranganyar",
+                    "bank_branch_office_name": "Bekasi",
+                    "is_primary": true,
+                    "logo": null
+                }
+            ]
+        }
+
+### List Bank Accounts Komuto [GET /banks/komuto]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Marketplace Bank Account Data",
+            "data": [
+                {
+                    "id": 4,
+                    "user_id": 1,
+                    "bank": {
+                        "id": 1,
+                        "name": "Mandiri",
+                        "code": "1001",
+                        "status": 1,
+                        "status_at": 1466497561,
+                        "logo": "https://komutodev.aptmi.com/img/bank/bank-mandiri.png"
+                    },
+                    "holder_name": "Rokidi",
+                    "holder_account_number": "009282772927",
+                    "marketplace_id": 0,
+                    "bank_branch_office_name": "Demak",
+                    "is_primary": false
+                }
+            ]
+        }
+
+## Brand [/brands]
+
+### List [GET /brands]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Brands Data",
+            "data": [
+                {
+                    "id": 1,
+                    "category_id": 2,
+                    "name": "Nike"
+                },
+                {
+                    "id": 2,
+                    "category_id": 2,
+                    "name": "Adidas"
+                }
+            ]
+        }
+        
+## Bucket [/buckets]
+
+### Add to Cart [POST /buckets]
+
++ Request (application/json)
+
+        {
+            "product_id": 1,
+            "expedition_id": 1,
+            "expedition_service_id": 1,
+            "qty": 1,
+            "note": "Lorem ipsum",
+            "address_id": 1,
+            "is_insurance": true,
+            "additional_cost": 5000,
+            "delivery_cost": 32000
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 252,
+                "user_id": 32,
+                "promo_id": null,
+                "order_at": 1501693200,
+                "wallet": 0,
+                "status": 1,
+                "status_at": 1501693200
+            }
+        }
+        
+### Delete Cart [DELETE /buckets/items/{id}]
+
++ Parameters
+
+    + id: 380 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Add Promo [POST /buckets/promo]
+
++ Request (application/json)
+
+        {
+            "code": "BELANJAENAK"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Count Bucket",
+            "data": {
+                "id": 7,
+                "marketplace_user_id": 0,
+                "promo_code": "RMN019",
+                "type": 1,
+                "percentage": 10,
+                "nominal": 300000,
+                "start_at": 1464886800,
+                "expired_at": 1509296400,
+                "status": 1,
+                "status_at": 1469775539
+            }
+        }
+
+### Cancel Promo [DELETE /buckets/promo/cancel]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Get Count [GET /buckets/count]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Count Bucket",
+            "data": {
+                "count": 10
+            }
+        }
+        
+### Bulk Update Cart [PUT /buckets]
+
++ Request
+
+        {
+            "items": [
+                {
+                    "id": 470,
+                    "expedition_id": 2,
+                    "expedition_service_id": 1,
+                    "qty": 1,
+                    "note": "Kirimnya cepat ya gan",
+                    "address_id": 142,
+                    "is_insurance": true,
+                    "service": "YES",
+                    "origin_ro_id": 152,
+                    "destination_ro_id": 108
+                }
+            ] 
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Items Data",
+            "data": [
+                {
+                    "id": 470,
+                    "qty": 1,
+                    "weight": 1000,
+                    "additional_cost": 0,
+                    "total_price": 32200,
+                    "bucket_id": 269,
+                    "product_id": 96,
+                    "invoice_id": null,
+                    "shipping_id": 309,
+                    "dropshipper_id": 0,
+                    "note": "Kirimnya cepat ya gan"
+                }
+            ]
+        }
+
+### Get Bucket [GET /users/bucket]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Bucket Data",
+            "data": {
+                "user_id": 50,
+                "promo": {
+                    "id": 0,
+                    "marketplace_user_id": 0,
+                    "promo_code": "DFLT",
+                    "type": 1,
+                    "percentage": 10,
+                    "nominal": 300000,
+                    "start_at": 1464886800,
+                    "expired_at": 1467219600,
+                    "status": 1,
+                    "status_at": 1464886800
+                },
+                "order_at": 1472749200,
+                "admin_fee": 0,
+                "total_price": 0,
+                "wallet": 0,
+                "final_price": 0,
+                "payment_method": 1,
+                "status": 0,
+                "status_at": 1472749200,
+                "items": [
+                    {
+                        "id": 630,
+                        "bucket_id": 4,
+                        "product_id": 15,
+                        "invoice_id": 1,
+                        "shipping_id": 1,
+                        "dropshipper_id": null,
+                        "qty": 1,
+                        "weight": 1,
+                        "option_information": "test",
+                        "delivery_cost": 10000,
+                        "additional_cost": 0,
+                        "total_price": 1000000,
+                        "final_price": 110000,
+                        "status": 1,
+                        "status_at": 1472804433,
+                        "product": {
+                            "id": 15,
+                            "name": "Hijab Muslimah Unik",
+                            "price": 35000,
+                            "discount": 0,
+                            "is_discount": false,
+                            "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
+                            "store": {
+                                "id": 11,
+                                "user_id": 37,
+                                "name": "MikhaShop",
+                                "slogan": "Untung Tidak Untung yang Penting Bati",
+                                "description": "Jualan segala jenis barang",
+                                "logo": "http://188.166.246.46/uploads/toko/3950b781c1196ec84204837cf7895a1f74b77343_DSC00694.jpg",
+                                "custom_domain": "",
+                                "status": 1,
+                                "remarks_status": null,
+                                "cover_image": null,
+                                "seller_theme_id": 0,
+                                "reputation": null,
+                                "store_id_number": "53125331263127621",
+                                "total_favorite": null,
+                                "created_at": 1471194000,
+                                "status_at": 1471206816,
+                                "is_verified": false
+                            }
+                        },
+                        "shipping": {
+                            "id": 1,
+                            "delivery_cost": 10000,
+                            "insurance_fee": 100000,
+                            "note": null,
+                            "is_insurance": true,
+                            "address": {
+                                "id": 29,
+                                "name": "Widodo Pangestu",
+                                "email": "email@mail.com",
+                                "phone_number": "08221613148",
+                                "postal_code": "15133",
+                                "address": "Jl. Sukabumi E9/28",
+                                "alias_address": "My Home",
+                                "is_primary_address": false,
+                                "is_sale_address": false,
+                                "is_tender_address": false
+                            },
+                            "expedition_service": {
+                                "id": 1,
+                                "name": "REG",
+                                "description": "JNE Reguler adalahpaket reguler yang ditawarkan JNE. Kecepatanpengiriman tergantung dari lokasi pengiriman dan tujuan. untuk kota yang sama umumnya memakan waku 2-3 hari",
+                                "logo": null,
+                                "expedition": {
+                                    "id": 2,
+                                    "name": "JNE",
+                                    "logo": "http://188.166.246.46/img/pengiriman/jne.png",
+                                    "insurance_fee": 2
+                                },
+                                "is_checked": false
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+
+### Get Bucket Item [GET /users/bucket/items/{id}]
+
++ Parameters
+
+    + id: 630 (number, required)
+
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 630,
+                "bucket_id": 4,
+                "product_id": 15,
+                "invoice_id": 1,
+                "shipping_id": 1,
+                "dropshipper_id": null,
+                "qty": 1,
+                "weight": 1,
+                "option_information": "test",
+                "delivery_cost": 10000,
+                "additional_cost": 0,
+                "total_price": 1000000,
+                "final_price": 110000,
+                "status": 1,
+                "status_at": 1472804433,
+                "product": {
+                    "id": 15,
+                    "name": "Hijab Muslimah Unik",
+                    "price": 35000,
+                    "discount": 0,
+                    "is_discount": false,
+                    "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
+                    "store": {
+                        "id": 11,
+                        "user_id": 37,
+                        "name": "MikhaShop",
+                        "slogan": "Untung Tidak Untung yang Penting Bati",
+                        "description": "Jualan segala jenis barang",
+                        "logo": "http://188.166.246.46/uploads/toko/3950b781c1196ec84204837cf7895a1f74b77343_DSC00694.jpg",
+                        "custom_domain": "",
+                        "status": 1,
+                        "remarks_status": null,
+                        "cover_image": null,
+                        "seller_theme_id": 0,
+                        "reputation": null,
+                        "store_id_number": "53125331263127621",
+                        "total_favorite": null,
+                        "created_at": 1471194000,
+                        "status_at": 1471206816,
+                        "is_verified": false
+                    }
+                },
+                "shipping": {
+                    "id": 1,
+                    "delivery_cost": 10000,
+                    "insurance_fee": 100000,
+                    "note": null,
+                    "is_insurance": true,
+                    "address": {
+                        "id": 29,
+                        "name": "Widodo Pangestu",
+                        "email": "email@mail.com",
+                        "phone_number": "08221613148",
+                        "postal_code": "15133",
+                        "address": "Jl. Sukabumi E9/28",
+                        "alias_address": "My Home",
+                        "is_primary_address": false,
+                        "is_sale_address": false,
+                        "is_tender_address": false
+                    },
+                    "expedition_service": {
+                        "id": 1,
+                        "name": "REG",
+                        "description": "JNE Reguler adalahpaket reguler yang ditawarkan JNE. Kecepatanpengiriman tergantung dari lokasi pengiriman dan tujuan. untuk kota yang sama umumnya memakan waku 2-3 hari",
+                        "logo": null,
+                        "expedition": {
+                            "id": 2,
+                            "name": "JNE",
+                            "logo": "http://188.166.246.46/img/pengiriman/jne.png",
+                            "insurance_fee": 2
+                        },
+                        "is_checked": false
+                    }
+                }
+            }
+        }
+
+## Catalog [/users/store/catalogs]
+
+### List [GET /users/store/catalogs]
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Store Catalog Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "Sepatu Futsal",
+                    "count_product": 5
+                },
+                {
+                    "id": 3,
+                    "name": "Sepatu Bola",
+                    "count_product": 5
+                }
+            ]
+        }
+
+### Create [POST /users/store/catalogs]
+
++ Request (application/json)
+
+        {
+            "name": "Sepatu Futsal"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 80,
+                "store_id": 41,
+                "name": "Sepatu Futsal",
+                "count_product": null,
+                "created_at": 1500266952
+            }
+        }
+
+### Get [GET /users/store/catalogs/{catalog_id}]
+
++ Parameters
+
+    + catalog_id: 1 (number, required)
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 1,
+                "store_id": 41,
+                "name": "Sepatu Futsal",
+                "count_product": null,
+                "created_at": 1500266952
+            }
+        }
+
+### Update [PUT /users/store/catalogs/{catalog_id}]
+
++ Parameters
+
+    + catalog_id: 1 (number, required)
+
++ Request (application/json)
+
+        {
+            "name": "Sepatu Bola"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Catalog Data",
+            "data": {
+                "id": 1,
+                "store_id": 41,
+                "name": "Sepatu Bola",
+                "count_product": null,
+                "created_at": 1476994034
+            }
+        }
+
+### Delete [DELETE /users/store/catalogs/{catalog_id}]
+
++ Parameters
+
+    + catalog_id: 1 (number, required)
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+## Category [/categories]
+
+### List [GET]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Category List Data",
+            "data": [
+                {
+                    "id": 1,
+                    "category_id": 0,
+                    "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
+                    "name": "Fashion dan Aksesoris"
+                }
+            ]
+        }
+
+### List Category with Sub Category [GET /categories/sub]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Category List Data",
+            "data": [
+                {
+                    "id": 1,
+                    "category_id": 0,
+                    "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
+                    "name": "Fashion dan Aksesoris",
+                    "sub_categories": [
+                        {
+                            "id": 2,
+                            "category_id": 1,
+                            "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
+                            "name": "Fashion Pria"
+                        },
+                        {
+                            "id": 3,
+                            "category_id": 1,
+                            "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
+                            "name": "Fashion Wanita"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "category_id": 0,
+                    "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
+                    "name": "Ibu dan Anak",
+                    "sub_categories": [
+                        {
+                            "id": 5,
+                            "category_id": 4,
+                            "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
+                            "name": "Ibu Hamil dan Menyusui"
+                        },
+                        {
+                            "id": 6,
+                            "category_id": 4,
+                            "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
+                            "name": "Baby Sitter"
+                        }
+                    ]
+                }
+            ]
+        }
+
+### Get Category with Sub Category [GET /categories/{id}]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Sub Category List Data",
+            "data": [
+                {
+                    "id": 2,
+                    "category_id": 1,
+                    "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
+                    "name": "Fashion Pria"
+                },
+                {
+                    "id": 3,
+                    "category_id": 1,
+                    "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
+                    "name": "Fashion Wanita"
+                }
+            ]
+        }
+
+### Get Brand by Category [GET /categories/{id}/brands]
+
++ Parameters
+    + id: 2 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Brand List Data",
+            "data": [
+                {
+                    "id": 1,
+                    "category_id": 2,
+                    "name": "Nike"
+                },
+                {
+                    "id": 2,
+                    "category_id": 2,
+                    "name": "Adidas"
+                }
+            ]
+        }
+        
+## Dispute [/disputes]
+
+## Expedition [/expeditions]
+
+### List [GET /expeditions]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Expedition Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "JNE",
+                    "logo": "logo.png",
+                    "insurance_fee": 20000,
+                    "services": [
+                        {
+                            "id": 1,
+                            "name": "REG",
+                            "description": "Layanan reguler",
+                            "logo": "logo.png"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "TIKI",
+                    "logo": "logo.png",
+                    "insurance_fee": 15000,
+                    "services": [
+                        {
+                            "id": 1,
+                            "name": "Service Normal",
+                            "description": "Service normal adalah",
+                            "logo": "logo.png"
+                        }
+                    ]
+                }
+            ]
+        }
+
+### List Expedition Service [GET /expeditions/services]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Expedition Service Data",
+            "data": [
+                {
+                    "id": 1,
+                    "expedition_id": 2,
+                    "name": "JNE Reguler",
+                    "description": "JNE Reguler adalahpaket reguler yang ditawarkan JNE. Kecepatanpengiriman tergantung dari lokasi pengiriman dan tujuan. untuk kota yang sama umumnya memakan waku 2-3 hari",
+                    "status": "1",
+                    "status_at": "2016-06-21T17:00:00.000Z",
+                    "logo": null
+                },
+                {
+                    "id": 2,
+                    "expedition_id": 2,
+                    "name": "JNE YES",
+                    "description": "JNE YES adalah Paket dengan prioritas pengiriman tercepat yang ditawarkan JNE. Hanya saja perlu diperhatikan kecepatan barang dipengaruhi kecepatan penjual melakukan pengiriman barang.",
+                    "status": "1",
+                    "status_at": "2016-06-11T17:00:00.000Z",
+                    "logo": null
+                }
+            ]
+        }
+
+### Get Expedition Services [GET /expeditions/{id}/services]
+
++ Parameters
+    + id : 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Expedition Data",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+                "total": 100,
+                "pages": 10
+            },
+            "data": [
+                {
+                    "id": 1,
+                    "name": "REG",
+                    "description": "Layanan reguler",
+                    "logo": "logo.png"
+                },
+                {
+                    "id": 1,
+                    "name": "REG",
+                    "description": "Layanan reguler",
+                    "logo": "logo.png"
+                }
+            ]
+        }
+
+### Expedition Cost [GET /expeditions/{id}/cost?origin_ro_id={origin_id}&destination_ro_id={destination_id}&weight={weight}]
+
++ Parameters
+    + origin_id: 501 (number, required)
+    + destination_id: 62 (number, required)
+    + weight: 1700 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Cost Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "REG",
+                    "description": "Layanan reguler",
+                    "cost": 32000,
+                    "etd": "6-7",
+                    "full_name": "JNE REG"
+                },
+                {
+                    "id": 2,
+                    "name": "OKE",
+                    "description": "Ongkos Kirim Ekonomis",
+                    "cost": 28000,
+                    "etd": "4-5",
+                    "full_name": "JNE OKE"
+                }
+            ]
+        }
+        
+### Expedition Cost by Product Id [GET /expeditions/cost?product_id={product_id}&origin_ro_id={origin_id}&destination_ro_id={destination_id}&weight={weight}]
+
++ Parameters
+    + product_id: 1 (number, required)
+    + origin_id: 501 (number, required)
+    + destination_id: 62 (number, required)
+    + weight: 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Cost Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "REG",
+                    "description": "Layanan reguler",
+                    "cost": 32000,
+                    "etd": "6-7",
+                    "full_name": "JNE REG"
+                },
+                {
+                    "id": 2,
+                    "name": "Reguler",
+                    "description": "Reguler",
+                    "cost": 28000,
+                    "etd": "4-5",
+                    "full_name": "TIKI Reguler"
+                }
+            ]
+        }
+
+### List Store Expeditions [GET /users/store/expeditions]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Store Expeditions Data",
+            "data": [
+                {
+                    "id": 7,
+                    "name": "PANDU",
+                    "status": 1,
+                    "method": "1",
+                    "status_at": 1471366800,
+                    "logo": "http://188.166.246.46/img/pengiriman/pandu.png",
+                    "insurance_fee": 2,
+                    "services": [
+                        {
+                            "id": 12,
+                            "name": "Reguler",
+                            "description": "Paket Reguler adalah paket yang ditawarkan oleh Pandu Logistik yang umumnya memakan waktu 2-3 hari",
+                            "logo": null,
+                            "is_checked": false
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "name": "CAHAYA",
+                    "status": 1,
+                    "method": "1",
+                    "status_at": 1471366800,
+                    "logo": "http://188.166.246.46/img/pengiriman/cahaya.png",
+                    "insurance_fee": 2,
+                    "services": [
+                        {
+                            "id": 13,
+                            "name": "Service Normal",
+                            "description": "Service Normal adalah Pengiriman paket yang ditawarkan keseluruh Indonesia dengan lead time  pengiriman estimasi 2-3 hari ke kota besar dan 4-7 hari ke pelosok",
+                            "logo": null,
+                            "is_checked": false
+                        }
+                    ]
+                }
+            ]
+        }
+
+### Update Store Expeditions [PUT /users/store/expeditions]
+
++ Request (application/json)
+
+        [
+            {
+                "expedition_service_id": 1,
+                "status": 1
+            },
+            {
+                "expedition_service_id": 0,
+                "status": 0
+            }
+        ]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Store Expeditions Manage [GET /users/store/expeditions/manage]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Expedition Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "JNE",
+                    "logo": "logo.png",
+                    "insurance_fee": 20000,
+                    "services": [
+                        {
+                            "id": 1,
+                            "name": "REG",
+                            "description": "Layanan reguler",
+                            "logo": "logo.png",
+                            "status": 1
+                        },
+                        {
+                            "id": 1,
+                            "name": "REG",
+                            "description": "Layanan reguler",
+                            "logo": "logo.png",
+                            "status": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "TIKI",
+                    "logo": "logo.png",
+                    "insurance_fee": 15000,
+                    "services": [
+                        {
+                            "id": 1,
+                            "name": "Service Normal",
+                            "description": "Service normal adalah",
+                            "logo": "logo.png",
+                            "status": 1
+                        }
+                    ]
+                }
+            ]
+        }
+
+
+       
+       
+       
+       
+       
+       
+       
+       
+        
+        
+        
+        
+        
+        
+        
+        
+
 ## User Collection [/users]
 
 ### Login [POST /users/login]
@@ -384,217 +1949,6 @@ Ready
             ]
         }
 
-### Get Primary Address Information [GET /users/address]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Address Information",
-            "data": {
-                "id": 1,
-                "name": "User skyshi",
-                "email": "user@skyshi.com",
-                "phone_number": "081222333444",
-                "postal_code": "84314",
-                "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
-                "alias_address": "Alamat Toko",
-                "is_primary_address": true,
-                "is_sale_address": false,
-                "is_tender_address": false,
-                "province": {
-                    "id": 1,
-                    "name": "Yogyakarta"
-                },
-                "district": {
-                    "id": 1,
-                    "ro_id": 1,
-                    "name": "Sleman"
-                },
-                "sub_district": {
-                    "id": 1,
-                    "name": "Ngaglik"
-                },
-                "village": {
-                    "id": 1,
-                    "name": "Sariharjo"
-                }
-            }
-        }
-
-### List Address Information [GET /users/addresses]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Address Information",
-            "data": [
-                {
-                    "id": 1,
-                    "name": "User skyshi",
-                    "email": "user@skyshi.com",
-                    "phone_number": "081222333444",
-                    "postal_code": "84314",
-                    "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
-                    "alias_address": "Alamat Toko",
-                    "is_primary_address": true,
-                    "is_sale_address": false,
-                    "is_tender_address": false,
-                    "province": {
-                        "id": 1,
-                        "name": "Yogyakarta"
-                    },
-                    "district": {
-                        "id": 1,
-                        "ro_id": 1,
-                        "name": "Sleman"
-                    },
-                    "sub_district": {
-                        "id": 1,
-                        "name": "Ngaglik"
-                    },
-                    "village": {
-                        "id": 1,
-                        "name": "Sariharjo"
-                    }
-                }
-            ]
-        }
-
-### Create Address Information [POST /users/addresses]
-Ready
-
-+ Request (application/json)
-
-        {
-            "province_id": 1,
-            "district_id": 1,
-            "sub_district_id": 1,
-            "village_id": 1,
-            "name": "User skyshi",
-            "email": "user@skyshi.com",
-            "phone_number": "081222333444",
-            "postal_code": "84314",
-            "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
-            "alias_address": "Alamat Toko",
-            "is_primary": true
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-### Get Address Information [GET /users/addresses/{id}]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {
-                "id": 1,
-                "name": "User skyshi",
-                "email": "user@skyshi.com",
-                "phone_number": "081222333444",
-                "postal_code": "84314",
-                "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
-                "alias_address": "Alamat Toko",
-                "is_primary_address": true,
-                "is_sale_address": false,
-                "is_tender_address": false,
-                "province": {
-                    "id": 1,
-                    "name": "Yogyakarta"
-                },
-                "district": {
-                    "id": 1,
-                    "ro_id": 1,
-                    "name": "Sleman"
-                },
-                "sub_district": {
-                    "id": 1,
-                    "name": "Ngaglik"
-                },
-                "village": {
-                    "id": 1,
-                    "name": "Sariharjo"
-                }
-            }
-        }
-
-### Update Address Information [PUT /users/addresses/{id}]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {
-                "id": 1,
-                "name": "User skyshi",
-                "email": "user@skyshi.com",
-                "phone_number": "081222333444",
-                "postal_code": "84314",
-                "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
-                "alias_address": "Alamat Toko",
-                "is_primary_address": true,
-                "is_sale_address": false,
-                "is_tender_address": false,
-                "province": {
-                    "id": 1,
-                    "name": "Yogyakarta"
-                },
-                "district": {
-                    "id": 1,
-                    "ro_id": 1,
-                    "name": "Sleman"
-                },
-                "sub_district": {
-                    "id": 1,
-                    "name": "Ngaglik"
-                },
-                "village": {
-                    "id": 1,
-                    "name": "Sariharjo"
-                }
-            }
-        }
-
-### Delete Address Information [DELETE /users/addresses/{id}]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
 ### Create Store [POST /users/store]
 Ready
 
@@ -718,215 +2072,6 @@ Ready
             "data": {}
         }
 
-### List Catalog Store [GET /users/store/catalogs]
-Ready
-
-+ Response 201 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Store Catalog Data",
-            "data": [
-                {
-                    "id": 1,
-                    "name": "Sepatu Futsal",
-                    "count_product": 5
-                },
-                {
-                    "id": 3,
-                    "name": "Sepatu Bola",
-                    "count_product": 5
-                }
-            ]
-        }
-
-### Create Catalog Store [POST /users/store/catalogs]
-Ready
-
-+ Request (application/json)
-
-        {
-            "name": "Sepatu Futsal"
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {
-                "id": 80,
-                "store_id": 41,
-                "name": "Sepatu Futsal",
-                "count_product": null,
-                "created_at": 1500266952
-            }
-        }
-
-### Get Catalog Store [GET /users/store/catalogs/{catalog_id}]
-Ready
-
-+ Parameters
-    + catalog_id: 1 (number, required)
-
-+ Response 201 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {
-                "id": 1,
-                "store_id": 41,
-                "name": "Sepatu Futsal",
-                "count_product": null,
-                "created_at": 1500266952
-            }
-        }
-
-### Update Catalog Store [PUT /users/store/catalogs/{catalog_id}]
-Ready
-
-+ Parameters
-    + catalog_id: 1 (number, required)
-
-+ Request (application/json)
-
-        {
-            "name": "Sepatu Bola"
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Catalog Data",
-            "data": {
-                "id": 1,
-                "store_id": 41,
-                "name": "Sepatu Bola",
-                "count_product": null,
-                "created_at": 1476994034
-            }
-        }
-
-### Delete Catalog Store [DELETE /users/store/catalogs/{catalog_id}]
-Ready
-
-+ Parameters
-    + catalog_id: 1 (number, required)
-
-+ Response 201 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-### List Expedition [GET /users/store/expeditions]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Store Expeditions Data",
-            "data": [
-                {
-                    "id": 7,
-                    "name": "PANDU",
-                    "status": 1,
-                    "method": "1",
-                    "status_at": 1471366800,
-                    "logo": "http://188.166.246.46/img/pengiriman/pandu.png",
-                    "insurance_fee": 2,
-                    "services": [
-                        {
-                            "id": 12,
-                            "name": "Reguler",
-                            "description": "Paket Reguler adalah paket yang ditawarkan oleh Pandu Logistik yang umumnya memakan waktu 2-3 hari",
-                            "logo": null,
-                            "is_checked": false
-                        }
-                    ]
-                },
-                {
-                    "id": 8,
-                    "name": "CAHAYA",
-                    "status": 1,
-                    "method": "1",
-                    "status_at": 1471366800,
-                    "logo": "http://188.166.246.46/img/pengiriman/cahaya.png",
-                    "insurance_fee": 2,
-                    "services": [
-                        {
-                            "id": 13,
-                            "name": "Service Normal",
-                            "description": "Service Normal adalah Pengiriman paket yang ditawarkan keseluruh Indonesia dengan lead time  pengiriman estimasi 2-3 hari ke kota besar dan 4-7 hari ke pelosok",
-                            "logo": null,
-                            "is_checked": false
-                        }
-                    ]
-                }
-            ]
-        }
-
-### List Expeditions Manage [GET /users/store/expeditions/manage]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Expedition Data",
-            "data": [
-                {
-                    "id": 1,
-                    "name": "JNE",
-                    "logo": "logo.png",
-                    "insurance_fee": 20000,
-                    "services": [
-                        {
-                            "id": 1,
-                            "name": "REG",
-                            "description": "Layanan reguler",
-                            "logo": "logo.png",
-                            "status": 1
-                        },
-                        {
-                            "id": 1,
-                            "name": "REG",
-                            "description": "Layanan reguler",
-                            "logo": "logo.png",
-                            "status": 0
-                        }
-                    ]
-                },
-                {
-                    "id": 2,
-                    "name": "TIKI",
-                    "logo": "logo.png",
-                    "insurance_fee": 15000,
-                    "services": [
-                        {
-                            "id": 1,
-                            "name": "Service Normal",
-                            "description": "Service normal adalah",
-                            "logo": "logo.png",
-                            "status": 1
-                        }
-                    ]
-                }
-            ]
-        }
-
 ### Product Expeditions Manage [GET /users/store/products/{id}/expeditions/manage]
 Ready
 
@@ -991,31 +2136,6 @@ Ready
             ]
         }
 
-### Update Store Expedition [PUT /users/store/expeditions]
-Ready
-
-+ Request (application/json)
-
-        [
-            {
-                "expedition_service_id": 1,
-                "status": 1
-            },
-            {
-                "expedition_service_id": 0,
-                "status": 0
-            }
-        ]
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
 ### List Favorite Store [GET /users/store/favorites]
 Ready
 
@@ -1052,117 +2172,6 @@ Ready
                     ]
                 }
             ]
-        }
-
-### Detail Bucket [GET /users/bucket]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {
-                "user_id": 50,
-                "promo": {
-                    "id": 0,
-                    "marketplace_user_id": 0,
-                    "promo_code": "DFLT",
-                    "type": 1,
-                    "percentage": 10,
-                    "nominal": 300000,
-                    "start_at": 1464886800,
-                    "expired_at": 1467219600,
-                    "status": 1,
-                    "status_at": 1464886800
-                },
-                "order_at": 1472749200,
-                "admin_fee": 0,
-                "total_price": 0,
-                "wallet": 0,
-                "final_price": 0,
-                "payment_method": 1,
-                "status": 0,
-                "status_at": 1472749200,
-                "items": [
-                    {
-                        "bucket_id": 4,
-                        "product_id": 15,
-                        "invoice_id": 1,
-                        "shipping_id": 1,
-                        "dropshipper_id": null,
-                        "qty": 1,
-                        "weight": 1,
-                        "option_information": "test",
-                        "delivery_cost": 10000,
-                        "additional_cost": 0,
-                        "total_price": 1000000,
-                        "final_price": 110000,
-                        "status": 1,
-                        "status_at": 1472804433,
-                        "product": {
-                            "id": 15,
-                            "name": "Hijab Muslimah Unik",
-                            "price": 35000,
-                            "discount": 0,
-                            "is_discount": false,
-                            "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
-                            "store": {
-                                "id": 11,
-                                "user_id": 37,
-                                "name": "MikhaShop",
-                                "slogan": "Untung Tidak Untung yang Penting Bati",
-                                "description": "Jualan segala jenis barang",
-                                "logo": "http://188.166.246.46/uploads/toko/3950b781c1196ec84204837cf7895a1f74b77343_DSC00694.jpg",
-                                "custom_domain": "",
-                                "status": 1,
-                                "remarks_status": null,
-                                "cover_image": null,
-                                "seller_theme_id": 0,
-                                "reputation": null,
-                                "store_id_number": "53125331263127621",
-                                "total_favorite": null,
-                                "created_at": 1471194000,
-                                "status_at": 1471206816,
-                                "is_verified": false
-                            }
-                        },
-                        "shipping": {
-                            "id": 1,
-                            "delivery_cost": 10000,
-                            "insurance_fee": 100000,
-                            "note": null,
-                            "is_insurance": true,
-                            "address": {
-                                "id": 29,
-                                "name": "Widodo Pangestu",
-                                "email": "email@mail.com",
-                                "phone_number": "08221613148",
-                                "postal_code": "15133",
-                                "address": "Jl. Sukabumi E9/28",
-                                "alias_address": "My Home",
-                                "is_primary_address": false,
-                                "is_sale_address": false,
-                                "is_tender_address": false
-                            },
-                            "expedition_service": {
-                                "id": 1,
-                                "name": "REG",
-                                "description": "JNE Reguler adalahpaket reguler yang ditawarkan JNE. Kecepatanpengiriman tergantung dari lokasi pengiriman dan tujuan. untuk kota yang sama umumnya memakan waku 2-3 hari",
-                                "logo": null,
-                                "expedition": {
-                                    "id": 2,
-                                    "name": "JNE",
-                                    "logo": "http://188.166.246.46/img/pengiriman/jne.png",
-                                    "insurance_fee": 2
-                                },
-                                "is_checked": false
-                            }
-                        }
-                    }
-                ]
-            }
         }
 
 ### Get Discussion [GET /users/discussions]
@@ -1724,41 +2733,6 @@ Ready
                 "created_at": 1502211600,
                 "status_at": 1502225988,
                 "verification_at": 1502211600
-            }
-        }
-
-### Update Address Store [PUT /users/store/address]
-Ready
-
-+ Request (application/json)
-
-        {
-            "province_id": 32,
-            "district_id": 3273,
-            "sub_district_id": 1111110,
-            "village_id": 1111110073,
-            "postal_code": "84341",
-            "address": "Jl. Klamat No. 24 RT. 002 RW. 003"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Address Data",
-            "data": {
-                "id": 485,
-                "name": "User skyshi",
-                "email": "abdan@skyshi.com",
-                "phone_number": "081222333444",
-                "postal_code": "84341",
-                "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
-                "alias_address": "Alamat Toko",
-                "is_primary_address": true,
-                "is_sale_address": true,
-                "is_tender_address": false,
-                "is_checked": false
             }
         }
 
@@ -2333,134 +3307,6 @@ Ready
             "status": true,
             "message": "Success",
             "data": {}
-        }
-
-## Category Collection [/categories]
-
-### List [GET]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Category List Data",
-            "data": [
-                {
-                    "id": 1,
-                    "category_id": 0,
-                    "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
-                    "name": "Fashion dan Aksesoris"
-                }
-            ]
-        }
-
-### List Category with Sub Category [GET /categories/sub]
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Category List Data",
-            "data": [
-                {
-                    "id": 1,
-                    "category_id": 0,
-                    "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
-                    "name": "Fashion dan Aksesoris",
-                    "sub_categories": [
-                        {
-                            "id": 2,
-                            "category_id": 1,
-                            "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
-                            "name": "Fashion Pria"
-                        },
-                        {
-                            "id": 3,
-                            "category_id": 1,
-                            "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
-                            "name": "Fashion Wanita"
-                        }
-                    ]
-                },
-                {
-                    "id": 4,
-                    "category_id": 0,
-                    "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
-                    "name": "Ibu dan Anak",
-                    "sub_categories": [
-                        {
-                            "id": 5,
-                            "category_id": 4,
-                            "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
-                            "name": "Ibu Hamil dan Menyusui"
-                        },
-                        {
-                            "id": 6,
-                            "category_id": 4,
-                            "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
-                            "name": "Baby Sitter"
-                        }
-                    ]
-                }
-            ]
-        }
-
-### Get Sub Category [GET /categories/{id}/sub-categories]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Sub Category List Data",
-            "data": [
-                {
-                    "id": 2,
-                    "category_id": 1,
-                    "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
-                    "name": "Fashion Pria"
-                },
-                {
-                    "id": 3,
-                    "category_id": 1,
-                    "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/367687-200.png",
-                    "name": "Fashion Wanita"
-                }
-            ]
-        }
-
-### Get Brand by Category [GET /categories/{id}/brands]
-
-+ Parameters
-    + id: 2 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Brand List Data",
-            "data": [
-                {
-                    "id": 1,
-                    "category_id": 2,
-                    "name": "Nike"
-                },
-                {
-                    "id": 2,
-                    "category_id": 2,
-                    "name": "Adidas"
-                }
-            ]
         }
 
 ## Product Collection [/products]
@@ -3101,7 +3947,7 @@ Ready
                 "content": "Iya sedia warna coklat aja",
                 "created_at": 1500014900
             }
-        }s
+        }
 
 ## Tender Product Collection [/tender-products]
 
@@ -3286,192 +4132,6 @@ Ready
             ]
         }
 
-## Bucket Collection [/buckets]
-
-### Add to cart [POST]
-Ready
-
-+ Request (application/json)
-
-        {
-            "product_id": 1,
-            "expedition_id": 1,
-            "expedition_service_id": 1,
-            "qty": 1,
-            "note": "Lorem ipsum",
-            "address_id": 1,
-            "is_insurance": true,
-            "additional_cost": 5000,
-            "delivery_cost": 32000
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {
-                "id": 252,
-                "user_id": 32,
-                "promo_id": null,
-                "order_at": 1501693200,
-                "wallet": 0,
-                "status": 1,
-                "status_at": 1501693200
-            }
-        }
-        
-### Delete cart [DELETE /buckets/items/{id}]
-Ready
-
-+ Parameters
-
-    + id: 380 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-### Get promo [GET /buckets/promo?code={code}]
-Ready
-
-+ Parameters
-    + code: BELANJAENAK (string, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Count Bucket",
-            "data": {
-                "id": 7,
-                "marketplace_user_id": 0,
-                "promo_code": "RMN019",
-                "type": 1,
-                "percentage": 10,
-                "nominal": 300000,
-                "start_at": 1464886800,
-                "expired_at": 1509296400,
-                "status": 1,
-                "status_at": 1469775539
-            }
-        }
-
-### Cancel promo [GET /buckets/promo/cancel]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-### Get Count Bucket [GET /buckets/count]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Count Bucket",
-            "data": {
-                "count": 100
-            }
-        }
-        
-### Bank Payment [POST /buckets/{id}/bank]
-Ready
-
-+ Parameters
-
-    + id: 252 (number, required)
-
-+ Request
-
-        {
-            "bank_account_id": 1,
-            "date": 1477242000,
-            "amount": 150000,
-            "bank": "BNI",
-            "holder_account_number": "12341234",
-            "attachment": "attachment.png"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "success",
-            "data": {
-                "id": "23",
-                "user_id": 32,
-                "bucket_id": 252,
-                "bank_account_id": 1,
-                "date": 1477242000,
-                "amount": 150000,
-                "bank": "BNI",
-                "holder_account_number": "12341234",
-                "attachment": "http://188.166.246.46/uploads/payment_confirmation/attachment.png"
-            }
-        }
-        
-### Bulk Update Cart [PUT /buckets]
-Ready
-
-+ Request
-
-        {
-            "items": [
-                {
-                    "id": 470,
-                    "expedition_id": 2,
-                    "expedition_service_id": 1,
-                    "qty": 1,
-                    "note": "Kirimnya cepat ya gan",
-                    "address_id": 142,
-                    "is_insurance": true,
-                    "service": "YES",
-                    "origin_ro_id": 152,
-                    "destination_ro_id": 108
-                }
-            ] 
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Items Data",
-            "data": [
-                {
-                    "id": 470,
-                    "qty": 1,
-                    "weight": 1000,
-                    "additional_cost": 0,
-                    "total_price": 32200,
-                    "bucket_id": 269,
-                    "product_id": 96,
-                    "invoice_id": null,
-                    "shipping_id": 309,
-                    "dropshipper_id": 0,
-                    "note": "Kirimnya cepat ya gan"
-                }
-            ]
-        }
-
 ## Review Collection [/reviews]
 
 ### Search  [GET /reviews/search?q={query}&store_id={store_id}&user_id={user_id}&product_id={product_id}&limit={limit}&page={page}]
@@ -3513,184 +4173,6 @@ Ready
                 }
             ]
         }
-
-## Expedition Collection [/expeditions]
-
-### Get List Expedition [GET]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Expedition Data",
-            "data": [
-                {
-                    "id": 1,
-                    "name": "JNE",
-                    "logo": "logo.png",
-                    "insurance_fee": 20000,
-                    "services": [
-                        {
-                            "id": 1,
-                            "name": "REG",
-                            "description": "Layanan reguler",
-                            "logo": "logo.png"
-                        }
-                    ]
-                },
-                {
-                    "id": 2,
-                    "name": "TIKI",
-                    "logo": "logo.png",
-                    "insurance_fee": 15000,
-                    "services": [
-                        {
-                            "id": 1,
-                            "name": "Service Normal",
-                            "description": "Service normal adalah",
-                            "logo": "logo.png"
-                        }
-                    ]
-                }
-            ]
-        }
-
-### Get Expedition Service [GET /expeditions/{id}/services]
-Ready
-
-+ Parameters
-    + id : 1 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Expedition Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
-            "data": [
-                {
-                    "id": 1,
-                    "name": "REG",
-                    "description": "Layanan reguler",
-                    "logo": "logo.png"
-                },
-                {
-                    "id": 1,
-                    "name": "REG",
-                    "description": "Layanan reguler",
-                    "logo": "logo.png"
-                }
-            ]
-        }
-
-### Cost Expedition [GET /expeditions/{id}/cost?origin_ro_id={origin_id}&destination_ro_id={destination_id}&weight={weight}]
-Ready
-
-+ Parameters
-    + origin_id: 501 (number, required)
-    + destination_id: 62 (number, required)
-    + weight: 1700 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Cost Data",
-            "data": [
-                {
-                    "id": 1,
-                    "name": "REG",
-                    "description": "Layanan reguler",
-                    "cost": 32000,
-                    "etd": "6-7",
-                    "full_name": "JNE REG"
-                },
-                {
-                    "id": 2,
-                    "name": "OKE",
-                    "description": "Ongkos Kirim Ekonomis",
-                    "cost": 28000,
-                    "etd": "4-5",
-                    "full_name": "JNE OKE"
-                }
-            ]
-        }
-
-### Get List Expedition Service [GET /expeditions/services]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Expedition Service Data",
-            "data": [
-                {
-                    "id": 1,
-                    "expedition_id": 2,
-                    "name": "JNE Reguler",
-                    "description": "JNE Reguler adalahpaket reguler yang ditawarkan JNE. Kecepatanpengiriman tergantung dari lokasi pengiriman dan tujuan. untuk kota yang sama umumnya memakan waku 2-3 hari",
-                    "status": "1",
-                    "status_at": "2016-06-21T17:00:00.000Z",
-                    "logo": null
-                },
-                {
-                    "id": 2,
-                    "expedition_id": 2,
-                    "name": "JNE YES",
-                    "description": "JNE YES adalah Paket dengan prioritas pengiriman tercepat yang ditawarkan JNE. Hanya saja perlu diperhatikan kecepatan barang dipengaruhi kecepatan penjual melakukan pengiriman barang.",
-                    "status": "1",
-                    "status_at": "2016-06-11T17:00:00.000Z",
-                    "logo": null
-                }
-            ]
-        }
-        
-### Cost Expedition by Product [GET /expeditions/cost?product_id={product_id}&origin_ro_id={origin_id}&destination_ro_id={destination_id}&weight={weight}]
-Ready
-
-+ Parameters
-    + product_id: 1 (number, required)
-    + origin_id: 501 (number, required)
-    + destination_id: 62 (number, required)
-    + weight: 1 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Cost Data",
-            "data": [
-                {
-                    "id": 1,
-                    "name": "REG",
-                    "description": "Layanan reguler",
-                    "cost": 32000,
-                    "etd": "6-7",
-                    "full_name": "JNE REG"
-                },
-                {
-                    "id": 2,
-                    "name": "Reguler",
-                    "description": "Reguler",
-                    "cost": 28000,
-                    "etd": "4-5",
-                    "full_name": "TIKI Reguler"
-                }
-            ]
-        }
-        
 
 ## Invoice Collection [/invoices]
 
@@ -4218,67 +4700,6 @@ Ready
             ]
         }
 
-## Bank Collection [/banks]
-
-### Get Master Bank [GET]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Master Bank Data",
-            "data": [
-                {
-                    "id": 1,
-                    "name": "Mandiri",
-                    "code": "1001",
-                    "status": 1,
-                    "status_at": 1496710635,
-                    "logo": "mandiri.png"
-                },
-                {
-                    "id": 3,
-                    "name": "BCA",
-                    "code": "1002",
-                    "status": 1,
-                    "status_at": 1496710635,
-                    "logo": "bca.png"
-                },
-                {
-                    "id": 5,
-                    "name": "BRI",
-                    "code": "2003",
-                    "status": 1,
-                    "status_at": 1496710635,
-                    "logo": "bri.png"
-                }
-            ]
-        }
-
-### Get Master Bank Detail [GET /banks/{id}]
-Ready
-
-+ Parameters
-    + id : 1 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Master Bank Data",
-            "data": {
-                "id": 1,
-                "name": "Mandiri",
-                "code": "1001",
-                "status": 1,
-                "status_at": 1496710635,
-                "logo": "mandiri.png"
-            }
-        }
-
 ## Wholesaler Collection [/wholesalers]
 
 ### Post Wholesaler [POST]
@@ -4335,31 +4756,6 @@ Ready
             ]
         }
 
-## Brand Collection [/brands]
-
-### List [GET /brands]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Brands Data",
-            "data": [
-                {
-                    "id": 1,
-                    "category_id": 2,
-                    "name": "Nike"
-                },
-                {
-                    "id": 2,
-                    "category_id": 2,
-                    "name": "Adidas"
-                }
-            ]
-        }
-
 ## Password Collection [/passwords]
 
 ### Forgot Password [POST /passwords/forgot]
@@ -4403,289 +4799,6 @@ Ready
         {
             "token": "784fd054301106e1679454fc0e7d9217"
             "password": "komuto"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-## Account Collection [/accounts]
-
-### Get Profile [GET /accounts/profile]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Profile Data",
-            "data": {
-                "id": 1,
-                "name": "User skyshi",
-                "photo": "http://media.tcc.fl.edu/webcourses/ctll/Developing_Your_Teaching_Philosophy/examples.jpg",
-                "gender": "female",
-                "place_of_birth": "Yogyakarta",
-                "date_of_birth": 1496710635
-            }
-        }
-
-### Update Profile [PUT /accounts/profile]
-Ready
-
-+ Request (application/json)
-
-        {
-            "name": "User Skyshi",
-            "photo": "photo.jpg",
-            "gender": "male",
-            "place_of_birth": 3471,
-            "date_of_birth": 1496710635
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Profile Data",
-            "data": {
-                "id": 1,
-                "name": "User skyshi",
-                "photo": "http://media.tcc.fl.edu/webcourses/ctll/Developing_Your_Teaching_Philosophy/examples.jpg",
-                "gender": "female",
-                "place_of_birth": "Yogyakarta",
-                "date_of_birth": 1496710635
-            }
-        }
-
-### Get Phone [GET /accounts/phone]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Phone Number Data",
-            "data": {
-                "phone_number": "082312391239"
-            }
-        }
-
-### Update Phone [PUT /accounts/phone]
-Ready
-
-+ Request (application/json)
-
-        {
-            "phone_number": "0823912383929"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Phone Number Data",
-            "data": {
-                "phone_number": "0823912383929"
-            }
-        }
-
-### Send OTP Phone [POST /accounts/otp/phone]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-### Verify Phone [POST /accounts/phone/verify]
-Ready
-
-+ Request (application/json)
-
-        {
-            "code": "84729"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-### List Bank Accounts [GET /accounts/banks]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Bank Account Data",
-            "data": [
-                {
-                    "id": 4,
-                    "user_id": 50,
-                    "bank": {
-                        "id": 1,
-                        "name": "Mandiri",
-                        "code": "1001",
-                        "status": "1",
-                        "status_at": 1466497561,
-                        "logo": null
-                    },
-                    "holder_name": "Satrio wisnugroho",
-                    "holder_account_name": "09829123923",
-                    "bank_branch_office_name": "SLEMAN",
-                    "is_primary": false
-                }
-            ]
-        }
-
-### Send OTP Bank [POST /accounts/otp/bank]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-### Create Bank Accounts [POST /accounts/banks]
-Ready
-
-+ Request (application/json)
-
-        {
-            "code": "83783",
-            "master_bank_id": 1,
-            "holder_name": "user skyshi2",
-            "holder_account_number": "09812309812398",
-            "bank_branch_office_name": "Yogyakarta"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Bank Account Data",
-            "data": {
-                "id": 4,
-                "user_id": 50,
-                "bank": {
-                    "id": 1,
-                    "name": "Mandiri",
-                    "code": "1001",
-                    "status": "1",
-                    "status_at": 1466497561,
-                    "logo": null
-                },
-                "holder_name": "Satrio wisnugroho",
-                "holder_account_name": "09829123923",
-                "bank_branch_office_name": "SLEMAN",
-                "is_primary": false
-            }
-        }
-
-### Get Bank Accounts [GET /accounts/banks/{id}]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Bank Account Data",
-            "data": {
-                "id": 4,
-                "user_id": 50,
-                "bank": {
-                    "id": 1,
-                    "name": "Mandiri",
-                    "code": "1001",
-                    "status": "1",
-                    "status_at": 1466497561,
-                    "logo": null
-                },
-                "holder_name": "Satrio wisnugroho",
-                "holder_account_name": "09829123923",
-                "bank_branch_office_name": "SLEMAN",
-                "is_primary": false
-            }
-        }
-
-### Update Bank Accounts [PUT /accounts/banks/{id}]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Request (application/json)
-
-        {
-            "code": "08293",
-            "master_bank_id": 1,
-            "holder_name": "user skyshi2",
-            "holder_account_number": "09812309812398",
-            "bank_branch_office_name": "Yogyakarta"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {
-                "id": 4,
-                "user_id": 50,
-                "bank": {
-                    "id": 1,
-                    "name": "Mandiri",
-                    "code": "1001",
-                    "status": "1",
-                    "status_at": 1466497561,
-                    "logo": null
-                },
-                "holder_name": "Satrio wisnugroho",
-                "holder_account_name": "09829123923",
-                "bank_branch_office_name": "SLEMAN",
-                "is_primary": false
-            }
-        }
-
-### Delete Bank Accounts [DELETE /accounts/banks/{id}]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Request (application/json)
-
-        {
-            "code": "83792"
         }
 
 + Response 200 (application/json)
