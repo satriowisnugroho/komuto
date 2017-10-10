@@ -1552,6 +1552,1982 @@ Postman collection https://www.getpostman.com/collections/f2801628834132085b4a
             ]
         }
 
+## Location [/locations]
+
+### List Provinces [GET /locations/provinces]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Provinces Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "Yogyakarta"
+                },
+                {
+                    "id": 2,
+                    "name": "Jakarta"
+                }
+            ]
+        }
+
+### List Districts [GET /locations/districts?province_id={id}&q={query}]
+
++ Parameters
+    + id: 1 (number, optional)
+    + query: yog (string, optional)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Districts Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "Sleman"
+                },
+                {
+                    "id": 2,
+                    "name": "Kulon Progo"
+                }
+            ]
+        }
+
+### List Sub District [GET /locations/sub-districts?district_id={id}]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Sub Districts Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "Ngaglik"
+                },
+                {
+                    "id": 2,
+                    "name": "Ngemplak"
+                }
+            ]
+        }
+
+### List Villages [GET /locations/villages?sub_district_id={id}]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Sub Districts Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "Sariharjo"
+                },
+                {
+                    "id": 2,
+                    "name": "Umbulmartani"
+                }
+            ]
+        }
+
+## Midtrans [/notification]
+
+### Notification [POST /notification]
+
++ Request (application/json)
+
+        {
+            "masked_card": "411111-1111",
+            "approval_code": "000000",
+            "bank": "mandiri",
+            "eci": "02",
+            "transaction_time": "2014-04-07 16:22:36",
+            "gross_amount": "2700",
+            "order_id": "ORDER-441",
+            "payment_type": "credit_card",
+            "signature_key": "acd9bf4e00b8dce463d676797a7c8722202c903e222229fc78e01588bff72cf25c2baae73437532193f121947a0de1c8aa319c69c20ff4827ab1df97e184209d",
+            "status_code": "200",
+            "transaction_id": "826acc53-14e0-4ae7-95e2-845bf0311579",
+            "transaction_status": "capture",
+            "fraud_status": "accept",
+            "status_message": "Veritrans payment notification"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+## Other [/images]
+
+### Upload Images [POST /images]
+
++ Request (application/json)
+
+        {
+            "images": "image",
+            "type": "resolution"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "path": "https://komutodev.aptmi.com/uploads/resolution",
+                "images": [
+                    {
+                        "name": "resolution-1507598000659-0.jpg"
+                    }
+                ]
+            }
+        }
+
+### Get Commission [GET /commissions?price={amount}]
+
++ Parameters
+    + amount: 750000 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Commission Data",
+            "data": {
+                "commission": 1.5
+            }
+        }
+
+### Store Page [GET /pages/store]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Store Page",
+            "data": {
+                "sales": {
+                    "new_order": 5,
+                    "processing_order": 3,
+                    "sale": 15
+                }
+            }
+        }
+
+## Payment [/payment-methods]
+
+### Get Payment Methods [GET /payment-methods]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Payment Methods Data",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "Manual Transfer",
+                    "remarks": "Menerima pembayaran via transfer bank, akan membantu Toko Online Anda lebih dipercaya.",
+                    "logo": "https://komutodev.aptmi.com/uploads/payment/transferbank.png",
+                    "type": 0,
+                    "type_text": "manual_transfer-doku",
+                    "status": 1,
+                    "status_at": 1468987469
+                },
+                {
+                    "id": 3,
+                    "name": "BCA KlikPay",
+                    "remarks": "BCA KlikPay adalah cara bayar belanja online yang praktis dan terpercaya dengan menggunakan fasilitas KlikBCA Individu atau BCA Card.",
+                    "logo": "https://komutodev.aptmi.com/uploads/payment/bcaklikpay.png",
+                    "type": 1,
+                    "type_text": "klikpay_bca-doku",
+                    "status": 1,
+                    "status_at": 1472526291
+                }
+            ]
+        }
+
+### Bank Payment [POST /buckets/{id}/bank]
+
++ Parameters
+    + id: 123 (number, required)
+
++ Request (application/json)
+
+        {
+            "bank_account_id": 3,
+            "date": 1477242000,
+            "amount": 150000,
+            "bank": "BNI",
+            "holder_account_number": "12341234",
+            "attachment": "attachment.png"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+## Resolution [/users/resolutions]
+
+### List [GET /users/resolutions?is_closed={isClosed}]
+
++ Parameters
+    + isClosed: false (boolean)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Resolution Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 50,
+                    "user_id": 59,
+                    "ticket_number": "RS-0050",
+                    "priority": 1,
+                    "topic": 1,
+                    "title": "Mau nanya tentang refund",
+                    "status": 2,
+                    "status_at": 1506391509,
+                    "ends_at": 1506358800,
+                    "created_at": 1506358800,
+                    "updated_at": null
+                }
+            ]
+        }
+
+### Get [GET /users/resolutions/{id}]
+
++ Parameters
+    + id: 50 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Resolution Data",
+            "data": {
+                "id": 50,
+                "user_id": 59,
+                "ticket_number": "RS-0050",
+                "priority": 1,
+                "topic": 1,
+                "title": "Mau nanya tentang refund",
+                "status": 2,
+                "status_at": 1506391509,
+                "ends_at": 1506358800,
+                "created_at": 1506358800,
+                "updated_at": null,
+                "discussions": [
+                    {
+                        "name": "safe",
+                        "message": "Ini nih refund ku kok lorem ipsum ya, coba di cek lagi",
+                        "created_at": 1506416709
+                    }
+                ],
+                "images": []
+            }
+        }
+
+### Create [POST /users/resolutions]
+
++ Request (application/json)
+
+        {
+            "priority": 1,
+            "topic": 1,
+            "title": "Mau nanya tentang refund",
+            "message": "Ini nih refund ku kok lorem ipsum ya, coba di cek lagi",
+            "images": [
+                {
+                    "name": "refund.jpg"
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 60,
+                "user_id": 59,
+                "ticket_number": "RS-0060",
+                "priority": 1,
+                "topic": 1,
+                "title": "Mau nanya tentang refund",
+                "status": 2,
+                "status_at": 1507599882,
+                "ends_at": 1507599882,
+                "created_at": 1507599882,
+                "updated_at": null
+            }
+        }
+
+### Reply [POST /users/resolutions/{id}]
+
++ Parameters
+    + id: 60 (number, required)
+
++ Request (application/json)
+
+        {
+            "message": "Iya mas refund nya belum lorem ipsum e. piye ki"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Resolution Data",
+            "data": {
+                "id": 60,
+                "user_id": 59,
+                "ticket_number": "RS-0060",
+                "priority": 1,
+                "topic": 1,
+                "title": "Mau nanya tentang refund",
+                "status": 2,
+                "status_at": 1507574682,
+                "ends_at": 1507568400,
+                "created_at": 1507568400,
+                "updated_at": 1507600062,
+                "discussions": [
+                    {
+                        "name": "safe",
+                        "message": "Ini nih refund ku kok lorem ipsum ya, coba di cek lagi",
+                        "created_at": 1507599882
+                    },
+                    {
+                        "name": "safe",
+                        "message": "Iya mas refund nya belum lorem ipsum e. piye ki",
+                        "created_at": 1507600062
+                    }
+                ],
+                "images": [
+                    {
+                        "id": 25,
+                        "parent_id": 60,
+                        "image": "https://komutodev.aptmi.com/uploads/resolution/refund.jpg",
+                        "group": "resolusi"
+                    }
+                ]
+            }
+        }
+
+## Transaction [/transactions]
+
+### List [GET /transactions]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Transactions Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "bucket": {
+                        "id": 489,
+                        "user_id": 59,
+                        "marketplace_id": null,
+                        "promo_id": null,
+                        "promo": null,
+                        "payment_method_id": null,
+                        "unique_code": 112,
+                        "total_bill": 1664112,
+                        "order_at": 1507222800,
+                        "wallet": 0,
+                        "platform": "pwa",
+                        "status": 3,
+                        "status_at": 1507222800
+                    },
+                    "summary_transaction": {
+                        "total_price": 1664000,
+                        "time_left": {
+                            "days": 0,
+                            "hours": 0,
+                            "minutes": 0,
+                            "seconds": 0
+                        }
+                    },
+                    "products": [
+                        {
+                            "id": 282,
+                            "name": "sepatu emas",
+                            "slug": "sepatu-emas",
+                            "price": 1650000,
+                            "discount": 0,
+                            "is_discount": false,
+                            "is_wholesaler": false,
+                            "is_dropship": false,
+                            "weight": 500,
+                            "stock": 48,
+                            "image": "https://komutodev.aptmi.com/uploads/produk/kucing.png"
+                        }
+                    ]
+                }
+            ]
+        }
+
+### Get [GET /transactions/{id}]
+
++ Parameters
+    + id: 489 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Transaction Data",
+            "data": {
+                "bucket": {
+                    "id": 489,
+                    "user_id": 59,
+                    "marketplace_id": null,
+                    "promo_id": null,
+                    "promo": null,
+                    "payment_method_id": null,
+                    "unique_code": 112,
+                    "total_bill": 1664112,
+                    "order_at": 1507222800,
+                    "wallet": 0,
+                    "platform": "pwa",
+                    "status": 3,
+                    "status_at": 1507222800
+                },
+                "summary_transaction": {
+                    "total_price": 1664000,
+                    "time_left": {
+                        "days": 0,
+                        "hours": 0,
+                        "minutes": 0,
+                        "seconds": 0
+                    }
+                },
+                "invoices": [
+                    {
+                        "id": 397,
+                        "payment_method_id": null,
+                        "store_id": 41,
+                        "store": {
+                            "id": 41,
+                            "name": "Toko Kain Jaya",
+                            "logo": "https://komutodev.aptmi.com/uploads/toko/eb4f4148d8b6699d49e48b084310893df292c27a_IMG_0210.jpg"
+                        },
+                        "shipping": {
+                            "id": 609,
+                            "delivery_cost": 14000,
+                            "insurance_fee": 0,
+                            "is_insurance": false,
+                            "address": {
+                                "id": 422,
+                                "postal_code": "57782",
+                                "address": "Jl. Matesih No. 12 RT. 004 RW. 001",
+                                "name": "Safei Muslim",
+                                "email": "safei@skyshi.com",
+                                "phone_number": "082329230000",
+                                "alias_address": "Rumah kamu",
+                                "is_primary_address": false,
+                                "is_sale_address": false,
+                                "is_tender_address": false,
+                                "is_checked": false
+                            },
+                            "expedition_service": {
+                                "id": 1,
+                                "name": "REG",
+                                "description": "JNE Reguler adalahpaket reguler yang ditawarkan JNE. Kecepatanpengiriman tergantung dari lokasi pengiriman dan tujuan. untuk kota yang sama umumnya memakan waku 2-3 hari",
+                                "logo": null,
+                                "is_checked": false,
+                                "expedition": {
+                                    "id": 2,
+                                    "name": "JNE",
+                                    "logo": "https://komutodev.aptmi.com/img/pengiriman/jne.png",
+                                    "insurance_fee": 2,
+                                    "is_checked": false
+                                }
+                            },
+                            "note": null,
+                            "seller_note": null,
+                            "airway_bill": null,
+                            "sender_status": 1,
+                            "sender_status_at": null,
+                            "sender_status_expired_at": null,
+                            "receiver_status": 1,
+                            "receiver_status_at": null,
+                            "receiver_status_expired_at": null
+                        },
+                        "invoice_number": "Invoice-1024777118/10/2017",
+                        "total_bill": 1664000,
+                        "total_price": 1664000,
+                        "status": 0,
+                        "transaction_status": null,
+                        "created_at": 1507222800,
+                        "items": [
+                            {
+                                "id": 765,
+                                "qty": 1,
+                                "weight": 500,
+                                "additional_cost": 0,
+                                "total_price": 1664000,
+                                "product": {
+                                    "id": 282,
+                                    "name": "sepatu emas",
+                                    "slug": "sepatu-emas",
+                                    "price": 1650000,
+                                    "discount": 0,
+                                    "is_discount": false,
+                                    "is_wholesaler": false,
+                                    "is_dropship": false,
+                                    "weight": 500,
+                                    "stock": 48,
+                                    "image": "https://komutodev.aptmi.com/uploads/produk/kambing.png"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+
+### Get Invoice [GET /transactions/{id}/invoices/{invoiceId}]
+
++ Parameters
+    + id: 489 (number, required)
+    + invoiceId: 397 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Invoice Data",
+            "data": {
+                "id": 397,
+                "payment_method_id": null,
+                "store_id": 41,
+                "store": {
+                    "id": 41,
+                    "name": "Toko Kain Jaya",
+                    "logo": "https://komutodev.aptmi.com/uploads/toko/eb4f4148d8b6699d49e48b084310893df292c27a_IMG_0210.jpg"
+                },
+                "shipping": {
+                    "id": 609,
+                    "delivery_cost": 14000,
+                    "insurance_fee": 0,
+                    "is_insurance": false,
+                    "address": {
+                        "id": 422,
+                        "postal_code": "57782",
+                        "address": "Jl. Matesih No. 12 RT. 004 RW. 001",
+                        "name": "Safei Muslim",
+                        "email": "safei@skyshi.com",
+                        "phone_number": "082329230000",
+                        "alias_address": "Rumah kamu",
+                        "is_primary_address": false,
+                        "is_sale_address": false,
+                        "is_tender_address": false,
+                        "is_checked": false
+                    },
+                    "expedition_service": {
+                        "id": 1,
+                        "name": "REG",
+                        "description": "JNE Reguler adalahpaket reguler yang ditawarkan JNE. Kecepatanpengiriman tergantung dari lokasi pengiriman dan tujuan. untuk kota yang sama umumnya memakan waku 2-3 hari",
+                        "logo": null,
+                        "is_checked": false,
+                        "expedition": {
+                            "id": 2,
+                            "name": "JNE",
+                            "logo": "https://komutodev.aptmi.com/img/pengiriman/jne.png",
+                            "insurance_fee": 2,
+                            "is_checked": false
+                        }
+                    },
+                    "note": null,
+                    "seller_note": null,
+                    "airway_bill": null,
+                    "sender_status": 1,
+                    "sender_status_at": null,
+                    "sender_status_expired_at": null,
+                    "receiver_status": 1,
+                    "receiver_status_at": null,
+                    "receiver_status_expired_at": null
+                },
+                "invoice_number": "Invoice-1024777118/10/2017",
+                "total_bill": 1664000,
+                "total_price": 1664000,
+                "status": 0,
+                "transaction_status": null,
+                "created_at": 1507222800,
+                "user_id": 59,
+                "bucket_id": 489,
+                "bid_id": null,
+                "shipping_id": 609,
+                "remark_cancel": null,
+                "delivery_cost": 14000,
+                "insurance_fee": 0,
+                "admin_cost": 0,
+                "wallet": 0,
+                "promo": 0,
+                "updated_at": 1507262402,
+                "items": [
+                    {
+                        "id": 765,
+                        "qty": 1,
+                        "weight": 500,
+                        "additional_cost": 0,
+                        "total_price": 1664000,
+                        "note": "",
+                        "bucket_id": 489,
+                        "product_id": 282,
+                        "product": {
+                            "id": 282.41,
+                            "name": "sepatu emas",
+                            "slug": "sepatu-emas",
+                            "price": 1650000,
+                            "discount": 0,
+                            "is_discount": false,
+                            "is_wholesaler": false,
+                            "is_dropship": false,
+                            "weight": 500,
+                            "stock": 48,
+                            "image": "https://komutodev.aptmi.com/uploads/produk/kambing.png"
+                        },
+                        "invoice_id": "397",
+                        "shipping_id": 609,
+                        "dropshipper_id": null,
+                        "review_id": null
+                    }
+                ],
+                "dispute": null
+            }
+        }
+
+### Bulk Review [POST /transactions/{id}/invoices/{invoiceId}]
+
++ Parameters
+    + id: 489 (number, required)
+    + invoiceId: 397 (number, required)
+
++ Request (application/json)
+
+        [
+            {
+                "product_id": 2.41,
+                "review": "Mantap gan barangnya",
+                "quality": 5,
+                "accuracy": 5
+            }
+        ]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Reviews Data",
+            "data": [
+                {
+                    "id": 156,
+                    "review": "Mantap gan barangnya",
+                    "quality": 5,
+                    "accuracy": 5,
+                    "created_at": 1507602868
+                }
+            ]
+        }
+
+### Dispute [POST /transactions/{id}/invoices/{invoiceId}/dispute]
+
++ Parameters
+    + id: 489 (number, required)
+    + invoiceId: 397 (number, required)
+
++ Request (application/json)
+
+        {
+            "products": [282.41],
+            "problems": [1, 2, 3],
+            "solution": 1,
+            "note": "Saya ingin refund dana saja. takutnya kalo tukar barang nanti sama saja",
+            "images": [
+                {
+                    "name": "refund.jpg"
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 37,
+                "user_id": 59,
+                "store_id": 41,
+                "invoice_id": 397,
+                "solution": 1,
+                "problems": "Barang tidak sesuai deskripsi, Barang rusak, Produk tidak lengkap",
+                "note": "Saya ingin refund dana saja. takutnya kalo tukar barang nanti sama saja",
+                "dispute_number": "4187-10/10/2017",
+                "status": 1,
+                "response_status": 0,
+                "response_at": 1507608792,
+                "created_at": 1507608792
+            }
+        }
+
+### Midtrans Snap Token [GET /transactions/{id}/token?platform={platform}]
+
++ Parameters
+    + id: 489 (number, required)
+    + platform: pwa (string, required)
+
++ Request (application/json)
+
+        {
+            "products": [282.41],
+            "problems": [1, 2, 3],
+            "solution": 1,
+            "note": "Saya ingin refund dana saja. takutnya kalo tukar barang nanti sama saja",
+            "images": [
+                {
+                    "name": "refund.jpg"
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Snap Token",
+            "data": {
+                "token": "fe1dc869-22b2-4149-8ecb-bb4a33266190",
+                "redirect_url": "https://app.midtrans.com/snap/v2/vtweb/fe1dc869-22b2-4149-8ecb-bb4a33266190"
+            }
+        }
+
+### Balance Payment [PUT /transactions/{id}/balance-payment]
+
++ Parameters
+    + id: 489 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+## Product [/products]
+
+### Create [POST /products]
+
++ Request (application/json)
+
+        {
+            "name": "Sepatu Lari Nike Orange",
+            "category_id": 2,
+            "brand_id": 1,
+            "description": "lorem ipsum",
+            "price": 1650000,
+            "weight": 500,
+            "stock": 50,
+            "condition": "1",
+            "insurance": "0",
+            "is_dropship": true,
+            "catalog_id": 1,
+            "wholesales": [
+                {
+                    "min_order": 5,
+                    "max_order": 10,
+                    "price": 1500000
+                },
+                {
+                    "min_order": 11,
+                    "max_order": 15,
+                    "price": 1200000
+                }
+            ],
+            "expeditions": [
+                {
+                    "expedition_service_id": 1
+                },
+                {
+                    "expedition_service_id": 2
+                }
+            ],
+            "images": [
+                {
+                    "image": "image.png"
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Get [GET /products/{id}]
+
++ Parameters
+    + id: 76.28 (decimal, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Product Detail Data",
+            "data": {
+                "product": {
+                    "id": 76.28,
+                    "name": "GoPro 5",
+                    "slug": "gopro-5",
+                    "stock": 100,
+                    "weight": 1,
+                    "type": "Camera",
+                    "description": "Lorem ipsum",
+                    "price": 5000000,
+                    "status": 1,
+                    "insurance": "Lorem",
+                    "discount": 10,
+                    "created_at": 1496710635,
+                    "status_at": 1496710635,
+                    "attrval": "0",
+                    "margin_dropshipper": 0,
+                    "is_dropshipper": true,
+                    "is_grosir": false,
+                    "count_sold": 0,
+                    "count_popular": 0,
+                    "count_review": 58,
+                    "count_view": 0,
+                    "count_discussion": 278,
+                    "count_like": 1,
+                    "is_liked": true,
+                    "identifier_brand": 0,
+                    "identifier_catalog": 32
+                },
+                "category": {
+                    "id": 1,
+                    "category_id": 4,
+                    "icon": "icon.png",
+                    "name": "Camera"
+                },
+                "store": {
+                    "id": 1,
+                    "user_id": 4,
+                    "name": "Sports Station",
+                    "slogan": "Semua harus keren",
+                    "description": "Menjual semua jenis baju yang keren",
+                    "logo": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
+                    "custom_domain": ".com",
+                    "created_at": 1496710635,
+                    "status": 1,
+                    "remarks_status": "",
+                    "status_at": 1496710635,
+                    "cover_image": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
+                    "seller_theme_id": 2,
+                    "reputation": 23,
+                    "store_id_number": "3404092309880001",
+                    "total_favorite": 40,
+                    "verification_at": 1496710635,
+                    "note": "lorem ipsum",
+                    "count_review": 15,
+                    "start_at": 1496710635,
+                    "end_at": 1496710635,
+                    "province": {
+                        "id": 1,
+                        "name": "Yogyakarta"
+                    }
+                },
+                "images": [
+                    {
+                        "id": 1,
+                        "product_id": 1,
+                        "file": "picture.png",
+                        "created_at": 1496710635,
+                        "updated_at": 1496710635
+                    }
+                ],
+                "reviews": [
+                    {
+                        "id": 1,
+                        "user": {
+                            "id": 2,
+                            "name": "Budi Budiman",
+                            "photo": "http://www.look4fitness.net/images/no_user_logo.png"
+                        },
+                        "review": "Pengemasannya bagus, pengiriman cepat,barang sesuai, recommended bgt lah",
+                        "quality": 5,
+                        "accuracy": 3,
+                        "created_at": 1496710635
+                    },
+                    {
+                        "id": 1,
+                        "user": {
+                            "id": 3,
+                            "name": "Jonathan Hope",
+                            "photo": "http://www.look4fitness.net/images/no_user_logo.png"
+                        },
+                        "review": "Lorem ipsum",
+                        "quality": 5,
+                        "accuracy": 3,
+                        "created_at": 1496710635
+                    }
+                ],
+                "rating": {
+                    "quality": 4,
+                    "accuracy": 3
+                },
+                "wholesaler": [
+                    {
+                        "id": 1,
+                        "min": 5,
+                        "max": 10,
+                        "price": 10000
+                    }
+                ],
+                "other_products": [
+                    {
+                        "id": 1,
+                        "name": "Kue Putu Ayu Kas Demak",
+                        "price": 5000,
+                        "discount": 0,
+                        "is_discount": false,
+                        "count_like": 1,
+                        "is_liked": true,
+                        "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Kue Putu Ayu Kas Demak",
+                        "price": 5000,
+                        "discount": 0,
+                        "is_discount": false,
+                        "count_like": 1,
+                        "is_liked": true,
+                        "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Kue Putu Ayu Kas Demak",
+                        "price": 5000,
+                        "discount": 0,
+                        "is_discount": false,
+                        "count_like": 1,
+                        "is_liked": true,
+                        "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
+                    }
+                ],
+                "expeditions": [
+                    {
+                        "id": 1,
+                        "name": "TIKI",
+                        "logo": "http://188.166.246.46/img/pengiriman/tiki.png",
+                        "insurance_fee": 2
+                    }
+                ]
+            }
+        }
+
+### List [GET /products?q={query}&page={page}&limit={limit}&sort={sort}&price={price}&condition={condition}&other={other}&brands={brands}&services={services}&address={address}]
+
++ Parameters
+    + query: "sepatu lari" (string)
+    + page: 2 (number)
+    + limit: 10 (number)
+    + sort: "newest" (string)
+    + price: "1000-10000" (string)
+    + condition: "new" (string)
+    + other: "discount" (string)
+    + brands: "1,2,3" (string)
+    + services: "1,2,3" (string)
+    + address: 1 (number)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Product List Data",
+            "meta": {
+                "page": 2,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "product": {
+                        "id": 23.41,
+                        "category_id": 30,
+                        "store_id": 14,
+                        "name": "Marketing for Dummies book",
+                        "stock": 100,
+                        "weight": 1,
+                        "type": 1,
+                        "description": "Buku ya buat belajar",
+                        "price": 1500,
+                        "attrval": 0,
+                        "status": 1,
+                        "insurance": 0,
+                        "discount": 0,
+                        "margin_dropshipper": null,
+                        "is_dropshipper": false,
+                        "is_wholesaler": false,
+                        "is_discount": false,
+                        "count_sold": 0,
+                        "count_popular": 0,
+                        "identifier_brand": null,
+                        "identifier_catalog": null,
+                        "status_at": 1471211789,
+                        "created_at": 1471194000,
+                        "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
+                    },
+                    "store": {
+                        "id": 14,
+                        "user_id": 43,
+                        "name": "WEARFINE",
+                        "slogan": "Kalo kita wear harus yang fine",
+                        "description": "Berani belanja HEBAT!",
+                        "logo": "5ffb2f2660a04eb964dc0251a61834a4d10a6c8a_Logo wearfine 2.jpg",
+                        "custom_domain": "",
+                        "status": 1,
+                        "remarks_status": null,
+                        "cover_image": "c39d5b00be92763fffe14846922e7bd6cba061e6_tumblr-background-vintage-flower.jpg",
+                        "seller_theme_id": 0,
+                        "reputation": null,
+                        "store_id_number": "3276021410870015",
+                        "total_favorite": null,
+                        "created_at": 1471194000,
+                        "status_at": 1471209324,
+                        "verification_at": 1499051147,
+                        "is_verified": true,
+                        "start_at": null,
+                        "end_at": null
+                    }
+                }
+            ]
+        }
+
+### Search [GET /products/search?q={query}]
+
++ Parameters
+    + query: "sepatu lari" (string)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Product List Data",
+            "data": [
+                {
+                    "name": "Sepatu lari dari"
+                },
+                {
+                    "name": "Sepatu lari dari kenyataan"
+                }
+            ]
+        }
+
+### Add to wishlist [GET /products/{id}/wishlist]
+
++ Parameters
+    + id: 1.28 (decimal, required)
+
++ Response 200 (application/json)
+
+        {
+              "code": 200,
+              "status": true,
+              "message": "Success",
+              "data": {}
+        }
+        
+### Get Discussions [GET /products/{id}/discussions]
+
++ Parameters
+    + id: 1.28 (decimal, required)
+    
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Product Discussion Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 2,
+                    "user": {
+                        "id": 100,
+                        "name": "Akmal Gumilar",
+                        "photo": "http://188.166.246.46/uploads/user/100_14770314462dba9b2d116.jpg",
+                        "gender": "male",
+                        "place_of_birth": 3275,
+                        "date_of_birth": 604861200
+                    },
+                    "question": "barangnya ready gan?",
+                    "created_at": 1477627049,
+                    "count_comments": 0
+                }
+            ]
+        }
+        
+### Get Discussion Comments [GET /discussions/{discussion_id}/comments]
+
++ Parameters
+    + discussion_id: 2 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Discussion Comments Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 4,
+                    "user": {
+                        "id": 3,
+                        "name": "Afifur Rahman",
+                        "photo": "http://188.166.246.46/uploads/user/3_1496110091dcbc8f63b06c8.jpeg",
+                        "gender": "male",
+                        "place_of_birth": 3321,
+                        "date_of_birth": 652899600
+                    },
+                    "content": "rem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+                    "created_at": 1496091123
+                },
+                {
+                    "id": 3,
+                    "user": {
+                        "id": 3,
+                        "name": "Afifur Rahman",
+                        "photo": "http://188.166.246.46/uploads/user/3_1496110091dcbc8f63b06c8.jpeg",
+                        "gender": "male",
+                        "place_of_birth": 3321,
+                        "date_of_birth": 652899600
+                    },
+                    "content": "barang saya kok belum sampai ya ?",
+                    "created_at": 1496090500
+                }
+            ]
+        }
+
+### Report [POST /products/{id}/report]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Request (application/json)
+
+        {
+            "report_type": 1,
+            "description": "Salah katalog nih"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 2,
+                "product_id": 1,
+                "user_id": 50,
+                "type": 1,
+                "description": "Salah katalog nih"
+            }
+        }
+
+### Create Dropship [POST /products/{id}/dropship]
+
++ parameters
+    + id: 121.8 (decimal, required)
+
++ Request (application/json)
+
+        {
+            "catalog_id": 1
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Dropship Data",
+            "data": {
+                "id": 5,
+                "product_id": 1,
+                "catalog_id": 78,
+                "store_id": 41,
+                "status": 1,
+                "status_at": 1500364537,
+                "created_at": 1500364537
+            }
+        }
+
+### Delete Dropship [DELETE /products/{id}/dropship]
+
++ parameters
+    + id: 121 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Hide Products [POST /users/products/hides]
+
++ Request (application/json)
+
+        {
+            "product_ids": [1, 2, 3] 
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Move Catalog Products [POST /users/store/products/move-catalog]
+
++ Request (application/json)
+
+        {
+            "catalog_id": 2,
+            "product_ids": [1, 2, 3] 
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Update Status Dropship [POST /users/store/products/dropships]
+
++ Request (application/json)
+
+        {
+            "product_ids": [1, 2, 3] 
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Delete Products [POST /users/store/products]
+
++ Request (application/json)
+
+        {
+            "product_ids": [1, 2, 3] 
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Get Store Product [GET /users/store/products/{id}]
+
++ Parameters
+    + id: 80 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Product Detail Data",
+            "data": {
+                "product": {
+                    "id": 80,
+                    "name": "asdasd",
+                    "slug": "asdasd",
+                    "price": 1650000,
+                    "discount": 100,
+                    "is_discount": true,
+                    "is_wholesaler": true,
+                    "is_dropshipper": true,
+                    "weight": 500,
+                    "stock": 50,
+                    "category_id": 63,
+                    "store_id": 28,
+                    "condition": 1,
+                    "description": "lorem ipsum",
+                    "attrval": 0,
+                    "status": 1,
+                    "is_insurance": false,
+                    "margin_dropshipper": null,
+                    "is_dropship": true,
+                    "count_sold": 0,
+                    "count_popular": 0,
+                    "count_view": 0,
+                    "identifier_brand": 1,
+                    "identifier_catalog": 124,
+                    "status_at": 1502778680,
+                    "created_at": 1502730000
+                },
+                "category": {
+                    "id": 63,
+                    "parent_id": 62,
+                    "icon": "http://188.166.246.46/images/img-kategori/default.png",
+                    "name": "Sneakers Pria",
+                    "slug": "sneakers-pria"
+                },
+                "images": [
+                    {
+                        "id": 428,
+                        "product_id": 80,
+                        "file": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
+                        "created_at": 1503618116,
+                        "updated_at": 1503618116
+                    },
+                    {
+                        "id": 427,
+                        "product_id": 80,
+                        "file": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
+                        "created_at": 1503618116,
+                        "updated_at": 1503618116
+                    }
+                ],
+                "wholesaler": [
+                    {
+                        "id": 74,
+                        "min": 20,
+                        "max": 30,
+                        "price": 120000
+                    },
+                    {
+                        "id": 75,
+                        "min": 20,
+                        "max": 30,
+                        "price": 120000
+                    }
+                ],
+                "catalog": {
+                    "id": 124,
+                    "store_id": 28,
+                    "name": "Batik Jamur",
+                    "count_product": null,
+                    "created_at": 1501857724
+                },
+                "brand": null,
+                "expedition_services": [
+                    "JNE REG",
+                    "JNE YES"
+                ]
+            }
+        }
+
+### Update Store Product [PUT /users/store/products/{id}]
+
++ Parameters
+    + id: 80 (number, required)
+    
++ Request
+
+        {
+            "name": "Dropship nih",
+            "category_id": 63,
+            "brand_id": 1,
+            "description": "lorem ipsum",
+            "price": 1650000,
+            "weight": 500,
+            "stock": 50,
+            "condition": 1,
+            "is_insurance": false,
+            "is_dropship": false,
+            "catalog_id": 124,
+            "is_wholesaler": true,
+            "discount": 0,
+            "wholesales": [
+                {
+                    "id": 67,
+                    "min_order": 5,
+                    "max_order": 10,
+                    "price": 1500000,
+                    "is_deleted": true
+                },
+                {
+                    "id": 68,
+                    "min_order": 11,
+                    "max_order": 20,
+                    "price": 1200000,
+                    "is_deleted": false
+                },
+                {
+                    "id": 0,
+                    "min_order": 20,
+                    "max_order": 30,
+                    "price": 120000,
+                    "is_created": true
+                }
+            ],
+            "expeditions": [
+                {
+                    "expedition_service_id": 1,
+                    "status": 1
+                },
+                {
+                    "expedition_service_id": 2,
+                    "status": 1
+                },
+                {
+                    "expedition_service_id": 3,
+                    "status": 2
+                }
+            ],
+            "images": [
+                {
+                    "name": "kucing.png"
+                },
+                {
+                    "name": "kambing.png"
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Product Data",
+            "data": {
+                "id": 80,
+                "name": "Dropship nih",
+                "slug": "dropship-nih",
+                "price": 1650000,
+                "discount": 0,
+                "is_discount": false,
+                "is_wholesaler": true,
+                "is_dropshipper": false,
+                "weight": 500,
+                "stock": 50,
+                "category_id": 63,
+                "store_id": 28,
+                "condition": 1,
+                "description": "lorem ipsum",
+                "attrval": 0,
+                "status": 1,
+                "is_insurance": false,
+                "margin_dropshipper": null,
+                "is_dropship": false,
+                "count_sold": 0,
+                "count_popular": 0,
+                "count_view": 0,
+                "identifier_brand": 1,
+                "identifier_catalog": 124,
+                "status_at": 1502778680,
+                "created_at": 1502730000
+            }
+        }
+
+### Product Expeditions Manage [GET /users/store/products/{id}/expeditions/manage]
+
++ Parameters
+    + id: 76 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Product Expeditions Manage Data",
+            "data": [
+                {
+                    "id": 2,
+                    "name": "JNE",
+                    "logo": "http://188.166.246.46/img/pengiriman/jne.png",
+                    "insurance_fee": 2,
+                    "is_checked": false,
+                    "status": 1,
+                    "method": 1,
+                    "status_at": 1466528400,
+                    "services": [
+                        {
+                            "id": 1,
+                            "name": "REG",
+                            "description": "JNE Reguler adalahpaket reguler yang ditawarkan JNE. Kecepatanpengiriman tergantung dari lokasi pengiriman dan tujuan. untuk kota yang sama umumnya memakan waku 2-3 hari",
+                            "logo": null,
+                            "is_checked": true,
+                            "expedition": {
+                                "id": 2,
+                                "name": "JNE",
+                                "logo": "http://188.166.246.46/img/pengiriman/jne.png",
+                                "insurance_fee": 2,
+                                "is_checked": false,
+                                "status": 1,
+                                "method": 1,
+                                "status_at": 1466528400
+                            },
+                            "is_active": true
+                        },
+                        {
+                            "id": 2,
+                            "name": "YES",
+                            "description": "JNE YES adalah Paket dengan prioritas pengiriman tercepat yang ditawarkan JNE. Hanya saja perlu diperhatikan kecepatan barang dipengaruhi kecepatan penjual melakukan pengiriman barang.",
+                            "logo": null,
+                            "is_checked": true,
+                            "expedition": {
+                                "id": 2,
+                                "name": "JNE",
+                                "logo": "http://188.166.246.46/img/pengiriman/jne.png",
+                                "insurance_fee": 2,
+                                "is_checked": false,
+                                "status": 1,
+                                "method": 1,
+                                "status_at": 1466528400
+                            },
+                            "is_active": true
+                        }
+                    ]
+                }
+            ]
+        }
+
+### List Dropship [GET /products/dropship]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Products Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "product": {
+                        "id": 287.41,
+                        "name": "esia dakwah",
+                        "slug": "esia-dakwah",
+                        "price": 0,
+                        "discount": 0,
+                        "is_discount": false,
+                        "is_wholesaler": true,
+                        "is_dropship": false,
+                        "weight": 500,
+                        "stock": 50,
+                        "image": "https://komutodev.aptmi.com/uploads/produk/kucing.png",
+                        "category_id": 63,
+                        "store_id": 41,
+                        "condition": 1,
+                        "description": "lorem ipsum",
+                        "attrval": 0,
+                        "status": 1,
+                        "is_insurance": false,
+                        "margin_dropshipper": null,
+                        "count_sold": 0,
+                        "count_popular": 0,
+                        "count_view": 1,
+                        "brand_id": 1,
+                        "catalog_id": 34,
+                        "status_at": 1507591380,
+                        "created_at": 1507568400,
+                        "count_like": 0,
+                        "is_liked": false,
+                        "commission": 0.5
+                    },
+                    "store": {
+                        "id": 41,
+                        "name": "Toko Kain Jaya",
+                        "logo": "https://komutodev.aptmi.com/uploads/toko/eb4f4148d8b6699d49e48b084310893df292c27a_IMG_0210.jpg",
+                        "user_id": 50,
+                        "slogan": "Kain apa aja ada disini..",
+                        "description": "Menyediakan berbagai jenis kain, baik kain batik,kain katun, tenun maupun songket.\r\nMenyediakan barang yang berkualitas adalah kewajiban kami..",
+                        "custom_domain": "",
+                        "status": 1,
+                        "remarks_status": null,
+                        "cover_image": "https://komutodev.aptmi.com/uploads/toko/f95f6876f3ba48e420902194a177c14ace716c23_2.jpg",
+                        "seller_theme_id": 0,
+                        "reputation": null,
+                        "store_id_number": "32878927389768",
+                        "total_favorite": null,
+                        "term_condition": "ini toko ya gan?",
+                        "created_at": 1476982800,
+                        "status_at": 1476993366,
+                        "verification_at": 1500310800,
+                        "is_verified": false
+                    }
+                }
+            ]
+        }
+
+## Review Collection [/reviews]
+  
+### List Product Reviews [GET /products/{id}/reviews?page={page}&size={size}]
+
++ Parameters
+    + id: 1 (number, required)
+    + page: 1 (number)
+    + size: 5 (number)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Review List Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 1,
+                    "user": {
+                        "id": 66,
+                        "name": "User skyshi",
+                        "photo": "http://www.look4fitness.net/images/no_user_logo.png"
+                    },
+                    "review": "Pengemasannya bagus, pengiriman cepat,barang sesuai, recommended bgt lah",
+                    "quality": 5,
+                    "accuracy": 3,
+                    "created_at": 1496710635
+                }
+            ]
+        }
+
+### Search  [GET /reviews/search?q={query}&store_id={store_id}&user_id={user_id}&product_id={product_id}&limit={limit}&page={page}]
+
++ Parameters
+    + query: "pengiriman cepat" (string)
+    + page: 2 (number)
+    + limit: 10 (number)
+    + store_id: 1 (number)
+    + user_id: 50 (number)
+    + product_id: 9 (number)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Review List Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 1,
+                    "product_id": 1,
+                    "user": {
+                        "id": 66,
+                        "name": "User skyshi",
+                        "photo": "http://www.look4fitness.net/images/no_user_logo.png"
+                    },
+                    "review": "Pengemasannya bagus, pengiriman cepat,barang sesuai, recommended bgt lah",
+                    "quality": 5,
+                    "accuracy": 3,
+                    "created_at": 1496710635
+                }
+            ]
+        }
+
+### Get User Reviews [GET /users/reviews]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Review List Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 69,
+                    "review": "Obatnya manjur gan update",
+                    "quality": 4,
+                    "accuracy": 5,
+                    "created_at": 1503349439,
+                    "product": {
+                        "id": 9,
+                        "name": "Obat Nyamuk",
+                        "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
+                        "store": {
+                            "id": 2,
+                            "name": "Amanah Jaya",
+                            "logo": "http://188.166.246.46/uploads/toko/a52fe8dd933bdeeac3ceb8dc0242ecb980569b00_jajan.jpg"
+                        }
+                    },
+                    "user": {
+                        "id": 32,
+                        "name": "bleble",
+                        "photo": "http://188.166.246.46/uploads/user/https://scontent.xx.fbcdn.net/v/t1.0-1/s200x200/12190927_1051452451551693_3353738072722896044_n.jpg?oh=1a89bdfda8446cc6b3c82a4536970ba3&oe=599E476F"
+                    }
+                }
+            ]
+        }
+
+### Get Store Reviews [GET /users/store/reviews]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Review List Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 69,
+                    "review": "Obatnya manjur gan update",
+                    "quality": 4,
+                    "accuracy": 5,
+                    "created_at": 1503349439,
+                    "product": {
+                        "id": 9,
+                        "name": "Obat Nyamuk",
+                        "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
+                        "store": {
+                            "id": 2,
+                            "name": "Amanah Jaya",
+                            "logo": "http://188.166.246.46/uploads/toko/a52fe8dd933bdeeac3ceb8dc0242ecb980569b00_jajan.jpg"
+                        }
+                    },
+                    "user": {
+                        "id": 32,
+                        "name": "bleble",
+                        "photo": "http://188.166.246.46/uploads/user/https://scontent.xx.fbcdn.net/v/t1.0-1/s200x200/12190927_1051452451551693_3353738072722896044_n.jpg?oh=1a89bdfda8446cc6b3c82a4536970ba3&oe=599E476F"
+                    }
+                }
+            ]
+        }
+  
+  
+  
+  
+        
+        
+        
+        
+### Get Store Catalog Products [GET /users/store/products/catalogs/{id}]
+Ready
+
++ Parameters
+    + id: 1 (number, required)
+    
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Store Catalog Products Data",
+            "data": {
+                "catalog": {
+                    "id": 38,
+                    "store_id": 41,
+                    "name": "Minuman",
+                    "count_product": 1,
+                    "created_at": 1477368926
+                },
+                "products": [
+                    {
+                        "id": 99,
+                        "name": "say tea",
+                        "slug": "say-tea",
+                        "price": 10000,
+                        "discount": 0,
+                        "is_discount": false,
+                        "is_wholesaler": true,
+                        "image": "https://komutodev.aptmi.com/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
+                    }
+                ]
+            }
+        }
+
+### Create Review [POST /products/{id}/reviews]
+Ready
+
++ Parameters
+    + id: 2 (number, required)
+
++ Request (application/json)
+
+        {
+            "review": "Barang memuaskan",
+            "quality": 5,
+            "accuracy": 3
+        }
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Bulk Delete Products [DELETE /products/delete]
+
++ Request (application/json)
+
+        [
+            {
+                "product_id" : 1
+            },
+            {
+                "product_id" : 2
+            }
+        ]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+        
+### New Discussion [POST /products/{id}/discussions]
+Ready
+
++ Parameters
+    + id: 1 (number, required)
+
++ Request (application/json)
+
+        {
+            "question": "Hallo gan, mau nanya neh. Sepatu ini kan ringan banget kayaknya. Ngerawat nya susah enggak ya?"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Discussion Data",
+            "data": {
+                "id": 21,
+                "user_id": 100,
+                "question": "Hallo gan, mau nanya neh. Sepatu ini kan ringan banget kayaknya. Ngerawat nya susah enggak ya?",
+                "created_at": 1496710635
+            }
+        }
+
+### New Comment [POST /discussions/{discussion_id}/comments]
+Ready
+
++ Parameters
+    + discussion_id: 1 (number, required)
+
++ Request (application/json)
+
+        {
+            "content": "Ready gan silahkan di order"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Comment Data",
+            "data": {
+                "id": 9,
+                "user_id": 9,
+                "content": "Iya sedia warna coklat aja",
+                "created_at": 1500014900
+            }
+        }
 
        
        
@@ -1560,6 +3536,10 @@ Postman collection https://www.getpostman.com/collections/f2801628834132085b4a
        
        
        
+       
+       
+       
+  
        
         
         
@@ -2072,70 +4052,6 @@ Ready
             "data": {}
         }
 
-### Product Expeditions Manage [GET /users/store/products/{id}/expeditions/manage]
-Ready
-
-+ Parameters
-    + id: 76 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Product Expeditions Manage Data",
-            "data": [
-                {
-                    "id": 2,
-                    "name": "JNE",
-                    "logo": "http://188.166.246.46/img/pengiriman/jne.png",
-                    "insurance_fee": 2,
-                    "is_checked": false,
-                    "status": 1,
-                    "method": 1,
-                    "status_at": 1466528400,
-                    "services": [
-                        {
-                            "id": 1,
-                            "name": "REG",
-                            "description": "JNE Reguler adalahpaket reguler yang ditawarkan JNE. Kecepatanpengiriman tergantung dari lokasi pengiriman dan tujuan. untuk kota yang sama umumnya memakan waku 2-3 hari",
-                            "logo": null,
-                            "is_checked": true,
-                            "expedition": {
-                                "id": 2,
-                                "name": "JNE",
-                                "logo": "http://188.166.246.46/img/pengiriman/jne.png",
-                                "insurance_fee": 2,
-                                "is_checked": false,
-                                "status": 1,
-                                "method": 1,
-                                "status_at": 1466528400
-                            },
-                            "is_active": true
-                        },
-                        {
-                            "id": 2,
-                            "name": "YES",
-                            "description": "JNE YES adalah Paket dengan prioritas pengiriman tercepat yang ditawarkan JNE. Hanya saja perlu diperhatikan kecepatan barang dipengaruhi kecepatan penjual melakukan pengiriman barang.",
-                            "logo": null,
-                            "is_checked": true,
-                            "expedition": {
-                                "id": 2,
-                                "name": "JNE",
-                                "logo": "http://188.166.246.46/img/pengiriman/jne.png",
-                                "insurance_fee": 2,
-                                "is_checked": false,
-                                "status": 1,
-                                "method": 1,
-                                "status_at": 1466528400
-                            },
-                            "is_active": true
-                        }
-                    ]
-                }
-            ]
-        }
-
 ### List Favorite Store [GET /users/store/favorites]
 Ready
 
@@ -2343,204 +4259,6 @@ Ready
                 }
             ]
         }
-
-### Get Store Product [GET /users/store/products/{id}]
-Ready
-
-+ Parameters
-    + id: 80 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Product Detail Data",
-            "data": {
-                "product": {
-                    "id": 80,
-                    "name": "asdasd",
-                    "slug": "asdasd",
-                    "price": 1650000,
-                    "discount": 100,
-                    "is_discount": true,
-                    "is_wholesaler": true,
-                    "is_dropshipper": true,
-                    "weight": 500,
-                    "stock": 50,
-                    "category_id": 63,
-                    "store_id": 28,
-                    "condition": 1,
-                    "description": "lorem ipsum",
-                    "attrval": 0,
-                    "status": 1,
-                    "is_insurance": false,
-                    "margin_dropshipper": null,
-                    "is_dropship": true,
-                    "count_sold": 0,
-                    "count_popular": 0,
-                    "count_view": 0,
-                    "identifier_brand": 1,
-                    "identifier_catalog": 124,
-                    "status_at": 1502778680,
-                    "created_at": 1502730000
-                },
-                "category": {
-                    "id": 63,
-                    "parent_id": 62,
-                    "icon": "http://188.166.246.46/images/img-kategori/default.png",
-                    "name": "Sneakers Pria",
-                    "slug": "sneakers-pria"
-                },
-                "images": [
-                    {
-                        "id": 428,
-                        "product_id": 80,
-                        "file": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
-                        "created_at": 1503618116,
-                        "updated_at": 1503618116
-                    },
-                    {
-                        "id": 427,
-                        "product_id": 80,
-                        "file": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
-                        "created_at": 1503618116,
-                        "updated_at": 1503618116
-                    }
-                ],
-                "wholesaler": [
-                    {
-                        "id": 74,
-                        "min": 20,
-                        "max": 30,
-                        "price": 120000
-                    },
-                    {
-                        "id": 75,
-                        "min": 20,
-                        "max": 30,
-                        "price": 120000
-                    }
-                ],
-                "catalog": {
-                    "id": 124,
-                    "store_id": 28,
-                    "name": "Batik Jamur",
-                    "count_product": null,
-                    "created_at": 1501857724
-                },
-                "brand": null,
-                "expedition_services": [
-                    "JNE REG",
-                    "JNE YES"
-                ]
-            }
-        }
-
-### Update Store Product [PUT /users/store/products/{id}]
-Ready
-
-+ Parameters
-    + id: 80 (number, required)
-    
-+ Request
-
-        {
-            "name": "Dropship nih",
-            "category_id": 63,
-            "brand_id": 1,
-            "description": "lorem ipsum",
-            "price": 1650000,
-            "weight": 500,
-            "stock": 50,
-            "condition": 1,
-            "is_insurance": false,
-            "is_dropship": false,
-            "catalog_id": 124,
-            "is_wholesaler": true,
-            "discount": 0,
-            "wholesales": [
-                {
-                    "id": 67,
-                    "min_order": 5,
-                    "max_order": 10,
-                    "price": 1500000,
-                    "is_deleted": true
-                },
-                {
-                    "id": 68,
-                    "min_order": 11,
-                    "max_order": 20,
-                    "price": 1200000,
-                    "is_deleted": false
-                },
-                {
-                    "id": 0,
-                    "min_order": 20,
-                    "max_order": 30,
-                    "price": 120000,
-                    "is_created": true
-                }
-            ],
-            "expeditions": [
-                {
-                    "expedition_service_id": 1,
-                    "status": 1
-                },
-                {
-                    "expedition_service_id": 2,
-                    "status": 1
-                },
-                {
-                    "expedition_service_id": 3,
-                    "status": 2
-                }
-            ],
-            "images": [
-                {
-                    "name": "kucing.png"
-                },
-                {
-                    "name": "kambing.png"
-                }
-            ]
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Product Data",
-            "data": {
-                "id": 80,
-                "name": "Dropship nih",
-                "slug": "dropship-nih",
-                "price": 1650000,
-                "discount": 0,
-                "is_discount": false,
-                "is_wholesaler": true,
-                "is_dropshipper": false,
-                "weight": 500,
-                "stock": 50,
-                "category_id": 63,
-                "store_id": 28,
-                "condition": 1,
-                "description": "lorem ipsum",
-                "attrval": 0,
-                "status": 1,
-                "is_insurance": false,
-                "margin_dropshipper": null,
-                "is_dropship": false,
-                "count_sold": 0,
-                "count_popular": 0,
-                "count_view": 0,
-                "identifier_brand": 1,
-                "identifier_catalog": 124,
-                "status_at": 1502778680,
-                "created_at": 1502730000
-            }
-        }
         
 ### Get List Store Products by Catalog [GET /users/store/products/catalogs/{id}]
 Ready
@@ -2620,43 +4338,6 @@ Ready
                     "image": "http://188.166.246.46/uploads/produk/kambing.png"
                 }
             ]
-        }
-
-### Hide Products [POST /users/products/hides]
-Ready
-
-+ Request (application/json)
-
-        {
-            "product_ids": [ 1, 2, 3 ] 
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-### Move Catalog Products [POST /users/store/products/move-catalog]
-Ready
-
-+ Request (application/json)
-
-        {
-            "catalog_id": 2,
-            "product_ids": [ 1, 2, 3 ] 
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
         }
 
 ### Update Store Information [PUT /users/store]
@@ -2939,47 +4620,6 @@ Ready
             "status": true,
             "message": "Success",
             "data": {}
-        }
-
-### Get User Reviews [GET /users/reviews]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Review List Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 6,
-                "pages": 1
-            },
-            "data": [
-                {
-                    "id": 69,
-                    "review": "Obatnya manjur gan update",
-                    "quality": 4,
-                    "accuracy": 5,
-                    "created_at": 1503349439,
-                    "product": {
-                        "id": 9,
-                        "name": "Obat Nyamuk",
-                        "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
-                        "store": {
-                            "id": 2,
-                            "name": "Amanah Jaya",
-                            "logo": "http://188.166.246.46/uploads/toko/a52fe8dd933bdeeac3ceb8dc0242ecb980569b00_jajan.jpg"
-                        }
-                    },
-                    "user": {
-                        "id": 32,
-                        "name": "bleble",
-                        "photo": "http://188.166.246.46/uploads/user/https://scontent.xx.fbcdn.net/v/t1.0-1/s200x200/12190927_1051452451551693_3353738072722896044_n.jpg?oh=1a89bdfda8446cc6b3c82a4536970ba3&oe=599E476F"
-                    }
-                }
-            ]
         }
 
 ## Store Collection [/stores]
@@ -3309,646 +4949,6 @@ Ready
             "data": {}
         }
 
-## Product Collection [/products]
-
-### Create [POST]
-Ready
-
-+ Request (application/json)
-
-        {
-            "name": "Sepatu Lari Nike Orange",
-            "category_id": 2,
-            "brand_id": 1,
-            "description": "lorem ipsum",
-            "price": 1650000,
-            "weight": 500,
-            "stock": 50,
-            "condition": "1",
-            "insurance": "0",
-            "is_dropship": true,
-            "catalog_id": 1,
-            "wholesales": [
-                {
-                    "min_order": 5,
-                    "max_order": 10,
-                    "price": 1500000
-                },
-                {
-                    "min_order": 11,
-                    "max_order": 15,
-                    "price": 1200000
-                }
-            ],
-            "expeditions": [
-                {
-                    "expedition_service_id": 1
-                },
-                {
-                    "expedition_service_id": 2
-                }
-            ],
-            "images": [
-                {
-                    "image": "image.png"
-                }
-            ]
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-### Create Dropship [POST /products/{id}/dropship]
-Ready
-
-+ parameters
-    + id: 1 (number, required)
-
-+ Request (application/json)
-
-        {
-            "catalog_id": 1
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Dropship Data",
-            "data": {
-                "id": 5,
-                "product_id": 1,
-                "catalog_id": 78,
-                "store_id": 41,
-                "status": 1,
-                "status_at": 1500364537,
-                "created_at": 1500364537
-            }
-        }    
-
-### List [GET /products?q={query}&page={page}&limit={limit}&sort={sort}&price={price}&condition={condition}&other={other}&brands={brands}&services={services}&address={address}]
-Ready
-
-+ Parameters
-    + query: "sepatu lari" (string)
-    + page: 2 (number)
-    + limit: 10 (number)
-    + sort: "newest" (string)
-    + price: "1000-10000" (string)
-    + condition: "new" (string)
-    + other: "discount" (string)
-    + brands: "1,2,3" (string)
-    + services: "1,2,3" (string)
-    + address: 1 (number)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Product List Data",
-            "meta": {
-                "page": 2,
-                "limit": 10
-            },
-            "data": [
-                {
-                    "product": {
-                        "id": 23,
-                        "category_id": 30,
-                        "store_id": 14,
-                        "name": "Marketing for Dummies book",
-                        "stock": 100,
-                        "weight": 1,
-                        "type": 1,
-                        "description": "Buku ya buat belajar",
-                        "price": 1500,
-                        "attrval": 0,
-                        "status": 1,
-                        "insurance": 0,
-                        "discount": 0,
-                        "margin_dropshipper": null,
-                        "is_dropshipper": false,
-                        "is_wholesaler": false,
-                        "is_discount": false,
-                        "count_sold": 0,
-                        "count_popular": 0,
-                        "identifier_brand": null,
-                        "identifier_catalog": null,
-                        "status_at": 1471211789,
-                        "created_at": 1471194000,
-                        "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
-                    },
-                    "store": {
-                        "id": 14,
-                        "user_id": 43,
-                        "name": "WEARFINE",
-                        "slogan": "Kalo kita wear harus yang fine",
-                        "description": "Berani belanja HEBAT!",
-                        "logo": "5ffb2f2660a04eb964dc0251a61834a4d10a6c8a_Logo wearfine 2.jpg",
-                        "custom_domain": "",
-                        "status": 1,
-                        "remarks_status": null,
-                        "cover_image": "c39d5b00be92763fffe14846922e7bd6cba061e6_tumblr-background-vintage-flower.jpg",
-                        "seller_theme_id": 0,
-                        "reputation": null,
-                        "store_id_number": "3276021410870015",
-                        "total_favorite": null,
-                        "created_at": 1471194000,
-                        "status_at": 1471209324,
-                        "verification_at": 1499051147,
-                        "is_verified": true,
-                        "start_at": null,
-                        "end_at": null
-                    }
-                }
-            ]
-        }
-
-### Search [GET /products/search?q={query}]
-Ready
-
-+ Parameters
-    + query: "sepatu lari" (string)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Product List Data",
-            "data": [
-                {
-                    "name": "Sepatu lari dari"
-                },
-                {
-                    "name": "Sepatu lari dari kenyataan"
-                }
-            ]
-        }
-
-### Get [GET /products/{id}]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Product Detail Data",
-            "data": {
-                "product": {
-                    "id": 1,
-                    "name": "GoPro 5",
-                    "slug": "gopro-5",
-                    "stock": 100,
-                    "weight": 1,
-                    "type": "Camera",
-                    "description": "Lorem ipsum",
-                    "price": 5000000,
-                    "status": 1,
-                    "insurance": "Lorem",
-                    "discount": 10,
-                    "created_at": 1496710635,
-                    "status_at": 1496710635,
-                    "attrval": "0",
-                    "margin_dropshipper": 0,
-                    "is_dropshipper": true,
-                    "is_grosir": false,
-                    "count_sold": 0,
-                    "count_popular": 0,
-                    "count_review": 58,
-                    "count_view": 0,
-                    "count_discussion": 278,
-                    "count_like": 1,
-                    "is_liked": true,
-                    "identifier_brand": 0,
-                    "identifier_catalog": 32
-                },
-                "category": {
-                    "id": 1,
-                    "category_id": 4,
-                    "icon": "icon.png",
-                    "name": "Camera"
-                },
-                "store": {
-                    "id": 1,
-                    "user_id": 4,
-                    "name": "Sports Station",
-                    "slogan": "Semua harus keren",
-                    "description": "Menjual semua jenis baju yang keren",
-                    "logo": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                    "custom_domain": ".com",
-                    "created_at": 1496710635,
-                    "status": 1,
-                    "remarks_status": "",
-                    "status_at": 1496710635,
-                    "cover_image": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                    "seller_theme_id": 2,
-                    "reputation": 23,
-                    "store_id_number": "3404092309880001",
-                    "total_favorite": 40,
-                    "verification_at": 1496710635,
-                    "note": "lorem ipsum",
-                    "count_review": 15,
-                    "start_at": 1496710635,
-                    "end_at": 1496710635,
-                    "province": {
-                        "id": 1,
-                        "name": "Yogyakarta"
-                    }
-                },
-                "images": [
-                    {
-                        "id": 1,
-                        "product_id": 1,
-                        "file": "picture.png",
-                        "created_at": 1496710635,
-                        "updated_at": 1496710635
-                    }
-                ],
-                "reviews": [
-                    {
-                        "id": 1,
-                        "user": {
-                            "id": 2,
-                            "name": "Budi Budiman",
-                            "photo": "http://www.look4fitness.net/images/no_user_logo.png"
-                        },
-                        "review": "Pengemasannya bagus, pengiriman cepat,barang sesuai, recommended bgt lah",
-                        "quality": 5,
-                        "accuracy": 3,
-                        "created_at": 1496710635
-                    },
-                    {
-                        "id": 1,
-                        "user": {
-                            "id": 3,
-                            "name": "Jonathan Hope",
-                            "photo": "http://www.look4fitness.net/images/no_user_logo.png"
-                        },
-                        "review": "Lorem ipsum",
-                        "quality": 5,
-                        "accuracy": 3,
-                        "created_at": 1496710635
-                    }
-                ],
-                "rating": {
-                    "quality": 4,
-                    "accuracy": 3
-                },
-                "wholesaler": [
-                    {
-                        "id": 1,
-                        "min": 5,
-                        "max": 10,
-                        "price": 10000
-                    }
-                ],
-                "other_products": [
-                    {
-                        "id": 1,
-                        "name": "Kue Putu Ayu Kas Demak",
-                        "price": 5000,
-                        "discount": 0,
-                        "is_discount": false,
-                        "count_like": 1,
-                        "is_liked": true,
-                        "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
-                    },
-                    {
-                        "id": 2,
-                        "name": "Kue Putu Ayu Kas Demak",
-                        "price": 5000,
-                        "discount": 0,
-                        "is_discount": false,
-                        "count_like": 1,
-                        "is_liked": true,
-                        "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
-                    },
-                    {
-                        "id": 3,
-                        "name": "Kue Putu Ayu Kas Demak",
-                        "price": 5000,
-                        "discount": 0,
-                        "is_discount": false,
-                        "count_like": 1,
-                        "is_liked": true,
-                        "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
-                    }
-                ],
-                "expeditions": [
-                    {
-                        "id": 1,
-                        "name": "TIKI",
-                        "logo": "http://188.166.246.46/img/pengiriman/tiki.png",
-                        "insurance_fee": 2
-                    }
-                ]
-            }
-        }
-        
-### Get Store Catalog Products [GET /users/store/products/catalogs/{id}]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-    
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Store Catalog Products Data",
-            "data": {
-                "catalog": {
-                    "id": 38,
-                    "store_id": 41,
-                    "name": "Minuman",
-                    "count_product": 1,
-                    "created_at": 1477368926
-                },
-                "products": [
-                    {
-                        "id": 99,
-                        "name": "say tea",
-                        "slug": "say-tea",
-                        "price": 10000,
-                        "discount": 0,
-                        "is_discount": false,
-                        "is_wholesaler": true,
-                        "image": "https://komutodev.aptmi.com/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
-                    }
-                ]
-            }
-        }
-  
-### Get Reviews [GET /products/{id}/reviews?page={page}&size={size}]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-    + page: 1 (number)
-    + size: 5 (number)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Review List Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
-            "data": [
-                {
-                    "id": 1,
-                    "user": {
-                        "id": 66,
-                        "name": "User skyshi",
-                        "photo": "http://www.look4fitness.net/images/no_user_logo.png"
-                    },
-                    "review": "Pengemasannya bagus, pengiriman cepat,barang sesuai, recommended bgt lah",
-                    "quality": 5,
-                    "accuracy": 3,
-                    "created_at": 1496710635
-                }
-            ]
-        }
-
-### Create Review [POST /products/{id}/reviews]
-Ready
-
-+ Parameters
-    + id: 2 (number, required)
-
-+ Request (application/json)
-
-        {
-            "review": "Barang memuaskan",
-            "quality": 5,
-            "accuracy": 3
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-### Bulk Delete Products [DELETE /products/delete]
-
-+ Request (application/json)
-
-        [
-            {
-                "product_id" : 1
-            },
-            {
-                "product_id" : 2
-            }
-        ]
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-### Report Product [POST /products/{id}/report]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Request (application/json)
-
-        {
-            "report_type": 1,
-            "description": "Salah katalog nih"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {
-                "id": 2,
-                "product_id": 1,
-                "user_id": 50,
-                "type": 1,
-                "description": "Salah katalog nih"
-            }
-        }
-
-### Add to wishlist [GET /products/{id}/wishlist]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-              "code": 200,
-              "status": true,
-              "message": "Success",
-              "data": {}
-        }
-        
-### Get Discussions [GET /products/{id}/discussions]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-    
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Product Discussion Data",
-            "meta": {
-                "page": 1,
-                "limit": 10
-            },
-            "data": [
-                {
-                    "id": 2,
-                    "user": {
-                        "id": 100,
-                        "name": "Akmal Gumilar",
-                        "photo": "http://188.166.246.46/uploads/user/100_14770314462dba9b2d116.jpg",
-                        "gender": "male",
-                        "place_of_birth": 3275,
-                        "date_of_birth": 604861200
-                    },
-                    "question": "barangnya ready gan?",
-                    "created_at": 1477627049,
-                    "count_comments": 0
-                }
-            ]
-        }
-        
-### Get Discussion Comments [GET /discussions/{discussion_id}/comments]
-Ready
-
-+ Parameters
-    + discussion_id: 2 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Discussion Comments Data",
-            "meta": {
-                "page": 1,
-                "limit": 10
-            },
-            "data": [
-                {
-                    "id": 4,
-                    "user": {
-                        "id": 3,
-                        "name": "Afifur Rahman",
-                        "photo": "http://188.166.246.46/uploads/user/3_1496110091dcbc8f63b06c8.jpeg",
-                        "gender": "male",
-                        "place_of_birth": 3321,
-                        "date_of_birth": 652899600
-                    },
-                    "content": "rem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-                    "created_at": 1496091123
-                },
-                {
-                    "id": 3,
-                    "user": {
-                        "id": 3,
-                        "name": "Afifur Rahman",
-                        "photo": "http://188.166.246.46/uploads/user/3_1496110091dcbc8f63b06c8.jpeg",
-                        "gender": "male",
-                        "place_of_birth": 3321,
-                        "date_of_birth": 652899600
-                    },
-                    "content": "barang saya kok belum sampai ya ?",
-                    "created_at": 1496090500
-                }
-            ]
-        }
-        
-### New Discussion [POST /products/{id}/discussions]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Request (application/json)
-
-        {
-            "question": "Hallo gan, mau nanya neh. Sepatu ini kan ringan banget kayaknya. Ngerawat nya susah enggak ya?"
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Discussion Data",
-            "data": {
-                "id": 21,
-                "user_id": 100,
-                "question": "Hallo gan, mau nanya neh. Sepatu ini kan ringan banget kayaknya. Ngerawat nya susah enggak ya?",
-                "created_at": 1496710635
-            }
-        }
-
-### New Comment [POST /discussions/{discussion_id}/comments]
-Ready
-
-+ Parameters
-    + discussion_id: 1 (number, required)
-
-+ Request (application/json)
-
-        {
-            "content": "Ready gan silahkan di order"
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Comment Data",
-            "data": {
-                "id": 9,
-                "user_id": 9,
-                "content": "Iya sedia warna coklat aja",
-                "created_at": 1500014900
-            }
-        }
-
 ## Tender Product Collection [/tender-products]
 
 ### List [GET]
@@ -4102,48 +5102,6 @@ Ready
     + id: 1 (number, required)
 
 + Request (application/json)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Review List Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
-            "data": [
-                {
-                    "id": 1,
-                    "product_id": 1,
-                    "user": {
-                        "id": 66,
-                        "name": "User skyshi",
-                        "photo": "http://www.look4fitness.net/images/no_user_logo.png"
-                    },
-                    "review": "Pengemasannya bagus, pengiriman cepat,barang sesuai, recommended bgt lah",
-                    "quality": 5,
-                    "accuracy": 3,
-                    "created_at": 1496710635
-                }
-            ]
-        }
-
-## Review Collection [/reviews]
-
-### Search  [GET /reviews/search?q={query}&store_id={store_id}&user_id={user_id}&product_id={product_id}&limit={limit}&page={page}]
-Ready
-
-+ Parameters
-    + query: "pengiriman cepat" (string)
-    + page: 2 (number)
-    + limit: 10 (number)
-    + store_id: 1 (number)
-    + user_id: 50 (number)
-    + product_id: 9 (number)
 
 + Response 200 (application/json)
 
@@ -4394,308 +5352,6 @@ Ready
                     "type_text": "klikpay-bca",
                     "status": 1,
                     "status_at": 1472526291
-                }
-            ]
-        }
-
-## Transactions Collection [/transactions]
-
-### List [GET]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Transactions Data",
-            "data": [
-                {
-                    "bucket": {
-                        "id": 252,
-                        "user_id": 32,
-                        "promo_id": null,
-                        "payment_method_id": 1,
-                        "unique_code": 0,
-                        "order_at": 1501693200,
-                        "wallet": 0,
-                        "status": 1,
-                        "status_at": 1501693200
-                    },
-                    "summary_invoice": {
-                        "total_price": 42201,
-                        "status": 1,
-                        "time_left": {
-                            "days": 1,
-                            "hours": 18,
-                            "minutes": 27,
-                            "seconds": 51
-                        }
-                    },
-                    "invoices": [
-                        {
-                            "id": 126,
-                            "payment_method_id": 1,
-                            "invoice_number": "Invoice-471268034/08/2017",
-                            "total_bill": 42201,
-                            "total_price": 42201,
-                            "status": 1,
-                            "items": [
-                                {
-                                    "id": 395,
-                                    "qty": 1,
-                                    "weight": 1,
-                                    "additional_cost": 0,
-                                    "total_price": 42201,
-                                    "product": {
-                                        "id": 96,
-                                        "name": "TV Kecil",
-                                        "slug": "tv-kecil",
-                                        "price": 10000,
-                                        "discount": 10,
-                                        "is_discount": true,
-                                        "is_wholesaler": false,
-                                        "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-
-### Get [GET /transactions/{id}]
-Ready
-
-+ Parameters
-    + id: 252 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Transactions Data",
-            "data": {
-                "bucket": {
-                    "id": 252,
-                    "user_id": 32,
-                    "promo_id": null,
-                    "payment_method_id": 1,
-                    "unique_code": 0,
-                    "order_at": 1501693200,
-                    "wallet": 0,
-                    "status": 1,
-                    "status_at": 1501693200
-                },
-                "summary_invoice": {
-                    "total_price": 42201,
-                    "status": 1,
-                    "time_left": {
-                        "days": 1,
-                        "hours": 18,
-                        "minutes": 29,
-                        "seconds": 17
-                    }
-                },
-                "invoices": [
-                    {
-                        "id": 126,
-                        "payment_method_id": 1,
-                        "invoice_number": "Invoice-471268034/08/2017",
-                        "total_bill": 42201,
-                        "total_price": 42201,
-                        "status": 1,
-                        "items": [
-                            {
-                                "id": 395,
-                                "qty": 1,
-                                "weight": 1,
-                                "additional_cost": 0,
-                                "total_price": 42201,
-                                "product": {
-                                    "id": 96,
-                                    "name": "TV Kecil",
-                                    "slug": "tv-kecil",
-                                    "price": 10000,
-                                    "discount": 10,
-                                    "is_discount": true,
-                                    "is_wholesaler": false,
-                                    "image": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
-                                }
-                            }
-                        ]
-                    }
-                ]
-            }
-        }
-
-### Set Transaction Summary [POST /transactions/summary]
-
-+ Request (application/json)
-
-        {
-            "user_id": 2,
-            "is_debit": true,
-            "transaction_at": 1496710635,
-            "transaction_code": "tId4K",
-            "status": 1,
-            "nominal": 20000
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Transaction Data",
-            "data": {
-                "id": 3,
-                "transaction_at": 1496710635,
-                "transaction_code": "tId4K",
-                "status": 1,
-                "status_at": 1496710635,
-                "nominal": "20000",
-                "balance_before": "500000",
-                "balance_after": "480000",
-                "is_debit": true,
-                "user_id": 2,
-                "remark": "",
-                "marketplace_id": 3
-            }
-        }
-
-### Transaction Summary [GET /transactions/summary]
-
-+ Request (application/json)
-
-        {
-            "user_id": 2
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Transaction Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
-            "data": [
-                {
-                    "id": 2,
-                    "transaction_at": 1496710635,
-                    "transaction_code": "AuXaH",
-                    "status": 1,
-                    "status_at": 1496710635,
-                    "nominal": "200000",
-                    "balance_before": "500000",
-                    "balance_after": "300000",
-                    "is_debit": false,
-                    "user_id": 2,
-                    "remark": "",
-                    "marketplace_id": 3
-                }
-            ]
-        }
-
-## Location Collection [/locations]
-
-### Get Provinces [GET /locations/provinces]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Provinces Data",
-            "data": [
-                {
-                    "id": 1,
-                    "name": "Yogyakarta"
-                },
-                {
-                    "id": 2,
-                    "name": "Jakarta"
-                }
-            ]
-        }
-
-### Get District [GET /locations/districts?province_id={id}&q={query}]
-Ready
-
-+ Parameters
-    + id: 1 (number, optional)
-    + query: yog (string, optional)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Districts Data",
-            "data": [
-                {
-                    "id": 1,
-                    "name": "Sleman"
-                },
-                {
-                    "id": 2,
-                    "name": "Kulon Progo"
-                }
-            ]
-        }
-
-### Get Sub District [GET /locations/sub-districts?district_id={id}]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Sub Districts Data",
-            "data": [
-                {
-                    "id": 1,
-                    "name": "Ngaglik"
-                },
-                {
-                    "id": 2,
-                    "name": "Ngemplak"
-                }
-            ]
-        }
-
-### Get Village [GET /locations/villages?sub_district_id={id}]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Sub Districts Data",
-            "data": [
-                {
-                    "id": 1,
-                    "name": "Sariharjo"
-                },
-                {
-                    "id": 2,
-                    "name": "Umbulmartani"
                 }
             ]
         }
