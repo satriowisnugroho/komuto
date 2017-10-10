@@ -3390,9 +3390,853 @@ Postman collection https://www.getpostman.com/collections/f2801628834132085b4a
             ]
         }
   
-  
-  
-  
+## Saldo [/users/saldo]
+
+### Withdraw [POST /users/saldo/withdraw]
+
++ Request (application/json)
+
+        {
+            "bank_account_id": 1,
+            "amount": 100000,
+            "code": "87324"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Withdraw Status [GET /users/saldo/withdraw]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Withdraw Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 1,
+                    "user_id": 50,
+                    "marketplace_id": 30,
+                    "bank_account_id": 1,
+                    "bank_account": {
+                        "id": 1,
+                        "user_id": 4,
+                        "bank": {
+                            "id": 1,
+                            "name": "Mandiri",
+                            "code": "1001",
+                            "status": 1,
+                            "status_at": 1466497561,
+                            "logo": "https://komutodev.aptmi.com/img/bank/bank-mandiri.png"
+                        },
+                        "holder_name": "Afifur Rahman",
+                        "holder_account_number": "022381928822",
+                        "marketplace_id": 29,
+                        "bank_branch_office_name": "PondokGede",
+                        "is_primary": false
+                    },
+                    "amount": 20000,
+                    "status": 0,
+                    "created_at": 1497453442
+                }
+            ]
+        }
+
+### Topup Status [GET /users/saldo/topup]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Topup Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 283,
+                    "user_id": 0,
+                    "marketplace_id": 30,
+                    "payment_method_id": 19,
+                    "amount": 100000,
+                    "status": 1,
+                    "platform": "web",
+                    "created_at": 1507621175
+                }
+            ]
+        }
+
+### History [GET /users/saldo/history?page={page}&limit={limit}&filter={filter}&start_at={startAt}&end_at={endAt}]
+
++ Parameters
+    + page: 1
+    + limit: 10
+    + filter: commission,sale,topup,refund,buy,withdraw
+    + startAt: 1502694557
+    + endAt: 1503036955
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Topup Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 265,
+                    "amount": 100000,
+                    "trans_type": "WTHD",
+                    "date": 1507624678,
+                    "user_id": 59,
+                    "first_saldo": 9998135887,
+                    "last_saldo": 9998035887,
+                    "remark": "Withdraw",
+                    "bucket_id": null
+                }
+            ]
+        }
+
+### History Detail [GET /users/saldo/history/{id}]
+
++ Parameters
+    + id: 265
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Withdraw Transaction Data",
+            "data": {
+                "transaction": {
+                    "id": 265,
+                    "amount": 100000,
+                    "trans_type": "WTHD",
+                    "date": 1507624678,
+                    "user_id": 59,
+                    "first_saldo": 9998135887,
+                    "last_saldo": 9998035887,
+                    "remark": "Withdraw"
+                },
+                "bankAccount": {
+                    "id": 1,
+                    "user_id": 4,
+                    "bank": {
+                        "id": 1,
+                        "name": "Mandiri"
+                    },
+                    "holder_name": "Afifur Rahman",
+                    "holder_account_number": "022381928822"
+                }
+            }
+        }
+
+### List Nominal [GET /saldo/nominal]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Nominal Saldo Data",
+            "data": [
+                {
+                    "id": 1,
+                    "amount": 20000
+                },
+                {
+                    "id": 2,
+                    "amount": 50000
+                },
+                {
+                    "id": 3,
+                    "amount": 100000
+                }
+            ]
+        }
+
+### Get Saldo Token [GET /saldo/nominal/{id}/token?platform={platform}]
+
++ Parameters
+    + id: 1
+    + platform: pwa
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Snap Token",
+            "data": {
+                "token": "90e7095b-b0b4-446d-ab2f-d156eed1df18",
+                "redirect_url": "https://app.midtrans.com/snap/v2/vtweb/90e7095b-b0b4-446d-ab2f-d156eed1df18"
+            }
+        }
+
+## Sales [/sales]
+
+### List New Orders [GET /new-orders]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "New Orders Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "invoice": {
+                        "id": 380,
+                        "payment_method_id": 1,
+                        "store_id": 22,
+                        "invoice_number": "Invoice-1163613157/10/2017",
+                        "total_bill": 124000,
+                        "total_price": 124000,
+                        "status": 1,
+                        "transaction_status": 1,
+                        "created_at": 1507136400,
+                        "type": "reseller"
+                    },
+                    "products": [
+                        {
+                            "id": 76,
+                            "name": "Kain denim motif polkadot",
+                            "slug": "kain-denim-motif-polkadot",
+                            "price": 100000,
+                            "discount": 0,
+                            "is_discount": false,
+                            "is_wholesaler": false,
+                            "is_dropship": true,
+                            "weight": 10,
+                            "stock": 11,
+                            "image": "https://komutodev.aptmi.com/uploads/produk/adidas.jpg"
+                        }
+                    ],
+                    "user": {
+                        "id": 59,
+                        "name": "safe",
+                        "photo": "https://komutodev.aptmi.com/uploads/user/default-user.png",
+                        "phone_number": "082329230000"
+                    }
+                }
+            ]
+        }
+
+### Get New Order Detail [GET /invoices/380/new-order-detail]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "New Order Detail Data",
+            "data": {
+                "invoice": {
+                    "id": 380,
+                    "payment_method_id": 1,
+                    "store_id": 22,
+                    "invoice_number": "Invoice-1163613157/10/2017",
+                    "total_bill": 124000,
+                    "total_price": 124000,
+                    "status": 1,
+                    "transaction_status": 1,
+                    "created_at": 1507136400,
+                    "delivery_cost": 22000,
+                    "insurance_fee": 2000,
+                    "expedition": {
+                        "id": 1,
+                        "name": "REG",
+                        "description": "JNE Reguler adalahpaket reguler yang ditawarkan JNE. Kecepatanpengiriman tergantung dari lokasi pengiriman dan tujuan. untuk kota yang sama umumnya memakan waku 2-3 hari",
+                        "logo": null,
+                        "is_checked": false,
+                        "expedition": {
+                            "id": 2,
+                            "name": "JNE",
+                            "logo": "https://komutodev.aptmi.com/img/pengiriman/jne.png",
+                            "insurance_fee": 2,
+                            "is_checked": false
+                        }
+                    },
+                    "is_insurance": true,
+                    "note": null,
+                    "seller_note": null,
+                    "type": "reseller"
+                },
+                "items": [
+                    {
+                        "id": 736,
+                        "qty": 1,
+                        "weight": 10,
+                        "additional_cost": 0,
+                        "total_price": 124000,
+                        "note": "Kirimnya cepat ya gan",
+                        "product": {
+                            "id": 76,
+                            "name": "Kain denim motif polkadot",
+                            "slug": "kain-denim-motif-polkadot",
+                            "price": 100000,
+                            "discount": 0,
+                            "is_discount": false,
+                            "is_wholesaler": false,
+                            "is_dropship": true,
+                            "weight": 10,
+                            "stock": 11,
+                            "image": "https://komutodev.aptmi.com/uploads/produk/adidas.jpg"
+                        }
+                    }
+                ],
+                "buyer": {
+                    "id": 59,
+                    "name": "safe",
+                    "photo": "https://komutodev.aptmi.com/uploads/user/default-user.png",
+                    "phone_number": "082329230000",
+                    "address": {
+                        "id": 142,
+                        "postal_code": "87197",
+                        "address": "Jalan Mauku sendiri",
+                        "province": {
+                            "id": 17,
+                            "name": "Bengkulu"
+                        },
+                        "district": {
+                            "id": 1702,
+                            "ro_id": 379,
+                            "name": "Kabupaten Rejang Lebong"
+                        },
+                        "subdistrict": {
+                            "id": 1702040,
+                            "name": "Curup"
+                        },
+                        "village": {
+                            "id": 1702040015,
+                            "name": "Adirejo"
+                        }
+                    }
+                },
+                "seller": {
+                    "id": 260,
+                    "name": "adi ps",
+                    "photo": "https://komutodev.aptmi.com/uploads/user/https://komutodev.aptmi.com/uploads/user/https://komutodev.aptmi.com/uploads/user/https://komutodev.aptmi.com/uploads/user/kucing",
+                    "phone_number": "088806850585",
+                    "address": {
+                        "id": 415,
+                        "postal_code": "11111",
+                        "address": "aceh barats",
+                        "province": {
+                            "id": 11,
+                            "name": "Aceh"
+                        },
+                        "district": {
+                            "id": 1107,
+                            "ro_id": 1,
+                            "name": "Kabupaten Aceh Barat"
+                        },
+                        "subdistrict": {
+                            "id": 1107080,
+                            "name": "Kaway Xvi"
+                        },
+                        "village": {
+                            "id": 1107080065,
+                            "name": "Alue Lhee"
+                        }
+                    }
+                },
+                "reseller": {
+                    "store": {
+                        "id": 28,
+                        "name": "Toko Makmur Abadi Sejahtera selamanya",
+                        "logo": null
+                    }
+                }
+            }
+        }
+
+### List Processing Orders [GET /processing-orders]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Processing Orders Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "invoice": {
+                        "id": 207,
+                        "payment_method_id": 1,
+                        "store_id": 22,
+                        "invoice_number": "Invoice-1163613157/10/2017",
+                        "total_bill": 124000,
+                        "total_price": 124000,
+                        "status": 1,
+                        "transaction_status": 1,
+                        "created_at": 1507136400,
+                        "type": "reseller"
+                    },
+                    "products": [
+                        {
+                            "id": 76,
+                            "name": "Kain denim motif polkadot",
+                            "slug": "kain-denim-motif-polkadot",
+                            "price": 100000,
+                            "discount": 0,
+                            "is_discount": false,
+                            "is_wholesaler": false,
+                            "is_dropship": true,
+                            "weight": 10,
+                            "stock": 11,
+                            "image": "https://komutodev.aptmi.com/uploads/produk/adidas.jpg"
+                        }
+                    ],
+                    "user": {
+                        "id": 59,
+                        "name": "safe",
+                        "photo": "https://komutodev.aptmi.com/uploads/user/default-user.png",
+                        "phone_number": "082329230000"
+                    }
+                }
+            ]
+        }
+
+### Get Processing Order Detail [GET /invoices/207/processing-order-detail]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "New Order Detail Data",
+            "data": {
+                "invoice": {
+                    "id": 207,
+                    "payment_method_id": 1,
+                    "store_id": 22,
+                    "invoice_number": "Invoice-1163613157/10/2017",
+                    "total_bill": 124000,
+                    "total_price": 124000,
+                    "status": 1,
+                    "transaction_status": 1,
+                    "created_at": 1507136400,
+                    "delivery_cost": 22000,
+                    "insurance_fee": 2000,
+                    "expedition": {
+                        "id": 1,
+                        "name": "REG",
+                        "description": "JNE Reguler adalahpaket reguler yang ditawarkan JNE. Kecepatanpengiriman tergantung dari lokasi pengiriman dan tujuan. untuk kota yang sama umumnya memakan waku 2-3 hari",
+                        "logo": null,
+                        "is_checked": false,
+                        "expedition": {
+                            "id": 2,
+                            "name": "JNE",
+                            "logo": "https://komutodev.aptmi.com/img/pengiriman/jne.png",
+                            "insurance_fee": 2,
+                            "is_checked": false
+                        }
+                    },
+                    "is_insurance": true,
+                    "note": null,
+                    "seller_note": null,
+                    "type": "reseller"
+                },
+                "items": [
+                    {
+                        "id": 736,
+                        "qty": 1,
+                        "weight": 10,
+                        "additional_cost": 0,
+                        "total_price": 124000,
+                        "note": "Kirimnya cepat ya gan",
+                        "product": {
+                            "id": 76,
+                            "name": "Kain denim motif polkadot",
+                            "slug": "kain-denim-motif-polkadot",
+                            "price": 100000,
+                            "discount": 0,
+                            "is_discount": false,
+                            "is_wholesaler": false,
+                            "is_dropship": true,
+                            "weight": 10,
+                            "stock": 11,
+                            "image": "https://komutodev.aptmi.com/uploads/produk/adidas.jpg"
+                        }
+                    }
+                ],
+                "buyer": {
+                    "id": 59,
+                    "name": "safe",
+                    "photo": "https://komutodev.aptmi.com/uploads/user/default-user.png",
+                    "phone_number": "082329230000",
+                    "address": {
+                        "id": 142,
+                        "postal_code": "87197",
+                        "address": "Jalan Mauku sendiri",
+                        "province": {
+                            "id": 17,
+                            "name": "Bengkulu"
+                        },
+                        "district": {
+                            "id": 1702,
+                            "ro_id": 379,
+                            "name": "Kabupaten Rejang Lebong"
+                        },
+                        "subdistrict": {
+                            "id": 1702040,
+                            "name": "Curup"
+                        },
+                        "village": {
+                            "id": 1702040015,
+                            "name": "Adirejo"
+                        }
+                    }
+                },
+                "seller": {
+                    "id": 260,
+                    "name": "adi ps",
+                    "photo": "https://komutodev.aptmi.com/uploads/user/https://komutodev.aptmi.com/uploads/user/https://komutodev.aptmi.com/uploads/user/https://komutodev.aptmi.com/uploads/user/kucing",
+                    "phone_number": "088806850585",
+                    "address": {
+                        "id": 415,
+                        "postal_code": "11111",
+                        "address": "aceh barats",
+                        "province": {
+                            "id": 11,
+                            "name": "Aceh"
+                        },
+                        "district": {
+                            "id": 1107,
+                            "ro_id": 1,
+                            "name": "Kabupaten Aceh Barat"
+                        },
+                        "subdistrict": {
+                            "id": 1107080,
+                            "name": "Kaway Xvi"
+                        },
+                        "village": {
+                            "id": 1107080065,
+                            "name": "Alue Lhee"
+                        }
+                    }
+                },
+                "reseller": {
+                    "store": {
+                        "id": 28,
+                        "name": "Toko Makmur Abadi Sejahtera selamanya",
+                        "logo": null
+                    }
+                }
+            }
+        }
+
+### List Sales [GET /sales?is_dropship={isDropship}]
+
++ Parameters
+    + isDropship: false
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Processing Orders Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "invoice": {
+                        "id": 212,
+                        "payment_method_id": 1,
+                        "store_id": 22,
+                        "invoice_number": "Invoice-1163613157/10/2017",
+                        "total_bill": 124000,
+                        "total_price": 124000,
+                        "status": 1,
+                        "transaction_status": 1,
+                        "created_at": 1507136400,
+                        "type": "reseller"
+                    },
+                    "products": [
+                        {
+                            "id": 76,
+                            "name": "Kain denim motif polkadot",
+                            "slug": "kain-denim-motif-polkadot",
+                            "price": 100000,
+                            "discount": 0,
+                            "is_discount": false,
+                            "is_wholesaler": false,
+                            "is_dropship": true,
+                            "weight": 10,
+                            "stock": 11,
+                            "image": "https://komutodev.aptmi.com/uploads/produk/adidas.jpg"
+                        }
+                    ],
+                    "user": {
+                        "id": 59,
+                        "name": "safe",
+                        "photo": "https://komutodev.aptmi.com/uploads/user/default-user.png",
+                        "phone_number": "082329230000"
+                    }
+                }
+            ]
+        }
+
+### Get Sale Detail [GET /invoices/212/sale-detail]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "New Order Detail Data",
+            "data": {
+                "invoice": {
+                    "id": 212,
+                    "payment_method_id": 1,
+                    "store_id": 22,
+                    "invoice_number": "Invoice-1163613157/10/2017",
+                    "total_bill": 124000,
+                    "total_price": 124000,
+                    "status": 1,
+                    "transaction_status": 1,
+                    "created_at": 1507136400,
+                    "delivery_cost": 22000,
+                    "insurance_fee": 2000,
+                    "expedition": {
+                        "id": 1,
+                        "name": "REG",
+                        "description": "JNE Reguler adalahpaket reguler yang ditawarkan JNE. Kecepatanpengiriman tergantung dari lokasi pengiriman dan tujuan. untuk kota yang sama umumnya memakan waku 2-3 hari",
+                        "logo": null,
+                        "is_checked": false,
+                        "expedition": {
+                            "id": 2,
+                            "name": "JNE",
+                            "logo": "https://komutodev.aptmi.com/img/pengiriman/jne.png",
+                            "insurance_fee": 2,
+                            "is_checked": false
+                        }
+                    },
+                    "is_insurance": true,
+                    "note": null,
+                    "seller_note": null,
+                    "type": "reseller"
+                },
+                "items": [
+                    {
+                        "id": 736,
+                        "qty": 1,
+                        "weight": 10,
+                        "additional_cost": 0,
+                        "total_price": 124000,
+                        "note": "Kirimnya cepat ya gan",
+                        "product": {
+                            "id": 76,
+                            "name": "Kain denim motif polkadot",
+                            "slug": "kain-denim-motif-polkadot",
+                            "price": 100000,
+                            "discount": 0,
+                            "is_discount": false,
+                            "is_wholesaler": false,
+                            "is_dropship": true,
+                            "weight": 10,
+                            "stock": 11,
+                            "image": "https://komutodev.aptmi.com/uploads/produk/adidas.jpg"
+                        }
+                    }
+                ],
+                "buyer": {
+                    "id": 59,
+                    "name": "safe",
+                    "photo": "https://komutodev.aptmi.com/uploads/user/default-user.png",
+                    "phone_number": "082329230000",
+                    "address": {
+                        "id": 142,
+                        "postal_code": "87197",
+                        "address": "Jalan Mauku sendiri",
+                        "province": {
+                            "id": 17,
+                            "name": "Bengkulu"
+                        },
+                        "district": {
+                            "id": 1702,
+                            "ro_id": 379,
+                            "name": "Kabupaten Rejang Lebong"
+                        },
+                        "subdistrict": {
+                            "id": 1702040,
+                            "name": "Curup"
+                        },
+                        "village": {
+                            "id": 1702040015,
+                            "name": "Adirejo"
+                        }
+                    }
+                },
+                "seller": {
+                    "id": 260,
+                    "name": "adi ps",
+                    "photo": "https://komutodev.aptmi.com/uploads/user/https://komutodev.aptmi.com/uploads/user/https://komutodev.aptmi.com/uploads/user/https://komutodev.aptmi.com/uploads/user/kucing",
+                    "phone_number": "088806850585",
+                    "address": {
+                        "id": 415,
+                        "postal_code": "11111",
+                        "address": "aceh barats",
+                        "province": {
+                            "id": 11,
+                            "name": "Aceh"
+                        },
+                        "district": {
+                            "id": 1107,
+                            "ro_id": 1,
+                            "name": "Kabupaten Aceh Barat"
+                        },
+                        "subdistrict": {
+                            "id": 1107080,
+                            "name": "Kaway Xvi"
+                        },
+                        "village": {
+                            "id": 1107080065,
+                            "name": "Alue Lhee"
+                        }
+                    }
+                },
+                "reseller": {
+                    "store": {
+                        "id": 28,
+                        "name": "Toko Makmur Abadi Sejahtera selamanya",
+                        "logo": null
+                    }
+                }
+            }
+        }
+
+### Accept Order [PUT /invoices/{id}/accept]
+
++ Parameters
+    + id: 207 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Reject Order [PUT /invoices/{id}/reject]
+
++ Parameters
+    + id: 207 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Input Airway Bill [PUT /invoices/{id}/airway-bill]
+
++ Parameters
+    + id: 207 (number, required)
+
++ Request
+
+        {
+            "airway_bill": "tnrseitnortn"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Message Buyer [PUT /invoices/{id}/buyer/message]
+
++ Parameters
+    + id: 207 (number, required)
+
++ Request
+
+        {
+            "subject": "Mau nanya nih percobaan",
+            "content": "Sepatu ini dijual ndak ya ?"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Message Reseller [PUT /invoices/{id}/reseller/message]
+
++ Parameters
+    + id: 207 (number, required)
+
++ Request
+
+        {
+            "subject": "Mau nanya nih percobaan",
+            "content": "Sepatu ini dijual ndak ya ?"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
