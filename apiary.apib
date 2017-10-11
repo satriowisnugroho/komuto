@@ -821,6 +821,17 @@ Postman collection https://www.getpostman.com/collections/f2801628834132085b4a
             ]
         }
 
+### Checkout [POST /checkout]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
 ### Get Bucket [GET /users/bucket]
 
 + Response 200 (application/json)
@@ -2367,6 +2378,117 @@ Postman collection https://www.getpostman.com/collections/f2801628834132085b4a
             "data": {}
         }
 
+### Message Buyer [POST /invoices/{id}/buyer/message]
+
++ Parameters
+    + id: 489 (number, required)
+
++ Request
+
+        {
+            "subject": "Mau nanya nih percobaan",
+            "content": "Sepatu ini dijual ndak ya ?"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 1,
+                "store_id": 1,
+                "user_id": 32,
+                "subject": "Mau nanya nih percobaan",
+                "flag_sender": 1,
+                "flag_receiver": 1,
+                "flag_sender_at": 1496710635,
+                "flag_receiver_at": 1496710635,
+                "detail_message": {
+                    "id": 1,
+                    "message_id": 1,
+                    "user_id": 32,
+                    "content": "Sepatu ini dijual ndak ya ?",
+                    "created_at": 1496710635
+                }
+            }
+        }
+
+### Message Seller [POST /invoices/{id}/seller/message]
+
++ Parameters
+    + id: 489 (number, required)
+
++ Request
+
+        {
+            "subject": "Mau nanya nih percobaan",
+            "content": "Sepatu ini dijual ndak ya ?"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 1,
+                "store_id": 1,
+                "user_id": 32,
+                "subject": "Mau nanya nih percobaan",
+                "flag_sender": 1,
+                "flag_receiver": 1,
+                "flag_sender_at": 1496710635,
+                "flag_receiver_at": 1496710635,
+                "detail_message": {
+                    "id": 1,
+                    "message_id": 1,
+                    "user_id": 32,
+                    "content": "Sepatu ini dijual ndak ya ?",
+                    "created_at": 1496710635
+                }
+            }
+        }
+
+### Message Reseller [POST /invoices/{id}/reseller/message]
+
++ Parameters
+    + id: 489 (number, required)
+
++ Request
+
+        {
+            "subject": "Mau nanya nih percobaan",
+            "content": "Sepatu ini dijual ndak ya ?"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 1,
+                "store_id": 1,
+                "user_id": 32,
+                "subject": "Mau nanya nih percobaan",
+                "flag_sender": 1,
+                "flag_receiver": 1,
+                "flag_sender_at": 1496710635,
+                "flag_receiver_at": 1496710635,
+                "detail_message": {
+                    "id": 1,
+                    "message_id": 1,
+                    "user_id": 32,
+                    "content": "Sepatu ini dijual ndak ya ?",
+                    "created_at": 1496710635
+                }
+            }
+        }
+
 ## Product [/products]
 
 ### Create [POST /products]
@@ -2773,6 +2895,56 @@ Postman collection https://www.getpostman.com/collections/f2801628834132085b4a
                     "created_at": 1496090500
                 }
             ]
+        }
+
+### Create Discussion [POST /products/{id}/discussions]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Request (application/json)
+
+        {
+            "question": "Hallo gan, mau nanya neh. Sepatu ini kan ringan banget kayaknya. Ngerawat nya susah enggak ya?"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Discussion Data",
+            "data": {
+                "id": 21,
+                "user_id": 100,
+                "question": "Hallo gan, mau nanya neh. Sepatu ini kan ringan banget kayaknya. Ngerawat nya susah enggak ya?",
+                "created_at": 1496710635
+            }
+        }
+
+### Create Discussion Comment [POST /discussions/{discussion_id}/comments]
+
++ Parameters
+    + discussion_id: 1 (number, required)
+
++ Request (application/json)
+
+        {
+            "content": "Ready gan silahkan di order"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Comment Data",
+            "data": {
+                "id": 9,
+                "user_id": 9,
+                "content": "Iya sedia warna coklat aja",
+                "created_at": 1500014900
+            }
         }
 
 ### Report [POST /products/{id}/report]
@@ -3242,7 +3414,7 @@ Postman collection https://www.getpostman.com/collections/f2801628834132085b4a
             ]
         }
 
-## Review Collection [/reviews]
+## Review [/reviews]
   
 ### List Product Reviews [GET /products/{id}/reviews?page={page}&size={size}]
 
@@ -5024,154 +5196,17 @@ Postman collection https://www.getpostman.com/collections/f2801628834132085b4a
             "message": "Success",
             "data": {}
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-  lalala yeyeye      
-        
-        
-    
-    
-    
-    
-    
-    
-    
 
-### Create Review [POST /products/{id}/reviews]
-Ready
-
-+ Parameters
-    + id: 2 (number, required)
-
-+ Request (application/json)
-
-        {
-            "review": "Barang memuaskan",
-            "quality": 5,
-            "accuracy": 3
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-### Bulk Delete Products [DELETE /products/delete]
-
-+ Request (application/json)
-
-        [
-            {
-                "product_id" : 1
-            },
-            {
-                "product_id" : 2
-            }
-        ]
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-        
-### New Discussion [POST /products/{id}/discussions]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Request (application/json)
-
-        {
-            "question": "Hallo gan, mau nanya neh. Sepatu ini kan ringan banget kayaknya. Ngerawat nya susah enggak ya?"
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Discussion Data",
-            "data": {
-                "id": 21,
-                "user_id": 100,
-                "question": "Hallo gan, mau nanya neh. Sepatu ini kan ringan banget kayaknya. Ngerawat nya susah enggak ya?",
-                "created_at": 1496710635
-            }
-        }
-
-### New Comment [POST /discussions/{discussion_id}/comments]
-Ready
-
-+ Parameters
-    + discussion_id: 1 (number, required)
-
-+ Request (application/json)
-
-        {
-            "content": "Ready gan silahkan di order"
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Comment Data",
-            "data": {
-                "id": 9,
-                "user_id": 9,
-                "content": "Iya sedia warna coklat aja",
-                "created_at": 1500014900
-            }
-        }
-
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-  
-       
-        
-        
-        
-        
-        
-        
-        
-        
-
-## User Collection [/users]
+## User [/users]
 
 ### Login [POST /users/login]
-Ready
 
 + Request (application/json)
 
         {
             "email": "admin@komuto.com",
-            "password": "admin"
+            "password": "admin",
+            "reg_token": "FCM_REGISTRATION_TOKEN"
         }
 
 + Response 200 (application/json)
@@ -5207,14 +5242,14 @@ Ready
         }
 
 ### Login Social [POST /users/social-login]
-Ready
 
 + Request (application/json)
 
         {
             "provider_name": "Facebook",
             "provider_uid": "12345678",
-            "access_token": "EAAViKAqZCMswBAM1UqlZBZAFRd6OyX0C5b9VpVU0mO0dKWduiZBRC2BqJ3wvHyKkJqUz53IUkr0RBByiFtWWRFcBtV3ZBUA8vSQCnbVvD76vTzuF75YtixmN5K0v00eN0u5DHfGGasSzUYWAOKYfkXglmL4DMMZB8aspE5bqN57h2sNO5CT8Nwhmz7kfbgZCBIZD"
+            "access_token": "EAAViKAqZCMswBAM1UqlZBZAFRd6OyX0C5b9VpVU0mO0dKWduiZBRC2BqJ3wvHyKkJqUz53IUkr0RBByiFtWWRFcBtV3ZBUA8vSQCnbVvD76vTzuF75YtixmN5K0v00eN0u5DHfGGasSzUYWAOKYfkXglmL4DMMZB8aspE5bqN57h2sNO5CT8Nwhmz7kfbgZCBIZD",
+            "reg_token": "FCM_REGISTRATION_TOKEN"
         }
 
 + Response 200 (application/json)
@@ -5249,8 +5284,7 @@ Ready
             }
         }
 
-### Registration [POST]
-Ready
+### Create [POST]
 
 + Request (application/json)
 
@@ -5291,7 +5325,6 @@ Ready
         }
 
 ### Activate Account [GET /signup-verification?token={token}]
-Ready
 
 + Parameters
     + token: 31540cf0b21cd8513d3dbc7192d8cad1 (string, required)
@@ -5306,7 +5339,6 @@ Ready
         }
 
 ### Update [PUT /users]
-Ready
 
 + Request (application/json)
 
@@ -5364,8 +5396,94 @@ Ready
             }
         }
 
-### Profile [GET /users/profile]
-Ready
+### Update Password [PUT /users/password]
+
++ Request (application/json)
+
+        {
+            "email": "lala@gmail.com",
+            "password": "123456",
+            "old_password": "654321"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "User Data",
+            "data": {
+                "id": 66,
+                "marketplace_id": 0,
+                "name": "User skyshi",
+                "email": "user@skyshi.com",
+                "cooperative_member_number": "ALSK83929K",
+                "approval_cooperative_status": "0",
+                "photo": "http://media.tcc.fl.edu/webcourses/ctll/Developing_Your_Teaching_Philosophy/examples.jpg",
+                "phone_number": "081222333444",
+                "gender": "female",
+                "status": 1,
+                "mother_name": "Siti Aminah",
+                "auth_key": "12345678",
+                "saldo_wallet": "500000",
+                "place_of_birth": "Yogyakarta",
+                "date_of_birth": 1496710635,
+                "created_at": 1496710635,
+                "join_at": 1496710635,
+                "status_at": 1496710635
+            }
+        }
+
+### Forgot Password [POST /passwords/forgot]
+
++ Request (application/json)
+
+        {
+            "email": "user@skyshi.com"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+        
+### Validate Forgot Password Token [GET /passwords/new?token={token}]
+
++ Parameters
+    + token: 31540cf0b21cd8513d3dbc7192d8cad1 (string, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Update Password Reset [PUT /passwords/new]
+
++ Request
+
+        {
+            "token": "784fd054301106e1679454fc0e7d9217"
+            "password": "komuto"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Get Profile [GET /users/profile]
 
 + Response 200 (application/json)
 
@@ -5419,47 +5537,7 @@ Ready
             }
         }
 
-### Update Password [PUT /users/password]
-Ready
-
-+ Request (application/json)
-
-        {
-            "email": "lala@gmail.com",
-            "password": "123456",
-            "old_password": "654321"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "User Data",
-            "data": {
-                "id": 66,
-                "marketplace_id": 0,
-                "name": "User skyshi",
-                "email": "user@skyshi.com",
-                "cooperative_member_number": "ALSK83929K",
-                "approval_cooperative_status": "0",
-                "photo": "http://media.tcc.fl.edu/webcourses/ctll/Developing_Your_Teaching_Philosophy/examples.jpg",
-                "phone_number": "081222333444",
-                "gender": "female",
-                "status": 1,
-                "mother_name": "Siti Aminah",
-                "auth_key": "12345678",
-                "saldo_wallet": "500000",
-                "place_of_birth": "Yogyakarta",
-                "date_of_birth": 1496710635,
-                "created_at": 1496710635,
-                "join_at": 1496710635,
-                "status_at": 1496710635
-            }
-        }
-
 ### Get Balance [GET /users/balance]
-Ready
 
 + Response 200 (application/json)
 
@@ -5472,8 +5550,7 @@ Ready
             }
         }
 
-### Get Wishlist [GET /users/wishlist]
-Ready
+### List Wishlist [GET /users/wishlist]
 
 + Response 200 (application/json)
 
@@ -5541,8 +5618,7 @@ Ready
             ]
         }
 
-### Get Discussion [GET /users/discussions]
-Ready
+### List Discussions [GET /users/discussions]
 
 + Response 200 (application/json)
 
@@ -5588,47 +5664,7 @@ Ready
             ]
         }
 
-### Update FCM Registration Token [PUT /users/registration-token]
-Ready
-
-+ Request (application/json)
-
-        {
-            "reg_token": "FCM_REG_TOKEN"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {
-                "id": 32,
-                "name": "bleble",
-                "photo": "http://188.166.246.46/uploads/user/user.jpg",
-                "gender": "female",
-                "place_of_birth": 1101,
-                "date_of_birth": null,
-                "marketplace_id": 0,
-                "email": "abdan@skyshi.com",
-                "cooperative_member_number": "ALSK83929K",
-                "approval_cooperative_status": "0",
-                "phone_number": "081222333444",
-                "status": 1,
-                "mother_name": "Siti Aminah",
-                "auth_key": null,
-                "saldo_wallet": 500000,
-                "created_at": 1497546000,
-                "status_at": 1497570793,
-                "provider_name": null,
-                "provider_uid": null,
-                "reg_token": "FCM_REG_TOKEN"
-            }
-        }
-
-### Get List Messages [GET /users/messages]
-Ready
+### List Messages [GET /users/messages]
 
 + Response 200 (application/json)
 
@@ -5662,8 +5698,7 @@ Ready
             ]
         }
 
-### Get Detail Message [GET /users/messages/{id}]
-Ready
+### Get Message [GET /users/messages/{id}]
 
 + Parameters
     + id: 26 (number, required)
@@ -5722,7 +5757,6 @@ Ready
         }
 
 ### Update Message [PUT /users/messages/{id}]
-Ready
 
 + Parameters
     + id: 26 (number, required)
@@ -5752,7 +5786,6 @@ Ready
         }
 
 ### Reply Message [POST /users/messages/{id}]
-Ready
 
 + Parameters
     + id: 26 (number, required)
@@ -5779,7 +5812,6 @@ Ready
         }
 
 ### Delete Message [DELETE /users/messages/{id}]
-Ready
 
 + Parameters
     + id: 26 (number, required)
@@ -5793,353 +5825,12 @@ Ready
             "data": {}
         }
 
-## Tender Product Collection [/tender-products]
-
-### List [GET]
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Tender Product List Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
-            "data": [
-                {
-                    "product": {
-                        "id": 1,
-                        "name": "GoPro 5",
-                        "amount": 5,
-                        "weight": 1,
-                        "type": "1",
-                        "description": "Panah  berburu buatan Jerman Tahun 1980",
-                        "open_bid": 120000,
-                        "max_bid": 5000000,
-                        "insurance": "1",
-                        "status": 1,
-                        "status_at": 1496710635,
-                        "start_at": 1496710635,
-                        "end_at": 1496710635
-                    },
-                    "category": {
-                        "id": 1,
-                        "category_id": 4,
-                        "icon": "icon.png",
-                        "name": "Camera"
-                    },
-                    "store": {
-                        "id": 13,
-                        "user_id": 2,
-                        "name": "Baju Keren",
-                        "slogan": "Semua harus keren",
-                        "description": "Menjual semua jenis baju yang keren",
-                        "logo": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                        "custom_domain": ".com",
-                        "created_at": 1496710635,
-                        "status": 1,
-                        "remarks_status": "",
-                        "status_at": 1496710635,
-                        "cover_image": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                        "seller_theme_id": 2,
-                        "reputation": 23,
-                        "store_id_number": "3404092309880001",
-                        "total_favorite": 40,
-                        "verification_at": 1496710635,
-                        "note": "lorem ipsum",
-                        "count_review": 15,
-                        "start_at": 1496710635,
-                        "end_at": 1496710635
-                    },
-                    "images": [
-                        {
-                            "id": 1,
-                            "product_id": 1,
-                            "file": "picture.png",
-                            "created_at": 1496710635,
-                            "updated_at": 1496710635
-                        }
-                    ]
-                }
-            ]
-        }
-
-### Get [GET /tender-products/{id}]
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Tender Product Detail Data",
-            "data": {
-                "product": {
-                    "id": 1,
-                    "name": "GoPro 5",
-                    "amount": 5,
-                    "weight": 1,
-                    "type": "1",
-                    "description": "Panah  berburu buatan Jerman Tahun 1980",
-                    "open_bid": 120000,
-                    "max_bid": 5000000,
-                    "insurance": "1",
-                    "status": 1,
-                    "status_at": 1496710635,
-                    "start_at": 1496710635,
-                    "end_at": 1496710635
-                },
-                "category": {
-                    "id": 1,
-                    "category_id": 4,
-                    "icon": "icon.png",
-                    "name": "Camera"
-                },
-                "store": {
-                    "id": 13,
-                    "user_id": 2,
-                    "name": "Baju Keren",
-                    "slogan": "Semua harus keren",
-                    "description": "Menjual semua jenis baju yang keren",
-                    "logo": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                    "custom_domain": ".com",
-                    "created_at": 1496710635,
-                    "status": 1,
-                    "remarks_status": "",
-                    "status_at": 1496710635,
-                    "cover_image": "https://thumb1.shutterstock.com/display_pic_with_logo/2710867/549356473/stock-vector-store-icon-shop-icon-flat-design-vector-illustration-549356473.jpg",
-                    "seller_theme_id": 2,
-                    "reputation": 23,
-                    "store_id_number": "3404092309880001",
-                    "total_favorite": 40,
-                    "verification_at": 1496710635,
-                    "note": "lorem ipsum",
-                    "count_review": 15,
-                    "start_at": 1496710635,
-                    "end_at": 1496710635
-                },
-                "images": [
-                    {
-                        "id": 1,
-                        "product_id": 1,
-                        "file": "picture.png",
-                        "created_at": 1496710635,
-                        "updated_at": 1496710635
-                    }
-                ]
-            }
-        }
-
-### Get Reviews [GET /tender-products/{id}/reviews]
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Review List Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
-            "data": [
-                {
-                    "id": 1,
-                    "product_id": 1,
-                    "user": {
-                        "id": 66,
-                        "name": "User skyshi",
-                        "photo": "http://www.look4fitness.net/images/no_user_logo.png"
-                    },
-                    "review": "Pengemasannya bagus, pengiriman cepat,barang sesuai, recommended bgt lah",
-                    "quality": 5,
-                    "accuracy": 3,
-                    "created_at": 1496710635
-                }
-            ]
-        }
-
-## Invoice Collection [/invoices]
-
-### Get Invoice [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Invoice Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
-            "data": [
-                {
-                    "id": 5,
-                    "number": "50",
-                    "create_at": 1496710635,
-                    "status": "ready",
-                    "store_id": 3,
-                    "user_id": 66,
-                    "total_bill": "500000",
-                    "cancel_remark": "no",
-                    "payment_method_id": 2,
-                    "shipping_id": 1,
-                    "price": "480000",
-                    "shipping_charge": "40000",
-                    "insurance_cost": "40000",
-                    "admin_cost": "20000",
-                    "wallet_pay": "30000",
-                    "promotion": "This",
-                    "confirmation_at": 1496710635,
-                    "bucket_id": 3,
-                    "bid_id": 6
-                },
-                {
-                    "id": 8,
-                    "number": "51",
-                    "create_at": 1496710635,
-                    "status": "ready",
-                    "store_id": 3,
-                    "user_id": 66,
-                    "total_bill": "500000",
-                    "cancel_remark": "no",
-                    "payment_method_id": 2,
-                    "shipping_id": 1,
-                    "price": "480000",
-                    "shipping_charge": "40000",
-                    "insurance_cost": "40000",
-                    "admin_cost": "20000",
-                    "wallet_pay": "30000",
-                    "promotion": "This",
-                    "confirmation_at": 1496710635,
-                    "bucket_id": 3,
-                    "bid_id": 6
-                }
-            ]
-        }
-
-### Get Invoice Detail [GET /invoices/{id}]
-
-+ Parameters
-    + id: 5 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Invoice Data",
-            "data": {
-                "id": 5,
-                "number": "50",
-                "create_at": 1496710635,
-                "status": "ready",
-                "store_id": 3,
-                "user_id": 66,
-                "total_bill": "500000",
-                "cancel_remark": "no",
-                "payment_method_id": 2,
-                "shipping_id": 1,
-                "price": "480000",
-                "shipping_charge": "40000",
-                "insurance_cost": "40000",
-                "admin_cost": "20000",
-                "wallet_pay": "30000",
-                "promotion": "This",
-                "confirmation_at": 1496710635,
-                "bucket_id": 3,
-                "bid_id": 6
-            }
-        }
-
-### Create Dispute [POST /invoices/{id}/disputes]
-
-+ Parameters
-    + id: 2 (number, required)
+### Update FCM Registration Token [PUT /users/registration-token]
 
 + Request (application/json)
 
         {
-            "dispute_type": 2,
-            "problem": "Barang cacat",
-            "picture": "pict.jpg",
-            "solution": "",
-            "reason": "",
-            "invoice_type": 1,
-            "report_number": "555222666"
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Invoice Data",
-            "data": {
-                "id": 4,
-                "problem": "Barang cacat",
-                "picture": "pict.jpg",
-                "solution": "",
-                "reason": "",
-                "admin_response": "Sudah di kirim barang yang baru, mohon kirimkan kembali barang lama",
-                "report_number": "555222666",
-                "remark_result": "Barang baru",
-                "invoice_type": 1,
-                "invoice_id": 2,
-                "user_id": 66,
-                "accept_order": "No",
-                "store_id": 5,
-                "created_at": 1496710635,
-                "admin_response_date": 1496710635
-            }
-        }
-
-### Create invoice [POST]
-
-+ Request (application/json)
-
-        {
-            "payment_method_id": 1
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-## Checkout Collection [/checkout]
-
-### Checkout [POST]
-Ready
-
-+ Request
-
-        {
-            "payment_method_id": 1
+            "reg_token": "FCM_REG_TOKEN"
         }
 
 + Response 200 (application/json)
@@ -6148,157 +5839,94 @@ Ready
             "code": 200,
             "status": true,
             "message": "Success",
-            "data": {}
-        }
-
-## Payment Collection [/payments]
-
-### Midtrans Snap Token [GET]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Snap Token",
             "data": {
-                "token": "24540917-6de6-4a88-a22e-c7d6c5ef70b6"
+                "id": 32,
+                "name": "bleble",
+                "photo": "http://188.166.246.46/uploads/user/user.jpg",
+                "gender": "female",
+                "place_of_birth": 1101,
+                "date_of_birth": null,
+                "marketplace_id": 0,
+                "email": "abdan@skyshi.com",
+                "cooperative_member_number": "ALSK83929K",
+                "approval_cooperative_status": "0",
+                "phone_number": "081222333444",
+                "status": 1,
+                "mother_name": "Siti Aminah",
+                "auth_key": null,
+                "saldo_wallet": 500000,
+                "created_at": 1497546000,
+                "status_at": 1497570793,
+                "provider_name": null,
+                "provider_uid": null,
+                "reg_token": "FCM_REG_TOKEN"
             }
         }
 
-### Get Payment Methods [GET /payment-methods]
-Ready
+### List Notifications [GET /users/notifications]
 
 + Response 200 (application/json)
 
         {
             "code": 200,
             "status": true,
-            "message": "Payment Methods Data",
+            "message": "Notification Configuration",
             "data": [
                 {
-                    "id": 1,
-                    "name": "Manual Transfer",
-                    "remarks": "Menerima pembayaran via transfer bank, akan membantu Toko Online Anda lebih dipercaya.",
-                    "logo": "http://188.166.246.46/uploads/payment/transferbank.png",
-                    "type": 0,
-                    "type_text": null,
-                    "status": 1,
-                    "status_at": 1468987469
-                },
-                {
-                    "id": 3,
-                    "name": "BCA KlikPay",
-                    "remarks": "BCA KlikPay adalah cara bayar belanja online yang praktis dan terpercaya dengan menggunakan fasilitas KlikBCA Individu atau BCA Card.",
-                    "logo": "http://188.166.246.46/uploads/payment/bcaklikpay.png",
                     "type": 1,
-                    "type_text": "klikpay-bca",
-                    "status": 1,
-                    "status_at": 1472526291
-                }
-            ]
-        }
-
-## Wholesaler Collection [/wholesalers]
-
-### Post Wholesaler [POST]
-
-+ Request (application/json)
-
-        {
-                "product_id": 5,
-                "min_order": 20,
-                "max_order": 60,
-                "price": "100000"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Wholesaler Data",
-            "data": {
-                "id": 6,
-                "product_id": 5,
-                "min_order": 20,
-                "max_order": 60,
-                "price": "100000"
-            }
-        }
-
-### Get Wholesaler [GET /wholesalers/{product_id}]
-
-+ Parameters
-    + product_id: 4 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Wholesaler Data",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
-            "data": [
+                    "is_active": false,
+                    "content": "Setiap pesan pribadi dari admin saya terima."
+                },
                 {
-                    "id": 5,
-                    "product_id": 4,
-                    "min_order": 12,
-                    "max_order": 48,
-                    "price": "50000"
+                    "type": 2,
+                    "is_active": true,
+                    "content": "Setiap Pesan Berita dari Komuto."
+                },
+                {
+                    "type": 3,
+                    "is_active": true,
+                    "content": "Setiap Review dan komentar saya terima."
+                },
+                {
+                    "type": 4,
+                    "is_active": true,
+                    "content": "Setiap Diskusi produk dan komentar saya terima."
+                },
+                {
+                    "type": 5,
+                    "is_active": true,
+                    "content": "Setiap Pesan Pribadi saya terima"
                 }
             ]
         }
 
-## Password Collection [/passwords]
-
-### Forgot Password [POST /passwords/forgot]
-Ready
+### Save Notifications [POST /users/notifications]
 
 + Request (application/json)
 
         {
-            "email": "user@skyshi.com"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-        
-### Validate Token [GET /passwords/new?token={token}]
-Ready
-
-+ Parameters
-    + token: 31540cf0b21cd8513d3dbc7192d8cad1 (string, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-### Update Password [PUT /passwords/new]
-Ready
-
-+ Request
-
-        {
-            "token": "784fd054301106e1679454fc0e7d9217"
-            "password": "komuto"
+            "notifications": [
+                {
+                    "type": 1,
+                    "is_active": false
+                },
+                {
+                    "type": 2,
+                    "is_active": true
+                },
+                {
+                    "type": 3,
+                    "is_active": true
+                },
+                {
+                    "type": 4,
+                    "is_active": true
+                },
+                {
+                    "type": 5,
+                    "is_active": true
+                }
+            ]
         }
 
 + Response 200 (application/json)
