@@ -4225,56 +4225,824 @@ Postman collection https://www.getpostman.com/collections/f2801628834132085b4a
             "data": {}
         }
 
+## Store [/stores]
+
+### Get [GET /stores/{id}]
+
++ Parameters
+    + id: 1 (number, required)
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Store Data",
+            "data": {
+                "store": {
+                    "id": 1,
+                    "user_id": 1,
+                    "name": "Jaya Makmur",
+                    "slogan": "kepuasan pelanggan adalah kebahagiaan kami",
+                    "description": "menjual aneka jajanan tradisional pasar",
+                    "logo": "http://188.166.246.46/uploads/toko/68d19956169712d63713a69f717f3c778998204e_jajan.jpg",
+                    "custom_domain": "",
+                    "status": 1,
+                    "remarks_status": null,
+                    "cover_image": null,
+                    "seller_theme_id": 0,
+                    "reputation": null,
+                    "store_id_number": "3321142704940001",
+                    "total_favorite": null,
+                    "note": null,
+                    "created_at": 1486486800,
+                    "status_at": 1486513025,
+                    "verification_at": 1486486800,
+                    "is_verified": false,
+                    "start_at": null,
+                    "end_at": null,
+                    "total_product_sold": "0000",
+                    "origin": "Kabupaten Bandung, Jawa Barat"
+                },
+                "catalogs": [
+                    {
+                        "id": 74,
+                        "store_id": 1,
+                        "name": "Sepatu",
+                        "created_at": 1491448518,
+                        "products": [
+                            {
+                                "id": 1,
+                                "name": "Kue Putu Ayu Kas Demak",
+                                "price": 5000,
+                                "discount": 0,
+                                "is_discount": false,
+                                "image": {
+                                    "id": 230,
+                                    "product_id": 1,
+                                    "file": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
+                                    "created_at": 1486513376,
+                                    "updated_at": 1486513376
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "district": {
+                    "id": 3204,
+                    "ro_id": 22,
+                    "name": "Kabupaten Bandung"
+                },
+                "rating": {
+                    "quality": 4,
+                    "accuracy": 5,
+                    "reviews": [
+                        {
+                            "id": 1,
+                            "review": "Obatnya manjur gan",
+                            "quality": 4,
+                            "accuracy": 5,
+                            "created_at": 1498702563,
+                            "user": {
+                                "id": 50,
+                                "name": "bleble",
+                                "photo": null
+                            },
+                            "product": {
+                                "id": 1,
+                                "name": "Kue Putu Ayu Kas Demak",
+                                "price": 5000,
+                                "discount": 0,
+                                "is_discount": false,
+                                "image": {
+                                    "id": 230,
+                                    "product_id": 1,
+                                    "file": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
+                                    "created_at": 1486513376,
+                                    "updated_at": 1486513376
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-### Get Store Catalog Products [GET /users/store/products/catalogs/{id}]
-Ready
+### Message Store [POST /stores/{id}/message]
 
 + Parameters
     + id: 1 (number, required)
     
++ Request (application/json)
+
+        {
+            "subject": "Mau nanya nih",
+            "content": "Sepatu ini dijual ndak ya ?"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Message Data",
+            "data": {
+                "message": {
+                    "id": 9,
+                    "store_id": "1",
+                    "user_id": 50,
+                    "subject": "Mau nanya nih",
+                    "flag_sender": 2,
+                    "flag_receiver": 2,
+                    "flag_sender_at": 1500260346,
+                    "flag_receiver_at": 1500260346
+                },
+                "detailMessage": {
+                    "id": 4,
+                    "message_id": 9,
+                    "user_id": 50,
+                    "content": "Sepatu ini dijual ndak ya ?",
+                    "created_at": 1500260347
+                }
+            }
+        }
+
+### Create Store [POST /users/store]
+
++ Request (application/json)
+
+        {
+            "store": {
+                "name": "Toko Makmur Abadi Sejahtera",
+                "slogan": "Lorem ipsum",
+                "description": "Lorem ipsum",
+                "logo": "logo.jpg"
+            },
+            "expedition_services" : [
+                {
+                    "expedition_service_id": 1,
+                    "status": 1
+                },
+                {
+                    "expedition_service_id": 2,
+                    "status": 0
+                }
+            ],
+            "user": {
+                "id_number": "0982390923989",
+                "mother_name": "Siti Aminah"
+            },
+            "address": {
+                "province_id": 32,
+                "district_id": 3273,
+                "sub_district_id": 1111110,
+                "village_id": 1111110073,
+                "name": "User skyshi",
+                "email": "user@skyshi.com",
+                "phone_number": "081222333444",
+                "postal_code": "84314",
+                "address": "Jl. Klamat No. 24 RT. 002 RW. 003"
+            }
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Store Data",
+            "data": {
+                "store": {
+                    "id": 57,
+                    "user_id": 50,
+                    "name": "Toko Makmur Abadi Sejahtera",
+                    "slogan": "Lorem ipsum",
+                    "description": "Lorem ipsum",
+                    "logo": "http://188.166.246.46/uploads/toko/logo.jpg",
+                    "status": 1,
+                    "cover_image": null,
+                    "seller_theme_id": 0,
+                    "store_id_number": "0982390923989",
+                    "created_at": 1499398387,
+                    "status_at": 1499398387,
+                    "verification_at": null,
+                    "is_verified": false,
+                    "start_at": null,
+                    "end_at": null
+                },
+                "user": {
+                    "marketplace_id": null,
+                    "cooperative_member_number": null,
+                    "photo": null,
+                    "phone_number": null,
+                    "gender": "female",
+                    "status": null,
+                    "mother_name": "Siti Aminah",
+                    "auth_key": null,
+                    "saldo_wallet": 0,
+                    "place_of_birth": null,
+                    "date_of_birth": null,
+                    "created_at": 1499398387,
+                    "join_at": null,
+                    "status_at": 1499398387
+                },
+                "address": {
+                    "id": 68,
+                    "name": "User skyshi",
+                    "email": "user@skyshi.com",
+                    "phone_number": "081222333444",
+                    "postal_code": "84314",
+                    "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
+                    "alias_address": "Jl. Klamat No. 24 RT. 002 RW. 003",
+                    "is_primary_address": false,
+                    "is_sale_address": true,
+                    "is_tender_address": false
+                },
+                "expedition_services": [
+                    {
+                        "expedition_service_id": 1,
+                        "status": 1
+                    },
+                    {
+                        "expedition_service_id": 2,
+                        "status": 0
+                    }
+                ]
+            }
+        }
+
+### Update Store Information [PUT /users/store]
+
++ Request (application/json)
+
+        {
+            "name": "Toko Makmur Abadi Sejahtera selamanya",
+            "slogan": "Lorem ipsum",
+            "description": "Lorem ipsum",
+            "logo": "logo.jpg"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 28,
+                "name": "Toko Makmur Abadi Sejahtera selamanya",
+                "logo": "http://188.166.246.46/uploads/toko/logo.jpg",
+                "user_id": 32,
+                "slogan": "Lorem ipsum",
+                "description": "Lorem ipsum",
+                "custom_domain": null,
+                "status": 1,
+                "remarks_status": null,
+                "cover_image": null,
+                "seller_theme_id": 0,
+                "reputation": null,
+                "store_id_number": "0982390923989",
+                "total_favorite": null,
+                "term_condition": null,
+                "created_at": 1502211600,
+                "status_at": 1502225988,
+                "verification_at": 1502211600
+            }
+        }
+
+### Update Store Term & Condition [PUT /users/store/term-condition]
+
++ Request (application/json)
+
+        {
+            "term_condition": "- Hanya melakukan pengiriman di hari kamis."
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 28,
+                "name": "Toko Makmur Abadi Sejahtera selamanya",
+                "logo": "http://188.166.246.46/uploads/toko/logo.jpg",
+                "user_id": 32,
+                "slogan": "Lorem ipsum",
+                "description": "Lorem ipsum",
+                "custom_domain": null,
+                "status": 1,
+                "remarks_status": null,
+                "cover_image": null,
+                "seller_theme_id": 0,
+                "reputation": null,
+                "store_id_number": "0982390923989",
+                "total_favorite": null,
+                "term_condition": "- Hanya melakukan pengiriman di hari kamis.",
+                "created_at": 1502211600,
+                "status_at": 1502225988,
+                "verification_at": 1502211600
+            }
+        }
+
+### Verify Store [POST /users/store/verify]
+
++ Request (application/json)
+
+        {
+            "code": "asd09213asdlk"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Get List Favorite Stores [GET /users/store/favorites?q={query}]
+
++ Parameters
+    + query: baju (string, optional)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Favorite Store",
+            "meta": {
+                "page": 1,
+                "limit": 10,
+            },
+            "data": [
+                {
+                    "store": {
+                        "id": 1,
+                        "name": "Baju Keren",
+                        "province": {
+                            "id": 1,
+                            "name": "DKI Jakarta"
+                        }
+                    },
+                    "products": [
+                        {
+                            "id": 1,
+                            "name": "Xiaomi Mi Notebook Air 12.5",
+                            "price": 5000000,
+                            "discount": 10,
+                            "image": "https://xiaomi-mi.com/uploads/CatalogueImage/pvm_xiaomi-mi-notebook-air-125-silver-01_14457_1469630599.jpg"
+                        }
+                    ]
+                }
+            ]
+        }
+
+### Favorite Store [POST /stores/{id}/favorite]
+
++ Parameters
+    + id : 1 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Get Store Discussion [GET /users/store/discussions]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Discussion Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 13,
+                    "user_id": 50,
+                    "question": "Barang ready gan ?",
+                    "created_at": 1500020060,
+                    "product": {
+                        "id": 4,
+                        "name": "Kue Putu Ayu",
+                        "slug": "kue-putu-ayu",
+                        "price": 2000,
+                        "discount": 0,
+                        "is_discount": false,
+                        "image": null
+                    }
+                },
+                {
+                    "id": 6,
+                    "user_id": 50,
+                    "question": "Barang ready gan ?",
+                    "created_at": 1500006654,
+                    "product": {
+                        "id": 5,
+                        "name": "Kue Putu Ayu",
+                        "slug": "kue-putu-ayu",
+                        "price": 2000,
+                        "discount": 0,
+                        "is_discount": false,
+                        "image": null
+                    }
+                }
+            ]
+        }
+
+### Get List Store Products [GET /users/store/products?hidden={hidden}]
+
++ Parameters
+    + hidden: true (boolean, optional)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Store Products Data",
+            "data": [
+                {
+                    "catalog": {
+                        "id": 38,
+                        "store_id": 41,
+                        "name": "Minuman",
+                        "count_product": 1,
+                        "created_at": 1477368926
+                    },
+                    "products": [
+                        {
+                            "id": 99,
+                            "name": "say tea",
+                            "slug": "say-tea",
+                            "price": 10000,
+                            "discount": 0,
+                            "is_discount": false,
+                            "is_wholesaler": true,
+                            "image": "https://komutodev.aptmi.com/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
+                        }
+                    ]
+                },
+                {
+                    "catalog": {
+                        "id": 33,
+                        "store_id": 41,
+                        "name": "Batik kumur kumur",
+                        "count_product": 3,
+                        "created_at": 1476994034
+                    },
+                    "products": [
+                        {
+                            "id": 155,
+                            "name": "Motif Bunga Cengkeh",
+                            "slug": "motif-bunga-cengkeh",
+                            "price": 80000,
+                            "discount": 20,
+                            "is_discount": true,
+                            "is_wholesaler": false,
+                            "image": "http://demo.makitweb.com/broken_image/images/noimage.png"
+                        }
+                    ]
+                },
+                {
+                    "catalog": {
+                        "name": "Tanpa Katalog",
+                        "count_product": 1
+                    },
+                    "products": [
+                        {
+                            "id": 93,
+                            "name": "Kain denim motif polkadot",
+                            "slug": "kain-denim-motif-polkadot",
+                            "price": 100000,
+                            "discount": 10,
+                            "is_discount": true,
+                            "is_wholesaler": true,
+                            "image": "http://demo.makitweb.com/broken_image/images/noimage.png"
+                        }
+                    ]
+                }
+            ]
+        }
+        
+### Get List Store Products by Catalog [GET /users/store/products/catalogs/{id}]
+
++ Parameters
+    + id: 120 (number, required)
+
 + Response 200 (application/json)
 
         {
             "code": 200,
             "status": true,
             "message": "Store Catalog Products Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
             "data": {
                 "catalog": {
-                    "id": 38,
-                    "store_id": 41,
-                    "name": "Minuman",
-                    "count_product": 1,
-                    "created_at": 1477368926
+                    "id": 120,
+                    "store_id": 23,
+                    "name": "Sport Shoes2",
+                    "count_product": 2,
+                    "created_at": 1501723126
                 },
                 "products": [
                     {
-                        "id": 99,
-                        "name": "say tea",
-                        "slug": "say-tea",
-                        "price": 10000,
+                        "id": 49,
+                        "name": "Dropship nih",
+                        "slug": "dropship-nih",
+                        "price": 1650000,
                         "discount": 0,
                         "is_discount": false,
-                        "is_wholesaler": true,
-                        "image": "https://komutodev.aptmi.com/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
+                        "is_wholesaler": false,
+                        "image": "http://188.166.246.46/uploads/produk/kambing.png"
+                    },
+                    {
+                        "id": 48,
+                        "name": "Bukan dropship",
+                        "slug": "bukan-dropship",
+                        "price": 1650000,
+                        "discount": 0,
+                        "is_discount": false,
+                        "is_wholesaler": false,
+                        "image": "http://188.166.246.46/uploads/produk/noimage.png"
                     }
                 ]
             }
         }
+        
+### Get List Store Products by Catalog (bulk) [GET /users/store/products/catalogs/{id}/list]
+
++ Parameters
+    + id: 124 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Store Catalog Products Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 80,
+                    "name": "Dropship nih",
+                    "slug": "dropship-nih",
+                    "price": 1650000,
+                    "discount": 0,
+                    "is_discount": false,
+                    "is_wholesaler": true,
+                    "is_dropshipper": false,
+                    "weight": 500,
+                    "stock": 50,
+                    "image": "http://188.166.246.46/uploads/produk/kambing.png"
+                }
+            ]
+        }
+        
+### Get List Hidden Store Products [GET /users/store/products/hidden]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Hidden Store Products Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 94,
+                    "name": "Masak sih?",
+                    "slug": "masak-sih",
+                    "price": 1000000,
+                    "discount": 0,
+                    "is_discount": false,
+                    "is_wholesaler": false,
+                    "is_dropship": true,
+                    "weight": 2,
+                    "stock": 9970,
+                    "image": "https://komutodev.aptmi.com/uploads/produk/adidas.jpg"
+                },
+                {
+                    "id": 224,
+                    "name": "nama",
+                    "slug": "nama",
+                    "price": 100000,
+                    "discount": 10,
+                    "is_discount": true,
+                    "is_wholesaler": true,
+                    "is_dropship": true,
+                    "weight": 1,
+                    "stock": 100,
+                    "image": "https://komutodev.aptmi.com/uploads/produk/adidas.jpg"
+                }
+            ]
+        }
+        
+### Get List Messages [GET /users/store/messages]
+        
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Message Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 24,
+                    "store": {
+                        "id": 28,
+                        "name": "Toko Makmur Abadi Sejahtera selamanya",
+                        "logo": "http://188.166.246.46/uploads/toko/logo.jpg",
+                        "user_id": 32
+                    },
+                    "user_id": 32,
+                    "subject": "Mau nanya nih",
+                    "flag_sender": 2,
+                    "flag_receiver": 2,
+                    "flag_sender_at": 1503029360,
+                    "flag_receiver_at": 1503029360,
+                    "detail_message": {
+                        "id": 19,
+                        "message_id": 24,
+                        "user_id": 32,
+                        "content": "Sepatu ini dijual ndak ya ?",
+                        "created_at": 1503029360
+                    }
+                }
+            ]
+        }
+        
+### Get Detail Message [GET /users/store/messages/{id}]
+
++ Parameters
+    + id: 25 (number, required)
+        
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Detail Message Data",
+            "data": {
+                "id": 25,
+                "store": {
+                    "id": 28,
+                    "name": "Toko Makmur Abadi Sejahtera selamanya",
+                    "logo": "http://188.166.246.46/uploads/toko/logo.jpg",
+                    "user_id": 32
+                },
+                "user_id": 50,
+                "subject": "Mau nanya nih",
+                "flag_sender": 2,
+                "flag_receiver": 4,
+                "flag_sender_at": 1503043739,
+                "flag_receiver_at": 1503559342,
+                "detail_messages": [
+                    {
+                        "id": 20,
+                        "message_id": 25,
+                        "user": {
+                            "id": 50,
+                            "name": "kucing",
+                            "photo": "http://188.166.246.46/uploads/user/http://bawahkolong",
+                            "gender": "male",
+                            "place_of_birth": 3471,
+                            "date_of_birth": 816714000
+                        },
+                        "content": "Sepatu ini dijual ndak ya ?",
+                        "created_at": 1503043739
+                    },
+                    {
+                        "id": 27,
+                        "message_id": 25,
+                        "user": {
+                            "id": 32,
+                            "name": "bleble",
+                            "photo": "http://188.166.246.46/uploads/user/https://scontent.xx.fbcdn.net/v/t1.0-1/s200x200/12190927_1051452451551693_3353738072722896044_n.jpg?oh=1a89bdfda8446cc6b3c82a4536970ba3&oe=599E476F",
+                            "gender": "female",
+                            "place_of_birth": 1101,
+                            "date_of_birth": null
+                        },
+                        "content": "Dijual lah cuy",
+                        "created_at": 1503282018
+                    }
+                ]
+            }
+        }
+        
+### Update Message [PUT /users/store/messages/{id}]
+
++ Parameters
+    + id: 25 (number, required)
+    
++ Request (application/json)
+
+        {
+            "type": "archive"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 25,
+                "store_id": 28,
+                "user_id": 50,
+                "subject": "Mau nanya nih",
+                "flag_sender": 2,
+                "flag_receiver": 4,
+                "flag_sender_at": 1503043739,
+                "flag_receiver_at": 1503894785
+            }
+        }
+        
+### Reply Message [POST /users/store/messages/{id}]
+
++ Parameters
+    + id: 25 (number, required)
+    
++ Request (application/json)
+
+        {
+            "content": "Dijual lah cuy"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 30,
+                "message_id": 25,
+                "user_id": 32,
+                "content": "Dijual lah cuy",
+                "created_at": 1503894958
+            }
+        }
+        
+### Delete Message [DELETE /users/store/messages/{id}]
+
++ Parameters
+    + id: 25 (number, required)
+        
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+  lalala yeyeye      
+        
+        
+    
+    
+    
+    
+    
+    
+    
 
 ### Create Review [POST /products/{id}/reviews]
 Ready
@@ -4773,167 +5541,6 @@ Ready
             ]
         }
 
-### Create Store [POST /users/store]
-Ready
-
-+ Request (application/json)
-
-        {
-            "store": {
-                "name": "Toko Makmur Abadi Sejahtera",
-                "slogan": "Lorem ipsum",
-                "description": "Lorem ipsum",
-                "logo": "logo.jpg"
-            },
-            "expedition_services" : [
-                {
-                    "expedition_service_id": 1,
-                    "status": 1
-                },
-                {
-                    "expedition_service_id": 2,
-                    "status": 0
-                }
-            ],
-            "user": {
-                "id_number": "0982390923989",
-                "mother_name": "Siti Aminah"
-            },
-            "address": {
-                "province_id": 32,
-                "district_id": 3273,
-                "sub_district_id": 1111110,
-                "village_id": 1111110073,
-                "name": "User skyshi",
-                "email": "user@skyshi.com",
-                "phone_number": "081222333444",
-                "postal_code": "84314",
-                "address": "Jl. Klamat No. 24 RT. 002 RW. 003"
-            }
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Store Data",
-            "data": {
-                "store": {
-                    "id": 57,
-                    "user_id": 50,
-                    "name": "Toko Makmur Abadi Sejahtera",
-                    "slogan": "Lorem ipsum",
-                    "description": "Lorem ipsum",
-                    "logo": "http://188.166.246.46/uploads/toko/logo.jpg",
-                    "status": 1,
-                    "cover_image": null,
-                    "seller_theme_id": 0,
-                    "store_id_number": "0982390923989",
-                    "created_at": 1499398387,
-                    "status_at": 1499398387,
-                    "verification_at": null,
-                    "is_verified": false,
-                    "start_at": null,
-                    "end_at": null
-                },
-                "user": {
-                    "marketplace_id": null,
-                    "cooperative_member_number": null,
-                    "photo": null,
-                    "phone_number": null,
-                    "gender": "female",
-                    "status": null,
-                    "mother_name": "Siti Aminah",
-                    "auth_key": null,
-                    "saldo_wallet": 0,
-                    "place_of_birth": null,
-                    "date_of_birth": null,
-                    "created_at": 1499398387,
-                    "join_at": null,
-                    "status_at": 1499398387
-                },
-                "address": {
-                    "id": 68,
-                    "name": "User skyshi",
-                    "email": "user@skyshi.com",
-                    "phone_number": "081222333444",
-                    "postal_code": "84314",
-                    "address": "Jl. Klamat No. 24 RT. 002 RW. 003",
-                    "alias_address": "Jl. Klamat No. 24 RT. 002 RW. 003",
-                    "is_primary_address": false,
-                    "is_sale_address": true,
-                    "is_tender_address": false
-                },
-                "expedition_services": [
-                    {
-                        "expedition_service_id": 1,
-                        "status": 1
-                    },
-                    {
-                        "expedition_service_id": 2,
-                        "status": 0
-                    }
-                ]
-            }
-        }
-
-### Verify Store [POST /users/store/verify]
-Ready
-
-+ Request (application/json)
-
-        {
-            "code": "asd09213asdlk"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-### List Favorite Store [GET /users/store/favorites]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Favorite Store",
-            "meta": {
-                "page": 1,
-                "limit": 10,
-                "total": 100,
-                "pages": 10
-            },
-            "data": [
-                {
-                    "store": {
-                        "id": 1,
-                        "name": "Baju Keren",
-                        "province": {
-                            "id": 1,
-                            "name": "DKI Jakarta"
-                        }
-                    },
-                    "products": [
-                        {
-                            "id": 1,
-                            "name": "Xiaomi Mi Notebook Air 12.5",
-                            "price": 5000000,
-                            "discount": 10,
-                            "image": "https://xiaomi-mi.com/uploads/CatalogueImage/pvm_xiaomi-mi-notebook-air-125-silver-01_14457_1469630599.jpg"
-                        }
-                    ]
-                }
-            ]
-        }
-
 ### Get Discussion [GET /users/discussions]
 Ready
 
@@ -4979,286 +5586,6 @@ Ready
                     }
                 }
             ]
-        }
-
-### Get Store Discussion [GET /users/store/discussions]
-Ready
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Discussion Data",
-            "meta": {
-                "page": 1,
-                "limit": 10
-            },
-            "data": [
-                {
-                    "id": 13,
-                    "user_id": 50,
-                    "question": "Barang ready gan ?",
-                    "created_at": 1500020060,
-                    "product": {
-                        "id": 4,
-                        "name": "Kue Putu Ayu",
-                        "slug": "kue-putu-ayu",
-                        "price": 2000,
-                        "discount": 0,
-                        "is_discount": false,
-                        "image": null
-                    }
-                },
-                {
-                    "id": 6,
-                    "user_id": 50,
-                    "question": "Barang ready gan ?",
-                    "created_at": 1500006654,
-                    "product": {
-                        "id": 5,
-                        "name": "Kue Putu Ayu",
-                        "slug": "kue-putu-ayu",
-                        "price": 2000,
-                        "discount": 0,
-                        "is_discount": false,
-                        "image": null
-                    }
-                }
-            ]
-        }
-
-### Get List Store Products [GET /users/store/products?hidden={hidden}]
-Ready
-
-+ Parameters
-    + hidden: true (boolean)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Store Products Data",
-            "data": [
-                {
-                    "catalog": {
-                        "id": 38,
-                        "store_id": 41,
-                        "name": "Minuman",
-                        "count_product": 1,
-                        "created_at": 1477368926
-                    },
-                    "products": [
-                        {
-                            "id": 99,
-                            "name": "say tea",
-                            "slug": "say-tea",
-                            "price": 10000,
-                            "discount": 0,
-                            "is_discount": false,
-                            "is_wholesaler": true,
-                            "image": "https://komutodev.aptmi.com/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg"
-                        }
-                    ]
-                },
-                {
-                    "catalog": {
-                        "id": 33,
-                        "store_id": 41,
-                        "name": "Batik kumur kumur",
-                        "count_product": 3,
-                        "created_at": 1476994034
-                    },
-                    "products": [
-                        {
-                            "id": 155,
-                            "name": "Motif Bunga Cengkeh",
-                            "slug": "motif-bunga-cengkeh",
-                            "price": 80000,
-                            "discount": 20,
-                            "is_discount": true,
-                            "is_wholesaler": false,
-                            "image": "http://demo.makitweb.com/broken_image/images/noimage.png"
-                        }
-                    ]
-                },
-                {
-                    "catalog": {
-                        "name": "Tanpa Katalog",
-                        "count_product": 1
-                    },
-                    "products": [
-                        {
-                            "id": 93,
-                            "name": "Kain denim motif polkadot",
-                            "slug": "kain-denim-motif-polkadot",
-                            "price": 100000,
-                            "discount": 10,
-                            "is_discount": true,
-                            "is_wholesaler": true,
-                            "image": "http://demo.makitweb.com/broken_image/images/noimage.png"
-                        }
-                    ]
-                }
-            ]
-        }
-        
-### Get List Store Products by Catalog [GET /users/store/products/catalogs/{id}]
-Ready
-
-+ Parameters
-    
-    + id: 120 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Store Catalog Products Data",
-            "data": {
-                "catalog": {
-                    "id": 120,
-                    "store_id": 23,
-                    "name": "Sport Shoes2",
-                    "count_product": 2,
-                    "created_at": 1501723126
-                },
-                "products": [
-                    {
-                        "id": 49,
-                        "name": "Dropship nih",
-                        "slug": "dropship-nih",
-                        "price": 1650000,
-                        "discount": 0,
-                        "is_discount": false,
-                        "is_wholesaler": false,
-                        "image": "http://188.166.246.46/uploads/produk/kambing.png"
-                    },
-                    {
-                        "id": 48,
-                        "name": "Bukan dropship",
-                        "slug": "bukan-dropship",
-                        "price": 1650000,
-                        "discount": 0,
-                        "is_discount": false,
-                        "is_wholesaler": false,
-                        "image": "http://188.166.246.46/uploads/produk/noimage.png"
-                    }
-                ]
-            }
-        }
-        
-### Get List Store Products by Catalog (bulk) [GET /users/store/products/catalogs/{id}/list]
-Ready
-
-+ Parameters
-    
-    + id: 124 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Store Catalog Products Data",
-            "meta": {
-                "page": 1,
-                "limit": 10
-            },
-            "data": [
-                {
-                    "id": 80,
-                    "name": "Dropship nih",
-                    "slug": "dropship-nih",
-                    "price": 1650000,
-                    "discount": 0,
-                    "is_discount": false,
-                    "is_wholesaler": true,
-                    "is_dropshipper": false,
-                    "weight": 500,
-                    "stock": 50,
-                    "image": "http://188.166.246.46/uploads/produk/kambing.png"
-                }
-            ]
-        }
-
-### Update Store Information [PUT /users/store]
-Ready
-
-+ Request (application/json)
-
-        {
-            "name": "Toko Makmur Abadi Sejahtera selamanya",
-            "slogan": "Lorem ipsum",
-            "description": "Lorem ipsum",
-            "logo": "logo.jpg"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {
-                "id": 28,
-                "name": "Toko Makmur Abadi Sejahtera selamanya",
-                "logo": "http://188.166.246.46/uploads/toko/logo.jpg",
-                "user_id": 32,
-                "slogan": "Lorem ipsum",
-                "description": "Lorem ipsum",
-                "custom_domain": null,
-                "status": 1,
-                "remarks_status": null,
-                "cover_image": null,
-                "seller_theme_id": 0,
-                "reputation": null,
-                "store_id_number": "0982390923989",
-                "total_favorite": null,
-                "term_condition": null,
-                "created_at": 1502211600,
-                "status_at": 1502225988,
-                "verification_at": 1502211600
-            }
-        }
-
-### Update Store Term & Condition [PUT /users/store/term-condition]
-Ready
-
-+ Request (application/json)
-
-        {
-            "term_condition": "- Hanya melakukan pengiriman di hari kamis."
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {
-                "id": 28,
-                "name": "Toko Makmur Abadi Sejahtera selamanya",
-                "logo": "http://188.166.246.46/uploads/toko/logo.jpg",
-                "user_id": 32,
-                "slogan": "Lorem ipsum",
-                "description": "Lorem ipsum",
-                "custom_domain": null,
-                "status": 1,
-                "remarks_status": null,
-                "cover_image": null,
-                "seller_theme_id": 0,
-                "reputation": null,
-                "store_id_number": "0982390923989",
-                "total_favorite": null,
-                "term_condition": "- Hanya melakukan pengiriman di hari kamis.",
-                "created_at": 1502211600,
-                "status_at": 1502225988,
-                "verification_at": 1502211600
-            }
         }
 
 ### Update FCM Registration Token [PUT /users/registration-token]
@@ -5457,333 +5784,6 @@ Ready
 + Parameters
     + id: 26 (number, required)
 
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-## Store Collection [/stores]
-
-### Get [GET /stores/{id}]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-
-+ Request (application/json)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Store Data",
-            "data": {
-                "store": {
-                    "id": 1,
-                    "user_id": 1,
-                    "name": "Jaya Makmur",
-                    "slogan": "kepuasan pelanggan adalah kebahagiaan kami",
-                    "description": "menjual aneka jajanan tradisional pasar",
-                    "logo": "http://188.166.246.46/uploads/toko/68d19956169712d63713a69f717f3c778998204e_jajan.jpg",
-                    "custom_domain": "",
-                    "status": 1,
-                    "remarks_status": null,
-                    "cover_image": null,
-                    "seller_theme_id": 0,
-                    "reputation": null,
-                    "store_id_number": "3321142704940001",
-                    "total_favorite": null,
-                    "note": null,
-                    "created_at": 1486486800,
-                    "status_at": 1486513025,
-                    "verification_at": 1486486800,
-                    "is_verified": false,
-                    "start_at": null,
-                    "end_at": null,
-                    "total_product_sold": "0000",
-                    "origin": "Kabupaten Bandung, Jawa Barat"
-                },
-                "catalogs": [
-                    {
-                        "id": 74,
-                        "store_id": 1,
-                        "name": "Sepatu",
-                        "created_at": 1491448518,
-                        "products": [
-                            {
-                                "id": 1,
-                                "name": "Kue Putu Ayu Kas Demak",
-                                "price": 5000,
-                                "discount": 0,
-                                "is_discount": false,
-                                "image": {
-                                    "id": 230,
-                                    "product_id": 1,
-                                    "file": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
-                                    "created_at": 1486513376,
-                                    "updated_at": 1486513376
-                                }
-                            }
-                        ]
-                    }
-                ],
-                "district": {
-                    "id": 3204,
-                    "ro_id": 22,
-                    "name": "Kabupaten Bandung"
-                },
-                "rating": {
-                    "quality": 4,
-                    "accuracy": 5,
-                    "reviews": [
-                        {
-                            "id": 1,
-                            "review": "Obatnya manjur gan",
-                            "quality": 4,
-                            "accuracy": 5,
-                            "created_at": 1498702563,
-                            "user": {
-                                "id": 50,
-                                "name": "bleble",
-                                "photo": null
-                            },
-                            "product": {
-                                "id": 1,
-                                "name": "Kue Putu Ayu Kas Demak",
-                                "price": 5000,
-                                "discount": 0,
-                                "is_discount": false,
-                                "image": {
-                                    "id": 230,
-                                    "product_id": 1,
-                                    "file": "http://188.166.246.46/uploads/produk/8011774ba21b8cc99a20583008bc07e43d19bdc1_klepon1.jpg",
-                                    "created_at": 1486513376,
-                                    "updated_at": 1486513376
-                                }
-                            }
-                        }
-                    ]
-                }
-            }
-        }
-
-### Favorite Store [POST /stores/{id}/favorite]
-Ready
-
-+ Parameters
-    + id : 1 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-        
-### Create Message [POST /stores/{id}/message]
-Ready
-
-+ Parameters
-    + id: 1 (number, required)
-    
-+ Request (application/json)
-
-        {
-            "subject": "Mau nanya nih",
-            "content": "Sepatu ini dijual ndak ya ?"
-        }
-        
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Message Data",
-            "data": {
-                "message": {
-                    "id": 9,
-                    "store_id": "1",
-                    "user_id": 50,
-                    "subject": "Mau nanya nih",
-                    "flag_sender": 2,
-                    "flag_receiver": 2,
-                    "flag_sender_at": 1500260346,
-                    "flag_receiver_at": 1500260346
-                },
-                "detailMessage": {
-                    "id": 4,
-                    "message_id": 9,
-                    "user_id": 50,
-                    "content": "Sepatu ini dijual ndak ya ?",
-                    "created_at": 1500260347
-                }
-            }
-        }
-        
-### Get List Messages [GET /users/store/messages]
-Ready
-        
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Message Data",
-            "data": [
-                {
-                    "id": 24,
-                    "store": {
-                        "id": 28,
-                        "name": "Toko Makmur Abadi Sejahtera selamanya",
-                        "logo": "http://188.166.246.46/uploads/toko/logo.jpg",
-                        "user_id": 32
-                    },
-                    "user_id": 32,
-                    "subject": "Mau nanya nih",
-                    "flag_sender": 2,
-                    "flag_receiver": 2,
-                    "flag_sender_at": 1503029360,
-                    "flag_receiver_at": 1503029360,
-                    "detail_message": {
-                        "id": 19,
-                        "message_id": 24,
-                        "user_id": 32,
-                        "content": "Sepatu ini dijual ndak ya ?",
-                        "created_at": 1503029360
-                    }
-                }
-            ]
-        }
-        
-### Get Detail Message [GET /users/store/messages/{id}]
-Ready
-
-+ Parameters
-    + id: 25 (number, required)
-        
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Detail Message Data",
-            "data": {
-                "id": 25,
-                "store": {
-                    "id": 28,
-                    "name": "Toko Makmur Abadi Sejahtera selamanya",
-                    "logo": "http://188.166.246.46/uploads/toko/logo.jpg",
-                    "user_id": 32
-                },
-                "user_id": 50,
-                "subject": "Mau nanya nih",
-                "flag_sender": 2,
-                "flag_receiver": 4,
-                "flag_sender_at": 1503043739,
-                "flag_receiver_at": 1503559342,
-                "detail_messages": [
-                    {
-                        "id": 20,
-                        "message_id": 25,
-                        "user": {
-                            "id": 50,
-                            "name": "kucing",
-                            "photo": "http://188.166.246.46/uploads/user/http://bawahkolong",
-                            "gender": "male",
-                            "place_of_birth": 3471,
-                            "date_of_birth": 816714000
-                        },
-                        "content": "Sepatu ini dijual ndak ya ?",
-                        "created_at": 1503043739
-                    },
-                    {
-                        "id": 27,
-                        "message_id": 25,
-                        "user": {
-                            "id": 32,
-                            "name": "bleble",
-                            "photo": "http://188.166.246.46/uploads/user/https://scontent.xx.fbcdn.net/v/t1.0-1/s200x200/12190927_1051452451551693_3353738072722896044_n.jpg?oh=1a89bdfda8446cc6b3c82a4536970ba3&oe=599E476F",
-                            "gender": "female",
-                            "place_of_birth": 1101,
-                            "date_of_birth": null
-                        },
-                        "content": "Dijual lah cuy",
-                        "created_at": 1503282018
-                    }
-                ]
-            }
-        }
-        
-### Update Message [PUT /users/store/messages/{id}]
-Ready
-
-+ Parameters
-    + id: 25 (number, required)
-    
-+ Request (application/json)
-
-        {
-            "type": "archive"
-        }
-        
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {
-                "id": 25,
-                "store_id": 28,
-                "user_id": 50,
-                "subject": "Mau nanya nih",
-                "flag_sender": 2,
-                "flag_receiver": 4,
-                "flag_sender_at": 1503043739,
-                "flag_receiver_at": 1503894785
-            }
-        }
-        
-### Reply Message [POST /users/store/messages/{id}]
-Ready
-
-+ Parameters
-    + id: 25 (number, required)
-    
-+ Request (application/json)
-
-        {
-            "content": "Dijual lah cuy"
-        }
-        
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {
-                "id": 30,
-                "message_id": 25,
-                "user_id": 32,
-                "content": "Dijual lah cuy",
-                "created_at": 1503894958
-            }
-        }
-        
-### Delete Message [DELETE /users/store/messages/{id}]
-Ready
-
-+ Parameters
-    + id: 25 (number, required)
-        
 + Response 200 (application/json)
 
         {
