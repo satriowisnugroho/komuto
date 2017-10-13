@@ -1806,689 +1806,6 @@ Postman collection https://www.getpostman.com/collections/f2801628834132085b4a
             "data": {}
         }
 
-## Resolution [/users/resolutions]
-
-### List [GET /users/resolutions?is_closed={isClosed}]
-
-+ Parameters
-    + isClosed: false (boolean)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Resolution Data",
-            "meta": {
-                "page": 1,
-                "limit": 10
-            },
-            "data": [
-                {
-                    "id": 50,
-                    "user_id": 59,
-                    "ticket_number": "RS-0050",
-                    "priority": 1,
-                    "topic": 1,
-                    "title": "Mau nanya tentang refund",
-                    "status": 2,
-                    "status_at": 1506391509,
-                    "ends_at": 1506358800,
-                    "created_at": 1506358800,
-                    "updated_at": null
-                }
-            ]
-        }
-
-### Get [GET /users/resolutions/{id}]
-
-+ Parameters
-    + id: 50 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Resolution Data",
-            "data": {
-                "id": 50,
-                "user_id": 59,
-                "ticket_number": "RS-0050",
-                "priority": 1,
-                "topic": 1,
-                "title": "Mau nanya tentang refund",
-                "status": 2,
-                "status_at": 1506391509,
-                "ends_at": 1506358800,
-                "created_at": 1506358800,
-                "updated_at": null,
-                "discussions": [
-                    {
-                        "name": "safe",
-                        "message": "Ini nih refund ku kok lorem ipsum ya, coba di cek lagi",
-                        "created_at": 1506416709
-                    }
-                ],
-                "images": []
-            }
-        }
-
-### Create [POST /users/resolutions]
-
-+ Request (application/json)
-
-        {
-            "priority": 1,
-            "topic": 1,
-            "title": "Mau nanya tentang refund",
-            "message": "Ini nih refund ku kok lorem ipsum ya, coba di cek lagi",
-            "images": [
-                {
-                    "name": "refund.jpg"
-                }
-            ]
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {
-                "id": 60,
-                "user_id": 59,
-                "ticket_number": "RS-0060",
-                "priority": 1,
-                "topic": 1,
-                "title": "Mau nanya tentang refund",
-                "status": 2,
-                "status_at": 1507599882,
-                "ends_at": 1507599882,
-                "created_at": 1507599882,
-                "updated_at": null
-            }
-        }
-
-### Reply [POST /users/resolutions/{id}]
-
-+ Parameters
-    + id: 60 (number, required)
-
-+ Request (application/json)
-
-        {
-            "message": "Iya mas refund nya belum lorem ipsum e. piye ki"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Resolution Data",
-            "data": {
-                "id": 60,
-                "user_id": 59,
-                "ticket_number": "RS-0060",
-                "priority": 1,
-                "topic": 1,
-                "title": "Mau nanya tentang refund",
-                "status": 2,
-                "status_at": 1507574682,
-                "ends_at": 1507568400,
-                "created_at": 1507568400,
-                "updated_at": 1507600062,
-                "discussions": [
-                    {
-                        "name": "safe",
-                        "message": "Ini nih refund ku kok lorem ipsum ya, coba di cek lagi",
-                        "created_at": 1507599882
-                    },
-                    {
-                        "name": "safe",
-                        "message": "Iya mas refund nya belum lorem ipsum e. piye ki",
-                        "created_at": 1507600062
-                    }
-                ],
-                "images": [
-                    {
-                        "id": 25,
-                        "parent_id": 60,
-                        "image": "https://komutodev.aptmi.com/uploads/resolution/refund.jpg",
-                        "group": "resolusi"
-                    }
-                ]
-            }
-        }
-
-## Transaction [/transactions]
-
-### List [GET /transactions]
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Transactions Data",
-            "meta": {
-                "page": 1,
-                "limit": 10
-            },
-            "data": [
-                {
-                    "bucket": {
-                        "id": 489,
-                        "user_id": 59,
-                        "marketplace_id": null,
-                        "promo_id": null,
-                        "promo": null,
-                        "payment_method_id": null,
-                        "unique_code": 112,
-                        "total_bill": 1664112,
-                        "order_at": 1507222800,
-                        "wallet": 0,
-                        "platform": "pwa",
-                        "status": 3,
-                        "status_at": 1507222800
-                    },
-                    "summary_transaction": {
-                        "total_price": 1664000,
-                        "time_left": {
-                            "days": 0,
-                            "hours": 0,
-                            "minutes": 0,
-                            "seconds": 0
-                        }
-                    },
-                    "products": [
-                        {
-                            "id": 282,
-                            "name": "sepatu emas",
-                            "slug": "sepatu-emas",
-                            "price": 1650000,
-                            "discount": 0,
-                            "is_discount": false,
-                            "is_wholesaler": false,
-                            "is_dropship": false,
-                            "weight": 500,
-                            "stock": 48,
-                            "image": "https://komutodev.aptmi.com/uploads/produk/kucing.png"
-                        }
-                    ]
-                }
-            ]
-        }
-
-### Get [GET /transactions/{id}]
-
-+ Parameters
-    + id: 489 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Transaction Data",
-            "data": {
-                "bucket": {
-                    "id": 489,
-                    "user_id": 59,
-                    "marketplace_id": null,
-                    "promo_id": null,
-                    "promo": null,
-                    "payment_method_id": null,
-                    "unique_code": 112,
-                    "total_bill": 1664112,
-                    "order_at": 1507222800,
-                    "wallet": 0,
-                    "platform": "pwa",
-                    "status": 3,
-                    "status_at": 1507222800
-                },
-                "summary_transaction": {
-                    "total_price": 1664000,
-                    "time_left": {
-                        "days": 0,
-                        "hours": 0,
-                        "minutes": 0,
-                        "seconds": 0
-                    }
-                },
-                "invoices": [
-                    {
-                        "id": 397,
-                        "payment_method_id": null,
-                        "store_id": 41,
-                        "store": {
-                            "id": 41,
-                            "name": "Toko Kain Jaya",
-                            "logo": "https://komutodev.aptmi.com/uploads/toko/eb4f4148d8b6699d49e48b084310893df292c27a_IMG_0210.jpg"
-                        },
-                        "shipping": {
-                            "id": 609,
-                            "delivery_cost": 14000,
-                            "insurance_fee": 0,
-                            "is_insurance": false,
-                            "address": {
-                                "id": 422,
-                                "postal_code": "57782",
-                                "address": "Jl. Matesih No. 12 RT. 004 RW. 001",
-                                "name": "Safei Muslim",
-                                "email": "safei@skyshi.com",
-                                "phone_number": "082329230000",
-                                "alias_address": "Rumah kamu",
-                                "is_primary_address": false,
-                                "is_sale_address": false,
-                                "is_tender_address": false,
-                                "is_checked": false
-                            },
-                            "expedition_service": {
-                                "id": 1,
-                                "name": "REG",
-                                "description": "JNE Reguler adalahpaket reguler yang ditawarkan JNE. Kecepatanpengiriman tergantung dari lokasi pengiriman dan tujuan. untuk kota yang sama umumnya memakan waku 2-3 hari",
-                                "logo": null,
-                                "is_checked": false,
-                                "expedition": {
-                                    "id": 2,
-                                    "name": "JNE",
-                                    "logo": "https://komutodev.aptmi.com/img/pengiriman/jne.png",
-                                    "insurance_fee": 2,
-                                    "is_checked": false
-                                }
-                            },
-                            "note": null,
-                            "seller_note": null,
-                            "airway_bill": null,
-                            "sender_status": 1,
-                            "sender_status_at": null,
-                            "sender_status_expired_at": null,
-                            "receiver_status": 1,
-                            "receiver_status_at": null,
-                            "receiver_status_expired_at": null
-                        },
-                        "invoice_number": "Invoice-1024777118/10/2017",
-                        "total_bill": 1664000,
-                        "total_price": 1664000,
-                        "status": 0,
-                        "transaction_status": null,
-                        "created_at": 1507222800,
-                        "items": [
-                            {
-                                "id": 765,
-                                "qty": 1,
-                                "weight": 500,
-                                "additional_cost": 0,
-                                "total_price": 1664000,
-                                "product": {
-                                    "id": 282,
-                                    "name": "sepatu emas",
-                                    "slug": "sepatu-emas",
-                                    "price": 1650000,
-                                    "discount": 0,
-                                    "is_discount": false,
-                                    "is_wholesaler": false,
-                                    "is_dropship": false,
-                                    "weight": 500,
-                                    "stock": 48,
-                                    "image": "https://komutodev.aptmi.com/uploads/produk/kambing.png"
-                                }
-                            }
-                        ]
-                    }
-                ]
-            }
-        }
-
-### Get Invoice [GET /transactions/{id}/invoices/{invoiceId}]
-
-+ Parameters
-    + id: 489 (number, required)
-    + invoiceId: 397 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Invoice Data",
-            "data": {
-                "id": 397,
-                "payment_method_id": null,
-                "store_id": 41,
-                "store": {
-                    "id": 41,
-                    "name": "Toko Kain Jaya",
-                    "logo": "https://komutodev.aptmi.com/uploads/toko/eb4f4148d8b6699d49e48b084310893df292c27a_IMG_0210.jpg"
-                },
-                "shipping": {
-                    "id": 609,
-                    "delivery_cost": 14000,
-                    "insurance_fee": 0,
-                    "is_insurance": false,
-                    "address": {
-                        "id": 422,
-                        "postal_code": "57782",
-                        "address": "Jl. Matesih No. 12 RT. 004 RW. 001",
-                        "name": "Safei Muslim",
-                        "email": "safei@skyshi.com",
-                        "phone_number": "082329230000",
-                        "alias_address": "Rumah kamu",
-                        "is_primary_address": false,
-                        "is_sale_address": false,
-                        "is_tender_address": false,
-                        "is_checked": false
-                    },
-                    "expedition_service": {
-                        "id": 1,
-                        "name": "REG",
-                        "description": "JNE Reguler adalahpaket reguler yang ditawarkan JNE. Kecepatanpengiriman tergantung dari lokasi pengiriman dan tujuan. untuk kota yang sama umumnya memakan waku 2-3 hari",
-                        "logo": null,
-                        "is_checked": false,
-                        "expedition": {
-                            "id": 2,
-                            "name": "JNE",
-                            "logo": "https://komutodev.aptmi.com/img/pengiriman/jne.png",
-                            "insurance_fee": 2,
-                            "is_checked": false
-                        }
-                    },
-                    "note": null,
-                    "seller_note": null,
-                    "airway_bill": null,
-                    "sender_status": 1,
-                    "sender_status_at": null,
-                    "sender_status_expired_at": null,
-                    "receiver_status": 1,
-                    "receiver_status_at": null,
-                    "receiver_status_expired_at": null
-                },
-                "invoice_number": "Invoice-1024777118/10/2017",
-                "total_bill": 1664000,
-                "total_price": 1664000,
-                "status": 0,
-                "transaction_status": null,
-                "created_at": 1507222800,
-                "user_id": 59,
-                "bucket_id": 489,
-                "bid_id": null,
-                "shipping_id": 609,
-                "remark_cancel": null,
-                "delivery_cost": 14000,
-                "insurance_fee": 0,
-                "admin_cost": 0,
-                "wallet": 0,
-                "promo": 0,
-                "updated_at": 1507262402,
-                "items": [
-                    {
-                        "id": 765,
-                        "qty": 1,
-                        "weight": 500,
-                        "additional_cost": 0,
-                        "total_price": 1664000,
-                        "note": "",
-                        "bucket_id": 489,
-                        "product_id": 282,
-                        "product": {
-                            "id": 282.41,
-                            "name": "sepatu emas",
-                            "slug": "sepatu-emas",
-                            "price": 1650000,
-                            "discount": 0,
-                            "is_discount": false,
-                            "is_wholesaler": false,
-                            "is_dropship": false,
-                            "weight": 500,
-                            "stock": 48,
-                            "image": "https://komutodev.aptmi.com/uploads/produk/kambing.png"
-                        },
-                        "invoice_id": "397",
-                        "shipping_id": 609,
-                        "dropshipper_id": null,
-                        "review_id": null
-                    }
-                ],
-                "dispute": null
-            }
-        }
-
-### Bulk Review [POST /transactions/{id}/invoices/{invoiceId}]
-
-+ Parameters
-    + id: 489 (number, required)
-    + invoiceId: 397 (number, required)
-
-+ Request (application/json)
-
-        [
-            {
-                "product_id": 2.41,
-                "review": "Mantap gan barangnya",
-                "quality": 5,
-                "accuracy": 5
-            }
-        ]
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Reviews Data",
-            "data": [
-                {
-                    "id": 156,
-                    "review": "Mantap gan barangnya",
-                    "quality": 5,
-                    "accuracy": 5,
-                    "created_at": 1507602868
-                }
-            ]
-        }
-
-### Dispute [POST /transactions/{id}/invoices/{invoiceId}/dispute]
-
-+ Parameters
-    + id: 489 (number, required)
-    + invoiceId: 397 (number, required)
-
-+ Request (application/json)
-
-        {
-            "products": [282.41],
-            "problems": [1, 2, 3],
-            "solution": 1,
-            "note": "Saya ingin refund dana saja. takutnya kalo tukar barang nanti sama saja",
-            "images": [
-                {
-                    "name": "refund.jpg"
-                }
-            ]
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {
-                "id": 37,
-                "user_id": 59,
-                "store_id": 41,
-                "invoice_id": 397,
-                "solution": 1,
-                "problems": "Barang tidak sesuai deskripsi, Barang rusak, Produk tidak lengkap",
-                "note": "Saya ingin refund dana saja. takutnya kalo tukar barang nanti sama saja",
-                "dispute_number": "4187-10/10/2017",
-                "status": 1,
-                "response_status": 0,
-                "response_at": 1507608792,
-                "created_at": 1507608792
-            }
-        }
-
-### Midtrans Snap Token [GET /transactions/{id}/token?platform={platform}]
-
-+ Parameters
-    + id: 489 (number, required)
-    + platform: pwa (string, required)
-
-+ Request (application/json)
-
-        {
-            "products": [282.41],
-            "problems": [1, 2, 3],
-            "solution": 1,
-            "note": "Saya ingin refund dana saja. takutnya kalo tukar barang nanti sama saja",
-            "images": [
-                {
-                    "name": "refund.jpg"
-                }
-            ]
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Snap Token",
-            "data": {
-                "token": "fe1dc869-22b2-4149-8ecb-bb4a33266190",
-                "redirect_url": "https://app.midtrans.com/snap/v2/vtweb/fe1dc869-22b2-4149-8ecb-bb4a33266190"
-            }
-        }
-
-### Balance Payment [PUT /transactions/{id}/balance-payment]
-
-+ Parameters
-    + id: 489 (number, required)
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
-        }
-
-### Message Buyer [POST /invoices/{id}/buyer/message]
-
-+ Parameters
-    + id: 489 (number, required)
-
-+ Request
-
-        {
-            "subject": "Mau nanya nih percobaan",
-            "content": "Sepatu ini dijual ndak ya ?"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {
-                "id": 1,
-                "store_id": 1,
-                "user_id": 32,
-                "subject": "Mau nanya nih percobaan",
-                "flag_sender": 1,
-                "flag_receiver": 1,
-                "flag_sender_at": 1496710635,
-                "flag_receiver_at": 1496710635,
-                "detail_message": {
-                    "id": 1,
-                    "message_id": 1,
-                    "user_id": 32,
-                    "content": "Sepatu ini dijual ndak ya ?",
-                    "created_at": 1496710635
-                }
-            }
-        }
-
-### Message Seller [POST /invoices/{id}/seller/message]
-
-+ Parameters
-    + id: 489 (number, required)
-
-+ Request
-
-        {
-            "subject": "Mau nanya nih percobaan",
-            "content": "Sepatu ini dijual ndak ya ?"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {
-                "id": 1,
-                "store_id": 1,
-                "user_id": 32,
-                "subject": "Mau nanya nih percobaan",
-                "flag_sender": 1,
-                "flag_receiver": 1,
-                "flag_sender_at": 1496710635,
-                "flag_receiver_at": 1496710635,
-                "detail_message": {
-                    "id": 1,
-                    "message_id": 1,
-                    "user_id": 32,
-                    "content": "Sepatu ini dijual ndak ya ?",
-                    "created_at": 1496710635
-                }
-            }
-        }
-
-### Message Reseller [POST /invoices/{id}/reseller/message]
-
-+ Parameters
-    + id: 489 (number, required)
-
-+ Request
-
-        {
-            "subject": "Mau nanya nih percobaan",
-            "content": "Sepatu ini dijual ndak ya ?"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {
-                "id": 1,
-                "store_id": 1,
-                "user_id": 32,
-                "subject": "Mau nanya nih percobaan",
-                "flag_sender": 1,
-                "flag_receiver": 1,
-                "flag_sender_at": 1496710635,
-                "flag_receiver_at": 1496710635,
-                "detail_message": {
-                    "id": 1,
-                    "message_id": 1,
-                    "user_id": 32,
-                    "content": "Sepatu ini dijual ndak ya ?",
-                    "created_at": 1496710635
-                }
-            }
-        }
-
 ## Product [/products]
 
 ### Create [POST /products]
@@ -3412,6 +2729,689 @@ Postman collection https://www.getpostman.com/collections/f2801628834132085b4a
                     }
                 }
             ]
+        }
+
+## Resolution [/users/resolutions]
+
+### List [GET /users/resolutions?is_closed={isClosed}]
+
++ Parameters
+    + isClosed: false (boolean)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Resolution Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "id": 50,
+                    "user_id": 59,
+                    "ticket_number": "RS-0050",
+                    "priority": 1,
+                    "topic": 1,
+                    "title": "Mau nanya tentang refund",
+                    "status": 2,
+                    "status_at": 1506391509,
+                    "ends_at": 1506358800,
+                    "created_at": 1506358800,
+                    "updated_at": null
+                }
+            ]
+        }
+
+### Get [GET /users/resolutions/{id}]
+
++ Parameters
+    + id: 50 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Resolution Data",
+            "data": {
+                "id": 50,
+                "user_id": 59,
+                "ticket_number": "RS-0050",
+                "priority": 1,
+                "topic": 1,
+                "title": "Mau nanya tentang refund",
+                "status": 2,
+                "status_at": 1506391509,
+                "ends_at": 1506358800,
+                "created_at": 1506358800,
+                "updated_at": null,
+                "discussions": [
+                    {
+                        "name": "safe",
+                        "message": "Ini nih refund ku kok lorem ipsum ya, coba di cek lagi",
+                        "created_at": 1506416709
+                    }
+                ],
+                "images": []
+            }
+        }
+
+### Create [POST /users/resolutions]
+
++ Request (application/json)
+
+        {
+            "priority": 1,
+            "topic": 1,
+            "title": "Mau nanya tentang refund",
+            "message": "Ini nih refund ku kok lorem ipsum ya, coba di cek lagi",
+            "images": [
+                {
+                    "name": "refund.jpg"
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 60,
+                "user_id": 59,
+                "ticket_number": "RS-0060",
+                "priority": 1,
+                "topic": 1,
+                "title": "Mau nanya tentang refund",
+                "status": 2,
+                "status_at": 1507599882,
+                "ends_at": 1507599882,
+                "created_at": 1507599882,
+                "updated_at": null
+            }
+        }
+
+### Reply [POST /users/resolutions/{id}]
+
++ Parameters
+    + id: 60 (number, required)
+
++ Request (application/json)
+
+        {
+            "message": "Iya mas refund nya belum lorem ipsum e. piye ki"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Resolution Data",
+            "data": {
+                "id": 60,
+                "user_id": 59,
+                "ticket_number": "RS-0060",
+                "priority": 1,
+                "topic": 1,
+                "title": "Mau nanya tentang refund",
+                "status": 2,
+                "status_at": 1507574682,
+                "ends_at": 1507568400,
+                "created_at": 1507568400,
+                "updated_at": 1507600062,
+                "discussions": [
+                    {
+                        "name": "safe",
+                        "message": "Ini nih refund ku kok lorem ipsum ya, coba di cek lagi",
+                        "created_at": 1507599882
+                    },
+                    {
+                        "name": "safe",
+                        "message": "Iya mas refund nya belum lorem ipsum e. piye ki",
+                        "created_at": 1507600062
+                    }
+                ],
+                "images": [
+                    {
+                        "id": 25,
+                        "parent_id": 60,
+                        "image": "https://komutodev.aptmi.com/uploads/resolution/refund.jpg",
+                        "group": "resolusi"
+                    }
+                ]
+            }
+        }
+
+## Transaction [/transactions]
+
+### List [GET /transactions]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Transactions Data",
+            "meta": {
+                "page": 1,
+                "limit": 10
+            },
+            "data": [
+                {
+                    "bucket": {
+                        "id": 489,
+                        "user_id": 59,
+                        "marketplace_id": null,
+                        "promo_id": null,
+                        "promo": null,
+                        "payment_method_id": null,
+                        "unique_code": 112,
+                        "total_bill": 1664112,
+                        "order_at": 1507222800,
+                        "wallet": 0,
+                        "platform": "pwa",
+                        "status": 3,
+                        "status_at": 1507222800
+                    },
+                    "summary_transaction": {
+                        "total_price": 1664000,
+                        "time_left": {
+                            "days": 0,
+                            "hours": 0,
+                            "minutes": 0,
+                            "seconds": 0
+                        }
+                    },
+                    "products": [
+                        {
+                            "id": 282,
+                            "name": "sepatu emas",
+                            "slug": "sepatu-emas",
+                            "price": 1650000,
+                            "discount": 0,
+                            "is_discount": false,
+                            "is_wholesaler": false,
+                            "is_dropship": false,
+                            "weight": 500,
+                            "stock": 48,
+                            "image": "https://komutodev.aptmi.com/uploads/produk/kucing.png"
+                        }
+                    ]
+                }
+            ]
+        }
+
+### Get [GET /transactions/{id}]
+
++ Parameters
+    + id: 489 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Transaction Data",
+            "data": {
+                "bucket": {
+                    "id": 489,
+                    "user_id": 59,
+                    "marketplace_id": null,
+                    "promo_id": null,
+                    "promo": null,
+                    "payment_method_id": null,
+                    "unique_code": 112,
+                    "total_bill": 1664112,
+                    "order_at": 1507222800,
+                    "wallet": 0,
+                    "platform": "pwa",
+                    "status": 3,
+                    "status_at": 1507222800
+                },
+                "summary_transaction": {
+                    "total_price": 1664000,
+                    "time_left": {
+                        "days": 0,
+                        "hours": 0,
+                        "minutes": 0,
+                        "seconds": 0
+                    }
+                },
+                "invoices": [
+                    {
+                        "id": 397,
+                        "payment_method_id": null,
+                        "store_id": 41,
+                        "store": {
+                            "id": 41,
+                            "name": "Toko Kain Jaya",
+                            "logo": "https://komutodev.aptmi.com/uploads/toko/eb4f4148d8b6699d49e48b084310893df292c27a_IMG_0210.jpg"
+                        },
+                        "shipping": {
+                            "id": 609,
+                            "delivery_cost": 14000,
+                            "insurance_fee": 0,
+                            "is_insurance": false,
+                            "address": {
+                                "id": 422,
+                                "postal_code": "57782",
+                                "address": "Jl. Matesih No. 12 RT. 004 RW. 001",
+                                "name": "Safei Muslim",
+                                "email": "safei@skyshi.com",
+                                "phone_number": "082329230000",
+                                "alias_address": "Rumah kamu",
+                                "is_primary_address": false,
+                                "is_sale_address": false,
+                                "is_tender_address": false,
+                                "is_checked": false
+                            },
+                            "expedition_service": {
+                                "id": 1,
+                                "name": "REG",
+                                "description": "JNE Reguler adalahpaket reguler yang ditawarkan JNE. Kecepatanpengiriman tergantung dari lokasi pengiriman dan tujuan. untuk kota yang sama umumnya memakan waku 2-3 hari",
+                                "logo": null,
+                                "is_checked": false,
+                                "expedition": {
+                                    "id": 2,
+                                    "name": "JNE",
+                                    "logo": "https://komutodev.aptmi.com/img/pengiriman/jne.png",
+                                    "insurance_fee": 2,
+                                    "is_checked": false
+                                }
+                            },
+                            "note": null,
+                            "seller_note": null,
+                            "airway_bill": null,
+                            "sender_status": 1,
+                            "sender_status_at": null,
+                            "sender_status_expired_at": null,
+                            "receiver_status": 1,
+                            "receiver_status_at": null,
+                            "receiver_status_expired_at": null
+                        },
+                        "invoice_number": "Invoice-1024777118/10/2017",
+                        "total_bill": 1664000,
+                        "total_price": 1664000,
+                        "status": 0,
+                        "transaction_status": null,
+                        "created_at": 1507222800,
+                        "items": [
+                            {
+                                "id": 765,
+                                "qty": 1,
+                                "weight": 500,
+                                "additional_cost": 0,
+                                "total_price": 1664000,
+                                "product": {
+                                    "id": 282,
+                                    "name": "sepatu emas",
+                                    "slug": "sepatu-emas",
+                                    "price": 1650000,
+                                    "discount": 0,
+                                    "is_discount": false,
+                                    "is_wholesaler": false,
+                                    "is_dropship": false,
+                                    "weight": 500,
+                                    "stock": 48,
+                                    "image": "https://komutodev.aptmi.com/uploads/produk/kambing.png"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+
+### Get Invoice [GET /transactions/{id}/invoices/{invoiceId}]
+
++ Parameters
+    + id: 489 (number, required)
+    + invoiceId: 397 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Invoice Data",
+            "data": {
+                "id": 397,
+                "payment_method_id": null,
+                "store_id": 41,
+                "store": {
+                    "id": 41,
+                    "name": "Toko Kain Jaya",
+                    "logo": "https://komutodev.aptmi.com/uploads/toko/eb4f4148d8b6699d49e48b084310893df292c27a_IMG_0210.jpg"
+                },
+                "shipping": {
+                    "id": 609,
+                    "delivery_cost": 14000,
+                    "insurance_fee": 0,
+                    "is_insurance": false,
+                    "address": {
+                        "id": 422,
+                        "postal_code": "57782",
+                        "address": "Jl. Matesih No. 12 RT. 004 RW. 001",
+                        "name": "Safei Muslim",
+                        "email": "safei@skyshi.com",
+                        "phone_number": "082329230000",
+                        "alias_address": "Rumah kamu",
+                        "is_primary_address": false,
+                        "is_sale_address": false,
+                        "is_tender_address": false,
+                        "is_checked": false
+                    },
+                    "expedition_service": {
+                        "id": 1,
+                        "name": "REG",
+                        "description": "JNE Reguler adalahpaket reguler yang ditawarkan JNE. Kecepatanpengiriman tergantung dari lokasi pengiriman dan tujuan. untuk kota yang sama umumnya memakan waku 2-3 hari",
+                        "logo": null,
+                        "is_checked": false,
+                        "expedition": {
+                            "id": 2,
+                            "name": "JNE",
+                            "logo": "https://komutodev.aptmi.com/img/pengiriman/jne.png",
+                            "insurance_fee": 2,
+                            "is_checked": false
+                        }
+                    },
+                    "note": null,
+                    "seller_note": null,
+                    "airway_bill": null,
+                    "sender_status": 1,
+                    "sender_status_at": null,
+                    "sender_status_expired_at": null,
+                    "receiver_status": 1,
+                    "receiver_status_at": null,
+                    "receiver_status_expired_at": null
+                },
+                "invoice_number": "Invoice-1024777118/10/2017",
+                "total_bill": 1664000,
+                "total_price": 1664000,
+                "status": 0,
+                "transaction_status": null,
+                "created_at": 1507222800,
+                "user_id": 59,
+                "bucket_id": 489,
+                "bid_id": null,
+                "shipping_id": 609,
+                "remark_cancel": null,
+                "delivery_cost": 14000,
+                "insurance_fee": 0,
+                "admin_cost": 0,
+                "wallet": 0,
+                "promo": 0,
+                "updated_at": 1507262402,
+                "items": [
+                    {
+                        "id": 765,
+                        "qty": 1,
+                        "weight": 500,
+                        "additional_cost": 0,
+                        "total_price": 1664000,
+                        "note": "",
+                        "bucket_id": 489,
+                        "product_id": 282,
+                        "product": {
+                            "id": 282.41,
+                            "name": "sepatu emas",
+                            "slug": "sepatu-emas",
+                            "price": 1650000,
+                            "discount": 0,
+                            "is_discount": false,
+                            "is_wholesaler": false,
+                            "is_dropship": false,
+                            "weight": 500,
+                            "stock": 48,
+                            "image": "https://komutodev.aptmi.com/uploads/produk/kambing.png"
+                        },
+                        "invoice_id": "397",
+                        "shipping_id": 609,
+                        "dropshipper_id": null,
+                        "review_id": null
+                    }
+                ],
+                "dispute": null
+            }
+        }
+
+### Bulk Review [POST /transactions/{id}/invoices/{invoiceId}]
+
++ Parameters
+    + id: 489 (number, required)
+    + invoiceId: 397 (number, required)
+
++ Request (application/json)
+
+        [
+            {
+                "product_id": 2.41,
+                "review": "Mantap gan barangnya",
+                "quality": 5,
+                "accuracy": 5
+            }
+        ]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Reviews Data",
+            "data": [
+                {
+                    "id": 156,
+                    "review": "Mantap gan barangnya",
+                    "quality": 5,
+                    "accuracy": 5,
+                    "created_at": 1507602868
+                }
+            ]
+        }
+
+### Dispute [POST /transactions/{id}/invoices/{invoiceId}/dispute]
+
++ Parameters
+    + id: 489 (number, required)
+    + invoiceId: 397 (number, required)
+
++ Request (application/json)
+
+        {
+            "products": [282.41],
+            "problems": [1, 2, 3],
+            "solution": 1,
+            "note": "Saya ingin refund dana saja. takutnya kalo tukar barang nanti sama saja",
+            "images": [
+                {
+                    "name": "refund.jpg"
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 37,
+                "user_id": 59,
+                "store_id": 41,
+                "invoice_id": 397,
+                "solution": 1,
+                "problems": "Barang tidak sesuai deskripsi, Barang rusak, Produk tidak lengkap",
+                "note": "Saya ingin refund dana saja. takutnya kalo tukar barang nanti sama saja",
+                "dispute_number": "4187-10/10/2017",
+                "status": 1,
+                "response_status": 0,
+                "response_at": 1507608792,
+                "created_at": 1507608792
+            }
+        }
+
+### Midtrans Snap Token [GET /transactions/{id}/token?platform={platform}]
+
++ Parameters
+    + id: 489 (number, required)
+    + platform: pwa (string, required)
+
++ Request (application/json)
+
+        {
+            "products": [282.41],
+            "problems": [1, 2, 3],
+            "solution": 1,
+            "note": "Saya ingin refund dana saja. takutnya kalo tukar barang nanti sama saja",
+            "images": [
+                {
+                    "name": "refund.jpg"
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Snap Token",
+            "data": {
+                "token": "fe1dc869-22b2-4149-8ecb-bb4a33266190",
+                "redirect_url": "https://app.midtrans.com/snap/v2/vtweb/fe1dc869-22b2-4149-8ecb-bb4a33266190"
+            }
+        }
+
+### Balance Payment [PUT /transactions/{id}/balance-payment]
+
++ Parameters
+    + id: 489 (number, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Message Buyer [POST /invoices/{id}/buyer/message]
+
++ Parameters
+    + id: 489 (number, required)
+
++ Request
+
+        {
+            "subject": "Mau nanya nih percobaan",
+            "content": "Sepatu ini dijual ndak ya ?"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 1,
+                "store_id": 1,
+                "user_id": 32,
+                "subject": "Mau nanya nih percobaan",
+                "flag_sender": 1,
+                "flag_receiver": 1,
+                "flag_sender_at": 1496710635,
+                "flag_receiver_at": 1496710635,
+                "detail_message": {
+                    "id": 1,
+                    "message_id": 1,
+                    "user_id": 32,
+                    "content": "Sepatu ini dijual ndak ya ?",
+                    "created_at": 1496710635
+                }
+            }
+        }
+
+### Message Seller [POST /invoices/{id}/seller/message]
+
++ Parameters
+    + id: 489 (number, required)
+
++ Request
+
+        {
+            "subject": "Mau nanya nih percobaan",
+            "content": "Sepatu ini dijual ndak ya ?"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 1,
+                "store_id": 1,
+                "user_id": 32,
+                "subject": "Mau nanya nih percobaan",
+                "flag_sender": 1,
+                "flag_receiver": 1,
+                "flag_sender_at": 1496710635,
+                "flag_receiver_at": 1496710635,
+                "detail_message": {
+                    "id": 1,
+                    "message_id": 1,
+                    "user_id": 32,
+                    "content": "Sepatu ini dijual ndak ya ?",
+                    "created_at": 1496710635
+                }
+            }
+        }
+
+### Message Reseller [POST /invoices/{id}/reseller/message]
+
++ Parameters
+    + id: 489 (number, required)
+
++ Request
+
+        {
+            "subject": "Mau nanya nih percobaan",
+            "content": "Sepatu ini dijual ndak ya ?"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "id": 1,
+                "store_id": 1,
+                "user_id": 32,
+                "subject": "Mau nanya nih percobaan",
+                "flag_sender": 1,
+                "flag_receiver": 1,
+                "flag_sender_at": 1496710635,
+                "flag_receiver_at": 1496710635,
+                "detail_message": {
+                    "id": 1,
+                    "message_id": 1,
+                    "user_id": 32,
+                    "content": "Sepatu ini dijual ndak ya ?",
+                    "created_at": 1496710635
+                }
+            }
         }
 
 ## Review [/reviews]
