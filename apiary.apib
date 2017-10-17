@@ -5329,10 +5329,21 @@ Komuto API
             }
         }
 
-### Activate Account [GET /signup-verification?token={token}]
+### Verify Account [GET /signup-verification?token={token}]
 
 + Parameters
     + token: 31540cf0b21cd8513d3dbc7192d8cad1 (string, required)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Resend Verification [POST /signup-verification]
 
 + Response 200 (application/json)
 
